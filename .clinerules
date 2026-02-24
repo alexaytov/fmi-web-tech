@@ -1,0 +1,477 @@
+# Cline Instructions - University Lectures Template
+
+Comprehensive guide for Cline AI when working with this Docusaurus-based university lectures template.
+
+## Project Overview
+
+Template for university course materials with:
+- **Docusaurus 3** - Static site generator
+- **React components** - Interactive UI elements
+- **Reveal.js** - Slide presentations from Markdown
+- **Exercise system** - Progress tracking with LocalStorage
+
+## Project Structure
+
+```
+university-lectures-template/
+├── docusaurus-site/
+│   ├── docs/                     # Lecture content
+│   │   ├── XX-topic-name/        # Each lecture directory
+│   │   │   ├── _category_.json   # Sidebar metadata
+│   │   │   ├── lecture.md        # Theory content
+│   │   │   ├── exercises.md      # Practice problems
+│   │   │   └── slides.md         # Reveal.js presentation (optional)
+│   ├── src/
+│   │   ├── components/           # React components
+│   │   │   ├── InfoBoxes/        # InfoBox, WarningBox, SuccessBox, WhyBox
+│   │   │   ├── Exercise/         # ExerciseCard, ProgressTracker
+│   │   │   ├── Grid/             # Grid, Card
+│   │   │   ├── Comparison/       # ComparisonBox
+│   │   │   └── ...
+│   │   └── pages/                # Homepage, slides index
+│   ├── plugins/
+│   │   ├── lectures-plugin.js    # Loads lectures for homepage
+│   │   └── reveal-slides-plugin.js # Generates Reveal.js slides
+│   └── docusaurus.config.ts      # Main configuration
+└── .github/workflows/deploy.yml  # GitHub Pages deployment
+```
+
+---
+
+## Creating New Lectures - Step by Step
+
+### Step 1: Create Directory
+
+```bash
+cd docusaurus-site/docs
+mkdir XX-topic-name  # e.g., 02-arrays
+```
+
+**Naming:** `XX-topic-name` (number-hyphenated-lowercase)
+
+### Step 2: Create _category_.json
+
+```json
+{
+  "label": "XX. Topic Title",
+  "position": XX,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Brief description"
+  }
+}
+```
+
+### Step 3: Create lecture.md
+
+**Required Frontmatter:**
+```yaml
+---
+title: "Лекция"
+sidebar_position: 1
+slug: lecture
+tags: [topic, subtopic]
+---
+```
+
+**Required Imports (at top, after frontmatter):**
+```jsx
+import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
+import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
+import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
+import WhyBox from '@site/src/components/InfoBoxes/WhyBox';
+import LearningObjectives from '@site/src/components/LearningObjectives';
+import QuickSummary from '@site/src/components/QuickSummary';
+import CollapsibleSection from '@site/src/components/CollapsibleSection';
+import ComparisonBox from '@site/src/components/Comparison/ComparisonBox';
+import Grid from '@site/src/components/Grid/Grid';
+import Card from '@site/src/components/Grid/Card';
+import ViewSlidesButton from '@site/src/components/ViewSlidesButton';
+```
+
+**Structure:**
+```markdown
+# Topic Title
+
+<ViewSlidesButton lectureSlug="topic-name" />
+
+<QuickSummary>
+
+**Key Points:**
+- Point 1
+- Point 2
+
+</QuickSummary>
+
+<LearningObjectives objectives={["Goal 1", "Goal 2", "Goal 3"]} />
+
+---
+
+## Introduction
+
+<WhyBox title="Why?">
+Motivation
+</WhyBox>
+
+## Main Content
+
+<InfoBox title="Definition">
+Core concept
+</InfoBox>
+
+\`\`\`python
+# Code example
+\`\`\`
+
+<SuccessBox title="Best Practice">
+Tip or recommendation
+</SuccessBox>
+
+---
+
+## Additional Resources
+
+### Online Materials
+- [Resource](url) - Description
+```
+
+### Step 4: Create exercises.md
+
+**🎯 CRITICAL: Zero Config - NO `id` or `exercises` props!**
+
+**Required Imports:**
+```jsx
+import ExerciseCard from '@site/src/components/Exercise/ExerciseCard';
+import ProgressTracker from '@site/src/components/Exercise/ProgressTracker';
+import CollapsibleSection from '@site/src/components/CollapsibleSection';
+```
+
+**Structure:**
+```markdown
+# Exercises: Topic
+
+<ProgressTracker />
+
+---
+
+## Easy Exercises
+
+<ExerciseCard difficulty="easy">
+
+### Task 1: Title
+
+Problem description
+
+<CollapsibleSection title="💡 Hint" icon="💡">
+Hint content
+</CollapsibleSection>
+
+<CollapsibleSection title="✅ Solution" icon="✅">
+
+\`\`\`python
+# Solution code
+\`\`\`
+
+**Explanation:** ...
+
+**Complexity:** $O(n)$
+
+</CollapsibleSection>
+
+</ExerciseCard>
+```
+
+### Step 5: Create slides.md (Optional)
+
+```markdown
+---
+title: Topic Title
+theme: white
+highlightTheme: github
+transition: slide
+---
+
+# First Slide
+
+Content
+
+---
+
+# Second Slide
+
+--
+
+## Vertical Subslide
+
+---
+
+Note:
+Speaker notes (press S to view)
+```
+
+After creating slides:
+```bash
+npm run build:slides
+```
+
+---
+
+## Component Reference
+
+### InfoBox Variants
+
+```jsx
+<InfoBox title="Information">Content</InfoBox>      // Blue
+<SuccessBox title="Tip">Content</SuccessBox>        // Green
+<WarningBox title="Warning">Content</WarningBox>    // Orange/Red
+<WhyBox title="Why?">Content</WhyBox>               // Purple
+```
+
+### LearningObjectives
+
+```jsx
+<LearningObjectives objectives={[
+  "First objective",
+  "Second objective",
+  "Third objective"
+]} />
+```
+
+### QuickSummary
+
+```jsx
+<QuickSummary>
+
+**Key Points:**
+- Point 1
+- Point 2
+
+</QuickSummary>
+```
+
+### CollapsibleSection
+
+```jsx
+<CollapsibleSection title="Title" icon="🎯">
+Hidden content
+</CollapsibleSection>
+```
+
+**Icons:** 💡 (hint), ✅ (solution), 📚 (info), 🎯 (goal), ⚠️ (warning)
+
+### Grid and Card
+
+```jsx
+<Grid columns={2}>
+  <Card title="Card 1" icon="📊">Content 1</Card>
+  <Card title="Card 2" icon="📈">Content 2</Card>
+</Grid>
+```
+
+**IMPORTANT Rules:**
+- Grid requires **2+ Card** components
+- Each Card **MUST have** `title` prop
+- For single item, use `<InfoBox>` instead
+
+### ComparisonBox
+
+```jsx
+<ComparisonBox
+  left={{
+    title: "Approach A",
+    content: (
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+      </ul>
+    )
+  }}
+  right={{
+    title: "Approach B",
+    content: (
+      <ul>
+        <li>Point 1</li>
+        <li>Point 2</li>
+      </ul>
+    )
+  }}
+/>
+```
+
+**Props:** `left`/`right` (neutral) or `wrong`/`correct` (with ❌/✅ icons)
+
+### ExerciseCard
+
+```jsx
+<ExerciseCard difficulty="easy">
+
+### Task Title
+
+Description...
+
+</ExerciseCard>
+```
+
+**Difficulty levels:** `easy`, `easy-medium`, `medium`, `medium-hard`, `hard`
+
+**⚠️ DO NOT set `id` prop!** Auto-generated from title.
+
+### ProgressTracker
+
+```jsx
+<ProgressTracker />
+```
+
+**⚠️ DO NOT set `exercises` prop!** Auto-detects ExerciseCard components.
+
+### ViewSlidesButton
+
+```jsx
+<ViewSlidesButton lectureSlug="topic-name" />
+```
+
+---
+
+## MDX and LaTeX
+
+### LaTeX Escaping (CRITICAL)
+
+In MDX v3, escape all `{` and `}` in LaTeX:
+
+```markdown
+✅ CORRECT:
+$O(n \log n)$                    // No braces - OK
+$O(n^\{2\})$                     // Escaped braces
+\sum_\{i=0\}^\{n\} i             // Escaped subscript/superscript
+
+❌ WRONG:
+$O(n^{2})$                       // Unescaped - MDX error!
+\frac{n}{2}                      // Unescaped
+```
+
+### Special Characters
+
+```markdown
+✅ CORRECT: E &lt;&lt; V²         // << as HTML entity
+❌ WRONG: E << V²                // MDX parse error
+```
+
+**In code blocks, no escaping needed!**
+
+---
+
+## Reveal.js Slides
+
+### Separators
+
+| Separator | Meaning |
+|-----------|---------|
+| `---` | Horizontal slide (← →) |
+| `--` | Vertical subslide (↑ ↓) |
+| `Note:` | Speaker notes |
+
+### Features
+
+**Colored background:**
+```markdown
+<!-- .slide: data-background="#4d7e65" -->
+## Slide with Color
+```
+
+**Fragments:**
+```markdown
+<!-- .element: class="fragment" -->
+- Appears first
+```
+
+**Code highlighting:**
+```markdown
+\`\`\`python {2-3}
+def example():
+    x = 10    # Highlighted
+    y = 20    # Highlighted
+\`\`\`
+```
+
+### Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| ←→↑↓ | Navigate |
+| S | Speaker view |
+| F | Fullscreen |
+| ESC | Overview |
+
+---
+
+## Language Rules
+
+- **Bulgarian** for content and explanations
+- **English** for code, variable names, comments
+- Component props use English
+
+---
+
+## Common Mistakes to Avoid
+
+1. ❌ Missing imports at top of file
+2. ❌ Wrong component paths (use `@site/src/components/...`)
+3. ❌ Grid with single Card (use InfoBox instead)
+4. ❌ Card without `title` prop
+5. ❌ Setting `id` prop on ExerciseCard
+6. ❌ Setting `exercises` prop on ProgressTracker
+7. ❌ Unescaped `{` `}` in LaTeX
+8. ❌ Using `<<` or `>>` outside code blocks
+9. ❌ Not testing locally before committing
+10. ❌ Missing "Additional Resources" section
+
+---
+
+## Testing Commands
+
+```bash
+cd docusaurus-site
+
+npm start              # Dev server
+npm run build          # Production build
+npm run build:slides   # Rebuild presentations
+npm run serve          # Test production build
+npm run clear          # Clear cache
+rm -rf .docusaurus     # Manual cache clear
+```
+
+---
+
+## Checklist for New Lecture
+
+- [ ] Directory: `docs/XX-topic-name/`
+- [ ] `_category_.json` with correct position
+- [ ] `lecture.md`:
+  - [ ] Frontmatter with tags
+  - [ ] Component imports
+  - [ ] QuickSummary
+  - [ ] LearningObjectives
+  - [ ] Content with components
+  - [ ] "Additional Resources" section
+- [ ] `exercises.md`:
+  - [ ] ProgressTracker (no props!)
+  - [ ] 3+ ExerciseCard (no id prop!)
+  - [ ] Hints and solutions in CollapsibleSection
+- [ ] `slides.md` (optional)
+- [ ] Tested: `npm start`
+- [ ] Build successful: `npm run build`
+
+---
+
+## Priority Rules
+
+1. **Always use components** over plain markdown
+2. **Test locally** before committing
+3. **Follow naming conventions** strictly
+4. **Zero Config** for Exercise system
+5. **Escape LaTeX braces** outside code blocks
+
+---
+
+**See CLAUDE.md for complete documentation.**
