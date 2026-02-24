@@ -39,18 +39,15 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // TODO: Заменете с вашия GitHub Pages URL
   // Set the production url of your site here
-  url: 'https://YOUR_USERNAME.github.io',
+  url: 'https://alexaytov.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/YOUR_REPO_NAME/',
+  baseUrl: '/fmi-web-tech/',
 
-  // TODO: Заменете с вашето GitHub потребителско име и име на репозитори
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'YOUR_USERNAME', // Usually your GitHub org/user name.
-  projectName: 'YOUR_REPO_NAME', // Usually your repo name.
+  organizationName: 'alexaytov', // Usually your GitHub org/user name.
+  projectName: 'fmi-web-tech', // Usually your repo name.
 
   onBrokenLinks: 'warn', // Changed to warn for reveal.js slides (generated in postBuild)
   onBrokenMarkdownLinks: 'warn',
@@ -70,9 +67,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // TODO: Заменете с вашето GitHub репозитори
           editUrl:
-            'https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/tree/main/docusaurus-site/',
+            'https://github.com/alexaytov/fmi-web-tech/tree/main/docusaurus-site/',
           exclude: ['**/slides.md'],
         },
         blog: false,
@@ -113,8 +109,7 @@ const config: Config = {
           items: slidesDropdownItems,
         },
         {
-          // TODO: Заменете с вашето GitHub репозитори
-          href: 'https://github.com/YOUR_USERNAME/YOUR_REPO_NAME',
+          href: 'https://github.com/alexaytov/fmi-web-tech',
           label: 'GitHub',
           position: 'right',
         },
@@ -156,8 +151,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              // TODO: Заменете с вашето GitHub репозитори
-              href: 'https://github.com/YOUR_USERNAME/YOUR_REPO_NAME',
+              href: 'https://github.com/alexaytov/fmi-web-tech',
             },
           ],
         },
