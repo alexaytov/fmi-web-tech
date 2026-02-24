@@ -1,0 +1,9 @@
+{
+  "label": "00. Cloud-Native Development",
+  "position": 0,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Introduction to cloud-native architecture, containers, microservices, and Kubernetes"
+  }
+}

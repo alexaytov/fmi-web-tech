@@ -1,0 +1,9 @@
+{
+  "label": "00. Git и GitHub",
+  "position": 0,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Основи на контрол на версиите с Git и съвместна работа с GitHub"
+  }
+}

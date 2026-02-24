@@ -1,4 +1,5 @@
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 interface ViewSlidesButtonProps {
@@ -10,8 +11,8 @@ interface ViewSlidesButtonProps {
 /**
  * Button component to link from lecture pages to reveal.js presentations
  *
- * Uses pathname:// protocol to bypass Docusaurus SPA router and serve static files.
- * This is the recommended approach from Docusaurus documentation for external static files.
+ * Uses useBaseUrl hook to correctly resolve the slides URL relative to
+ * the site's baseUrl, ensuring it works in any deployment environment.
  *
  * @example
  * ```tsx
@@ -23,7 +24,7 @@ export default function ViewSlidesButton({
   variant = 'primary',
   size = 'lg'
 }: ViewSlidesButtonProps) {
-  const slideUrl = `pathname:///slides/${lectureSlug}/`;
+  const slideUrl = useBaseUrl(`/slides/${lectureSlug}/`);
 
   return (
     <div className={styles.container}>
