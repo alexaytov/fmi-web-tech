@@ -1,40 +1,43 @@
 <div align="center">
 
-# 📚 University Lectures Template
+# 🌐 Уеб Технологии
 
-### Шаблон за университетски курсове с Docusaurus
+### Курс по Уеб Технологии във ФМИ към СУ „Св. Климент Охридски"
 
 [![Built with Docusaurus](https://img.shields.io/badge/Built%20with-Docusaurus%203-green?logo=docusaurus)](https://docusaurus.io/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**[📖 Отвори сайта](https://alexaytov.github.io/fmi-web-tech/)**
 
 </div>
 
 ---
 
-## ✨ Какво Предоставя Шаблонът?
+## 📚 За Курса
+
+Този курс въвежда студентите в съвременните уеб технологии и практики за разработка. Материалите покриват както фундаментални концепции, така и модерни инструменти използвани в индустрията.
+
+### Какво Ще Научите
 
 <table>
 <tr>
 <td width="50%">
 
-### 🎯 Интерактивно Обучение
-- 📖 Готова структура за лекции
-- 💡 Упражнения с hints и решения
-- 🎨 Красиви React компоненти
-- 📊 Progress tracking система
-- 📊 Reveal.js презентации
+#### 🎨 Frontend Технологии
+- HTML5 семантика и достъпност
+- CSS3, Flexbox, Grid Layout
+- JavaScript (ES6+)
+- Responsive дизайн
 
 </td>
 <td width="50%">
 
-### 🚀 Модерна Платформа
-- ⚡ Бърз Docusaurus 3 site
-- 🌓 Dark/Light mode
-- 📱 Responsive дизайн
-- 🔍 Пълнотекстово търсене
-- 🚀 GitHub Actions deployment
+#### ⚙️ Инструменти и Практики
+- Git и GitHub
+- Cloud-Native Development
+- CI/CD и deployment
+- Best practices
 
 </td>
 </tr>
@@ -44,16 +47,12 @@
 
 ## 🚀 Бърз Старт
 
-### 1. Използвай като Template
-
-Натиснете бутона **"Use this template"** в GitHub, за да създадете ново репозитори.
-
-### 2. Клонирайте и Инсталирайте
+### Локално Стартиране
 
 ```bash
-# Клонирай вашето ново репозитори
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME/docusaurus-site
+# Клонирай репозиторито
+git clone https://github.com/alexaytov/fmi-web-tech.git
+cd fmi-web-tech/docusaurus-site
 
 # Инсталирай dependencies
 npm install
@@ -62,226 +61,43 @@ npm install
 npm start
 ```
 
-🎉 Отворете [http://localhost:3000](http://localhost:3000) в браузъра!
-
-### 3. Персонализирайте Конфигурацията
-
-Редактирайте `docusaurus-site/docusaurus.config.ts`:
-
-```typescript
-const config: Config = {
-  title: 'Вашият Курс',                    // Заменете
-  tagline: 'Описание на курса',            // Заменете
-
-  url: 'https://YOUR_USERNAME.github.io',  // Заменете
-  baseUrl: '/YOUR_REPO_NAME/',             // Заменете
-
-  organizationName: 'YOUR_USERNAME',       // Заменете
-  projectName: 'YOUR_REPO_NAME',           // Заменете
-};
-```
-
-### 4. Добавете Съдържание
-
-Вижте примерните лекции в `docs/00-getting-started/` и `docs/01-sample-topic/`.
+Отворете [http://localhost:3000](http://localhost:3000) в браузъра.
 
 ---
 
-## 📁 Структура на Проекта
+## 📁 Структура
 
 ```
-university-lectures-template/
-│
-├── 📂 docusaurus-site/           # Главно приложение
+fmi-web-tech/
+├── 📂 docusaurus-site/           # Docusaurus приложение
 │   ├── 📂 docs/                  # Лекционни материали
-│   │   ├── 00-getting-started/   # Примерна въведителна лекция
-│   │   │   ├── _category_.json
-│   │   │   ├── lecture.md
-│   │   │   ├── exercises.md
-│   │   │   └── slides.md
-│   │   └── 01-sample-topic/      # Шаблон за копиране
-│   │
-│   ├── 📂 src/
-│   │   ├── 📂 components/        # React компоненти
-│   │   │   ├── InfoBoxes/
-│   │   │   ├── Exercise/
-│   │   │   ├── Grid/
-│   │   │   └── ...
-│   │   └── 📂 css/               # Стилове
-│   │
+│   │   ├── cloud-native/         # Cloud-Native Development
+│   │   ├── git-github/           # Git и GitHub
+│   │   └── ...                   # Други лекции
+│   ├── 📂 src/                   # React компоненти и стилове
 │   ├── 📂 plugins/               # Docusaurus плъгини
-│   ├── 📂 static/                # Статични файлове
 │   └── docusaurus.config.ts      # Конфигурация
-│
-├── 📂 .github/workflows/         # CI/CD pipeline
-├── CLAUDE.md                     # AI инструкции
+├── 📂 .github/workflows/         # GitHub Actions CI/CD
+├── CLAUDE.md                     # Инструкции за разработка
 └── README.md                     # Този файл
 ```
 
 ---
 
-## 📝 Създаване на Нови Лекции
+## ✨ Функционалности
 
-### Бърз Workflow
-
-```bash
-# 1. Създайте директория
-mkdir docs/02-my-topic
-
-# 2. Създайте файлове (копирайте от 01-sample-topic)
-cp docs/01-sample-topic/_category_.json docs/02-my-topic/
-cp docs/01-sample-topic/lecture.md docs/02-my-topic/
-cp docs/01-sample-topic/exercises.md docs/02-my-topic/
-
-# 3. Персонализирайте съдържанието
-
-# 4. (Опционално) Добавете презентация
-touch docs/02-my-topic/slides.md
-
-# 5. Rebuild презентации (ако има slides.md)
-npm run build:slides
-```
-
-### Структура на Лекция
-
-| Файл | Описание |
-|------|----------|
-| `_category_.json` | Метаданни за sidebar |
-| `lecture.md` | Теоретично съдържание |
-| `exercises.md` | Практически задачи |
-| `slides.md` | Reveal.js презентация (опционално) |
+| Функционалност | Описание |
+|----------------|----------|
+| 📖 **Лекции** | Структурирано теоретично съдържание |
+| ✏️ **Упражнения** | Практически задачи с hints и решения |
+| 📊 **Презентации** | Reveal.js слайдове за всяка тема |
+| 📈 **Progress Tracking** | Следене на напредъка по упражнения |
+| 🌓 **Dark Mode** | Тъмен режим за комфортно четене |
+| 🔍 **Търсене** | Пълнотекстово търсене в материалите |
 
 ---
 
-## 🎨 Налични Компоненти
-
-### Информационни Кутии
-
-```jsx
-<InfoBox title="Информация">Основна информация</InfoBox>
-<SuccessBox title="Съвет">Положителна информация</SuccessBox>
-<WarningBox title="Внимание">Важни предупреждения</WarningBox>
-<WhyBox title="Защо?">Мотивация и обяснения</WhyBox>
-```
-
-### Упражнения
-
-```jsx
-<ExerciseCard difficulty="easy">
-  ### Заглавие на Задачата
-
-  Описание...
-
-  <CollapsibleSection title="Решение" icon="✅">
-    Решение тук...
-  </CollapsibleSection>
-</ExerciseCard>
-
-<ProgressTracker />
-```
-
-### Layout Компоненти
-
-```jsx
-<Grid columns={2}>
-  <Card title="Вариант А">Съдържание А</Card>
-  <Card title="Вариант Б">Съдържание Б</Card>
-</Grid>
-
-<CollapsibleSection title="Подсказка" icon="💡">
-  Скрито съдържание...
-</CollapsibleSection>
-
-<ComparisonBox
-  title="Сравнение"
-  leftLabel="Подход А"
-  rightLabel="Подход Б"
-  leftItems={["Точка 1", "Точка 2"]}
-  rightItems={["Точка 1", "Точка 2"]}
-/>
-```
-
----
-
-## 📊 Reveal.js Презентации
-
-### Създаване на Презентация
-
-Създайте `slides.md` в директорията на лекцията:
-
-```markdown
----
-title: Моята Презентация
-theme: white
-highlightTheme: github
-transition: slide
----
-
-# Първи Слайд
-
-Съдържание
-
----
-
-## Втори Слайд
-
-- Точка 1
-- Точка 2
-
---
-
-### Вертикален Подслайд
-
-Използвайте `--` за подслайдове
-
----
-
-## Код
-
-\`\`\`python
-def hello():
-    print("Здравей!")
-\`\`\`
-```
-
-### Rebuild Презентации
-
-```bash
-npm run build:slides
-```
-
-### Клавишни Комбинации
-
-| Клавиш | Действие |
-|--------|----------|
-| Стрелки | Навигация |
-| S | Speaker view |
-| F | Fullscreen |
-| ESC | Overview |
-| ? | Help |
-
----
-
-## 🔄 Deployment
-
-### GitHub Pages (Автоматично)
-
-Всеки push към `main` автоматично:
-
-1. ✅ Build-ва сайта
-2. ✅ Генерира презентации
-3. ✅ Deploy-ва към GitHub Pages
-
-### Ръчен Build
-
-```bash
-npm run build    # Production build
-npm run serve    # Тест на build-а
-```
-
----
-
-## 🛠️ Tech Stack
+## 🛠️ Технологии
 
 - **Framework**: [Docusaurus 3](https://docusaurus.io/)
 - **Frontend**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
@@ -292,24 +108,28 @@ npm run serve    # Тест на build-а
 
 ---
 
-## 📚 Документация
+## 📝 Полезни Команди
 
-| Документ | Описание |
-|----------|----------|
-| [CLAUDE.md](CLAUDE.md) | Пълно ръководство за структурата |
-| [docs/00-getting-started](docusaurus-site/docs/00-getting-started/) | Примерна лекция с всички компоненти |
-| [docs/01-sample-topic](docusaurus-site/docs/01-sample-topic/) | Минимален шаблон за копиране |
+```bash
+cd docusaurus-site
+
+npm start          # Development server
+npm run build      # Production build
+npm run serve      # Тест на production build
+npm run build:slides  # Rebuild презентации
+```
 
 ---
 
-## 📄 Лиценз
+## 🔗 Връзки
 
-Този проект е лицензиран под **MIT License**.
+- [ФМИ - Факултет по Математика и Информатика](https://www.fmi.uni-sofia.bg/)
+- [Софийски Университет „Св. Климент Охридски"](https://www.uni-sofia.bg/)
 
 ---
 
 <div align="center">
 
-**Изграден с ❤️ за университетски курсове**
+**Изграден с ❤️ за студентите на ФМИ**
 
 </div>

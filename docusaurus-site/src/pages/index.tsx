@@ -88,7 +88,7 @@ function LecturesSection() {
           📚 Учебни Материали
         </Heading>
         <p className={styles.sectionSubtitle}>
-          Курсът съдържа лекции, всяка с теория и практически упражнения
+          Курсът обхваща съвременни уеб технологии – от HTML и CSS до JavaScript и cloud-native разработка
         </p>
         <div className={styles.lecturesGrid}>
           {lectures.map((lecture) => (
@@ -136,7 +136,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Начало"
-      description="Шаблон за университетски курсове с Docusaurus">
+      description="Курс по Уеб Технологии във ФМИ към СУ „Св. Климент Охридски"">
       <HomepageHeader />
       <main>
         <LecturesSection />

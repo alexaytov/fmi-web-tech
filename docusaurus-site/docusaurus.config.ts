@@ -29,9 +29,8 @@ const slidesDropdownItems = [
 ];
 
 const config: Config = {
-  // TODO: Персонализирайте заглавието на вашия курс
-  title: 'Университетски Лекции',
-  tagline: 'Шаблон за университетски курсове с Docusaurus',
+  title: 'Уеб Технологии',
+  tagline: 'Курс по Уеб Технологии във ФМИ към СУ „Св. Климент Охридски"',
   favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -93,8 +92,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      // TODO: Персонализирайте заглавието в navbar
-      title: 'Университетски Лекции',
+      title: 'Уеб Технологии @ ФМИ',
       items: [
         {
           type: 'docSidebar',
@@ -135,13 +133,12 @@ const config: Config = {
           title: 'Ресурси',
           items: [
             {
-              // TODO: Добавете линкове към вашия университет
-              label: 'Университет',
-              href: 'https://example.edu',
+              label: 'ФМИ',
+              href: 'https://www.fmi.uni-sofia.bg/',
             },
             {
-              label: 'Moodle',
-              href: 'https://moodle.example.edu',
+              label: 'Софийски Университет',
+              href: 'https://www.uni-sofia.bg/',
             },
           ],
         },
@@ -155,8 +152,7 @@ const config: Config = {
           ],
         },
       ],
-      // TODO: Персонализирайте copyright текста
-      copyright: `Copyright © ${new Date().getFullYear()} Вашият Университет. Всички права запазени.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ФМИ, СУ „Св. Климент Охридски". Всички права запазени.`,
     },
     prism: {
       theme: prismThemes.github,
