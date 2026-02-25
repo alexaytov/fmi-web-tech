@@ -119,16 +119,15 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          // TODO: Персонализирайте линковете в footer
           title: 'Лекции',
           items: [
             {
-              label: 'Въведение',
-              to: '/docs/getting-started/lecture',
+              label: 'Cloud-Native Development',
+              to: '/docs/cloud-native/lecture',
             },
             {
-              label: 'Примерна Тема',
-              to: '/docs/sample-topic/lecture',
+              label: 'Git и GitHub',
+              to: '/docs/git-github/lecture',
             },
           ],
         },
