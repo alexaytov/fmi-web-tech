@@ -23,13 +23,13 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 Дефинирайте "cloud-native" със собствени думи. Какво е ключовото прозрение за cloud-native - дали е предимно за **къде** работи приложението или **как** е проектирано?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="Подсказка" icon="💡">
 
 Помислете за разликата между "lift and shift" миграция и redesign на архитектурата.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Cloud-native** е философия за дизайн на софтуер, която създава приложения, оптимизирани да използват напълно предимствата на cloud computing модела.
 
@@ -51,13 +51,13 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 Изброете три бизнес драйвера, които мотивират организациите да приемат cloud-native подходи.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="Подсказка" icon="💡">
 
 Помислете за конкурентно предимство, разходи и надеждност.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Три основни бизнес драйвера:**
 
@@ -93,7 +93,7 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 | C. Chaos Monkey | 3. Архитектурен стил, използващ малки, автономни сервизи |
 | D. IaC | 4. Дефиниране на инфраструктура във version-controlled файлове |
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 | Термин | Отговор |
 |--------|---------|
@@ -112,7 +112,7 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 Какви са трите стълба на observability в cloud-native системи? Дайте еднозначно описание на всеки.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Трите стълба на observability:**
 
@@ -134,7 +134,7 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 *"В cloud-native система, използваща containers, всеки container включва своя собствена пълна операционна система, точно като виртуална машина."*
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Невярно.**
 
@@ -168,13 +168,13 @@ Containers **споделят host OS kernel** и включват само appl
 
 **c)** Какво ново предизвикателство могат да въведат microservices вместо това?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="Подсказка" icon="💡">
 
 Помислете за fault isolation и distributed system сложността.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Защо в монолитна архитектура:**
 - Всички components споделят един процес и памет
@@ -222,7 +222,7 @@ CMD ["python", "app.py"]
 
 **c)** Какво се случва когато container-ът стартира (последният ред)?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Base image:**
 `python:3.9-slim` - минимален Python 3.9 image (slim variant е по-малък от пълния).
@@ -261,7 +261,7 @@ CMD ["python", "app.py"]
 
 На базата на попълнената таблица, в какъв сценарий бихте избрали VMs пред containers?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Попълнена таблица:**
 
@@ -292,7 +292,7 @@ CMD ["python", "app.py"]
 
 Обяснете какво означава "configuration drift" и защо е проблем. След това опишете как immutable infrastructure решава този проблем.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **Какво е Configuration Drift:**
 Configuration drift възниква когато сървъри, които би трябвало да са идентични, постепенно стават различни поради:
@@ -345,7 +345,7 @@ spec:
 
 **c)** Защо може да зададете `minReplicas: 2` вместо `minReplicas: 1`?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) При CPU > 70%:**
 - Kubernetes автоматично **добавя нови pods** (replicas)
@@ -385,13 +385,13 @@ spec:
 - Container port: 3000
 - Label за pods: `app: frontend`
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="Подсказка" icon="💡">
 
 Структурата е: apiVersion, kind, metadata, spec (с replicas, selector, template).
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 ```yaml
 apiVersion: apps/v1
@@ -445,7 +445,7 @@ spec:
 
 **c)** Идентифицирайте два сервиза, които трябва да комуникират синхронно и два, които биха могли да комуникират асинхронно. Обосновете изборите си.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Microservices архитектура:**
 
@@ -510,7 +510,7 @@ data:
 
 **c)** Каква допълнителна практика трябва да допълни Подход B за максимална ефективност?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Проблеми с Imperative подход:**
 
@@ -554,7 +554,7 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 
 **c)** Опишете един друг chaos engineering експеримент (освен random termination), който може да разкрие слабости в cloud-native система.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Логиката зад Chaos Engineering:**
 
@@ -605,7 +605,7 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 
 **c)** Предложите roadmap от три конкретни стъпки за движение към истинска cloud-native архитектура
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="Решение" icon="✅">
 
 **a) Cloud-Enabled vs Cloud-Native:**
 
