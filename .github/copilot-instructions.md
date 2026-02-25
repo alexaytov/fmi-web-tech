@@ -608,11 +608,9 @@ def example():
 
 # Fragments
 
-<!-- .element: class="fragment" -->
-- Appears first
-
-<!-- .element: class="fragment fade-in" -->
-- Appears second
+- Appears first <!-- .element: class="fragment" -->
+- Appears second <!-- .element: class="fragment" -->
+- Appears third <!-- .element: class="fragment fade-in" -->
 
 ---
 
@@ -627,6 +625,56 @@ Speaker notes - press S for presenter view
 | `---` | Horizontal slide (← →) |
 | `--` | Vertical subslide (↑ ↓) |
 | `Note:` | Speaker notes |
+
+### Fragments (Incremental Reveal)
+
+Fragments are used to reveal elements step by step on a slide. The `<!-- .element: -->` comment **MUST** come **AFTER** the element, not before.
+
+**Markdown Syntax:**
+
+```markdown
+- First element <!-- .element: class="fragment" -->
+- Second element <!-- .element: class="fragment" -->
+- Third element <!-- .element: class="fragment fade-up" -->
+```
+
+**Available Fragment Styles:**
+
+| Style | Effect |
+|-------|--------|
+| `fragment` | Fade in (default) |
+| `fragment fade-out` | Start visible, fade out |
+| `fragment fade-up` | Slide up while fading in |
+| `fragment fade-down` | Slide down while fading in |
+| `fragment fade-left` | Slide left while fading in |
+| `fragment fade-right` | Slide right while fading in |
+| `fragment fade-in-then-out` | Fade in, then out on next step |
+| `fragment fade-in-then-semi-out` | Fade in, then 50% opacity |
+| `fragment highlight-red` | Turn text red |
+| `fragment highlight-green` | Turn text green |
+| `fragment highlight-blue` | Turn text blue |
+| `fragment grow` | Scale up |
+| `fragment shrink` | Scale down |
+| `fragment strike` | Strike through |
+
+**Controlling Order:**
+
+```markdown
+- Last <!-- .element: class="fragment" data-fragment-index="3" -->
+- First <!-- .element: class="fragment" data-fragment-index="1" -->
+- Second <!-- .element: class="fragment" data-fragment-index="2" -->
+```
+
+**⚠️ IMPORTANT:** Comment MUST be on the **SAME line** after the element!
+
+```markdown
+✅ CORRECT:
+- Text <!-- .element: class="fragment" -->
+
+❌ WRONG:
+<!-- .element: class="fragment" -->
+- Text
+```
 
 ### Keyboard Shortcuts
 

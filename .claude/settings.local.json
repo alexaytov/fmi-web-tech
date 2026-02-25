@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "mcp__searxng__searxng_web_search",
+      "mcp__searxng__web_url_read"
     ]
   }
 }

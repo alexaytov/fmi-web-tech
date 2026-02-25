@@ -1,0 +1,9 @@
+{
+  "label": "00. IaaS, PaaS & SaaS",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Cloud service models comparison: Infrastructure, Platform, and Software as a Service"
+  }
+}

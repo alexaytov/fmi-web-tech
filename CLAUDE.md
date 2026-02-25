@@ -717,11 +717,11 @@ def example():
 
 # Fragments
 
-<!-- .element: class="fragment" -->
-- Появява се първо
+🔹 **Появява се първо** <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment fade-in" -->
-- Появява се второ
+🔹 **Появява се второ** <!-- .element: class="fragment" -->
+
+🔹 **Появява се трето** <!-- .element: class="fragment fade-in" -->
 
 ---
 
@@ -736,6 +736,92 @@ Speaker notes - натисни S за presenter view
 | `---` | Хоризонтален слайд (← →) |
 | `--` | Вертикален подслайд (↑ ↓) |
 | `Note:` | Speaker notes |
+
+### Fragments (Постепенно показване)
+
+Fragments се използват за постепенно показване на елементи на слайд. Коментарът `<!-- .element: -->` **ТРЯБВА** да е **СЛЕД** елемента, не преди него.
+
+**⚠️ ВАЖНО: Използвайте ПАРАГРАФИ, не списъци!**
+
+Fragments работят най-добре с **отделни параграфи**, разделени с празни редове. **НЕ** използвайте bullet списъци (`-`), защото Markdown процесорът може да не приложи fragment класа правилно към `<li>` елемента.
+
+**✅ ПРАВИЛЕН Синтаксис (Параграфи):**
+
+```markdown
+🔹 **Първи елемент** <!-- .element: class="fragment" -->
+
+🔹 **Втори елемент** <!-- .element: class="fragment" -->
+
+🔹 **Трети елемент** <!-- .element: class="fragment fade-up" -->
+```
+
+**❌ ИЗБЯГВАЙТЕ (Списъци с `-`):**
+
+```markdown
+- Първи елемент <!-- .element: class="fragment" -->
+- Втори елемент <!-- .element: class="fragment" -->
+```
+
+**Алтернативни формати за параграфи:**
+
+```markdown
+# С емоджи префикси
+📜 **История** - Виждате всяка промяна <!-- .element: class="fragment" -->
+
+↩️ **Rollback** - Връщате се към работещи версии <!-- .element: class="fragment" -->
+
+# С номера (за поредност)
+1️⃣ **Първа стъпка** <!-- .element: class="fragment" -->
+
+2️⃣ **Втора стъпка** <!-- .element: class="fragment" -->
+
+# Само bold текст
+**Концепция едно** - описание <!-- .element: class="fragment" -->
+
+**Концепция две** - описание <!-- .element: class="fragment" -->
+```
+
+**Налични fragment стилове:**
+
+| Стил | Ефект |
+|------|-------|
+| `fragment` | Fade in (по подразбиране) |
+| `fragment fade-out` | Започва видим, изчезва |
+| `fragment fade-up` | Слайдва нагоре докато се появява |
+| `fragment fade-down` | Слайдва надолу докато се появява |
+| `fragment fade-left` | Слайдва наляво докато се появява |
+| `fragment fade-right` | Слайдва надясно докато се появява |
+| `fragment fade-in-then-out` | Появява се, след това изчезва |
+| `fragment fade-in-then-semi-out` | Появява се, след това 50% opacity |
+| `fragment highlight-red` | Текстът става червен |
+| `fragment highlight-green` | Текстът става зелен |
+| `fragment highlight-blue` | Текстът става син |
+| `fragment grow` | Увеличава размера |
+| `fragment shrink` | Намалява размера |
+| `fragment strike` | Зачертава текста |
+
+**Контролиране на реда:**
+
+```markdown
+Трети (появява се последен) <!-- .element: class="fragment" data-fragment-index="3" -->
+
+Първи (появява се първи) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+Втори (появява се втори) <!-- .element: class="fragment" data-fragment-index="2" -->
+```
+
+**⚠️ ВАЖНО:** Коментарът ТРЯБВА да е на **СЪЩИЯ ред** след елемента!
+
+```markdown
+✅ ПРАВИЛНО:
+Текст <!-- .element: class="fragment" -->
+
+❌ ГРЕШНО:
+<!-- .element: class="fragment" -->
+Текст
+```
+
+**⚠️ ВАЖНО:** Оставяйте **празен ред** между fragment елементите!
 
 ### Keyboard Shortcuts
 

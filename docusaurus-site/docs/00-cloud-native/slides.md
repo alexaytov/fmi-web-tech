@@ -33,14 +33,11 @@ Note:
 
 ### Бизнес Драйвери
 
-<!-- .element: class="fragment" data-fragment-index="1" -->
-🚀 **По-бързи иновации** - Deploy хиляди пъти дневно
+🚀 **По-бързи иновации** - Deploy хиляди пъти дневно <!-- .element: class="fragment" data-fragment-index="1" -->
 
-<!-- .element: class="fragment" data-fragment-index="2" -->
-💰 **Намалени разходи** - Плащате само за реално използвани ресурси
+💰 **Намалени разходи** - Плащате само за реално използвани ресурси <!-- .element: class="fragment" data-fragment-index="2" -->
 
-<!-- .element: class="fragment" data-fragment-index="3" -->
-🛡️ **Подобрена надеждност** - Системи, които издържат на сривове
+🛡️ **Подобрена надеждност** - Системи, които издържат на сривове <!-- .element: class="fragment" data-fragment-index="3" -->
 
 Note:
 Amazon прави deploy хиляди пъти дневно. Cloud-native архитектурата прави това възможно.
@@ -64,17 +61,53 @@ Note:
 
 ### Традиционен Подход
 
-```
-┌─────────────────────────────────────┐
-│        MONOLITHIC APPLICATION       │
-│  ┌───────────────────────────────┐  │
-│  │   User Auth + Products +      │  │
-│  │   Cart + Orders + Payments    │  │
-│  │   + Notifications + Reports   │  │
-│  └───────────────────────────────┘  │
-│           ALL IN ONE 📦             │
-└─────────────────────────────────────┘
-```
+<svg viewBox="0 0 450 220" style="max-width: 450px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="monoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#95a5a6"/>
+      <stop offset="100%" style="stop-color:#7f8c8d"/>
+    </linearGradient>
+    <linearGradient id="monoInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bdc3c7"/>
+      <stop offset="100%" style="stop-color:#95a5a6"/>
+    </linearGradient>
+    <filter id="monoShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <style>
+    .mono-frame { opacity: 0; animation: monoFadeIn 0.5s ease-out 0.1s forwards; }
+    .mono-title { opacity: 0; animation: monoFadeIn 0.4s ease-out 0.3s forwards; }
+    .mono-inner { opacity: 0; transform: scale(0.9); animation: monoInnerPop 0.5s ease-out 0.4s forwards; }
+    .mono-text { opacity: 0; }
+    .mono-t1 { animation: monoTextIn 0.3s ease-out 0.6s forwards; }
+    .mono-t2 { animation: monoTextIn 0.3s ease-out 0.75s forwards; }
+    .mono-t3 { animation: monoTextIn 0.3s ease-out 0.9s forwards; }
+    .mono-label { opacity: 0; animation: monoFadeIn 0.4s ease-out 1.1s forwards; }
+    .mono-tangle { opacity: 0; stroke-dasharray: 200; stroke-dashoffset: 200; animation: monoTangle 1s ease-out 0.7s forwards; }
+    @keyframes monoFadeIn { to { opacity: 1; } }
+    @keyframes monoInnerPop { to { opacity: 1; transform: scale(1); } }
+    @keyframes monoTextIn { to { opacity: 1; } }
+    @keyframes monoTangle { to { opacity: 0.3; stroke-dashoffset: 0; } }
+  </style>
+  <!-- Outer frame -->
+  <rect class="mono-frame" x="30" y="20" width="390" height="180" rx="10" fill="url(#monoGrad)" filter="url(#monoShadow)"/>
+  <text class="mono-title" x="225" y="48" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">MONOLITHIC APPLICATION</text>
+  <!-- Inner tangled box -->
+  <rect class="mono-inner" x="55" y="60" width="340" height="100" rx="6" fill="url(#monoInner)"/>
+  <!-- Tangled spaghetti lines to show complexity -->
+  <path class="mono-tangle" d="M 80 90 Q 150 70 200 110 Q 250 80 300 120 Q 350 90 370 100" stroke="#7f8c8d" stroke-width="2" fill="none"/>
+  <path class="mono-tangle" d="M 100 130 Q 180 100 220 140 Q 280 110 340 130" stroke="#7f8c8d" stroke-width="2" fill="none"/>
+  <path class="mono-tangle" d="M 70 110 Q 120 140 200 100 Q 280 140 360 110" stroke="#7f8c8d" stroke-width="2" fill="none"/>
+  <!-- Text content -->
+  <text class="mono-text mono-t1" x="225" y="88" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">User Auth + Products +</text>
+  <text class="mono-text mono-t2" x="225" y="108" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Cart + Orders + Payments</text>
+  <text class="mono-text mono-t3" x="225" y="128" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">+ Notifications + Reports</text>
+  <!-- Bottom label -->
+  <g class="mono-label">
+    <text x="225" y="180" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">ALL IN ONE 📦</text>
+  </g>
+</svg>
 
 Note:
 Всичко е в едно - една грешка може да срине цялото приложение.
@@ -155,17 +188,120 @@ Note:
 
 ### От Монолит към Микросервизи
 
-```
-┌────────────────────────────────────────────┐
-│          MICROSERVICES ARCHITECTURE        │
-├──────────┬──────────┬──────────┬──────────┤
-│   User   │ Product  │   Cart   │  Order   │
-│ Service  │ Service  │ Service  │ Service  │
-├──────────┼──────────┼──────────┼──────────┤
-│ Payment  │ Inventory│ Shipping │Notificat.│
-│ Service  │ Service  │ Service  │ Service  │
-└──────────┴──────────┴──────────┴──────────┘
-```
+<svg viewBox="0 0 600 280" style="max-width: 600px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="msGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="msGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="msGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="msGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22"/>
+      <stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <filter id="msShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <style>
+    .ms-title { opacity: 0; animation: msFadeIn 0.4s ease-out 0.1s forwards; }
+    .ms-box { opacity: 0; transform: scale(0.8); }
+    .ms-1 { animation: msPopIn 0.3s ease-out 0.2s forwards; }
+    .ms-2 { animation: msPopIn 0.3s ease-out 0.3s forwards; }
+    .ms-3 { animation: msPopIn 0.3s ease-out 0.4s forwards; }
+    .ms-4 { animation: msPopIn 0.3s ease-out 0.5s forwards; }
+    .ms-5 { animation: msPopIn 0.3s ease-out 0.6s forwards; }
+    .ms-6 { animation: msPopIn 0.3s ease-out 0.7s forwards; }
+    .ms-7 { animation: msPopIn 0.3s ease-out 0.8s forwards; }
+    .ms-8 { animation: msPopIn 0.3s ease-out 0.9s forwards; }
+    .ms-conn { stroke-dasharray: 100; stroke-dashoffset: 100; }
+    .ms-conn-1 { animation: msDrawConn 0.3s ease-out 1.0s forwards; }
+    .ms-conn-2 { animation: msDrawConn 0.3s ease-out 1.1s forwards; }
+    .ms-conn-3 { animation: msDrawConn 0.3s ease-out 1.2s forwards; }
+    .ms-conn-4 { animation: msDrawConn 0.3s ease-out 1.3s forwards; }
+    .ms-conn-5 { animation: msDrawConn 0.3s ease-out 1.4s forwards; }
+    .ms-particle { opacity: 0; }
+    .ms-p1 { animation: msParticle 2s linear 1.5s infinite; }
+    .ms-p2 { animation: msParticle 2.5s linear 1.8s infinite; }
+    @keyframes msFadeIn { to { opacity: 1; } }
+    @keyframes msPopIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes msDrawConn { to { stroke-dashoffset: 0; } }
+    @keyframes msParticle { 0%,100% { opacity: 0; } 10%,90% { opacity: 1; } }
+  </style>
+  <!-- Title bar -->
+  <rect class="ms-title" x="50" y="15" width="500" height="35" rx="6" fill="#2c3e50"/>
+  <text class="ms-title" x="300" y="40" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">MICROSERVICES ARCHITECTURE</text>
+  <!-- Row 1 -->
+  <g class="ms-box ms-1" filter="url(#msShadow)">
+    <rect x="60" y="70" width="110" height="70" rx="8" fill="url(#msGrad1)"/>
+    <text x="115" y="100" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">User</text>
+    <text x="115" y="118" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="115" y="132" font-size="14" text-anchor="middle">👤</text>
+  </g>
+  <g class="ms-box ms-2" filter="url(#msShadow)">
+    <rect x="185" y="70" width="110" height="70" rx="8" fill="url(#msGrad2)"/>
+    <text x="240" y="100" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Product</text>
+    <text x="240" y="118" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="240" y="132" font-size="14" text-anchor="middle">📦</text>
+  </g>
+  <g class="ms-box ms-3" filter="url(#msShadow)">
+    <rect x="310" y="70" width="110" height="70" rx="8" fill="url(#msGrad3)"/>
+    <text x="365" y="100" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Cart</text>
+    <text x="365" y="118" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="365" y="132" font-size="14" text-anchor="middle">🛒</text>
+  </g>
+  <g class="ms-box ms-4" filter="url(#msShadow)">
+    <rect x="435" y="70" width="110" height="70" rx="8" fill="url(#msGrad4)"/>
+    <text x="490" y="100" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Order</text>
+    <text x="490" y="118" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="490" y="132" font-size="14" text-anchor="middle">📋</text>
+  </g>
+  <!-- Row 2 -->
+  <g class="ms-box ms-5" filter="url(#msShadow)">
+    <rect x="60" y="160" width="110" height="70" rx="8" fill="url(#msGrad4)"/>
+    <text x="115" y="190" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Payment</text>
+    <text x="115" y="208" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="115" y="222" font-size="14" text-anchor="middle">💳</text>
+  </g>
+  <g class="ms-box ms-6" filter="url(#msShadow)">
+    <rect x="185" y="160" width="110" height="70" rx="8" fill="url(#msGrad3)"/>
+    <text x="240" y="190" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Inventory</text>
+    <text x="240" y="208" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="240" y="222" font-size="14" text-anchor="middle">📊</text>
+  </g>
+  <g class="ms-box ms-7" filter="url(#msShadow)">
+    <rect x="310" y="160" width="110" height="70" rx="8" fill="url(#msGrad2)"/>
+    <text x="365" y="190" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Shipping</text>
+    <text x="365" y="208" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="365" y="222" font-size="14" text-anchor="middle">🚚</text>
+  </g>
+  <g class="ms-box ms-8" filter="url(#msShadow)">
+    <rect x="435" y="160" width="110" height="70" rx="8" fill="url(#msGrad1)"/>
+    <text x="490" y="190" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Notification</text>
+    <text x="490" y="208" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Service</text>
+    <text x="490" y="222" font-size="14" text-anchor="middle">🔔</text>
+  </g>
+  <!-- Connection lines -->
+  <line class="ms-conn ms-conn-1" x1="170" y1="105" x2="185" y2="105" stroke="#95a5a6" stroke-width="2" stroke-dasharray="4"/>
+  <line class="ms-conn ms-conn-2" x1="295" y1="105" x2="310" y2="105" stroke="#95a5a6" stroke-width="2" stroke-dasharray="4"/>
+  <line class="ms-conn ms-conn-3" x1="420" y1="105" x2="435" y2="105" stroke="#95a5a6" stroke-width="2" stroke-dasharray="4"/>
+  <line class="ms-conn ms-conn-4" x1="365" y1="140" x2="365" y2="160" stroke="#95a5a6" stroke-width="2" stroke-dasharray="4"/>
+  <line class="ms-conn ms-conn-5" x1="240" y1="140" x2="240" y2="160" stroke="#95a5a6" stroke-width="2" stroke-dasharray="4"/>
+  <!-- Animated particles on connections -->
+  <circle class="ms-particle ms-p1" cx="240" cy="150" r="3" fill="#3498db">
+    <animate attributeName="cy" from="140" to="160" dur="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="ms-particle ms-p2" cx="365" cy="150" r="3" fill="#27ae60">
+    <animate attributeName="cy" from="140" to="160" dur="0.6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
 
 Note:
 Всеки сервиз е независим, deployable и scalable.
@@ -174,17 +310,13 @@ Note:
 
 ### Ползи на Микросервизите
 
-<!-- .element: class="fragment" -->
-🚀 **Independent Deployment** - Update payment без да пипате inventory
+🚀 **Independent Deployment** - Update payment без да пипате inventory <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-🔧 **Technology Freedom** - Python за ML, Go за performance
+🔧 **Technology Freedom** - Python за ML, Go за performance <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-🛡️ **Fault Isolation** - Notification fail не засяга checkout
+🛡️ **Fault Isolation** - Notification fail не засяга checkout <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-📈 **Targeted Scaling** - Скалирайте само натоварените сервизи
+📈 **Targeted Scaling** - Скалирайте само натоварените сервизи <!-- .element: class="fragment" -->
 
 Note:
 Микросервизите позволяват на малки екипи да работят независимо.
@@ -197,20 +329,74 @@ Note:
 
 ### Какво е Container?
 
-```
-┌───────────────────────────────────────┐
-│              CONTAINER 🐳              │
-│  ┌─────────────────────────────────┐  │
-│  │      Application Code           │  │
-│  ├─────────────────────────────────┤  │
-│  │   Runtime (Node, Python, Java)  │  │
-│  ├─────────────────────────────────┤  │
-│  │      System Libraries           │  │
-│  ├─────────────────────────────────┤  │
-│  │      Configuration Files        │  │
-│  └─────────────────────────────────┘  │
-└───────────────────────────────────────┘
-```
+<svg viewBox="0 0 500 300" style="max-width: 500px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="dockerBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0db7ed"/>
+      <stop offset="100%" style="stop-color:#0a8dc4"/>
+    </linearGradient>
+    <linearGradient id="layerApp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="layerRuntime" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="layerLibs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="layerConfig" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22"/>
+      <stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <filter id="containerShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <style>
+    .container-frame { opacity: 0; animation: containerFadeIn 0.5s ease-out 0.1s forwards; }
+    .container-layer { opacity: 0; transform: translateY(20px); }
+    .layer-config { animation: layerBuild 0.4s ease-out 0.3s forwards; }
+    .layer-libs { animation: layerBuild 0.4s ease-out 0.5s forwards; }
+    .layer-runtime { animation: layerBuild 0.4s ease-out 0.7s forwards; }
+    .layer-app { animation: layerBuild 0.4s ease-out 0.9s forwards; }
+    .docker-whale { opacity: 0; transform-origin: center; animation: whalePop 0.5s ease-out 1.1s forwards; }
+    .container-title { opacity: 0; animation: containerFadeIn 0.4s ease-out 1.3s forwards; }
+    @keyframes containerFadeIn { to { opacity: 1; } }
+    @keyframes layerBuild { to { opacity: 1; transform: translateY(0); } }
+    @keyframes whalePop { 0% { opacity: 0; transform: scale(0) rotate(-10deg); } 70% { transform: scale(1.1) rotate(5deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
+  </style>
+  <!-- Container frame -->
+  <g class="container-frame" filter="url(#containerShadow)">
+    <rect x="60" y="30" width="380" height="240" rx="12" fill="#f8f9fa" stroke="url(#dockerBlue)" stroke-width="3"/>
+  </g>
+  <!-- Title -->
+  <text class="container-title" x="250" y="58" fill="#0db7ed" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">CONTAINER</text>
+  <!-- Layer 4: Config (bottom) -->
+  <g class="container-layer layer-config" filter="url(#containerShadow)">
+    <rect x="90" y="210" width="320" height="42" rx="6" fill="url(#layerConfig)"/>
+    <text x="250" y="236" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Configuration Files</text>
+  </g>
+  <!-- Layer 3: Libraries -->
+  <g class="container-layer layer-libs" filter="url(#containerShadow)">
+    <rect x="90" y="160" width="320" height="42" rx="6" fill="url(#layerLibs)"/>
+    <text x="250" y="186" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">System Libraries</text>
+  </g>
+  <!-- Layer 2: Runtime -->
+  <g class="container-layer layer-runtime" filter="url(#containerShadow)">
+    <rect x="90" y="110" width="320" height="42" rx="6" fill="url(#layerRuntime)"/>
+    <text x="250" y="136" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Runtime (Node, Python, Java)</text>
+  </g>
+  <!-- Layer 1: Application (top) -->
+  <g class="container-layer layer-app" filter="url(#containerShadow)">
+    <rect x="90" y="65" width="320" height="42" rx="6" fill="url(#layerApp)"/>
+    <text x="250" y="91" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Application Code</text>
+  </g>
+  <!-- Docker whale icon -->
+  <text class="docker-whale" x="420" y="55" font-size="28">🐳</text>
+</svg>
 
 Note:
 Контейнерите пакетират код и зависимости заедно - работи навсякъде еднакво.
@@ -269,21 +455,112 @@ Kubernetes отговаря на всички тези въпроси автом
 
 ### Kubernetes Architecture
 
-```
-┌────────────────────────────────────────────┐
-│           KUBERNETES CLUSTER               │
-│  ┌──────────────────────────────────────┐  │
-│  │         CONTROL PLANE                │  │
-│  │  API Server │ Scheduler │ etcd       │  │
-│  └──────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────┐  │
-│  │          WORKER NODES                │  │
-│  │  ┌─────────┐  ┌─────────┐            │  │
-│  │  │ Pod Pod │  │ Pod Pod │   ...      │  │
-│  │  └─────────┘  └─────────┘            │  │
-│  └──────────────────────────────────────┘  │
-└────────────────────────────────────────────┘
-```
+<svg viewBox="0 0 620 320" style="max-width: 620px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="k8sBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326ce5"/>
+      <stop offset="100%" style="stop-color:#2956b8"/>
+    </linearGradient>
+    <linearGradient id="k8sGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="k8sPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <filter id="k8sShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <filter id="k8sGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .k8s-frame { opacity: 0; animation: k8sFadeIn 0.5s ease-out 0.1s forwards; }
+    .k8s-title { opacity: 0; animation: k8sFadeIn 0.4s ease-out 0.2s forwards; }
+    .k8s-control { opacity: 0; transform: translateY(-10px); animation: k8sSlideIn 0.4s ease-out 0.3s forwards; }
+    .k8s-workers { opacity: 0; transform: translateY(10px); animation: k8sSlideIn 0.4s ease-out 0.5s forwards; }
+    .k8s-comp { opacity: 0; transform: scale(0.8); }
+    .k8s-api { animation: k8sPopIn 0.3s ease-out 0.5s forwards; }
+    .k8s-sched { animation: k8sPopIn 0.3s ease-out 0.6s forwards; }
+    .k8s-etcd { animation: k8sPopIn 0.3s ease-out 0.7s forwards; }
+    .k8s-node { opacity: 0; transform: scale(0.9); }
+    .k8s-node1 { animation: k8sNodeIn 0.4s ease-out 0.7s forwards; }
+    .k8s-node2 { animation: k8sNodeIn 0.4s ease-out 0.85s forwards; }
+    .k8s-pod { opacity: 0; transform: scale(0); }
+    .k8s-pod1 { animation: k8sPodPop 0.25s ease-out 0.9s forwards; }
+    .k8s-pod2 { animation: k8sPodPop 0.25s ease-out 1.0s forwards; }
+    .k8s-pod3 { animation: k8sPodPop 0.25s ease-out 1.1s forwards; }
+    .k8s-pod4 { animation: k8sPodPop 0.25s ease-out 1.2s forwards; }
+    .k8s-conn { stroke-dasharray: 80; stroke-dashoffset: 80; animation: k8sDrawConn 0.5s ease-out 1.3s forwards; }
+    .k8s-flow { opacity: 0; }
+    .k8s-flow1 { animation: k8sFlowAnim 2s linear 1.5s infinite; }
+    .k8s-flow2 { animation: k8sFlowAnim 2.3s linear 1.8s infinite; }
+    @keyframes k8sFadeIn { to { opacity: 1; } }
+    @keyframes k8sSlideIn { to { opacity: 1; transform: translateY(0); } }
+    @keyframes k8sPopIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes k8sNodeIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes k8sPodPop { 0% { opacity: 0; transform: scale(0); } 70% { transform: scale(1.15); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes k8sDrawConn { to { stroke-dashoffset: 0; } }
+    @keyframes k8sFlowAnim { 0%,100% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(80px); } }
+  </style>
+  <!-- Main frame -->
+  <rect class="k8s-frame" x="30" y="20" width="560" height="280" rx="12" fill="#f8f9fa" stroke="url(#k8sBlue)" stroke-width="3"/>
+  <text class="k8s-title" x="310" y="48" fill="#326ce5" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">☸️ KUBERNETES CLUSTER</text>
+  <!-- Control Plane -->
+  <g class="k8s-control">
+    <rect x="50" y="60" width="520" height="70" rx="8" fill="#e8f4fd" stroke="#326ce5" stroke-width="1.5"/>
+    <text x="310" y="82" fill="#326ce5" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">CONTROL PLANE</text>
+  </g>
+  <!-- Control plane components -->
+  <g class="k8s-comp k8s-api" filter="url(#k8sShadow)">
+    <rect x="70" y="90" width="100" height="30" rx="4" fill="url(#k8sBlue)"/>
+    <text x="120" y="110" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">API Server</text>
+  </g>
+  <g class="k8s-comp k8s-sched" filter="url(#k8sShadow)">
+    <rect x="190" y="90" width="100" height="30" rx="4" fill="url(#k8sBlue)"/>
+    <text x="240" y="110" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Scheduler</text>
+  </g>
+  <g class="k8s-comp k8s-etcd" filter="url(#k8sShadow)">
+    <rect x="310" y="90" width="100" height="30" rx="4" fill="url(#k8sPurple)"/>
+    <text x="360" y="110" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">etcd</text>
+  </g>
+  <!-- Worker Nodes area -->
+  <g class="k8s-workers">
+    <rect x="50" y="145" width="520" height="140" rx="8" fill="#e8f8f0" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="310" y="167" fill="#27ae60" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">WORKER NODES</text>
+  </g>
+  <!-- Node 1 -->
+  <g class="k8s-node k8s-node1" filter="url(#k8sShadow)">
+    <rect x="70" y="180" width="200" height="85" rx="6" fill="white" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="170" y="200" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Node 1</text>
+  </g>
+  <!-- Node 2 -->
+  <g class="k8s-node k8s-node2" filter="url(#k8sShadow)">
+    <rect x="290" y="180" width="200" height="85" rx="6" fill="white" stroke="#27ae60" stroke-width="1.5"/>
+    <text x="390" y="200" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Node 2</text>
+  </g>
+  <!-- Pods in Node 1 -->
+  <rect class="k8s-pod k8s-pod1" x="85" y="210" width="55" height="45" rx="4" fill="url(#k8sGreen)" filter="url(#k8sShadow)"/>
+  <text class="k8s-pod k8s-pod1" x="112" y="238" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Pod</text>
+  <rect class="k8s-pod k8s-pod2" x="150" y="210" width="55" height="45" rx="4" fill="url(#k8sGreen)" filter="url(#k8sShadow)"/>
+  <text class="k8s-pod k8s-pod2" x="177" y="238" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Pod</text>
+  <!-- Pods in Node 2 -->
+  <rect class="k8s-pod k8s-pod3" x="305" y="210" width="55" height="45" rx="4" fill="url(#k8sGreen)" filter="url(#k8sShadow)"/>
+  <text class="k8s-pod k8s-pod3" x="332" y="238" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Pod</text>
+  <rect class="k8s-pod k8s-pod4" x="370" y="210" width="55" height="45" rx="4" fill="url(#k8sGreen)" filter="url(#k8sShadow)"/>
+  <text class="k8s-pod k8s-pod4" x="397" y="238" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Pod</text>
+  <!-- ... indicator -->
+  <text class="k8s-node k8s-node2" x="510" y="235" fill="#27ae60" font-family="system-ui, sans-serif" font-size="18" font-weight="600">...</text>
+  <!-- Connection line from control to workers -->
+  <line class="k8s-conn" x1="170" y1="130" x2="170" y2="180" stroke="#326ce5" stroke-width="2" stroke-dasharray="5"/>
+  <line class="k8s-conn" x1="390" y1="130" x2="390" y2="180" stroke="#326ce5" stroke-width="2" stroke-dasharray="5"/>
+  <!-- Flow particles -->
+  <circle class="k8s-flow k8s-flow1" cx="170" cy="135" r="4" fill="#326ce5" filter="url(#k8sGlow)"/>
+  <circle class="k8s-flow k8s-flow2" cx="390" cy="135" r="4" fill="#326ce5" filter="url(#k8sGlow)"/>
+</svg>
 
 Note:
 Control plane взема решения, worker nodes изпълняват контейнерите.
@@ -424,12 +701,100 @@ Note:
 
 ### CI/CD Pipeline
 
-```
-Code → Build → Test → Deploy → Monitor
-  │      │       │       │        │
-  └──────┴───────┴───────┴────────┘
-         AUTOMATED 🤖
-```
+<svg viewBox="0 0 650 180" style="max-width: 650px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="ciCode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="ciBuild" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="ciTest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22"/>
+      <stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <linearGradient id="ciDeploy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="ciMonitor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+    <filter id="ciShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="ciArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#95a5a6"/>
+    </marker>
+  </defs>
+  <style>
+    .ci-stage { opacity: 0; transform: translateY(15px); }
+    .ci-code { animation: ciSlideUp 0.4s ease-out 0.2s forwards; }
+    .ci-build { animation: ciSlideUp 0.4s ease-out 0.35s forwards; }
+    .ci-test { animation: ciSlideUp 0.4s ease-out 0.5s forwards; }
+    .ci-deploy { animation: ciSlideUp 0.4s ease-out 0.65s forwards; }
+    .ci-monitor { animation: ciSlideUp 0.4s ease-out 0.8s forwards; }
+    .ci-arrow { stroke-dasharray: 40; stroke-dashoffset: 40; }
+    .ci-arr1 { animation: ciDrawArrow 0.3s ease-out 0.5s forwards; }
+    .ci-arr2 { animation: ciDrawArrow 0.3s ease-out 0.65s forwards; }
+    .ci-arr3 { animation: ciDrawArrow 0.3s ease-out 0.8s forwards; }
+    .ci-arr4 { animation: ciDrawArrow 0.3s ease-out 0.95s forwards; }
+    .ci-pipe { stroke-dasharray: 550; stroke-dashoffset: 550; animation: ciDrawPipe 1s ease-out 1.0s forwards; }
+    .ci-label { opacity: 0; animation: ciFadeIn 0.4s ease-out 1.2s forwards; }
+    .ci-particle { opacity: 0; }
+    .ci-p1 { animation: ciParticleFlow 3s linear 1.3s infinite; }
+    .ci-p2 { animation: ciParticleFlow 3s linear 2s infinite; }
+    @keyframes ciSlideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes ciDrawArrow { to { stroke-dashoffset: 0; } }
+    @keyframes ciDrawPipe { to { stroke-dashoffset: 0; } }
+    @keyframes ciFadeIn { to { opacity: 1; } }
+    @keyframes ciParticleFlow { 0% { opacity: 0; transform: translateX(0); } 5% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; transform: translateX(500px); } }
+  </style>
+  <!-- Pipeline stages -->
+  <g class="ci-stage ci-code" filter="url(#ciShadow)">
+    <rect x="30" y="40" width="90" height="60" rx="8" fill="url(#ciCode)"/>
+    <text x="75" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Code</text>
+    <text x="75" y="88" font-size="18" text-anchor="middle">💻</text>
+  </g>
+  <g class="ci-stage ci-build" filter="url(#ciShadow)">
+    <rect x="155" y="40" width="90" height="60" rx="8" fill="url(#ciBuild)"/>
+    <text x="200" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Build</text>
+    <text x="200" y="88" font-size="18" text-anchor="middle">🔨</text>
+  </g>
+  <g class="ci-stage ci-test" filter="url(#ciShadow)">
+    <rect x="280" y="40" width="90" height="60" rx="8" fill="url(#ciTest)"/>
+    <text x="325" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Test</text>
+    <text x="325" y="88" font-size="18" text-anchor="middle">🧪</text>
+  </g>
+  <g class="ci-stage ci-deploy" filter="url(#ciShadow)">
+    <rect x="405" y="40" width="90" height="60" rx="8" fill="url(#ciDeploy)"/>
+    <text x="450" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Deploy</text>
+    <text x="450" y="88" font-size="18" text-anchor="middle">🚀</text>
+  </g>
+  <g class="ci-stage ci-monitor" filter="url(#ciShadow)">
+    <rect x="530" y="40" width="90" height="60" rx="8" fill="url(#ciMonitor)"/>
+    <text x="575" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Monitor</text>
+    <text x="575" y="88" font-size="18" text-anchor="middle">📊</text>
+  </g>
+  <!-- Arrows between stages -->
+  <line class="ci-arrow ci-arr1" x1="120" y1="70" x2="150" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr2" x1="245" y1="70" x2="275" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr3" x1="370" y1="70" x2="400" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr4" x1="495" y1="70" x2="525" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <!-- Bottom connecting pipe -->
+  <path class="ci-pipe" d="M 75 105 L 75 140 L 575 140 L 575 105" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+  <!-- AUTOMATED label -->
+  <g class="ci-label">
+    <rect x="260" y="128" width="130" height="26" rx="13" fill="#2c3e50"/>
+    <text x="325" y="146" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">AUTOMATED 🤖</text>
+  </g>
+  <!-- Flow particles -->
+  <circle class="ci-particle ci-p1" cx="75" cy="70" r="5" fill="#3498db"/>
+  <circle class="ci-particle ci-p2" cx="75" cy="70" r="5" fill="#27ae60"/>
+</svg>
 
 Note:
 Cloud-native архитектурата позволява бързи, надеждни deployment цикли.
@@ -478,17 +843,13 @@ CLOUD-NATIVE = Design Philosophy
 
 ### Takeaways
 
-<!-- .element: class="fragment" -->
-✅ Cloud-native е **философия за дизайн**, не локация
+✅ Cloud-native е **философия за дизайн**, не локация <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-✅ Петте стълба работят **заедно** за scalability и resilience
+✅ Петте стълба работят **заедно** за scalability и resilience <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-✅ Cloud-native е **стандарт** за нови приложения
+✅ Cloud-native е **стандарт** за нови приложения <!-- .element: class="fragment" -->
 
-<!-- .element: class="fragment" -->
-✅ Следваща стъпка: containers, Kubernetes, CI/CD
+✅ Следваща стъпка: containers, Kubernetes, CI/CD <!-- .element: class="fragment" -->
 
 ---
 
