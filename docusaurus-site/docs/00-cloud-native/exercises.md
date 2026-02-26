@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+slug: exercises
 title: "Упражнения"
 tags: [exercises, practice, cloud-native, kubernetes, containers]
 ---
@@ -8,10 +9,29 @@ import ExerciseCard from '@site/src/components/Exercise/ExerciseCard';
 import ProgressTracker from '@site/src/components/Exercise/ProgressTracker';
 import CollapsibleSection from '@site/src/components/CollapsibleSection';
 import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
+import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Упражнения: Cloud-Native Development
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/exercises-header.svg')} alt="Cloud-Native Exercises" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
+
 <ProgressTracker />
+
+<InfoBox title="📋 Инструкции">
+
+- Упражненията са подредени по трудност - започнете от лесните
+- **Practical exercises** изискват познания по Docker и Kubernetes
+- Разгледайте подсказките преди да видите решенията
+- Cloud-native е философия, не технология - фокусирайте се на **защо**, не само **как**
+
+</InfoBox>
+
+---
+
+## Cloud-Native Pillars
+
+<img src={useBaseUrl('/img/diagrams/cloud-native/four-pillars-exercises.svg')} alt="Cloud-Native Four Pillars" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
 ---
 
@@ -23,15 +43,17 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 Дефинирайте "cloud-native" със собствени думи. Какво е ключовото прозрение за cloud-native - дали е предимно за **къде** работи приложението или **как** е проектирано?
 
-<CollapsibleSection title="Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за разликата между "lift and shift" миграция и redesign на архитектурата.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Cloud-native** е философия за дизайн на софтуер, която създава приложения, оптимизирани да използват напълно предимствата на cloud computing модела.
+
+<img src={useBaseUrl('/img/diagrams/cloud-native/cloud-enabled-vs-native.svg')} alt="Cloud-Enabled vs Cloud-Native" style={{width: '100%', maxWidth: '550px', margin: '15px auto', display: 'block'}} />
 
 **Ключовото прозрение:** Cloud-native е предимно за **как** е проектирано приложението, не за **къде** работи. Може да имате приложение, работещо в AWS, което не е cloud-native (lift and shift), и може да имате cloud-native приложение, работещо on-premises.
 
@@ -45,21 +67,25 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="easy">
 
 ### Задача 2: Бизнес Драйвери
 
 Изброете три бизнес драйвера, които мотивират организациите да приемат cloud-native подходи.
 
-<CollapsibleSection title="Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за конкурентно предимство, разходи и надеждност.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Три основни бизнес драйвера:**
+
+<img src={useBaseUrl('/img/diagrams/cloud-native/business-drivers.svg')} alt="Business Drivers" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
 
 1. **По-бързи иновации и Time-to-Market**
    - Компании като Amazon правят deploy хиляди пъти дневно
@@ -80,6 +106,8 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="easy">
 
 ### Задача 3: Съпоставяне на Термини
@@ -93,7 +121,7 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 | C. Chaos Monkey | 3. Архитектурен стил, използващ малки, автономни сервизи |
 | D. IaC | 4. Дефиниране на инфраструктура във version-controlled файлове |
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Термин | Отговор |
 |--------|---------|
@@ -106,13 +134,17 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="easy">
 
 ### Задача 4: Трите Стълба на Observability
 
 Какви са трите стълба на observability в cloud-native системи? Дайте еднозначно описание на всеки.
 
-<CollapsibleSection title="Решение" icon="✅">
+<img src={useBaseUrl('/img/diagrams/cloud-native/observability-pillars.svg')} alt="Observability Three Pillars" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="✅ Решение">
 
 **Трите стълба на observability:**
 
@@ -126,6 +158,8 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="easy">
 
 ### Задача 5: Вярно или Невярно
@@ -134,7 +168,9 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 
 *"В cloud-native система, използваща containers, всеки container включва своя собствена пълна операционна система, точно като виртуална машина."*
 
-<CollapsibleSection title="Решение" icon="✅">
+<img src={useBaseUrl('/img/diagrams/cloud-native/vms-vs-containers.svg')} alt="VMs vs Containers" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="✅ Решение">
 
 **Невярно.**
 
@@ -156,6 +192,8 @@ Containers **споделят host OS kernel** и включват само appl
 
 ## Средни Упражнения (MEDIUM)
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/medium-level-header.svg')} alt="Medium Level" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 6: Монолит vs Microservices Сценарий
@@ -168,13 +206,15 @@ Containers **споделят host OS kernel** и включват само appl
 
 **c)** Какво ново предизвикателство могат да въведат microservices вместо това?
 
-<CollapsibleSection title="Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/cloud-native/monolith-vs-microservices.svg')} alt="Monolith vs Microservices" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за fault isolation и distributed system сложността.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Защо в монолитна архитектура:**
 - Всички components споделят един процес и памет
@@ -200,6 +240,8 @@ Containers **споделят host OS kernel** и включват само appl
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 7: Анализ на Dockerfile
@@ -216,13 +258,15 @@ EXPOSE 8000
 CMD ["python", "app.py"]
 ```
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/docker-image-layers.svg')} alt="Docker Image Layers" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
 **a)** От какъв base image е построен този container?
 
 **b)** Защо `requirements.txt` се копира и инсталира *преди* да се копира останалата част от application кода?
 
 **c)** Какво се случва когато container-ът стартира (последният ред)?
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Base image:**
 `python:3.9-slim` - минимален Python 3.9 image (slim variant е по-малък от пълния).
@@ -246,6 +290,8 @@ CMD ["python", "app.py"]
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 8: Containers vs VMs Сравнение
@@ -261,7 +307,7 @@ CMD ["python", "app.py"]
 
 На базата на попълнената таблица, в какъв сценарий бихте избрали VMs пред containers?
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Попълнена таблица:**
 
@@ -286,13 +332,17 @@ CMD ["python", "app.py"]
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 9: Configuration Drift
 
 Обяснете какво означава "configuration drift" и защо е проблем. След това опишете как immutable infrastructure решава този проблем.
 
-<CollapsibleSection title="Решение" icon="✅">
+<img src={useBaseUrl('/img/diagrams/cloud-native/configuration-drift.svg')} alt="Configuration Drift" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="✅ Решение">
 
 **Какво е Configuration Drift:**
 Configuration drift възниква когато сървъри, които би трябвало да са идентични, постепенно стават различни поради:
@@ -320,6 +370,8 @@ Configuration drift възниква когато сървъри, които б�
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 10: Kubernetes HorizontalPodAutoscaler
@@ -339,13 +391,15 @@ spec:
         averageUtilization: 70
 ```
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/hpa-autoscaler.svg')} alt="HorizontalPodAutoscaler" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
 **a)** Какво ще се случи когато average CPU utilization надвиши 70%?
 
 **b)** Какво ще се случи ако трафикът падне почти до нула?
 
 **c)** Защо може да зададете `minReplicas: 2` вместо `minReplicas: 1`?
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) При CPU > 70%:**
 - Kubernetes автоматично **добавя нови pods** (replicas)
@@ -374,6 +428,8 @@ spec:
 
 ## Трудни Упражнения (HARD)
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/hard-level-header.svg')} alt="Hard Level" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 11: Kubernetes Deployment YAML
@@ -385,13 +441,13 @@ spec:
 - Container port: 3000
 - Label за pods: `app: frontend`
 
-<CollapsibleSection title="Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Структурата е: apiVersion, kind, metadata, spec (с replicas, selector, template).
 
 </CollapsibleSection>
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```yaml
 apiVersion: apps/v1
@@ -427,6 +483,8 @@ spec:
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 12: Ride-Sharing Microservices Design
@@ -439,13 +497,15 @@ spec:
 - Trip history и receipts
 - Push notifications
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/ride-sharing-architecture.svg')} alt="Ride-Sharing Architecture" style={{width: '100%', maxWidth: '700px', margin: '15px auto', display: 'block'}} />
+
 **a)** Проектирайте microservices архитектура като идентифицирате 5-6 сервиза и техните отговорности.
 
 **b)** Кой сервиз(и) вероятно ще се нуждае(ят) от най-агресивно auto-scaling и защо?
 
 **c)** Идентифицирайте два сервиза, които трябва да комуникират синхронно и два, които биха могли да комуникират асинхронно. Обосновете изборите си.
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Microservices архитектура:**
 
@@ -477,6 +537,8 @@ spec:
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 13: Imperative vs Declarative Configuration
@@ -504,13 +566,15 @@ data:
 # Reference in Deployment, then: kubectl apply -f config.yaml
 ```
 
+<img src={useBaseUrl('/img/diagrams/cloud-native/imperative-vs-declarative.svg')} alt="Imperative vs Declarative" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
 **a)** Изброете три конкретни проблема, които могат да възникнат с Подход A.
 
 **b)** Как Подход B адресира всеки от тези проблеми?
 
 **c)** Каква допълнителна практика трябва да допълни Подход B за максимална ефективност?
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Проблеми с Imperative подход:**
 
@@ -542,11 +606,15 @@ data:
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 14: Chaos Engineering
 
 Netflix's "Chaos Monkey" случайно терминира production сервизи. Това изглежда контраинтуитивно - защо умишлено да причинявате сривове?
+
+<img src={useBaseUrl('/img/diagrams/cloud-native/chaos-monkey.svg')} alt="Chaos Monkey Philosophy" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
 
 **a)** Обяснете логиката зад chaos engineering.
 
@@ -554,7 +622,7 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 
 **c)** Опишете един друг chaos engineering експеримент (освен random termination), който може да разкрие слабости в cloud-native система.
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Логиката зад Chaos Engineering:**
 
@@ -589,6 +657,8 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 
 </ExerciseCard>
 
+---
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 15: Cloud-Native Migration Roadmap
@@ -596,6 +666,8 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 **Case Study Analysis:**
 
 Компания е направила "lift and shift" на монолитното си Java приложение към AWS EC2 instances. Сега го наричат "cloud application". CTO твърди, че са постигнали cloud-native архитектура.
+
+<img src={useBaseUrl('/img/diagrams/cloud-native/cloud-migration-journey.svg')} alt="Cloud Migration Journey" style={{width: '100%', maxWidth: '700px', margin: '15px auto', display: 'block'}} />
 
 Оценете това твърдение като:
 
@@ -605,7 +677,7 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 
 **c)** Предложите roadmap от три конкретни стъпки за движение към истинска cloud-native архитектура
 
-<CollapsibleSection title="Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) Cloud-Enabled vs Cloud-Native:**
 
@@ -656,3 +728,22 @@ Netflix's "Chaos Monkey" случайно терминира production серв
 </CollapsibleSection>
 
 </ExerciseCard>
+
+---
+
+<SuccessBox title="🎉 Поздравления!">
+
+Завършихте всички упражнения по Cloud-Native Development!
+
+**Ключови takeaways:**
+- Cloud-native е за **как** проектирате, не **къде** deploy-вате
+- Containers, microservices и automation са основни pillars
+- Observability е критична за distributed systems
+- Migration е journey, не destination
+
+**Следващи стъпки:**
+- Експериментирайте с Docker и Kubernetes локално
+- Изградете малък microservices проект
+- Научете повече за service meshes (Istio, Linkerd)
+
+</SuccessBox>

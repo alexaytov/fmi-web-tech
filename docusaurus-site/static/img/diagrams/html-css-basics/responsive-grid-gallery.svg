@@ -1,0 +1,26 @@
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+  <text x="80" y="20" text-anchor="middle" font-size="10" fill="#666">Mobile</text>
+  <rect x="50" y="30" width="60" height="100" rx="4" fill="#e3f2fd" stroke="#2196f3"/>
+  <rect x="55" y="35" width="50" height="20" rx="2" fill="#2196f3"/>
+  <rect x="55" y="60" width="50" height="20" rx="2" fill="#2196f3"/>
+  <rect x="55" y="85" width="50" height="20" rx="2" fill="#2196f3"/>
+  <rect x="55" y="105" width="50" height="20" rx="2" fill="#2196f3" opacity="0.5"/>
+
+  <text x="220" y="20" text-anchor="middle" font-size="10" fill="#666">Tablet</text>
+  <rect x="150" y="30" width="140" height="100" rx="4" fill="#e8f5e9" stroke="#4caf50"/>
+  <rect x="155" y="35" width="60" height="40" rx="2" fill="#4caf50"/>
+  <rect x="220" y="35" width="60" height="40" rx="2" fill="#4caf50"/>
+  <rect x="155" y="80" width="60" height="40" rx="2" fill="#4caf50"/>
+  <rect x="220" y="80" width="60" height="40" rx="2" fill="#4caf50"/>
+
+  <text x="450" y="20" text-anchor="middle" font-size="10" fill="#666">Desktop</text>
+  <rect x="320" y="30" width="260" height="100" rx="4" fill="#fce4ec" stroke="#e91e63"/>
+  <rect x="325" y="35" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="385" y="35" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="445" y="35" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="505" y="35" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="325" y="80" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="385" y="80" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="445" y="80" width="55" height="40" rx="2" fill="#e91e63"/>
+  <rect x="505" y="80" width="55" height="40" rx="2" fill="#e91e63"/>
+</svg>

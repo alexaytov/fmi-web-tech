@@ -1,0 +1,11 @@
+<svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mediumGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f9ca24"/>
+      <stop offset="100%" stop-color="#f0932b"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="700" height="80" rx="12" fill="url(#mediumGrad)"/>
+  <text x="350" y="35" text-anchor="middle" fill="white" font-size="20" font-weight="bold">Medium Level</text>
+  <text x="350" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14">Content manipulation - DOM navigation - Events</text>
+</svg>

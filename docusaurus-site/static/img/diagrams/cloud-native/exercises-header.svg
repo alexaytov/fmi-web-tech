@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+  <defs>
+    <linearGradient id="cloudNativeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0984e3"/>
+      <stop offset="50%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00b894"/>
+    </linearGradient>
+    <filter id="cloudGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="800" height="120" rx="16" fill="url(#cloudNativeGrad)"/>
+  <text x="400" y="45" text-anchor="middle" fill="white" font-size="28" font-weight="bold" filter="url(#cloudGlow)">☁️ Cloud-Native Development</text>
+  <text x="400" y="75" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="16">Containers • Microservices • Kubernetes • Scalability</text>
+  <text x="400" y="100" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="14">15 упражнения • От концепции до архитектура</text>
+</svg>

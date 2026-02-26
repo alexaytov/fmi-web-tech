@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240">
+  <defs>
+    <linearGradient id="msGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="msGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="msGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="msGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <filter id="msShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <style>
+    .ms-title { opacity: 0; animation: msFadeIn 0.4s ease-out 0.1s forwards; }
+    .ms-box { opacity: 0; transform: scale(0.8); }
+    .ms-1 { animation: msPopIn 0.3s ease-out 0.2s forwards; }
+    .ms-2 { animation: msPopIn 0.3s ease-out 0.3s forwards; }
+    .ms-3 { animation: msPopIn 0.3s ease-out 0.4s forwards; }
+    .ms-4 { animation: msPopIn 0.3s ease-out 0.5s forwards; }
+    .ms-5 { animation: msPopIn 0.3s ease-out 0.6s forwards; }
+    .ms-6 { animation: msPopIn 0.3s ease-out 0.7s forwards; }
+    .ms-7 { animation: msPopIn 0.3s ease-out 0.8s forwards; }
+    .ms-8 { animation: msPopIn 0.3s ease-out 0.9s forwards; }
+    @keyframes msFadeIn { to { opacity: 1; } }
+    @keyframes msPopIn { to { opacity: 1; transform: scale(1); } }
+  </style>
+  <rect class="ms-title" x="50" y="10" width="500" height="30" rx="6" fill="#2c3e50"/>
+  <text class="ms-title" x="300" y="32" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">MICROSERVICES ARCHITECTURE</text>
+  <g class="ms-box ms-1" filter="url(#msShadow)">
+    <rect x="60" y="55" width="110" height="65" rx="6" fill="url(#msGrad1)"/>
+    <text x="115" y="82" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">User Service</text>
+    <text x="115" y="105" font-size="16" text-anchor="middle">👤</text>
+  </g>
+  <g class="ms-box ms-2" filter="url(#msShadow)">
+    <rect x="185" y="55" width="110" height="65" rx="6" fill="url(#msGrad2)"/>
+    <text x="240" y="82" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Product Service</text>
+    <text x="240" y="105" font-size="16" text-anchor="middle">📦</text>
+  </g>
+  <g class="ms-box ms-3" filter="url(#msShadow)">
+    <rect x="310" y="55" width="110" height="65" rx="6" fill="url(#msGrad3)"/>
+    <text x="365" y="82" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Cart Service</text>
+    <text x="365" y="105" font-size="16" text-anchor="middle">🛒</text>
+  </g>
+  <g class="ms-box ms-4" filter="url(#msShadow)">
+    <rect x="435" y="55" width="110" height="65" rx="6" fill="url(#msGrad4)"/>
+    <text x="490" y="82" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Order Service</text>
+    <text x="490" y="105" font-size="16" text-anchor="middle">📋</text>
+  </g>
+  <g class="ms-box ms-5" filter="url(#msShadow)">
+    <rect x="60" y="135" width="110" height="65" rx="6" fill="url(#msGrad4)"/>
+    <text x="115" y="162" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Payment Service</text>
+    <text x="115" y="185" font-size="16" text-anchor="middle">💳</text>
+  </g>
+  <g class="ms-box ms-6" filter="url(#msShadow)">
+    <rect x="185" y="135" width="110" height="65" rx="6" fill="url(#msGrad3)"/>
+    <text x="240" y="162" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Inventory Service</text>
+    <text x="240" y="185" font-size="16" text-anchor="middle">📊</text>
+  </g>
+  <g class="ms-box ms-7" filter="url(#msShadow)">
+    <rect x="310" y="135" width="110" height="65" rx="6" fill="url(#msGrad2)"/>
+    <text x="365" y="162" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Shipping Service</text>
+    <text x="365" y="185" font-size="16" text-anchor="middle">🚚</text>
+  </g>
+  <g class="ms-box ms-8" filter="url(#msShadow)">
+    <rect x="435" y="135" width="110" height="65" rx="6" fill="url(#msGrad1)"/>
+    <text x="490" y="162" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Notification</text>
+    <text x="490" y="185" font-size="16" text-anchor="middle">🔔</text>
+  </g>
+</svg>

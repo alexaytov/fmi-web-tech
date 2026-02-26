@@ -1,0 +1,17 @@
+<svg viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="domHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#f093fb"/>
+    </linearGradient>
+    <filter id="domGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="800" height="120" rx="16" fill="url(#domHeaderGrad)"/>
+  <text x="400" y="45" text-anchor="middle" fill="white" font-size="28" font-weight="bold" filter="url(#domGlow)">Document Object Model</text>
+  <text x="400" y="80" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="16">Manipulating HTML elements with JavaScript</text>
+  <text x="400" y="105" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="14">20 exercises - Selectors - Events - Dynamic content</text>
+</svg>

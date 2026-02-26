@@ -1,0 +1,20 @@
+<svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="20" width="120" height="50" rx="6" fill="#e3f2fd" stroke="#2196f3"/>
+  <text x="90" y="50" text-anchor="middle" font-size="11" fill="#1565c0" font-weight="bold">&lt;header&gt;</text>
+  <text x="90" y="65" text-anchor="middle" font-size="9" fill="#1976d2">-&gt; C</text>
+
+  <rect x="170" y="20" width="120" height="50" rx="6" fill="#e8eaf6" stroke="#673ab7"/>
+  <text x="230" y="50" text-anchor="middle" font-size="11" fill="#512da8" font-weight="bold">&lt;nav&gt;</text>
+  <text x="230" y="65" text-anchor="middle" font-size="9" fill="#5e35b1">-&gt; A</text>
+
+  <rect x="310" y="20" width="120" height="50" rx="6" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="370" y="50" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="bold">&lt;article&gt;</text>
+  <text x="370" y="65" text-anchor="middle" font-size="9" fill="#388e3c">-&gt; B</text>
+
+  <rect x="450" y="20" width="120" height="50" rx="6" fill="#fce4ec" stroke="#e91e63"/>
+  <text x="510" y="50" text-anchor="middle" font-size="11" fill="#c2185b" font-weight="bold">&lt;footer&gt;</text>
+  <text x="510" y="65" text-anchor="middle" font-size="9" fill="#d81b60">-&gt; D</text>
+
+  <rect x="150" y="90" width="300" height="35" rx="6" fill="#fff8e1" stroke="#ff9800"/>
+  <text x="300" y="112" text-anchor="middle" font-size="10" fill="#e65100">Semantic HTML = Better SEO + Accessibility</text>
+</svg>

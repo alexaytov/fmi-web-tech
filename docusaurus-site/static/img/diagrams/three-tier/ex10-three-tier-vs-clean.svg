@@ -1,0 +1,37 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cleanCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <text x="175" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#667eea">&#x1F3D7;&#xFE0F; Three-Tier</text>
+  <text x="175" y="50" text-anchor="middle" font-size="11" fill="#666">Physical Separation</text>
+
+  <rect x="50" y="70" width="250" height="50" rx="8" fill="#4facfe"/>
+  <text x="175" y="100" text-anchor="middle" font-size="12" fill="white">Server 1: Frontend</text>
+
+  <rect x="50" y="130" width="250" height="50" rx="8" fill="#43e97b"/>
+  <text x="175" y="160" text-anchor="middle" font-size="12" fill="white">Server 2: Backend API</text>
+
+  <rect x="50" y="190" width="250" height="50" rx="8" fill="#fa709a"/>
+  <text x="175" y="220" text-anchor="middle" font-size="12" fill="white">Server 3: Database</text>
+
+  <text x="525" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#764ba2">&#x1F3AF; Clean Architecture</text>
+  <text x="525" y="50" text-anchor="middle" font-size="11" fill="#666">Logical Separation</text>
+
+  <circle cx="525" cy="165" r="90" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+  <circle cx="525" cy="165" r="65" fill="none" stroke="#bdbdbd" stroke-width="2"/>
+  <circle cx="525" cy="165" r="40" fill="url(#cleanCenter)"/>
+
+  <text x="525" y="170" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Entities</text>
+  <text x="525" y="220" text-anchor="middle" font-size="9" fill="#666">Use Cases</text>
+  <text x="525" y="265" text-anchor="middle" font-size="9" fill="#999">Adapters &amp; Frameworks</text>
+
+  <text x="175" y="270" text-anchor="middle" font-size="10" fill="#4facfe">&#x2713; Deployment focused</text>
+  <text x="175" y="285" text-anchor="middle" font-size="10" fill="#4facfe">&#x2713; Independent scaling</text>
+
+  <text x="525" y="285" text-anchor="middle" font-size="10" fill="#764ba2">&#x2713; Testability focused</text>
+  <text x="525" y="300" text-anchor="middle" font-size="10" fill="#764ba2">&#x2713; Domain-centric</text>
+</svg>

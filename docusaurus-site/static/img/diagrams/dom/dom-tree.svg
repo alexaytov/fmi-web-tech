@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="domDocGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="domHtmlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="domHeadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="domBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="domChildGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <filter id="domShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Connection lines -->
+  <line x1="350" y1="55" x2="350" y2="95" stroke="#64748b" stroke-width="2"/>
+  <line x1="350" y1="145" x2="200" y2="195" stroke="#64748b" stroke-width="2"/>
+  <line x1="350" y1="145" x2="500" y2="195" stroke="#64748b" stroke-width="2"/>
+  <line x1="200" y1="245" x2="200" y2="295" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="245" x2="380" y2="295" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="245" x2="500" y2="295" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="245" x2="620" y2="295" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Document node (purple) -->
+  <g filter="url(#domShadow)">
+    <rect x="290" y="20" width="120" height="40" rx="8" fill="url(#domDocGrad)"/>
+    <text x="350" y="46" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">document</text>
+  </g>
+
+  <!-- HTML node (blue) -->
+  <g filter="url(#domShadow)">
+    <rect x="300" y="100" width="100" height="40" rx="8" fill="url(#domHtmlGrad)"/>
+    <text x="350" y="126" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;html&gt;</text>
+  </g>
+
+  <!-- Head node (green) -->
+  <g filter="url(#domShadow)">
+    <rect x="145" y="200" width="110" height="40" rx="8" fill="url(#domHeadGrad)"/>
+    <text x="200" y="226" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;head&gt;</text>
+  </g>
+
+  <!-- Body node (orange) -->
+  <g filter="url(#domShadow)">
+    <rect x="445" y="200" width="110" height="40" rx="8" fill="url(#domBodyGrad)"/>
+    <text x="500" y="226" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;body&gt;</text>
+  </g>
+
+  <!-- Title node (pink) -->
+  <g filter="url(#domShadow)">
+    <rect x="145" y="300" width="110" height="40" rx="8" fill="url(#domChildGrad)"/>
+    <text x="200" y="326" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;title&gt;</text>
+  </g>
+
+  <!-- H1 node (pink) -->
+  <g filter="url(#domShadow)">
+    <rect x="330" y="300" width="100" height="40" rx="8" fill="url(#domChildGrad)"/>
+    <text x="380" y="326" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;h1&gt;</text>
+  </g>
+
+  <!-- P node (pink) -->
+  <g filter="url(#domShadow)">
+    <rect x="450" y="300" width="100" height="40" rx="8" fill="url(#domChildGrad)"/>
+    <text x="500" y="326" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;p&gt;</text>
+  </g>
+
+  <!-- Button node (pink) -->
+  <g filter="url(#domShadow)">
+    <rect x="565" y="300" width="110" height="40" rx="8" fill="url(#domChildGrad)"/>
+    <text x="620" y="326" fill="white" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">&lt;button&gt;</text>
+  </g>
+
+  <!-- Description label -->
+  <text x="350" y="380" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">DOM Tree: Hierarchical structure of HTML elements</text>
+</svg>

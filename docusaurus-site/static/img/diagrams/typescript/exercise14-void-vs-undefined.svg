@@ -1,0 +1,13 @@
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="30" width="250" height="100" rx="10" fill="#607d8b"/>
+  <text x="155" y="60" text-anchor="middle" font-size="14" fill="white" font-weight="bold">void</text>
+  <text x="155" y="85" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)">Function return type</text>
+  <text x="155" y="105" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)">"No return value"</text>
+  <text x="155" y="120" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.7)">function log(): void</text>
+
+  <rect x="320" y="30" width="250" height="100" rx="10" fill="#795548"/>
+  <text x="445" y="60" text-anchor="middle" font-size="14" fill="white" font-weight="bold">undefined</text>
+  <text x="445" y="85" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)">Variable value</text>
+  <text x="445" y="105" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.9)">"Value is undefined"</text>
+  <text x="445" y="120" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.7)">let x: undefined</text>
+</svg>

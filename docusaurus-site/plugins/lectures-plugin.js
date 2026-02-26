@@ -74,37 +74,32 @@ module.exports = function lecturesPlugin(context, options) {
  * Extract topics from lecture title
  */
 function extractTopics(title) {
-  if (title.includes('Hash') || title.includes('Хеш')) {
-    return ['Hash Tables', 'Hash Functions', 'Криптография', 'Колизии'];
+  // Web Technologies topics
+  if (title.includes('Cloud-Native')) {
+    return ['Containers', 'Microservices', 'Kubernetes', 'Docker'];
   }
-  if (title.includes('Графи')) {
-    return ['Графи', 'BFS', 'DFS', 'Алгоритми'];
+  if (title.includes('Git') || title.includes('GitHub')) {
+    return ['Git', 'GitHub', 'Version Control', 'Collaboration'];
   }
-  if (title.includes('Дървета')) {
-    return ['Дървета', 'BST', 'Обхождане', 'Баланс'];
+  if (title.includes('IaaS') || title.includes('PaaS') || title.includes('SaaS')) {
+    return ['Cloud', 'AWS', 'Azure', 'GCP'];
   }
-  if (title.includes('Heap')) {
-    return ['Heap', 'Priority Queue', 'Heapify', 'Heap Sort'];
+  if (title.includes('Трислойна') || title.includes('Three-Tier')) {
+    return ['Architecture', 'Frontend', 'Backend', 'Database'];
   }
-  if (title.includes('Сортиране')) {
-    return ['Bubble Sort', 'Merge Sort', 'Quick Sort', 'Complexity'];
+  if (title.includes('JavaScript')) {
+    return ['JavaScript', 'ES6+', 'Functions', 'DOM'];
   }
-  if (title.includes('Стек') || title.includes('Опашка')) {
-    return ['Stack', 'Queue', 'LIFO', 'FIFO'];
+  if (title.includes('TypeScript')) {
+    return ['TypeScript', 'Types', 'Interfaces', 'Compilation'];
   }
-  if (title.includes('Списъци')) {
-    return ['Linked Lists', 'Итератори', 'Памет', 'Навигация'];
+  if (title.includes('HTML') || title.includes('CSS')) {
+    return ['HTML5', 'CSS3', 'Flexbox', 'Grid'];
   }
-  if (title.includes('Масиви')) {
-    return ['Arrays', 'Търсене', 'Достъп', 'Памет'];
-  }
-  if (title.includes('Сложност') || title.includes('Big-O')) {
-    return ['Сложност', 'Big-O', 'Тестване', 'Анализ'];
-  }
-  if (title.includes('Компилатор') || title.includes('Оптимизаци')) {
-    return ['Компилатор', 'Оптимизация', 'Кеш', 'Производителност'];
+  if (title.includes('DOM')) {
+    return ['DOM', 'Events', 'Manipulation', 'JavaScript'];
   }
 
-  // Default topics
-  return ['Data Structures', 'Algorithms', 'C++', 'Practice'];
+  // Default topics for web tech
+  return ['Web Development', 'Frontend', 'Backend', 'Practice'];
 }

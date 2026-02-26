@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120">
+  <defs>
+    <linearGradient id="ternaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00bcd4"/>
+      <stop offset="100%" stop-color="#26c6da"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="50" y="30" width="500" height="60" rx="10" fill="url(#ternaryGrad)"/>
+  <text x="300" y="55" text-anchor="middle" font-size="12" fill="white" font-family="monospace">condition  ?  valueIfTrue  :  valueIfFalse</text>
+  <text x="300" y="75" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.9)">score >= 50 ? "Издържал" : "Неиздържал"</text>
+</svg>

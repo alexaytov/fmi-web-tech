@@ -1,0 +1,11 @@
+<svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="30" width="250" height="90" rx="10" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="155" y="55" text-anchor="middle" font-size="12" fill="#2e7d32" font-weight="bold">Inherited</text>
+  <text x="155" y="80" text-anchor="middle" font-size="10" fill="#388e3c">color - font-family - font-size</text>
+  <text x="155" y="100" text-anchor="middle" font-size="9" fill="#666">Text properties pass to children</text>
+
+  <rect x="320" y="30" width="250" height="90" rx="10" fill="#ffebee" stroke="#f44336"/>
+  <text x="445" y="55" text-anchor="middle" font-size="12" fill="#c62828" font-weight="bold">Not Inherited</text>
+  <text x="445" y="80" text-anchor="middle" font-size="10" fill="#d32f2f">border - margin - padding</text>
+  <text x="445" y="100" text-anchor="middle" font-size="9" fill="#666">Box model properties</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200">
+  <defs>
+    <linearGradient id="andGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4caf50"/>
+      <stop offset="100%" stop-color="#8bc34a"/>
+    </linearGradient>
+    <linearGradient id="orGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2196f3"/>
+      <stop offset="100%" stop-color="#03a9f4"/>
+    </linearGradient>
+    <linearGradient id="notGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f44336"/>
+      <stop offset="100%" stop-color="#e91e63"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="20" y="30" width="190" height="140" rx="10" fill="url(#andGrad)"/>
+  <text x="115" y="60" text-anchor="middle" font-size="18" fill="white" font-weight="bold">&amp;&amp;</text>
+  <text x="115" y="85" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">AND</text>
+  <text x="115" y="115" text-anchor="middle" font-size="10" fill="white">true &amp;&amp; true = true</text>
+  <text x="115" y="135" text-anchor="middle" font-size="10" fill="white">true &amp;&amp; false = false</text>
+  <text x="115" y="155" text-anchor="middle" font-size="10" fill="white">Both must be true</text>
+
+  <rect x="230" y="30" width="190" height="140" rx="10" fill="url(#orGrad)"/>
+  <text x="325" y="60" text-anchor="middle" font-size="18" fill="white" font-weight="bold">||</text>
+  <text x="325" y="85" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">OR</text>
+  <text x="325" y="115" text-anchor="middle" font-size="10" fill="white">true || false = true</text>
+  <text x="325" y="135" text-anchor="middle" font-size="10" fill="white">false || false = false</text>
+  <text x="325" y="155" text-anchor="middle" font-size="10" fill="white">At least one true</text>
+
+  <rect x="440" y="30" width="190" height="140" rx="10" fill="url(#notGrad)"/>
+  <text x="535" y="60" text-anchor="middle" font-size="18" fill="white" font-weight="bold">!</text>
+  <text x="535" y="85" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">NOT</text>
+  <text x="535" y="115" text-anchor="middle" font-size="10" fill="white">!true = false</text>
+  <text x="535" y="135" text-anchor="middle" font-size="10" fill="white">!false = true</text>
+  <text x="535" y="155" text-anchor="middle" font-size="10" fill="white">Inverts value</text>
+</svg>

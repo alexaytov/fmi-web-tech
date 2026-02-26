@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="browserGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="webGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1abc9c"/>
+      <stop offset="100%" stop-color="#16a085"/>
+    </linearGradient>
+    <linearGradient id="appGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-15%" y="-15%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <marker id="reqArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3498db"/>
+    </marker>
+    <marker id="resArrow" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- User Box -->
+  <g filter="url(#boxShadow)">
+    <rect x="20" y="60" width="90" height="70" rx="10" fill="url(#userGrad)"/>
+    <text x="65" y="90" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">USER</text>
+    <text x="65" y="115" font-size="22" text-anchor="middle">👤</text>
+  </g>
+
+  <!-- Browser Box -->
+  <g filter="url(#boxShadow)">
+    <rect x="160" y="60" width="100" height="70" rx="10" fill="url(#browserGrad)"/>
+    <text x="210" y="90" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">BROWSER</text>
+    <text x="210" y="115" font-size="22" text-anchor="middle">🌐</text>
+  </g>
+
+  <!-- Web Server Box -->
+  <g filter="url(#boxShadow)">
+    <rect x="310" y="60" width="110" height="70" rx="10" fill="url(#webGrad)"/>
+    <text x="365" y="90" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">WEB SERVER</text>
+    <text x="365" y="115" font-size="22" text-anchor="middle">🖥️</text>
+  </g>
+
+  <!-- App Server Box -->
+  <g filter="url(#boxShadow)">
+    <rect x="470" y="60" width="110" height="70" rx="10" fill="url(#appGrad)"/>
+    <text x="525" y="90" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">APP SERVER</text>
+    <text x="525" y="115" font-size="22" text-anchor="middle">⚙️</text>
+  </g>
+
+  <!-- Database Box -->
+  <g filter="url(#boxShadow)">
+    <rect x="630" y="60" width="110" height="70" rx="10" fill="url(#dbGrad)"/>
+    <text x="685" y="90" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">DATABASE</text>
+    <text x="685" y="115" font-size="22" text-anchor="middle">💾</text>
+  </g>
+
+  <!-- Request arrows (blue, top) -->
+  <line x1="112" y1="82" x2="156" y2="82" stroke="#3498db" stroke-width="2" marker-end="url(#reqArrow)"/>
+  <line x1="262" y1="82" x2="306" y2="82" stroke="#3498db" stroke-width="2" marker-end="url(#reqArrow)"/>
+  <line x1="422" y1="82" x2="466" y2="82" stroke="#3498db" stroke-width="2" marker-end="url(#reqArrow)"/>
+  <line x1="582" y1="82" x2="626" y2="82" stroke="#3498db" stroke-width="2" marker-end="url(#reqArrow)"/>
+
+  <!-- Response arrows (red, bottom) -->
+  <line x1="626" y1="108" x2="582" y2="108" stroke="#e74c3c" stroke-width="2" marker-end="url(#resArrow)"/>
+  <line x1="466" y1="108" x2="422" y2="108" stroke="#e74c3c" stroke-width="2" marker-end="url(#resArrow)"/>
+  <line x1="306" y1="108" x2="262" y2="108" stroke="#e74c3c" stroke-width="2" marker-end="url(#resArrow)"/>
+  <line x1="156" y1="108" x2="112" y2="108" stroke="#e74c3c" stroke-width="2" marker-end="url(#resArrow)"/>
+
+  <!-- Legend -->
+  <text x="400" y="165" fill="#3498db" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">→ REQUEST</text>
+  <text x="400" y="185" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">← RESPONSE</text>
+</svg>

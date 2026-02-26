@@ -1,0 +1,28 @@
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="funcTsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3178c6"/>
+      <stop offset="100%" stop-color="#235a97"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="30" width="120" height="60" rx="6" fill="#e3f2fd" stroke="#2196f3"/>
+  <text x="90" y="55" text-anchor="middle" font-size="10" fill="#1565c0" font-weight="bold">INPUT</text>
+  <text x="90" y="75" text-anchor="middle" font-size="9" fill="#1976d2">price: number</text>
+  <text x="90" y="87" text-anchor="middle" font-size="9" fill="#1976d2">discount: number</text>
+
+  <path d="M150 60 L200 60" stroke="#3178c6" stroke-width="2"/>
+  <polygon points="195,55 210,60 195,65" fill="#3178c6"/>
+
+  <rect x="210" y="20" width="180" height="80" rx="8" fill="url(#funcTsGrad)"/>
+  <text x="300" y="50" text-anchor="middle" font-size="11" fill="white" font-weight="bold">calculateDiscount</text>
+  <text x="300" y="72" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.9)">(price, discountPercent)</text>
+  <text x="300" y="88" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.9)">: number</text>
+
+  <path d="M390 60 L440 60" stroke="#3178c6" stroke-width="2"/>
+  <polygon points="435,55 450,60 435,65" fill="#3178c6"/>
+
+  <rect x="450" y="30" width="120" height="60" rx="6" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="510" y="55" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="bold">OUTPUT</text>
+  <text x="510" y="75" text-anchor="middle" font-size="11" fill="#388e3c">number</text>
+</svg>

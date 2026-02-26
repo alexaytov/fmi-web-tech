@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 150">
+  <rect x="30" y="30" width="590" height="100" rx="12" fill="#fff8e1" stroke="#ffc107" stroke-width="2"/>
+  <text x="325" y="55" text-anchor="middle" fill="#ff6f00" font-size="14" font-weight="bold">🐒 Chaos Monkey Philosophy</text>
+
+  <rect x="60" y="70" width="160" height="45" rx="6" fill="#ffecb3"/>
+  <text x="140" y="90" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Production</text>
+  <text x="140" y="105" text-anchor="middle" fill="#666" font-size="9">Real environment</text>
+
+  <text x="245" y="95" text-anchor="middle" fill="#f57c00" font-size="18">💥</text>
+
+  <rect x="270" y="70" width="160" height="45" rx="6" fill="#ffccbc"/>
+  <text x="350" y="90" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Controlled Failure</text>
+  <text x="350" y="105" text-anchor="middle" fill="#666" font-size="9">Random termination</text>
+
+  <text x="455" y="95" text-anchor="middle" fill="#4caf50" font-size="18">→</text>
+
+  <rect x="480" y="70" width="120" height="45" rx="6" fill="#c8e6c9"/>
+  <text x="540" y="90" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Learning</text>
+  <text x="540" y="105" text-anchor="middle" fill="#666" font-size="9">Build resilience</text>
+</svg>

@@ -16,6 +16,7 @@ import ComparisonBox from '@site/src/components/Comparison/ComparisonBox';
 import Grid from '@site/src/components/Grid/Grid';
 import Card from '@site/src/components/Grid/Card';
 import ViewSlidesButton from '@site/src/components/ViewSlidesButton';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Git и GitHub за Разработчици
 
@@ -251,71 +252,7 @@ git config user.email
 
 <InfoBox title="Git Workflow Диаграма">
 
-<svg viewBox="0 0 700 280" style={{maxWidth: '700px', margin: '0 auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="workingGradL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#e74c3c'}}/>
-      <stop offset="100%" style={{stopColor:'#c0392b'}}/>
-    </linearGradient>
-    <linearGradient id="stagingGradL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#f39c12'}}/>
-      <stop offset="100%" style={{stopColor:'#e67e22'}}/>
-    </linearGradient>
-    <linearGradient id="repoGradL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#1e8449'}}/>
-    </linearGradient>
-    <filter id="gitShadowL" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#000" floodOpacity="0.15"/>
-    </filter>
-    <marker id="arrowHeadL" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
-    </marker>
-  </defs>
-  <style>{`
-    .stage-box-l { opacity: 0; transform: translateY(20px); animation: stageSlideUpL 0.5s ease-out forwards; }
-    .box-working-l { animation-delay: 0.2s; }
-    .box-staging-l { animation-delay: 0.5s; }
-    .box-repo-l { animation-delay: 0.8s; }
-    .stage-arrow-l { stroke-dasharray: 100; stroke-dashoffset: 100; }
-    .arrow-1-l { animation: drawArrowL 0.4s ease-out 0.7s forwards; }
-    .arrow-2-l { animation: drawArrowL 0.4s ease-out 1.0s forwards; }
-    .stage-cmd-l { opacity: 0; animation: cmdFadeInL 0.3s ease-out forwards; }
-    .cmd-add-l { animation-delay: 0.9s; }
-    .cmd-commit-l { animation-delay: 1.2s; }
-    @keyframes stageSlideUpL { to { opacity: 1; transform: translateY(0); } }
-    @keyframes drawArrowL { to { stroke-dashoffset: 0; } }
-    @keyframes cmdFadeInL { to { opacity: 1; } }
-  `}</style>
-  <g className="stage-box-l box-working-l" filter="url(#gitShadowL)">
-    <rect x="40" y="60" width="160" height="100" rx="10" fill="url(#workingGradL)"/>
-    <text x="120" y="95" fill="white" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" textAnchor="middle">WORKING</text>
-    <text x="120" y="115" fill="rgba(255,255,255,0.85)" fontFamily="system-ui, sans-serif" fontSize="11" textAnchor="middle">DIRECTORY</text>
-    <text x="120" y="145" fontSize="20" textAnchor="middle">📄</text>
-  </g>
-  <g className="stage-box-l box-staging-l" filter="url(#gitShadowL)">
-    <rect x="270" y="60" width="160" height="100" rx="10" fill="url(#stagingGradL)"/>
-    <text x="350" y="95" fill="white" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" textAnchor="middle">STAGING</text>
-    <text x="350" y="115" fill="rgba(255,255,255,0.85)" fontFamily="system-ui, sans-serif" fontSize="11" textAnchor="middle">AREA</text>
-    <text x="350" y="145" fontSize="20" textAnchor="middle">📋</text>
-  </g>
-  <g className="stage-box-l box-repo-l" filter="url(#gitShadowL)">
-    <rect x="500" y="60" width="160" height="100" rx="10" fill="url(#repoGradL)"/>
-    <text x="580" y="95" fill="white" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" textAnchor="middle">REPOSITORY</text>
-    <text x="580" y="115" fill="rgba(255,255,255,0.85)" fontFamily="system-ui, sans-serif" fontSize="11" textAnchor="middle">(Commits)</text>
-    <text x="580" y="145" fontSize="20" textAnchor="middle">📦</text>
-  </g>
-  <line className="stage-arrow-l arrow-1-l" x1="200" y1="110" x2="265" y2="110" stroke="#666" strokeWidth="3" strokeLinecap="round" markerEnd="url(#arrowHeadL)"/>
-  <line className="stage-arrow-l arrow-2-l" x1="430" y1="110" x2="495" y2="110" stroke="#666" strokeWidth="3" strokeLinecap="round" markerEnd="url(#arrowHeadL)"/>
-  <g className="stage-cmd-l cmd-add-l">
-    <rect x="195" y="185" width="90" height="28" rx="6" fill="#2c3e50"/>
-    <text x="240" y="204" fill="#7ee787" fontFamily="monospace" fontSize="12" textAnchor="middle">git add</text>
-  </g>
-  <g className="stage-cmd-l cmd-commit-l">
-    <rect x="410" y="185" width="100" height="28" rx="6" fill="#2c3e50"/>
-    <text x="460" y="204" fill="#7ee787" fontFamily="monospace" fontSize="12" textAnchor="middle">git commit</text>
-  </g>
-</svg>
+<img src={useBaseUrl('/img/diagrams/git-github/git-three-stages.svg')} alt="Git Three Stages" style={{maxWidth: '700px', margin: '0 auto', display: 'block'}} />
 
 </InfoBox>
 
@@ -465,72 +402,7 @@ git log --oneline
 
 Branches позволяват да **работите върху различни features независимо** без да засягате основния код.
 
-<svg viewBox="0 0 650 200" style={{maxWidth: '650px', margin: '1rem auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="brGitOrangeL" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#f05033'}}/>
-      <stop offset="100%" style={{stopColor:'#de4c36'}}/>
-    </linearGradient>
-    <linearGradient id="brGreenL" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#2ecc71'}}/>
-    </linearGradient>
-    <linearGradient id="brPurpleL" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style={{stopColor:'#9b59b6'}}/>
-      <stop offset="100%" style={{stopColor:'#a371f7'}}/>
-    </linearGradient>
-    <filter id="brGlowL" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="brShadowL" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.2"/>
-    </filter>
-  </defs>
-  <style>{`
-    .br-main-line-l { stroke-dasharray: 580; stroke-dashoffset: 580; animation: brDrawLineL 1s ease-out 0.2s forwards; }
-    .br-feature-line-l { stroke-dasharray: 250; stroke-dashoffset: 250; animation: brDrawLineL 0.6s ease-out 0.8s forwards; }
-    .br-bugfix-line-l { stroke-dasharray: 150; stroke-dashoffset: 150; animation: brDrawLineL 0.5s ease-out 1.0s forwards; }
-    .br-commit-l { transform-origin: center; transform: scale(0); }
-    .br-c1-l { animation: brPopInL 0.25s ease-out 0.5s forwards; }
-    .br-c2-l { animation: brPopInL 0.25s ease-out 0.65s forwards; }
-    .br-c3-l { animation: brPopInL 0.25s ease-out 0.8s forwards; }
-    .br-c4-l { animation: brPopInL 0.25s ease-out 0.95s forwards; }
-    .br-c5-l { animation: brPopInL 0.25s ease-out 1.1s forwards; }
-    .br-c6-l { animation: brPopInL 0.25s ease-out 1.25s forwards; }
-    .br-cf1-l { animation: brPopInL 0.25s ease-out 1.0s forwards; }
-    .br-cf2-l { animation: brPopInL 0.25s ease-out 1.15s forwards; }
-    .br-cb1-l { animation: brPopInL 0.25s ease-out 1.2s forwards; }
-    .br-label-l { opacity: 0; animation: brFadeInL 0.3s ease-out forwards; }
-    .br-label-main-l { animation-delay: 1.0s; }
-    .br-label-feature-l { animation-delay: 1.2s; }
-    .br-label-bugfix-l { animation-delay: 1.35s; }
-    @keyframes brDrawLineL { to { stroke-dashoffset: 0; } }
-    @keyframes brPopInL { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
-    @keyframes brFadeInL { to { opacity: 1; } }
-  `}</style>
-  <path className="br-main-line-l" d="M 40 100 L 610 100" stroke="#30363d" strokeWidth="4" strokeLinecap="round" fill="none"/>
-  <path className="br-feature-line-l" d="M 150 100 Q 180 100 200 50 L 350 50 Q 380 50 400 100" stroke="url(#brGreenL)" strokeWidth="3" strokeLinecap="round" fill="none" filter="url(#brGlowL)"/>
-  <path className="br-bugfix-line-l" d="M 280 100 Q 310 100 330 150 L 420 150 Q 450 150 470 100" stroke="url(#brPurpleL)" strokeWidth="3" strokeLinecap="round" fill="none" filter="url(#brGlowL)"/>
-  <g filter="url(#brShadowL)">
-    <circle className="br-commit-l br-c1-l" cx="70" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-    <circle className="br-commit-l br-c2-l" cx="150" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-    <circle className="br-commit-l br-c3-l" cx="280" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-    <circle className="br-commit-l br-c4-l" cx="400" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-    <circle className="br-commit-l br-c5-l" cx="470" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-    <circle className="br-commit-l br-c6-l" cx="570" cy="100" r="10" fill="url(#brGitOrangeL)"/>
-  </g>
-  <g filter="url(#brShadowL)">
-    <circle className="br-commit-l br-cf1-l" cx="250" cy="50" r="8" fill="#2ecc71"/>
-    <circle className="br-commit-l br-cf2-l" cx="320" cy="50" r="8" fill="#2ecc71"/>
-  </g>
-  <g filter="url(#brShadowL)">
-    <circle className="br-commit-l br-cb1-l" cx="375" cy="150" r="8" fill="#a371f7"/>
-  </g>
-  <text className="br-label-l br-label-main-l" x="320" y="125" fill="#f05033" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" textAnchor="middle">main</text>
-  <text className="br-label-l br-label-feature-l" x="285" y="35" fill="#27ae60" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">feature-branch</text>
-  <text className="br-label-l br-label-bugfix-l" x="375" y="180" fill="#9b59b6" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">bugfix-branch</text>
-</svg>
+<img src={useBaseUrl('/img/diagrams/git-github/git-branching.svg')} alt="Git Branching" style={{maxWidth: '650px', margin: '1rem auto', display: 'block'}} />
 
 </InfoBox>
 

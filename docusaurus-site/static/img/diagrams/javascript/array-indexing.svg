@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150">
+  <text x="300" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Array Indexing (0-based)</text>
+
+  <rect x="50" y="50" width="100" height="50" rx="6" fill="#ffeb3b" stroke="#fbc02d"/>
+  <text x="100" y="70" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">[0]</text>
+  <text x="100" y="88" text-anchor="middle" font-size="9" fill="#666">"ябълка"</text>
+
+  <rect x="160" y="50" width="100" height="50" rx="6" fill="#ffeb3b" stroke="#fbc02d"/>
+  <text x="210" y="70" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">[1]</text>
+  <text x="210" y="88" text-anchor="middle" font-size="9" fill="#666">"банан"</text>
+
+  <rect x="270" y="50" width="100" height="50" rx="6" fill="#4caf50" stroke="#388e3c" stroke-width="2"/>
+  <text x="320" y="70" text-anchor="middle" font-size="10" fill="white" font-weight="bold">[2] ←</text>
+  <text x="320" y="88" text-anchor="middle" font-size="9" fill="white">"портокал"</text>
+
+  <rect x="380" y="50" width="100" height="50" rx="6" fill="#ffeb3b" stroke="#fbc02d"/>
+  <text x="430" y="70" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">[3]</text>
+  <text x="430" y="88" text-anchor="middle" font-size="9" fill="#666">"грозде"</text>
+
+  <rect x="490" y="50" width="80" height="50" rx="6" fill="#e3f2fd" stroke="#2196f3" stroke-dasharray="4,4"/>
+  <text x="530" y="70" text-anchor="middle" font-size="10" fill="#1976d2" font-weight="bold">[4]</text>
+  <text x="530" y="88" text-anchor="middle" font-size="9" fill="#1976d2">"киви" +</text>
+
+  <text x="320" y="130" text-anchor="middle" font-size="11" fill="#388e3c" font-weight="bold">fruits[2] = "портокал" (third element)</text>
+</svg>

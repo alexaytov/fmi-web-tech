@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <text x="350" y="20" text-anchor="middle" fill="#636e72" font-size="12" font-weight="bold">Complete Feature Branch Workflow Timeline</text>
+
+  <rect x="20" y="40" width="80" height="35" rx="6" fill="#74b9ff"/>
+  <text x="60" y="62" text-anchor="middle" fill="white" font-size="9">clone</text>
+
+  <rect x="110" y="40" width="80" height="35" rx="6" fill="#00b894"/>
+  <text x="150" y="62" text-anchor="middle" fill="white" font-size="9">branch</text>
+
+  <rect x="200" y="40" width="80" height="35" rx="6" fill="#fdcb6e"/>
+  <text x="240" y="62" text-anchor="middle" fill="#2d3436" font-size="9">commit</text>
+
+  <rect x="290" y="40" width="80" height="35" rx="6" fill="#e17055"/>
+  <text x="330" y="62" text-anchor="middle" fill="white" font-size="9">push branch</text>
+
+  <rect x="380" y="40" width="80" height="35" rx="6" fill="#0984e3"/>
+  <text x="420" y="62" text-anchor="middle" fill="white" font-size="9">pull main</text>
+
+  <rect x="470" y="40" width="80" height="35" rx="6" fill="#667eea"/>
+  <text x="510" y="62" text-anchor="middle" fill="white" font-size="9">merge</text>
+
+  <rect x="560" y="40" width="60" height="35" rx="6" fill="#a29bfe"/>
+  <text x="590" y="62" text-anchor="middle" fill="white" font-size="9">push</text>
+
+  <rect x="630" y="40" width="60" height="35" rx="6" fill="#636e72"/>
+  <text x="660" y="62" text-anchor="middle" fill="white" font-size="9">cleanup</text>
+
+  <line x1="100" y1="57" x2="110" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="190" y1="57" x2="200" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="280" y1="57" x2="290" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="370" y1="57" x2="380" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="460" y1="57" x2="470" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="550" y1="57" x2="560" y2="57" stroke="#636e72" stroke-width="2"/>
+  <line x1="620" y1="57" x2="630" y2="57" stroke="#636e72" stroke-width="2"/>
+
+  <rect x="20" y="100" width="670" height="90" rx="8" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="35" y="120" fill="#333" font-size="10" font-weight="bold">Ключови въпроси:</text>
+  <text x="35" y="140" fill="#666" font-size="10">1. Защо pull преди merge?</text>
+  <text x="35" y="155" fill="#666" font-size="10">2. Защо два delete commands?</text>
+  <text x="35" y="170" fill="#666" font-size="10">3. Къде би спрял процесът при conflict?</text>
+  <text x="35" y="185" fill="#666" font-size="10">4. Какво подобрение е често срещано в професионални среди?</text>
+</svg>

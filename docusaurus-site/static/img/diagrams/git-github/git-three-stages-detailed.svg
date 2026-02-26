@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 200">
+  <defs>
+    <linearGradient id="workingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#74b9ff"/>
+      <stop offset="100%" stop-color="#0984e3"/>
+    </linearGradient>
+    <linearGradient id="stagingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffeaa7"/>
+      <stop offset="100%" stop-color="#fdcb6e"/>
+    </linearGradient>
+    <linearGradient id="repoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#55efc4"/>
+      <stop offset="100%" stop-color="#00b894"/>
+    </linearGradient>
+    <marker id="arrowGit" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#636e72"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="50" width="180" height="100" rx="12" fill="url(#workingGrad)"/>
+  <text x="120" y="90" text-anchor="middle" fill="white" font-size="14" font-weight="bold">📁 Working</text>
+  <text x="120" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Directory</text>
+  <text x="120" y="135" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Вашите файлове</text>
+
+  <line x1="215" y1="100" x2="280" y2="100" stroke="#636e72" stroke-width="3" marker-end="url(#arrowGit)"/>
+  <text x="247" y="85" text-anchor="middle" fill="#2d3436" font-size="11" font-weight="bold">git add</text>
+
+  <rect x="285" y="50" width="180" height="100" rx="12" fill="url(#stagingGrad)"/>
+  <text x="375" y="90" text-anchor="middle" fill="#2d3436" font-size="14" font-weight="bold">📦 Staging</text>
+  <text x="375" y="110" text-anchor="middle" fill="#2d3436" font-size="14" font-weight="bold">Area</text>
+  <text x="375" y="135" text-anchor="middle" fill="rgba(0,0,0,0.6)" font-size="11">Готови за commit</text>
+
+  <line x1="470" y1="100" x2="535" y2="100" stroke="#636e72" stroke-width="3" marker-end="url(#arrowGit)"/>
+  <text x="502" y="85" text-anchor="middle" fill="#2d3436" font-size="11" font-weight="bold">git commit</text>
+
+  <rect x="540" y="50" width="180" height="100" rx="12" fill="url(#repoGrad)"/>
+  <text x="630" y="90" text-anchor="middle" fill="white" font-size="14" font-weight="bold">🗄️ Repository</text>
+  <text x="630" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">(Commits)</text>
+  <text x="630" y="135" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">Постоянна история</text>
+
+  <text x="375" y="180" text-anchor="middle" fill="#636e72" font-size="12">Workflow: Edit → Stage → Commit → Push</text>
+</svg>

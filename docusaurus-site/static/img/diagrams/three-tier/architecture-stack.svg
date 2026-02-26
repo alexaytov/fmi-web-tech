@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 380">
+  <defs>
+    <linearGradient id="presentationGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="applicationGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+    </marker>
+    <marker id="arrowUp" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- Presentation Layer -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="30" width="340" height="80" rx="12" fill="url(#presentationGrad)"/>
+    <text x="250" y="60" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">ПРЕЗЕНТАЦИОНЕН СЛОЙ</text>
+    <text x="250" y="82" fill="rgba(255,255,255,0.85)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">HTML, CSS, JavaScript, React, Vue</text>
+  </g>
+  <text x="45" y="75" font-size="28">🖥️</text>
+
+  <!-- Arrow 1 -->
+  <g>
+    <line x1="230" y1="115" x2="230" y2="140" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowDown)"/>
+    <line x1="270" y1="140" x2="270" y2="115" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowUp)"/>
+    <text x="250" y="133" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">HTTP/REST</text>
+  </g>
+
+  <!-- Application Layer -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="150" width="340" height="80" rx="12" fill="url(#applicationGrad)"/>
+    <text x="250" y="180" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">ПРИЛОЖЕН СЛОЙ</text>
+    <text x="250" y="202" fill="rgba(255,255,255,0.85)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Java, Python, Node.js, .NET</text>
+  </g>
+  <text x="45" y="195" font-size="28">⚙️</text>
+
+  <!-- Arrow 2 -->
+  <g>
+    <line x1="230" y1="235" x2="230" y2="260" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowDown)"/>
+    <line x1="270" y1="260" x2="270" y2="235" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrowUp)"/>
+    <text x="250" y="253" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">SQL/ORM</text>
+  </g>
+
+  <!-- Data Layer -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="270" width="340" height="80" rx="12" fill="url(#dataGrad)"/>
+    <text x="250" y="300" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">СЛОЙ ЗА ДАННИ</text>
+    <text x="250" y="322" fill="rgba(255,255,255,0.85)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">MySQL, PostgreSQL, MongoDB</text>
+  </g>
+  <text x="45" y="315" font-size="28">💾</text>
+</svg>

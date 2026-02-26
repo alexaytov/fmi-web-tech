@@ -1,0 +1,9 @@
+{
+  "label": "05. DOM Модел",
+  "position": 5,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Document Object Model - програмен интерфейс за уеб документи, позволяващ манипулация на HTML елементи чрез JavaScript"
+  }
+}

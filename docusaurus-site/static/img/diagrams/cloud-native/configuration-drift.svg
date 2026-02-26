@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 160">
+  <text x="325" y="20" text-anchor="middle" fill="#636e72" font-size="12" font-weight="bold">Configuration Drift Problem</text>
+
+  <rect x="30" y="40" width="80" height="50" rx="6" fill="#4caf50"/>
+  <text x="70" y="70" text-anchor="middle" fill="white" font-size="10">Server 1</text>
+  <text x="70" y="100" fill="#4caf50" font-size="9">v1.0</text>
+
+  <rect x="130" y="40" width="80" height="50" rx="6" fill="#8bc34a"/>
+  <text x="170" y="70" text-anchor="middle" fill="white" font-size="10">Server 2</text>
+  <text x="170" y="100" fill="#8bc34a" font-size="9">v1.0 + patch</text>
+
+  <rect x="230" y="40" width="80" height="50" rx="6" fill="#cddc39"/>
+  <text x="270" y="70" text-anchor="middle" fill="#333" font-size="10">Server 3</text>
+  <text x="270" y="100" fill="#827717" font-size="9">v1.1 + hotfix</text>
+
+  <rect x="330" y="40" width="80" height="50" rx="6" fill="#ffeb3b"/>
+  <text x="370" y="70" text-anchor="middle" fill="#333" font-size="10">Server 4</text>
+  <text x="370" y="100" fill="#f57f17" font-size="9">v1.1 + custom</text>
+
+  <rect x="430" y="40" width="80" height="50" rx="6" fill="#ff9800"/>
+  <text x="470" y="70" text-anchor="middle" fill="white" font-size="10">Server 5</text>
+  <text x="470" y="100" fill="#e65100" font-size="9">???</text>
+
+  <path d="M 30 130 L 510 130" stroke="#e57373" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="270" y="150" text-anchor="middle" fill="#c62828" font-size="11" font-weight="bold">⚠️ Snowflake Servers - Всеки е уникален!</text>
+</svg>

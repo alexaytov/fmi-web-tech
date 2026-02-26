@@ -1,0 +1,23 @@
+<svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="180" y="10" width="140" height="35" rx="6" fill="#667eea"/>
+  <text x="250" y="33" text-anchor="middle" fill="white" font-size="12" font-weight="bold">&lt;ul id="nav"&gt;</text>
+  <text x="350" y="33" fill="#667eea" font-size="10">.parentElement</text>
+
+  <line x1="250" y1="45" x2="100" y2="80" stroke="#888" stroke-width="1"/>
+  <line x1="250" y1="45" x2="250" y2="80" stroke="#888" stroke-width="1"/>
+  <line x1="250" y1="45" x2="400" y2="80" stroke="#888" stroke-width="1"/>
+
+  <rect x="40" y="85" width="120" height="35" rx="6" fill="#dfe6e9"/>
+  <text x="100" y="107" text-anchor="middle" fill="#636e72" font-size="11">&lt;li&gt;Home&lt;/li&gt;</text>
+  <text x="100" y="140" text-anchor="middle" fill="#888" font-size="10">.previousElementSibling</text>
+
+  <rect x="190" y="85" width="120" height="35" rx="6" fill="#00b894" stroke="#00b894" stroke-width="3"/>
+  <text x="250" y="107" text-anchor="middle" fill="white" font-size="11" font-weight="bold">.current</text>
+
+  <rect x="340" y="85" width="120" height="35" rx="6" fill="#dfe6e9"/>
+  <text x="400" y="107" text-anchor="middle" fill="#636e72" font-size="11">&lt;li&gt;Contact&lt;/li&gt;</text>
+  <text x="400" y="140" text-anchor="middle" fill="#888" font-size="10">.nextElementSibling</text>
+
+  <path d="M 160 102 L 185 102" stroke="#00b894" stroke-width="2"/>
+  <path d="M 315 102 L 335 102" stroke="#00b894" stroke-width="2"/>
+</svg>

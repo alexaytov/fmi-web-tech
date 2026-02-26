@@ -1,0 +1,13 @@
+<svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="20" width="250" height="100" rx="8" fill="#ffebee" stroke="#f44336"/>
+  <text x="155" y="45" text-anchor="middle" font-size="12" fill="#c62828" font-weight="bold">❌ JavaScript Bugs</text>
+  <text x="155" y="70" text-anchor="middle" font-size="10" fill="#d32f2f">price: "29.99" (string!)</text>
+  <text x="155" y="90" text-anchor="middle" font-size="10" fill="#d32f2f">discountcode vs discountCode</text>
+  <text x="155" y="110" text-anchor="middle" font-size="10" fill="#d32f2f">No type checking</text>
+
+  <rect x="320" y="20" width="250" height="100" rx="8" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="445" y="45" text-anchor="middle" font-size="12" fill="#2e7d32" font-weight="bold">✅ TypeScript Fixed</text>
+  <text x="445" y="70" text-anchor="middle" font-size="10" fill="#388e3c">price: number</text>
+  <text x="445" y="90" text-anchor="middle" font-size="10" fill="#388e3c">discountCode: string | undefined</text>
+  <text x="445" y="110" text-anchor="middle" font-size="10" fill="#388e3c">Compile-time errors!</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 180">
+  <defs>
+    <linearGradient id="objGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9800"/>
+      <stop offset="100%" stop-color="#ffc107"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="100" y="20" width="350" height="140" rx="12" fill="url(#objGrad)"/>
+  <text x="275" y="50" text-anchor="middle" font-size="14" fill="white" font-weight="bold">student { }</text>
+
+  <rect x="120" y="65" width="145" height="35" rx="6" fill="rgba(255,255,255,0.3)"/>
+  <text x="192" y="87" text-anchor="middle" font-size="11" fill="white">name: "Иван"</text>
+
+  <rect x="285" y="65" width="145" height="35" rx="6" fill="rgba(255,255,255,0.3)"/>
+  <text x="357" y="87" text-anchor="middle" font-size="11" fill="white">age: 22</text>
+
+  <rect x="120" y="110" width="145" height="35" rx="6" fill="rgba(255,255,255,0.3)"/>
+  <text x="192" y="132" text-anchor="middle" font-size="11" fill="white">grades: [5,6,4,5]</text>
+
+  <rect x="285" y="110" width="145" height="35" rx="6" fill="rgba(255,255,255,0.3)"/>
+  <text x="357" y="132" text-anchor="middle" font-size="11" fill="white">isActive: true</text>
+</svg>

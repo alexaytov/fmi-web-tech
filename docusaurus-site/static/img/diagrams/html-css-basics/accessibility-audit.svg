@@ -1,0 +1,22 @@
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">4 Accessibility Issues</text>
+
+  <rect x="30" y="40" width="130" height="50" rx="6" fill="#ffebee" stroke="#f44336"/>
+  <text x="95" y="60" text-anchor="middle" font-size="9" fill="#c62828" font-weight="bold">1. div onclick</text>
+  <text x="95" y="78" text-anchor="middle" font-size="8" fill="#d32f2f">Use &lt;button&gt;</text>
+
+  <rect x="175" y="40" width="130" height="50" rx="6" fill="#ffebee" stroke="#f44336"/>
+  <text x="240" y="60" text-anchor="middle" font-size="9" fill="#c62828" font-weight="bold">2. No alt text</text>
+  <text x="240" y="78" text-anchor="middle" font-size="8" fill="#d32f2f">Add alt="..."</text>
+
+  <rect x="320" y="40" width="130" height="50" rx="6" fill="#ffebee" stroke="#f44336"/>
+  <text x="385" y="60" text-anchor="middle" font-size="9" fill="#c62828" font-weight="bold">3. Low contrast</text>
+  <text x="385" y="78" text-anchor="middle" font-size="8" fill="#d32f2f">Need 4.5:1 ratio</text>
+
+  <rect x="465" y="40" width="130" height="50" rx="6" fill="#ffebee" stroke="#f44336"/>
+  <text x="530" y="60" text-anchor="middle" font-size="9" fill="#c62828" font-weight="bold">4. No label</text>
+  <text x="530" y="78" text-anchor="middle" font-size="8" fill="#d32f2f">Add &lt;label&gt;</text>
+
+  <rect x="100" y="110" width="400" height="35" rx="6" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="300" y="132" text-anchor="middle" font-size="10" fill="#2e7d32">WCAG 2.1 AA: 4.5:1 contrast for normal text</text>
+</svg>

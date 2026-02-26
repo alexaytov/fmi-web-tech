@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 150">
+  <defs>
+    <linearGradient id="metricsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00b894"/>
+      <stop offset="100%" stop-color="#00cec9"/>
+    </linearGradient>
+    <linearGradient id="logsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0984e3"/>
+      <stop offset="100%" stop-color="#74b9ff"/>
+    </linearGradient>
+    <linearGradient id="tracesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="30" width="180" height="100" rx="12" fill="url(#metricsGrad)"/>
+  <text x="120" y="65" text-anchor="middle" fill="white" font-size="16" font-weight="bold">📊 Metrics</text>
+  <text x="120" y="85" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">Числови измервания</text>
+  <text x="120" y="100" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">CPU, Memory, Latency</text>
+  <text x="120" y="115" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">Prometheus, Grafana</text>
+
+  <rect x="235" y="30" width="180" height="100" rx="12" fill="url(#logsGrad)"/>
+  <text x="325" y="65" text-anchor="middle" fill="white" font-size="16" font-weight="bold">📝 Logs</text>
+  <text x="325" y="85" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">Дискретни събития</text>
+  <text x="325" y="100" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">Timestamped records</text>
+  <text x="325" y="115" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">ELK Stack, Splunk</text>
+
+  <rect x="440" y="30" width="180" height="100" rx="12" fill="url(#tracesGrad)"/>
+  <text x="530" y="65" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🔗 Traces</text>
+  <text x="530" y="85" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">Request пътища</text>
+  <text x="530" y="100" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">End-to-end flow</text>
+  <text x="530" y="115" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">Jaeger, Zipkin</text>
+</svg>

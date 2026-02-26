@@ -1,0 +1,17 @@
+<svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="280" height="160" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="150" y="35" text-anchor="middle" fill="#2e7d32" font-size="14" font-weight="bold">textContent</text>
+  <text x="150" y="60" text-anchor="middle" fill="#388e3c" font-size="11">Treats everything as text</text>
+  <rect x="30" y="75" width="240" height="35" rx="5" fill="white" stroke="#4caf50"/>
+  <text x="150" y="97" text-anchor="middle" fill="#333" font-size="11">"&lt;b&gt;Bold&lt;/b&gt;" -&gt; shows tags</text>
+  <text x="150" y="135" text-anchor="middle" fill="#4caf50" font-size="12" font-weight="bold">Safe</text>
+  <text x="150" y="155" text-anchor="middle" fill="#666" font-size="10">No XSS risk</text>
+
+  <rect x="310" y="10" width="280" height="160" rx="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="450" y="35" text-anchor="middle" fill="#e65100" font-size="14" font-weight="bold">innerHTML</text>
+  <text x="450" y="60" text-anchor="middle" fill="#f57c00" font-size="11">Parses HTML tags</text>
+  <rect x="330" y="75" width="240" height="35" rx="5" fill="white" stroke="#ff9800"/>
+  <text x="450" y="97" text-anchor="middle" fill="#333" font-size="11">"&lt;b&gt;Bold&lt;/b&gt;" -&gt; Bold</text>
+  <text x="450" y="135" text-anchor="middle" fill="#ff5722" font-size="12" font-weight="bold">XSS Risk</text>
+  <text x="450" y="155" text-anchor="middle" fill="#666" font-size="10">Never use with user input!</text>
+</svg>

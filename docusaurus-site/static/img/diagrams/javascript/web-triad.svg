@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs>
+    <linearGradient id="htmlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e44d26"/>
+      <stop offset="100%" stop-color="#c73c1a"/>
+    </linearGradient>
+    <linearGradient id="cssGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#264de4"/>
+      <stop offset="100%" stop-color="#1b3bb0"/>
+    </linearGradient>
+    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7df1e"/>
+      <stop offset="100%" stop-color="#d4bf00"/>
+    </linearGradient>
+    <filter id="webShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+    <marker id="webArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- HTML Box -->
+  <g filter="url(#webShadow)">
+    <rect x="60" y="80" width="160" height="140" rx="12" fill="url(#htmlGrad)"/>
+    <text x="140" y="125" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">HTML</text>
+    <text x="140" y="150" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Structure</text>
+    <text x="140" y="185" font-size="32" text-anchor="middle">&#x1F3D7;</text>
+  </g>
+
+  <!-- CSS Box -->
+  <g filter="url(#webShadow)">
+    <rect x="270" y="80" width="160" height="140" rx="12" fill="url(#cssGrad)"/>
+    <text x="350" y="125" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">CSS</text>
+    <text x="350" y="150" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Style</text>
+    <text x="350" y="185" font-size="32" text-anchor="middle">&#x1F3A8;</text>
+  </g>
+
+  <!-- JS Box -->
+  <g filter="url(#webShadow)">
+    <rect x="480" y="80" width="160" height="140" rx="12" fill="url(#jsGrad)"/>
+    <text x="560" y="125" fill="#323330" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">JavaScript</text>
+    <text x="560" y="150" fill="rgba(50,51,48,0.8)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Behavior</text>
+    <text x="560" y="185" font-size="32" text-anchor="middle">&#x26A1;</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="220" y1="150" x2="265" y2="150" stroke="#666" stroke-width="3" stroke-linecap="round" marker-end="url(#webArrow)"/>
+  <line x1="430" y1="150" x2="475" y2="150" stroke="#666" stroke-width="3" stroke-linecap="round" marker-end="url(#webArrow)"/>
+
+  <!-- Labels -->
+  <text x="140" y="250" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Content and</text>
+  <text x="140" y="265" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">semantics</text>
+  <text x="350" y="250" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Visual</text>
+  <text x="350" y="265" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">presentation</text>
+  <text x="560" y="250" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Interactivity</text>
+  <text x="560" y="265" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">and dynamics</text>
+</svg>

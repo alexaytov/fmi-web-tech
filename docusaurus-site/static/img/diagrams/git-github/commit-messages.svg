@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140">
+  <rect x="20" y="10" width="270" height="120" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="155" y="35" text-anchor="middle" fill="#2e7d32" font-size="13" font-weight="bold">✅ Добри съобщения</text>
+  <text x="35" y="60" fill="#333" font-size="11">• Add user authentication</text>
+  <text x="35" y="80" fill="#333" font-size="11">• Fix null pointer in login</text>
+  <text x="35" y="100" fill="#333" font-size="11">• Update README</text>
+  <text x="35" y="120" fill="#666" font-size="10">Imperative mood, specific</text>
+
+  <rect x="310" y="10" width="270" height="120" rx="10" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <text x="445" y="35" text-anchor="middle" fill="#c62828" font-size="13" font-weight="bold">❌ Лоши съобщения</text>
+  <text x="325" y="60" fill="#333" font-size="11">• Fixed stuff</text>
+  <text x="325" y="80" fill="#333" font-size="11">• asdfasdf</text>
+  <text x="325" y="100" fill="#333" font-size="11">• WIP</text>
+  <text x="325" y="120" fill="#666" font-size="10">Vague, meaningless</text>
+</svg>

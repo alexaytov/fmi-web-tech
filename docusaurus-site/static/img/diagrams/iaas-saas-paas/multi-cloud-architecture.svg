@@ -1,0 +1,53 @@
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" fill="#1e293b" font-size="14" font-weight="bold">🌐 Multi-Cloud Architecture Pattern</text>
+
+  <!-- Primary Cloud (Azure) -->
+  <rect x="50" y="40" width="250" height="140" rx="12" fill="#dbeafe" stroke="#0078d4" stroke-width="2" />
+  <text x="175" y="65" text-anchor="middle" fill="#0078d4" font-size="12" font-weight="bold">☁️ Primary: Azure</text>
+
+  <rect x="70" y="80" width="90" height="30" rx="4" fill="#0078d4" />
+  <text x="115" y="100" text-anchor="middle" fill="white" font-size="9" font-weight="bold">App Service</text>
+  <text x="115" y="112" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Web App</text>
+
+  <rect x="170" y="80" width="90" height="30" rx="4" fill="#0078d4" />
+  <text x="215" y="100" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Azure SQL</text>
+  <text x="215" y="112" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Database</text>
+
+  <rect x="70" y="120" width="90" height="30" rx="4" fill="#0078d4" />
+  <text x="115" y="140" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Blob Storage</text>
+  <text x="115" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Files</text>
+
+  <rect x="170" y="120" width="90" height="30" rx="4" fill="#0078d4" />
+  <text x="215" y="140" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Azure AD</text>
+  <text x="215" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Identity</text>
+
+  <!-- Connection -->
+  <line x1="300" y1="110" x2="400" y2="110" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="350" y="100" text-anchor="middle" fill="#64748b" font-size="9" font-weight="bold">Sync</text>
+  <text x="350" y="125" text-anchor="middle" fill="#64748b" font-size="8">Failover</text>
+
+  <!-- Secondary Cloud (AWS) -->
+  <rect x="400" y="40" width="250" height="140" rx="12" fill="#fef3c7" stroke="#ff9900" stroke-width="2" />
+  <text x="525" y="65" text-anchor="middle" fill="#b45309" font-size="12" font-weight="bold">☁️ Secondary: AWS (DR)</text>
+
+  <rect x="420" y="80" width="90" height="30" rx="4" fill="#ff9900" />
+  <text x="465" y="100" text-anchor="middle" fill="white" font-size="9" font-weight="bold">EC2</text>
+  <text x="465" y="112" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Standby</text>
+
+  <rect x="520" y="80" width="90" height="30" rx="4" fill="#ff9900" />
+  <text x="565" y="100" text-anchor="middle" fill="white" font-size="9" font-weight="bold">RDS</text>
+  <text x="565" y="112" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Read Replica</text>
+
+  <rect x="420" y="120" width="90" height="30" rx="4" fill="#ff9900" />
+  <text x="465" y="140" text-anchor="middle" fill="white" font-size="9" font-weight="bold">S3</text>
+  <text x="465" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">Backup</text>
+
+  <rect x="520" y="120" width="90" height="30" rx="4" fill="#ff9900" />
+  <text x="565" y="140" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Route 53</text>
+  <text x="565" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">DNS Failover</text>
+
+  <!-- Benefits -->
+  <text x="175" y="190" text-anchor="middle" fill="#0078d4" font-size="9">✓ Primary workloads</text>
+  <text x="525" y="190" text-anchor="middle" fill="#b45309" font-size="9">✓ Geographic redundancy</text>
+</svg>

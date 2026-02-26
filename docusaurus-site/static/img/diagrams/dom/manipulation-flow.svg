@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <defs>
+    <linearGradient id="selectGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="modifyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="updateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="manipShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="flowArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- SELECT Box (Blue) -->
+  <g filter="url(#manipShadow)">
+    <rect x="50" y="50" width="160" height="90" rx="12" fill="url(#selectGrad)"/>
+    <text x="130" y="82" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">1. SELECT</text>
+    <text x="130" y="105" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">querySelector()</text>
+    <text x="130" y="122" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">getElementById()</text>
+  </g>
+
+  <!-- Arrow SELECT -> MODIFY -->
+  <line x1="215" y1="95" x2="265" y2="95" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+
+  <!-- MODIFY Box (Orange) -->
+  <g filter="url(#manipShadow)">
+    <rect x="270" y="50" width="160" height="90" rx="12" fill="url(#modifyGrad)"/>
+    <text x="350" y="82" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">2. MODIFY</text>
+    <text x="350" y="105" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">textContent</text>
+    <text x="350" y="122" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">innerHTML, style</text>
+  </g>
+
+  <!-- Arrow MODIFY -> UPDATE -->
+  <line x1="435" y1="95" x2="485" y2="95" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#flowArrow)"/>
+
+  <!-- UPDATE Box (Green) -->
+  <g filter="url(#manipShadow)">
+    <rect x="490" y="50" width="160" height="90" rx="12" fill="url(#updateGrad)"/>
+    <text x="570" y="82" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">3. UPDATE</text>
+    <text x="570" y="105" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">appendChild()</text>
+    <text x="570" y="122" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">removeChild()</text>
+  </g>
+
+  <!-- Cycle arrow (curved line going back from UPDATE to SELECT) -->
+  <path d="M 570 145 Q 570 175 350 175 Q 130 175 130 145" stroke="#64748b" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="6,4"/>
+
+  <!-- Small arrow head on the cycle line -->
+  <polygon points="130,150 125,158 135,158" fill="#64748b"/>
+
+  <!-- Description -->
+  <text x="350" y="195" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">DOM Manipulation Flow: Select elements, modify content, update the tree</text>
+</svg>

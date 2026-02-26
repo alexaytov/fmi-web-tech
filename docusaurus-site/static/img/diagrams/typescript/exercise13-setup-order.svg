@@ -1,0 +1,39 @@
+<svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3178c6"/>
+      <stop offset="100%" stop-color="#235a97"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="60" cy="50" r="25" fill="url(#stepGrad)"/>
+  <text x="60" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">1</text>
+  <text x="60" y="90" text-anchor="middle" font-size="9" fill="#333">mkdir</text>
+
+  <path d="M90 50 L130 50" stroke="#3178c6" stroke-width="2"/>
+
+  <circle cx="160" cy="50" r="25" fill="url(#stepGrad)"/>
+  <text x="160" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">2</text>
+  <text x="160" y="90" text-anchor="middle" font-size="9" fill="#333">npm init</text>
+
+  <path d="M190 50 L230 50" stroke="#3178c6" stroke-width="2"/>
+
+  <circle cx="260" cy="50" r="25" fill="url(#stepGrad)"/>
+  <text x="260" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">3</text>
+  <text x="260" y="90" text-anchor="middle" font-size="9" fill="#333">npm install</text>
+
+  <path d="M290 50 L330 50" stroke="#3178c6" stroke-width="2"/>
+
+  <circle cx="360" cy="50" r="25" fill="url(#stepGrad)"/>
+  <text x="360" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">4</text>
+  <text x="360" y="90" text-anchor="middle" font-size="9" fill="#333">tsc --init</text>
+
+  <path d="M390 50 L430 50" stroke="#3178c6" stroke-width="2"/>
+
+  <circle cx="460" cy="50" r="25" fill="url(#stepGrad)"/>
+  <text x="460" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">5</text>
+  <text x="460" y="90" text-anchor="middle" font-size="9" fill="#333">npx tsc</text>
+
+  <rect x="100" y="120" width="400" height="45" rx="6" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="300" y="145" text-anchor="middle" font-size="10" fill="#2e7d32" font-family="monospace">mkdir → npm init → npm install typescript → tsc --init → tsc</text>
+</svg>

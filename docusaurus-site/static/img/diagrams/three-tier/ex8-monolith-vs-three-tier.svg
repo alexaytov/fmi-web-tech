@@ -1,0 +1,50 @@
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="monoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="threeGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="threeGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#43e97b"/>
+      <stop offset="100%" stop-color="#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="threeGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fa709a"/>
+      <stop offset="100%" stop-color="#fee140"/>
+    </linearGradient>
+  </defs>
+
+  <text x="175" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#667eea">&#x1F9F1; Monolithic</text>
+  <text x="525" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#11998e">&#x1F3D7;&#xFE0F; Three-Tier</text>
+
+  <rect x="50" y="50" width="250" height="200" rx="12" fill="url(#monoGrad)"/>
+  <text x="175" y="90" text-anchor="middle" font-size="14" fill="white">UI + Logic + Data</text>
+  <text x="175" y="120" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.8)">All in One Package</text>
+  <rect x="80" y="140" width="190" height="30" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="175" y="160" text-anchor="middle" font-size="11" fill="white">Single Deployment</text>
+  <rect x="80" y="180" width="190" height="30" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="175" y="200" text-anchor="middle" font-size="11" fill="white">Scale Everything Together</text>
+
+  <rect x="400" y="50" width="250" height="55" rx="8" fill="url(#threeGrad1)"/>
+  <text x="525" y="82" text-anchor="middle" font-size="12" fill="white">&#x1F5A5;&#xFE0F; Presentation</text>
+
+  <rect x="400" y="115" width="250" height="55" rx="8" fill="url(#threeGrad2)"/>
+  <text x="525" y="147" text-anchor="middle" font-size="12" fill="white">&#x2699;&#xFE0F; Application</text>
+
+  <rect x="400" y="180" width="250" height="55" rx="8" fill="url(#threeGrad3)"/>
+  <text x="525" y="212" text-anchor="middle" font-size="12" fill="white">&#x1F5C4;&#xFE0F; Data</text>
+
+  <text x="525" y="255" text-anchor="middle" font-size="11" fill="#666">Independent Scaling</text>
+
+  <rect x="50" y="280" width="250" height="50" rx="8" fill="#e8f5e9"/>
+  <text x="175" y="300" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="bold">&#x2713; Simple - Fast Start</text>
+  <text x="175" y="318" text-anchor="middle" font-size="10" fill="#388e3c">Best for: MVP, Small Teams</text>
+
+  <rect x="400" y="280" width="250" height="50" rx="8" fill="#e3f2fd"/>
+  <text x="525" y="300" text-anchor="middle" font-size="11" fill="#1565c0" font-weight="bold">&#x2713; Scalable - Maintainable</text>
+  <text x="525" y="318" text-anchor="middle" font-size="10" fill="#1976d2">Best for: Growth, Large Teams</text>
+</svg>

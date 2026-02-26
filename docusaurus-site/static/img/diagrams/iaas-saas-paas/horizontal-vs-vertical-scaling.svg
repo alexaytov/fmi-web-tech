@@ -1,0 +1,44 @@
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" fill="#1e293b" font-size="14" font-weight="bold">📈 Horizontal vs Vertical Scaling</text>
+
+  <!-- Vertical Scaling -->
+  <rect x="50" y="45" width="280" height="140" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <text x="190" y="70" text-anchor="middle" fill="#92400e" font-size="12" font-weight="bold">⬆️ Vertical Scaling (Scale Up)</text>
+
+  <!-- Small server → Big server -->
+  <rect x="80" y="90" width="50" height="50" rx="6" fill="#f59e0b" />
+  <text x="105" y="115" text-anchor="middle" fill="white" font-size="20">📦</text>
+  <text x="105" y="150" text-anchor="middle" fill="#92400e" font-size="9">4GB RAM</text>
+
+  <text x="160" y="118" fill="#f59e0b" font-size="24">→</text>
+
+  <rect x="190" y="80" width="70" height="70" rx="6" fill="#f59e0b" />
+  <text x="225" y="115" text-anchor="middle" fill="white" font-size="28">📦</text>
+  <text x="225" y="160" text-anchor="middle" fill="#92400e" font-size="9">64GB RAM</text>
+
+  <text x="275" y="180" text-anchor="middle" fill="#92400e" font-size="9" font-style="italic">Same machine, more power</text>
+
+  <!-- Horizontal Scaling -->
+  <rect x="370" y="45" width="280" height="140" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" />
+  <text x="510" y="70" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="bold">↔️ Horizontal Scaling (Scale Out)</text>
+
+  <!-- One server → Many servers -->
+  <rect x="400" y="95" width="40" height="40" rx="6" fill="#3b82f6" />
+  <text x="420" y="120" text-anchor="middle" fill="white" font-size="16">📦</text>
+
+  <text x="460" y="118" fill="#3b82f6" font-size="24">→</text>
+
+  <rect x="490" y="85" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="507" y="107" text-anchor="middle" fill="white" font-size="14">📦</text>
+  <rect x="530" y="85" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="547" y="107" text-anchor="middle" fill="white" font-size="14">📦</text>
+  <rect x="570" y="85" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="587" y="107" text-anchor="middle" fill="white" font-size="14">📦</text>
+  <rect x="510" y="125" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="527" y="147" text-anchor="middle" fill="white" font-size="14">📦</text>
+  <rect x="550" y="125" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="567" y="147" text-anchor="middle" fill="white" font-size="14">📦</text>
+
+  <text x="510" y="180" text-anchor="middle" fill="#1e40af" font-size="9" font-style="italic">More machines, same size</text>
+</svg>

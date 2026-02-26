@@ -1,0 +1,82 @@
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="step1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="step2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f093fb"/>
+      <stop offset="100%" stop-color="#f5576c"/>
+    </linearGradient>
+    <linearGradient id="step3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="step4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#43e97b"/>
+      <stop offset="100%" stop-color="#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="step5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fa709a"/>
+      <stop offset="100%" stop-color="#fee140"/>
+    </linearGradient>
+    <linearGradient id="step6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a8edea"/>
+      <stop offset="100%" stop-color="#fed6e3"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#667eea"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">&#x1F510; Login Flow - 6 Steps</text>
+
+  <circle cx="80" cy="80" r="25" fill="url(#step1)"/>
+  <text x="80" y="85" text-anchor="middle" font-size="14" fill="white" font-weight="bold">1</text>
+  <text x="80" y="125" text-anchor="middle" font-size="11" fill="#333">User enters</text>
+  <text x="80" y="140" text-anchor="middle" font-size="11" fill="#333">credentials</text>
+
+  <path d="M110 80 L180 80" stroke="#667eea" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="220" cy="80" r="25" fill="url(#step2)"/>
+  <text x="220" y="85" text-anchor="middle" font-size="14" fill="white" font-weight="bold">2</text>
+  <text x="220" y="125" text-anchor="middle" font-size="11" fill="#333">POST /api/login</text>
+  <text x="220" y="140" text-anchor="middle" font-size="11" fill="#333">to server</text>
+
+  <path d="M250 80 L320 80" stroke="#667eea" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="360" cy="80" r="25" fill="url(#step3)"/>
+  <text x="360" y="85" text-anchor="middle" font-size="14" fill="white" font-weight="bold">3</text>
+  <text x="360" y="125" text-anchor="middle" font-size="11" fill="#333">Validate &amp;</text>
+  <text x="360" y="140" text-anchor="middle" font-size="11" fill="#333">hash password</text>
+
+  <path d="M360 110 L360 180" stroke="#667eea" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="360" cy="220" r="25" fill="url(#step4)"/>
+  <text x="360" y="225" text-anchor="middle" font-size="14" fill="white" font-weight="bold">4</text>
+  <text x="360" y="265" text-anchor="middle" font-size="11" fill="#333">Query database</text>
+  <text x="360" y="280" text-anchor="middle" font-size="11" fill="#333">for user</text>
+
+  <path d="M335 220 L265 220" stroke="#667eea" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="220" cy="220" r="25" fill="url(#step5)"/>
+  <text x="220" y="225" text-anchor="middle" font-size="14" fill="white" font-weight="bold">5</text>
+  <text x="220" y="265" text-anchor="middle" font-size="11" fill="#333">Generate JWT</text>
+  <text x="220" y="280" text-anchor="middle" font-size="11" fill="#333">if valid</text>
+
+  <path d="M195 220 L125 220" stroke="#667eea" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="80" cy="220" r="25" fill="url(#step6)"/>
+  <text x="80" y="225" text-anchor="middle" font-size="14" fill="#333" font-weight="bold">6</text>
+  <text x="80" y="265" text-anchor="middle" font-size="11" fill="#333">Display result</text>
+  <text x="80" y="280" text-anchor="middle" font-size="11" fill="#333">to user</text>
+
+  <rect x="450" y="60" width="220" height="40" rx="6" fill="#4facfe" opacity="0.2" stroke="#4facfe"/>
+  <text x="560" y="85" text-anchor="middle" font-size="12" fill="#4facfe" font-weight="bold">&#x1F4F1; Presentation Tier</text>
+
+  <rect x="450" y="110" width="220" height="60" rx="6" fill="#43e97b" opacity="0.2" stroke="#43e97b"/>
+  <text x="560" y="145" text-anchor="middle" font-size="12" fill="#43e97b" font-weight="bold">&#x2699;&#xFE0F; Application Tier</text>
+
+  <rect x="450" y="180" width="220" height="40" rx="6" fill="#fa709a" opacity="0.2" stroke="#fa709a"/>
+  <text x="560" y="205" text-anchor="middle" font-size="12" fill="#fa709a" font-weight="bold">&#x1F5C4;&#xFE0F; Data Tier</text>
+</svg>

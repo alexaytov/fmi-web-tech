@@ -276,8 +276,11 @@ import ExerciseCard from '@site/src/components/Exercise/ExerciseCard';
 import ProgressTracker from '@site/src/components/Exercise/ProgressTracker';
 import CollapsibleSection from '@site/src/components/CollapsibleSection';
 import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Упражнения: Моята Тема
+
+<img src={useBaseUrl('/img/diagrams/моята-тема/exercises-header.svg')} alt="Exercises Header" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
 
 <ProgressTracker />
 
@@ -301,13 +304,13 @@ import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 очакван изход
 ```
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Насока за решението...
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```python
 def solution(input_data):
@@ -335,7 +338,7 @@ def solution(input_data):
 
 Описание...
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```python
 def medium_solution():
@@ -365,7 +368,7 @@ def medium_solution():
 
 Описание...
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```python
 def hard_solution():
@@ -487,7 +490,7 @@ Speaker notes - видими само при натискане на S
 ### 4. CollapsibleSection
 
 ```jsx
-<CollapsibleSection title="Заглавие" icon="📚">
+<CollapsibleSection title="📚 Заглавие">
 
 Скрито съдържание, което може да се разгъне.
 
@@ -499,6 +502,18 @@ Speaker notes - видими само при натискане на S
 ```
 
 **Често използвани икони:** 💡 (подсказка), ✅ (решение), 📚 (информация), 🎯 (цел), ⚠️ (внимание)
+
+**⚠️ ВАЖНО: НЕ използвайте едновременно emoji в title И icon prop!**
+```jsx
+// ❌ ГРЕШНО - показва две икони
+<CollapsibleSection title="💡 Подсказка">
+
+// ✅ ПРАВИЛНО - само emoji в title
+<CollapsibleSection title="💡 Подсказка">
+
+// ✅ СЪЩО ПРАВИЛНО - само icon prop с plain title
+<CollapsibleSection title="Подсказка" icon="💡">
+```
 
 ### 5. Grid и Card
 
@@ -665,6 +680,104 @@ E << V²                                 // MDX parse error
 ```
 
 **В code blocks НЕ е нужно escape-ване!**
+
+---
+
+## Inline SVG Графики (JSX Синтаксис)
+
+### Основни Правила за SVG в MDX
+
+MDX използва JSX синтаксис, затова SVG елементите трябва да следват JSX конвенции:
+
+**1. Атрибути с тирета → camelCase:**
+```jsx
+// ❌ ГРЕШНО - HTML синтаксис
+<svg stroke-width="2" fill-opacity="0.5" text-anchor="middle">
+
+// ✅ ПРАВИЛНО - JSX синтаксис
+<svg strokeWidth="2" fillOpacity="0.5" textAnchor="middle">
+```
+
+**2. Стилове като обекти с двойни къдрави скоби:**
+```jsx
+// ❌ ГРЕШНО - string стил или escape-нати скоби
+<svg style="max-width: 600px">
+<svg style=\{{maxWidth: '600px'}}>
+
+// ✅ ПРАВИЛНО - JSX style обект
+<svg style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}}>
+```
+
+**3. CSS в `<style>` тагове:**
+```jsx
+// ✅ ПРАВИЛНО - CSS string в template literal
+<svg>
+  <style>{`
+    .my-class { opacity: 0; animation: fadeIn 0.4s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+  `}</style>
+</svg>
+```
+
+**4. linearGradient stop стилове:**
+```jsx
+// ❌ ГРЕШНО - string атрибути
+<stop offset="0%" stop-color="#3498db" stop-opacity="1"/>
+
+// ✅ ПРАВИЛНО - JSX style обект
+<stop offset="0%" style={{stopColor: '#3498db', stopOpacity: 1}}/>
+
+// ✅ СЪЩО ПРАВИЛНО - директни атрибути (camelCase)
+<stop offset="0%" stopColor="#3498db" stopOpacity={1}/>
+```
+
+### Пълен SVG Шаблон
+
+```jsx
+<svg viewBox="0 0 600 200" style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}}>
+  <defs>
+    <linearGradient id="uniqueGradId" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style={{stopColor: '#3498db'}}/>
+      <stop offset="100%" style={{stopColor: '#2980b9'}}/>
+    </linearGradient>
+    <filter id="uniqueFilterId">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" floodOpacity="0.3"/>
+    </filter>
+  </defs>
+  <style>{`
+    .fade-in { opacity: 0; animation: fadeIn 0.4s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+  `}</style>
+
+  <rect x="50" y="50" width="200" height="100" rx="8"
+        fill="url(#uniqueGradId)" filter="url(#uniqueFilterId)"
+        className="fade-in"/>
+  <text x="150" y="105" textAnchor="middle" fill="white"
+        fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">
+    Текст
+  </text>
+</svg>
+```
+
+### Важни Бележки
+
+| HTML Атрибут | JSX Атрибут |
+|--------------|-------------|
+| `class` | `className` |
+| `stroke-width` | `strokeWidth` |
+| `fill-opacity` | `fillOpacity` |
+| `text-anchor` | `textAnchor` |
+| `font-size` | `fontSize` |
+| `font-weight` | `fontWeight` |
+| `font-family` | `fontFamily` |
+| `stop-color` | `stopColor` |
+| `stop-opacity` | `stopOpacity` |
+| `flood-opacity` | `floodOpacity` |
+
+**⚠️ ВАЖНО:**
+- Използвайте **уникални ID-та** за gradients и filters (добавете префикс базиран на секцията)
+- **НЕ escape-вайте** къдравите скоби в JSX (`{{` е правилно, `\{{` е ГРЕШНО)
+- Стойностите в style обекти са **strings** за единици (`'600px'`) или **numbers** за безединични стойности (`1`)
 
 ---
 
@@ -876,6 +989,8 @@ npm run build
 8. **Включвай подсказки** в CollapsibleSection
 9. **Добавяй сложност анализ** в решенията
 10. **Използвай 3-5 упражнения** с различни нива на сложност
+11. **Ред на елементите**: Header banner → ProgressTracker → Exercises (винаги banner преди tracker!)
+12. **Nested code blocks**: Използвай ```````` (4 backticks) за външен блок когато съдържа вътрешни ``` блокове
 
 ### Код
 

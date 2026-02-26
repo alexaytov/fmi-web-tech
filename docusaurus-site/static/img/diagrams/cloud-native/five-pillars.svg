@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180">
+  <defs>
+    <linearGradient id="pillarGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="pillarGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="pillarGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="pillarGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <filter id="pillarShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <style>
+    .pillar-title { opacity: 0; animation: pillarFadeIn 0.4s ease-out 0.1s forwards; }
+    .pillar-base { opacity: 0; transform: translateY(10px); animation: pillarSlideUp 0.4s ease-out 0.2s forwards; }
+    .pillar-box { opacity: 0; transform: scale(0.9); }
+    .pillar-1 { animation: pillarPopIn 0.3s ease-out 0.4s forwards; }
+    .pillar-2 { animation: pillarPopIn 0.3s ease-out 0.5s forwards; }
+    .pillar-3 { animation: pillarPopIn 0.3s ease-out 0.6s forwards; }
+    .pillar-4 { animation: pillarPopIn 0.3s ease-out 0.7s forwards; }
+    @keyframes pillarFadeIn { to { opacity: 1; } }
+    @keyframes pillarSlideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes pillarPopIn { to { opacity: 1; transform: scale(1); } }
+  </style>
+  <rect class="pillar-title" x="30" y="15" width="540" height="35" rx="6" fill="#2c3e50"/>
+  <text class="pillar-title" x="300" y="40" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">CLOUD-NATIVE ARCHITECTURE</text>
+  <g class="pillar-box pillar-1" filter="url(#pillarShadow)">
+    <rect x="40" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad1)"/>
+    <text x="100" y="88" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">MICROSERVICES</text>
+    <text x="100" y="108" font-size="16" text-anchor="middle">🔧</text>
+  </g>
+  <g class="pillar-box pillar-2" filter="url(#pillarShadow)">
+    <rect x="170" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad2)"/>
+    <text x="230" y="88" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">CONTAINERS</text>
+    <text x="230" y="108" font-size="16" text-anchor="middle">🐳</text>
+  </g>
+  <g class="pillar-box pillar-3" filter="url(#pillarShadow)">
+    <rect x="300" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad3)"/>
+    <text x="360" y="88" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">KUBERNETES</text>
+    <text x="360" y="108" font-size="16" text-anchor="middle">☸️</text>
+  </g>
+  <g class="pillar-box pillar-4" filter="url(#pillarShadow)">
+    <rect x="430" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad4)"/>
+    <text x="490" y="82" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">IMMUTABLE</text>
+    <text x="490" y="96" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">INFRA</text>
+    <text x="490" y="114" font-size="16" text-anchor="middle">🔒</text>
+  </g>
+  <rect class="pillar-base" x="40" y="130" width="510" height="35" rx="6" fill="#34495e"/>
+  <text class="pillar-base" x="295" y="153" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">📝 DECLARATIVE APIs</text>
+</svg>

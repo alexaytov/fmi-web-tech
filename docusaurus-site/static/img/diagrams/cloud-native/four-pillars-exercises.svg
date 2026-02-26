@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 200">
+  <defs>
+    <linearGradient id="pillar1Grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0984e3"/>
+      <stop offset="100%" stop-color="#74b9ff"/>
+    </linearGradient>
+    <linearGradient id="pillar2Grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#00b894"/>
+      <stop offset="100%" stop-color="#55efc4"/>
+    </linearGradient>
+    <linearGradient id="pillar3Grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="pillar4Grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#e17055"/>
+      <stop offset="100%" stop-color="#fab1a0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="60" width="150" height="120" rx="8" fill="url(#pillar1Grad)"/>
+  <text x="105" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">📦 Containers</text>
+  <text x="105" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Пакетиране</text>
+  <text x="105" y="145" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Изолация</text>
+
+  <rect x="210" y="60" width="150" height="120" rx="8" fill="url(#pillar2Grad)"/>
+  <text x="285" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">🔧 Microservices</text>
+  <text x="285" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Декомпозиция</text>
+  <text x="285" y="145" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Независимост</text>
+
+  <rect x="390" y="60" width="150" height="120" rx="8" fill="url(#pillar3Grad)"/>
+  <text x="465" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">⚙️ Automation</text>
+  <text x="465" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">CI/CD</text>
+  <text x="465" y="145" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">IaC</text>
+
+  <rect x="570" y="60" width="150" height="120" rx="8" fill="url(#pillar4Grad)"/>
+  <text x="645" y="110" text-anchor="middle" fill="white" font-size="14" font-weight="bold">📊 Observability</text>
+  <text x="645" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Metrics, Logs</text>
+  <text x="645" y="145" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Traces</text>
+
+  <rect x="30" y="185" width="690" height="8" rx="4" fill="#dfe6e9"/>
+  <text x="375" y="35" text-anchor="middle" fill="#636e72" font-size="12" font-weight="bold">Четирите стълба на Cloud-Native архитектура</text>
+</svg>

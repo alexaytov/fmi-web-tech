@@ -16,6 +16,7 @@ import ComparisonBox from '@site/src/components/Comparison/ComparisonBox';
 import Grid from '@site/src/components/Grid/Grid';
 import Card from '@site/src/components/Grid/Card';
 import ViewSlidesButton from '@site/src/components/ViewSlidesButton';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Въведение в Cloud-Native Разработка
 
@@ -196,66 +197,7 @@ Cloud-native системите приемат, че сривове ще се с
 
 Cloud-native архитектурата се основава на пет взаимосвързани технологични основи. Разбирането на всеки един - и как работят заедно - е от съществено значение.
 
-<svg viewBox="0 0 600 180" style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="pillarGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#3498db'}}/>
-      <stop offset="100%" style={{stopColor:'#2980b9'}}/>
-    </linearGradient>
-    <linearGradient id="pillarGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#9b59b6'}}/>
-      <stop offset="100%" style={{stopColor:'#8e44ad'}}/>
-    </linearGradient>
-    <linearGradient id="pillarGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#1e8449'}}/>
-    </linearGradient>
-    <linearGradient id="pillarGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#e67e22'}}/>
-      <stop offset="100%" style={{stopColor:'#d35400'}}/>
-    </linearGradient>
-    <filter id="pillarShadow" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.15"/>
-    </filter>
-  </defs>
-  <style>{`
-    .pillar-title { opacity: 0; animation: pillarFadeIn 0.4s ease-out 0.1s forwards; }
-    .pillar-base { opacity: 0; transform: translateY(10px); animation: pillarSlideUp 0.4s ease-out 0.2s forwards; }
-    .pillar-box { opacity: 0; transform: scale(0.9); }
-    .pillar-1 { animation: pillarPopIn 0.3s ease-out 0.4s forwards; }
-    .pillar-2 { animation: pillarPopIn 0.3s ease-out 0.5s forwards; }
-    .pillar-3 { animation: pillarPopIn 0.3s ease-out 0.6s forwards; }
-    .pillar-4 { animation: pillarPopIn 0.3s ease-out 0.7s forwards; }
-    @keyframes pillarFadeIn { to { opacity: 1; } }
-    @keyframes pillarSlideUp { to { opacity: 1; transform: translateY(0); } }
-    @keyframes pillarPopIn { to { opacity: 1; transform: scale(1); } }
-  `}</style>
-  <rect className="pillar-title" x="30" y="15" width="540" height="35" rx="6" fill="#2c3e50"/>
-  <text className="pillar-title" x="300" y="40" fill="white" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" textAnchor="middle">CLOUD-NATIVE ARCHITECTURE</text>
-  <g className="pillar-box pillar-1" filter="url(#pillarShadow)">
-    <rect x="40" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad1)"/>
-    <text x="100" y="88" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">MICROSERVICES</text>
-    <text x="100" y="108" fontSize="16" textAnchor="middle">🔧</text>
-  </g>
-  <g className="pillar-box pillar-2" filter="url(#pillarShadow)">
-    <rect x="170" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad2)"/>
-    <text x="230" y="88" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">CONTAINERS</text>
-    <text x="230" y="108" fontSize="16" textAnchor="middle">🐳</text>
-  </g>
-  <g className="pillar-box pillar-3" filter="url(#pillarShadow)">
-    <rect x="300" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad3)"/>
-    <text x="360" y="88" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">KUBERNETES</text>
-    <text x="360" y="108" fontSize="16" textAnchor="middle">☸️</text>
-  </g>
-  <g className="pillar-box pillar-4" filter="url(#pillarShadow)">
-    <rect x="430" y="60" width="120" height="60" rx="6" fill="url(#pillarGrad4)"/>
-    <text x="490" y="82" fill="white" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">IMMUTABLE</text>
-    <text x="490" y="96" fill="white" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">INFRA</text>
-    <text x="490" y="114" fontSize="16" textAnchor="middle">🔒</text>
-  </g>
-  <rect className="pillar-base" x="40" y="130" width="510" height="35" rx="6" fill="#34495e"/>
-  <text className="pillar-base" x="295" y="153" fill="white" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">📝 DECLARATIVE APIs</text>
-</svg>
+<img src={useBaseUrl('/img/diagrams/cloud-native/five-pillars.svg')} alt="Cloud-Native Architecture Five Pillars" style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}} />
 
 ---
 
@@ -273,85 +215,7 @@ Cloud-native архитектурата се основава на пет вза
 
 В microservices архитектура, всяка от тези функции става независим сервиз:
 
-<svg viewBox="0 0 600 240" style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="msGradL1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#3498db'}}/>
-      <stop offset="100%" style={{stopColor:'#2980b9'}}/>
-    </linearGradient>
-    <linearGradient id="msGradL2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#9b59b6'}}/>
-      <stop offset="100%" style={{stopColor:'#8e44ad'}}/>
-    </linearGradient>
-    <linearGradient id="msGradL3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#1e8449'}}/>
-    </linearGradient>
-    <linearGradient id="msGradL4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#e67e22'}}/>
-      <stop offset="100%" style={{stopColor:'#d35400'}}/>
-    </linearGradient>
-    <filter id="msShadowL" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.15"/>
-    </filter>
-  </defs>
-  <style>{`
-    .ms-title-l { opacity: 0; animation: msFadeInL 0.4s ease-out 0.1s forwards; }
-    .ms-box-l { opacity: 0; transform: scale(0.8); }
-    .ms-1-l { animation: msPopInL 0.3s ease-out 0.2s forwards; }
-    .ms-2-l { animation: msPopInL 0.3s ease-out 0.3s forwards; }
-    .ms-3-l { animation: msPopInL 0.3s ease-out 0.4s forwards; }
-    .ms-4-l { animation: msPopInL 0.3s ease-out 0.5s forwards; }
-    .ms-5-l { animation: msPopInL 0.3s ease-out 0.6s forwards; }
-    .ms-6-l { animation: msPopInL 0.3s ease-out 0.7s forwards; }
-    .ms-7-l { animation: msPopInL 0.3s ease-out 0.8s forwards; }
-    .ms-8-l { animation: msPopInL 0.3s ease-out 0.9s forwards; }
-    @keyframes msFadeInL { to { opacity: 1; } }
-    @keyframes msPopInL { to { opacity: 1; transform: scale(1); } }
-  `}</style>
-  <rect className="ms-title-l" x="50" y="10" width="500" height="30" rx="6" fill="#2c3e50"/>
-  <text className="ms-title-l" x="300" y="32" fill="white" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" textAnchor="middle">MICROSERVICES ARCHITECTURE</text>
-  <g className="ms-box-l ms-1-l" filter="url(#msShadowL)">
-    <rect x="60" y="55" width="110" height="65" rx="6" fill="url(#msGradL1)"/>
-    <text x="115" y="82" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">User Service</text>
-    <text x="115" y="105" fontSize="16" textAnchor="middle">👤</text>
-  </g>
-  <g className="ms-box-l ms-2-l" filter="url(#msShadowL)">
-    <rect x="185" y="55" width="110" height="65" rx="6" fill="url(#msGradL2)"/>
-    <text x="240" y="82" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Product Service</text>
-    <text x="240" y="105" fontSize="16" textAnchor="middle">📦</text>
-  </g>
-  <g className="ms-box-l ms-3-l" filter="url(#msShadowL)">
-    <rect x="310" y="55" width="110" height="65" rx="6" fill="url(#msGradL3)"/>
-    <text x="365" y="82" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Cart Service</text>
-    <text x="365" y="105" fontSize="16" textAnchor="middle">🛒</text>
-  </g>
-  <g className="ms-box-l ms-4-l" filter="url(#msShadowL)">
-    <rect x="435" y="55" width="110" height="65" rx="6" fill="url(#msGradL4)"/>
-    <text x="490" y="82" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Order Service</text>
-    <text x="490" y="105" fontSize="16" textAnchor="middle">📋</text>
-  </g>
-  <g className="ms-box-l ms-5-l" filter="url(#msShadowL)">
-    <rect x="60" y="135" width="110" height="65" rx="6" fill="url(#msGradL4)"/>
-    <text x="115" y="162" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Payment Service</text>
-    <text x="115" y="185" fontSize="16" textAnchor="middle">💳</text>
-  </g>
-  <g className="ms-box-l ms-6-l" filter="url(#msShadowL)">
-    <rect x="185" y="135" width="110" height="65" rx="6" fill="url(#msGradL3)"/>
-    <text x="240" y="162" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Inventory Service</text>
-    <text x="240" y="185" fontSize="16" textAnchor="middle">📊</text>
-  </g>
-  <g className="ms-box-l ms-7-l" filter="url(#msShadowL)">
-    <rect x="310" y="135" width="110" height="65" rx="6" fill="url(#msGradL2)"/>
-    <text x="365" y="162" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Shipping Service</text>
-    <text x="365" y="185" fontSize="16" textAnchor="middle">🚚</text>
-  </g>
-  <g className="ms-box-l ms-8-l" filter="url(#msShadowL)">
-    <rect x="435" y="135" width="110" height="65" rx="6" fill="url(#msGradL1)"/>
-    <text x="490" y="162" fill="white" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="600" textAnchor="middle">Notification</text>
-    <text x="490" y="185" fontSize="16" textAnchor="middle">🔔</text>
-  </g>
-</svg>
+<img src={useBaseUrl('/img/diagrams/cloud-native/microservices-architecture.svg')} alt="Microservices Architecture" style={{maxWidth: '600px', margin: '1rem auto', display: 'block'}} />
 
 #### Ползи от Microservices
 
@@ -394,67 +258,7 @@ Microservices въвеждат сложност:
 
 Shipping containers решиха това със стандартизация. **Software containers правят същото:**
 
-<svg viewBox="0 0 450 260" style={{maxWidth: '450px', margin: '1rem auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="dockerBlueL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#0db7ed'}}/>
-      <stop offset="100%" style={{stopColor:'#0a8dc4'}}/>
-    </linearGradient>
-    <linearGradient id="layerAppL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#9b59b6'}}/>
-      <stop offset="100%" style={{stopColor:'#8e44ad'}}/>
-    </linearGradient>
-    <linearGradient id="layerRuntimeL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#3498db'}}/>
-      <stop offset="100%" style={{stopColor:'#2980b9'}}/>
-    </linearGradient>
-    <linearGradient id="layerLibsL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#1e8449'}}/>
-    </linearGradient>
-    <linearGradient id="layerConfigL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#e67e22'}}/>
-      <stop offset="100%" style={{stopColor:'#d35400'}}/>
-    </linearGradient>
-    <filter id="containerShadowL" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#000" floodOpacity="0.15"/>
-    </filter>
-  </defs>
-  <style>{`
-    .container-frame-l { opacity: 0; animation: containerFadeInL 0.5s ease-out 0.1s forwards; }
-    .container-layer-l { opacity: 0; transform: translateY(15px); }
-    .layer-config-l { animation: layerBuildL 0.4s ease-out 0.3s forwards; }
-    .layer-libs-l { animation: layerBuildL 0.4s ease-out 0.5s forwards; }
-    .layer-runtime-l { animation: layerBuildL 0.4s ease-out 0.7s forwards; }
-    .layer-app-l { animation: layerBuildL 0.4s ease-out 0.9s forwards; }
-    .docker-whale-l { opacity: 0; transform-origin: center; animation: whalePopL 0.5s ease-out 1.1s forwards; }
-    .container-title-l { opacity: 0; animation: containerFadeInL 0.4s ease-out 1.3s forwards; }
-    @keyframes containerFadeInL { to { opacity: 1; } }
-    @keyframes layerBuildL { to { opacity: 1; transform: translateY(0); } }
-    @keyframes whalePopL { 0% { opacity: 0; transform: scale(0) rotate(-10deg); } 70% { transform: scale(1.1) rotate(5deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
-  `}</style>
-  <g className="container-frame-l" filter="url(#containerShadowL)">
-    <rect x="50" y="25" width="350" height="210" rx="10" fill="#f8f9fa" stroke="url(#dockerBlueL)" strokeWidth="3"/>
-  </g>
-  <text className="container-title-l" x="225" y="52" fill="#0db7ed" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="700" textAnchor="middle">CONTAINER</text>
-  <g className="container-layer-l layer-config-l" filter="url(#containerShadowL)">
-    <rect x="75" y="185" width="300" height="38" rx="5" fill="url(#layerConfigL)"/>
-    <text x="225" y="209" fill="white" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">Configuration Files</text>
-  </g>
-  <g className="container-layer-l layer-libs-l" filter="url(#containerShadowL)">
-    <rect x="75" y="140" width="300" height="38" rx="5" fill="url(#layerLibsL)"/>
-    <text x="225" y="164" fill="white" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">System Libraries</text>
-  </g>
-  <g className="container-layer-l layer-runtime-l" filter="url(#containerShadowL)">
-    <rect x="75" y="95" width="300" height="38" rx="5" fill="url(#layerRuntimeL)"/>
-    <text x="225" y="119" fill="white" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">Runtime (Node, Python)</text>
-  </g>
-  <g className="container-layer-l layer-app-l" filter="url(#containerShadowL)">
-    <rect x="75" y="55" width="300" height="38" rx="5" fill="url(#layerAppL)"/>
-    <text x="225" y="79" fill="white" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" textAnchor="middle">Application Code</text>
-  </g>
-  <text className="docker-whale-l" x="380" y="50" fontSize="26">🐳</text>
-</svg>
+<img src={useBaseUrl('/img/diagrams/cloud-native/container-layers.svg')} alt="Container Layers" style={{maxWidth: '450px', margin: '1rem auto', display: 'block'}} />
 
 #### Containers vs. Virtual Machines
 
@@ -524,87 +328,7 @@ CMD ["python", "app.py"]
 
 #### Kubernetes Архитектура
 
-<svg viewBox="0 0 620 300" style={{maxWidth: '620px', margin: '1rem auto', display: 'block'}}>
-  <defs>
-    <linearGradient id="k8sBlueL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#326ce5'}}/>
-      <stop offset="100%" style={{stopColor:'#2956b8'}}/>
-    </linearGradient>
-    <linearGradient id="k8sGreenL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#27ae60'}}/>
-      <stop offset="100%" style={{stopColor:'#1e8449'}}/>
-    </linearGradient>
-    <linearGradient id="k8sPurpleL" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style={{stopColor:'#9b59b6'}}/>
-      <stop offset="100%" style={{stopColor:'#8e44ad'}}/>
-    </linearGradient>
-    <filter id="k8sShadowL" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000" floodOpacity="0.15"/>
-    </filter>
-  </defs>
-  <style>{`
-    .k8s-frame-l { opacity: 0; animation: k8sFadeInL 0.5s ease-out 0.1s forwards; }
-    .k8s-title-l { opacity: 0; animation: k8sFadeInL 0.4s ease-out 0.2s forwards; }
-    .k8s-control-l { opacity: 0; transform: translateY(-10px); animation: k8sSlideInL 0.4s ease-out 0.3s forwards; }
-    .k8s-workers-l { opacity: 0; transform: translateY(10px); animation: k8sSlideInL 0.4s ease-out 0.5s forwards; }
-    .k8s-comp-l { opacity: 0; transform: scale(0.8); }
-    .k8s-api-l { animation: k8sPopInL 0.3s ease-out 0.5s forwards; }
-    .k8s-sched-l { animation: k8sPopInL 0.3s ease-out 0.6s forwards; }
-    .k8s-etcd-l { animation: k8sPopInL 0.3s ease-out 0.7s forwards; }
-    .k8s-node-l { opacity: 0; transform: scale(0.9); }
-    .k8s-node1-l { animation: k8sNodeInL 0.4s ease-out 0.7s forwards; }
-    .k8s-node2-l { animation: k8sNodeInL 0.4s ease-out 0.85s forwards; }
-    .k8s-pod-l { opacity: 0; transform: scale(0); }
-    .k8s-pod1-l { animation: k8sPodPopL 0.25s ease-out 0.9s forwards; }
-    .k8s-pod2-l { animation: k8sPodPopL 0.25s ease-out 1.0s forwards; }
-    .k8s-pod3-l { animation: k8sPodPopL 0.25s ease-out 1.1s forwards; }
-    .k8s-pod4-l { animation: k8sPodPopL 0.25s ease-out 1.2s forwards; }
-    @keyframes k8sFadeInL { to { opacity: 1; } }
-    @keyframes k8sSlideInL { to { opacity: 1; transform: translateY(0); } }
-    @keyframes k8sPopInL { to { opacity: 1; transform: scale(1); } }
-    @keyframes k8sNodeInL { to { opacity: 1; transform: scale(1); } }
-    @keyframes k8sPodPopL { 0% { opacity: 0; transform: scale(0); } 70% { transform: scale(1.15); } 100% { opacity: 1; transform: scale(1); } }
-  `}</style>
-  <rect className="k8s-frame-l" x="30" y="15" width="560" height="270" rx="10" fill="#f8f9fa" stroke="url(#k8sBlueL)" strokeWidth="3"/>
-  <text className="k8s-title-l" x="310" y="42" fill="#326ce5" fontFamily="system-ui, sans-serif" fontSize="15" fontWeight="700" textAnchor="middle">☸️ KUBERNETES CLUSTER</text>
-  <g className="k8s-control-l">
-    <rect x="50" y="55" width="520" height="65" rx="6" fill="#e8f4fd" stroke="#326ce5" strokeWidth="1.5"/>
-    <text x="310" y="75" fill="#326ce5" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="700" textAnchor="middle">CONTROL PLANE</text>
-  </g>
-  <g className="k8s-comp-l k8s-api-l" filter="url(#k8sShadowL)">
-    <rect x="70" y="85" width="90" height="26" rx="4" fill="url(#k8sBlueL)"/>
-    <text x="115" y="103" fill="white" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">API Server</text>
-  </g>
-  <g className="k8s-comp-l k8s-sched-l" filter="url(#k8sShadowL)">
-    <rect x="175" y="85" width="90" height="26" rx="4" fill="url(#k8sBlueL)"/>
-    <text x="220" y="103" fill="white" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">Scheduler</text>
-  </g>
-  <g className="k8s-comp-l k8s-etcd-l" filter="url(#k8sShadowL)">
-    <rect x="280" y="85" width="90" height="26" rx="4" fill="url(#k8sPurpleL)"/>
-    <text x="325" y="103" fill="white" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">etcd</text>
-  </g>
-  <g className="k8s-workers-l">
-    <rect x="50" y="130" width="520" height="140" rx="6" fill="#e8f8f0" stroke="#27ae60" strokeWidth="1.5"/>
-    <text x="310" y="150" fill="#27ae60" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="700" textAnchor="middle">WORKER NODES</text>
-  </g>
-  <g className="k8s-node-l k8s-node1-l" filter="url(#k8sShadowL)">
-    <rect x="70" y="160" width="180" height="90" rx="5" fill="white" stroke="#27ae60" strokeWidth="1.5"/>
-    <text x="160" y="178" fill="#27ae60" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">Node 1</text>
-  </g>
-  <g className="k8s-node-l k8s-node2-l" filter="url(#k8sShadowL)">
-    <rect x="270" y="160" width="180" height="90" rx="5" fill="white" stroke="#27ae60" strokeWidth="1.5"/>
-    <text x="360" y="178" fill="#27ae60" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" textAnchor="middle">Node 2</text>
-  </g>
-  <rect className="k8s-pod-l k8s-pod1-l" x="85" y="190" width="50" height="45" rx="4" fill="url(#k8sGreenL)" filter="url(#k8sShadowL)"/>
-  <text className="k8s-pod-l k8s-pod1-l" x="110" y="218" fill="white" fontFamily="system-ui, sans-serif" fontSize="9" fontWeight="600" textAnchor="middle">Pod</text>
-  <rect className="k8s-pod-l k8s-pod2-l" x="145" y="190" width="50" height="45" rx="4" fill="url(#k8sGreenL)" filter="url(#k8sShadowL)"/>
-  <text className="k8s-pod-l k8s-pod2-l" x="170" y="218" fill="white" fontFamily="system-ui, sans-serif" fontSize="9" fontWeight="600" textAnchor="middle">Pod</text>
-  <rect className="k8s-pod-l k8s-pod3-l" x="285" y="190" width="50" height="45" rx="4" fill="url(#k8sGreenL)" filter="url(#k8sShadowL)"/>
-  <text className="k8s-pod-l k8s-pod3-l" x="310" y="218" fill="white" fontFamily="system-ui, sans-serif" fontSize="9" fontWeight="600" textAnchor="middle">Pod</text>
-  <rect className="k8s-pod-l k8s-pod4-l" x="345" y="190" width="50" height="45" rx="4" fill="url(#k8sGreenL)" filter="url(#k8sShadowL)"/>
-  <text className="k8s-pod-l k8s-pod4-l" x="370" y="218" fill="white" fontFamily="system-ui, sans-serif" fontSize="9" fontWeight="600" textAnchor="middle">Pod</text>
-  <text className="k8s-node-l k8s-node2-l" x="490" y="215" fill="#27ae60" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="600">...</text>
-</svg>
+<img src={useBaseUrl('/img/diagrams/cloud-native/kubernetes-architecture.svg')} alt="Kubernetes Architecture" style={{maxWidth: '620px', margin: '1rem auto', display: 'block'}} />
 
 #### Ключови Kubernetes Възможности
 

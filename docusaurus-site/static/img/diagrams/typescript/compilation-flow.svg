@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320">
+  <defs>
+    <linearGradient id="tsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3178c6"/>
+      <stop offset="100%" stop-color="#235a97"/>
+    </linearGradient>
+    <linearGradient id="compilerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#e67e22"/>
+    </linearGradient>
+    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="typeCheckGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- .ts file box (blue) -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="80" width="140" height="100" rx="12" fill="url(#tsGrad)"/>
+    <text x="100" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">.ts file</text>
+    <text x="100" y="138" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">let x: number = 5;</text>
+    <text x="100" y="162" font-size="24" text-anchor="middle">&#128196;</text>
+  </g>
+
+  <!-- TypeScript Compiler box (orange) -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="80" width="180" height="100" rx="12" fill="url(#compilerGrad)"/>
+    <text x="370" y="110" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">TypeScript</text>
+    <text x="370" y="128" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Compiler (tsc)</text>
+    <text x="370" y="162" font-size="24" text-anchor="middle">&#9881;</text>
+  </g>
+
+  <!-- .js file box (green) -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="80" width="140" height="100" rx="12" fill="url(#jsGrad)"/>
+    <text x="640" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">.js file</text>
+    <text x="640" y="138" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="11" text-anchor="middle">var x = 5;</text>
+    <text x="640" y="162" font-size="24" text-anchor="middle">&#128220;</text>
+  </g>
+
+  <!-- Type Checking annotation box (green) -->
+  <g filter="url(#shadow)">
+    <rect x="295" y="220" width="150" height="70" rx="10" fill="url(#typeCheckGrad)"/>
+    <text x="370" y="250" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Type Checking</text>
+    <text x="370" y="272" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Errors at compile time!</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="170" y1="130" x2="275" y2="130" stroke="#666" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="460" y1="130" x2="565" y2="130" stroke="#666" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="370" y1="180" x2="370" y2="215" stroke="#27ae60" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>

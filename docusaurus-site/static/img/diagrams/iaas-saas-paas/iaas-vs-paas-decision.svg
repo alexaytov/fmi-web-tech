@@ -1,0 +1,24 @@
+<svg viewBox="0 0 750 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" fill="#1e293b" font-size="16" font-weight="bold">🎯 IaaS vs PaaS Decision Framework</text>
+
+  <!-- IaaS Side -->
+  <rect x="50" y="45" width="300" height="100" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" />
+  <text x="200" y="70" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="bold">Choose IaaS When...</text>
+  <text x="200" y="90" text-anchor="middle" fill="#7c3aed" font-size="10">✓ Custom OS/kernel requirements</text>
+  <text x="200" y="105" text-anchor="middle" fill="#7c3aed" font-size="10">✓ Legacy app migration</text>
+  <text x="200" y="120" text-anchor="middle" fill="#7c3aed" font-size="10">✓ Full infrastructure control needed</text>
+  <text x="200" y="135" text-anchor="middle" fill="#7c3aed" font-size="10">✓ Dedicated DevOps team available</text>
+
+  <!-- VS -->
+  <circle cx="375" cy="95" r="25" fill="#e2e8f0" />
+  <text x="375" y="100" text-anchor="middle" fill="#475569" font-size="12" font-weight="bold">VS</text>
+
+  <!-- PaaS Side -->
+  <rect x="400" y="45" width="300" height="100" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <text x="550" y="70" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="bold">Choose PaaS When...</text>
+  <text x="550" y="90" text-anchor="middle" fill="#2563eb" font-size="10">✓ Fast time-to-market is priority</text>
+  <text x="550" y="105" text-anchor="middle" fill="#2563eb" font-size="10">✓ No dedicated DevOps team</text>
+  <text x="550" y="120" text-anchor="middle" fill="#2563eb" font-size="10">✓ Auto-scaling is critical</text>
+  <text x="550" y="135" text-anchor="middle" fill="#2563eb" font-size="10">✓ Focus on code, not infrastructure</text>
+</svg>

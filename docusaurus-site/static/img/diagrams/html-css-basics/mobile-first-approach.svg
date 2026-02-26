@@ -1,0 +1,24 @@
+<svg viewBox="0 0 600 130" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="30" width="60" height="80" rx="6" fill="#4caf50"/>
+  <text x="80" y="75" text-anchor="middle" font-size="9" fill="white">Mobile</text>
+
+  <path d="M110 70 L160 70" stroke="#4caf50" stroke-width="2"/>
+  <polygon points="155,65 170,70 155,75" fill="#4caf50"/>
+
+  <rect x="170" y="25" width="80" height="90" rx="6" fill="#8bc34a"/>
+  <text x="210" y="75" text-anchor="middle" font-size="10" fill="white">Tablet</text>
+
+  <path d="M250 70 L300 70" stroke="#4caf50" stroke-width="2"/>
+  <polygon points="295,65 310,70 295,75" fill="#4caf50"/>
+
+  <rect x="310" y="15" width="120" height="100" rx="6" fill="#cddc39"/>
+  <text x="370" y="70" text-anchor="middle" font-size="11" fill="#333">Laptop</text>
+
+  <path d="M430 65 L480 65" stroke="#4caf50" stroke-width="2"/>
+  <polygon points="475,60 490,65 475,70" fill="#4caf50"/>
+
+  <rect x="490" y="10" width="80" height="110" rx="6" fill="#ffeb3b"/>
+  <text x="530" y="70" text-anchor="middle" font-size="12" fill="#333">Desktop</text>
+
+  <text x="300" y="125" text-anchor="middle" font-size="10" fill="#666">min-width media queries: add features as screen grows</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg viewBox="0 0 550 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="interfaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#673ab7"/>
+      <stop offset="100%" stop-color="#9c27b0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="100" y="20" width="350" height="110" rx="10" fill="url(#interfaceGrad)"/>
+  <text x="275" y="50" text-anchor="middle" font-size="14" fill="white" font-weight="bold">interface IProduct</text>
+
+  <rect x="120" y="65" width="100" height="25" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="170" y="82" text-anchor="middle" font-size="9" fill="white">id: string</text>
+
+  <rect x="230" y="65" width="100" height="25" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="280" y="82" text-anchor="middle" font-size="9" fill="white">name: string</text>
+
+  <rect x="340" y="65" width="90" height="25" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="385" y="82" text-anchor="middle" font-size="9" fill="white">price: number</text>
+
+  <rect x="120" y="95" width="100" height="25" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="170" y="112" text-anchor="middle" font-size="9" fill="white">category: string</text>
+
+  <rect x="230" y="95" width="100" height="25" rx="4" fill="rgba(255,255,255,0.2)"/>
+  <text x="280" y="112" text-anchor="middle" font-size="9" fill="white">inStock: boolean</text>
+</svg>

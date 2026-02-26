@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Модел</title>
+
+    <!-- Reveal.js Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+
+    <!-- Code Highlighting - using highlight.js directly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .reveal .slides {
+            text-align: left;
+        }
+        .reveal h1 {
+            font-size: 2.2em;
+            text-transform: none;
+        }
+        .reveal h2 {
+            font-size: 1.8em;
+            text-transform: none;
+        }
+        .reveal h3 {
+            font-size: 1.4em;
+            text-transform: none;
+        }
+        .reveal p, .reveal li {
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .reveal pre code {
+            max-height: 500px;
+            font-size: 0.75em;
+        }
+        .reveal code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .reveal {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+        .reveal ul, .reveal ol {
+            margin-left: 1em;
+        }
+        .reveal li {
+            margin-bottom: 0.4em;
+        }
+        .reveal table {
+            font-size: 0.8em;
+        }
+        .reveal img {
+            max-width: 70%;
+            max-height: 400px;
+            margin: 0.5em auto;
+            display: block;
+            object-fit: contain;
+        }
+        /* Two-column layout */
+        .reveal .columns {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+        .reveal .column {
+            flex: 1;
+        }
+        .reveal .column img {
+            max-width: 100%;
+            max-height: 450px;
+            margin: 0;
+        }
+        .reveal .column.left {
+            text-align: left;
+        }
+        .reveal .column.right {
+            text-align: center;
+        }
+        /* Back to lecture button */
+        .back-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 100;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,1);
+            color: #333;
+            border-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+<script type="text/template">
+# DOM Модел
+
+### Document Object Model - Програмен интерфейс за уеб документи
+
+Note:
+Добре дошли в лекцията за DOM модела. Днес ще научим как JavaScript взаимодейства с HTML документите.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Учебни Цели
+
+🎯 Разбирате структурата на DOM дървото <!-- .element: class="fragment" -->
+
+🔍 Селектирате елементи с различни методи <!-- .element: class="fragment" -->
+
+✏️ Манипулирате съдържание и структура <!-- .element: class="fragment" -->
+
+📡 Работите с събития чрез addEventListener <!-- .element: class="fragment" -->
+
+🐛 Дебъгвате DOM в browser DevTools <!-- .element: class="fragment" -->
+
+Note:
+Това са петте основни умения, които ще придобиете днес.
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Какво е DOM?
+
+**Document Object Model** - дървовидно представяне на HTML документа
+
+Note:
+DOM е интерфейсът между JavaScript и HTML страницата.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### DOM Дървото
+
+<svg viewBox="0 0 450 280" style="max-width: 450px; margin: 0 auto; display: block;">
+  <defs>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/><stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="elemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/><stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+  </defs>
+  <rect x="175" y="10" width="100" height="40" rx="6" fill="url(#docGrad)"/>
+  <text x="225" y="35" text-anchor="middle" fill="white" font-size="12">document</text>
+  <line x1="225" y1="50" x2="225" y2="70" stroke="#666" stroke-width="2"/>
+  <rect x="175" y="70" width="100" height="35" rx="6" fill="url(#elemGrad)"/>
+  <text x="225" y="92" text-anchor="middle" fill="white" font-size="11">&lt;html&gt;</text>
+  <line x1="225" y1="105" x2="125" y2="130" stroke="#666" stroke-width="2"/>
+  <line x1="225" y1="105" x2="325" y2="130" stroke="#666" stroke-width="2"/>
+  <rect x="75" y="130" width="100" height="35" rx="6" fill="url(#elemGrad)"/>
+  <text x="125" y="152" text-anchor="middle" fill="white" font-size="11">&lt;head&gt;</text>
+  <rect x="275" y="130" width="100" height="35" rx="6" fill="url(#elemGrad)"/>
+  <text x="325" y="152" text-anchor="middle" fill="white" font-size="11">&lt;body&gt;</text>
+  <line x1="325" y1="165" x2="275" y2="195" stroke="#666" stroke-width="2"/>
+  <line x1="325" y1="165" x2="375" y2="195" stroke="#666" stroke-width="2"/>
+  <rect x="225" y="195" width="100" height="35" rx="6" fill="#27ae60"/>
+  <text x="275" y="217" text-anchor="middle" fill="white" font-size="11">&lt;h1&gt;</text>
+  <rect x="325" y="195" width="100" height="35" rx="6" fill="#27ae60"/>
+  <text x="375" y="217" text-anchor="middle" fill="white" font-size="11">&lt;p&gt;</text>
+</svg>
+
+Note:
+Всеки HTML елемент става възел (node) в това дърво.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Защо е важен DOM?
+
+📄 HTML е статичен текст <!-- .element: class="fragment" -->
+
+🌳 DOM е жива структура в паметта <!-- .element: class="fragment" -->
+
+⚡ JavaScript манипулира DOM, не HTML файла <!-- .element: class="fragment" -->
+
+Note:
+Браузърът парсва HTML и създава DOM. JavaScript работи с DOM обекти.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Типове Възли (Node Types)
+
+| Тип | Описание | Пример |
+|-----|----------|--------|
+| Element | HTML елемент | `<div>`, `<p>` |
+| Text | Текстово съдържание | "Hello World" |
+| Attribute | Атрибут на елемент | `class="btn"` |
+| Comment | HTML коментар | `<!-- ... -->` |
+
+Note:
+Най-често работим с Element nodes, но е важно да знаем, че има и други типове.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Проверка на типа възел
+
+```javascript
+const element = document.querySelector('p');
+
+console.log(element.nodeType);  // 1 (Element)
+console.log(element.nodeName);  // "P"
+
+const textNode = element.firstChild;
+console.log(textNode.nodeType); // 3 (Text)
+```
+
+Note:
+nodeType връща число - 1 за елементи, 3 за текст, 8 за коментари.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Селектиране на Елементи
+
+🔑 Основата на DOM манипулацията
+
+Note:
+Преди да променим нещо, трябва да го намерим.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### getElementById
+
+```javascript
+// Връща единичен елемент или null
+const header = document.getElementById('main-header');
+
+// ID трябва да е уникален!
+```
+
+⚡ **Най-бърз метод** - директен достъп по ID
+
+Note:
+Използвайте когато имате уникален ID.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### querySelector
+
+```javascript
+// Връща ПЪРВИЯ съвпадащ елемент
+const button = document.querySelector('.btn-primary');
+
+// Използва CSS селектори
+const input = document.querySelector('form input[type="email"]');
+```
+
+🎯 **Гъвкав** - приема всякакви CSS селектори
+
+Note:
+querySelector е модерният начин за селектиране.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### querySelectorAll
+
+```javascript
+// Връща NodeList с ВСИЧКИ съвпадащи елементи
+const items = document.querySelectorAll('.menu-item');
+
+// Итерация
+items.forEach(item => {
+  console.log(item.textContent);
+});
+```
+
+📋 **Връща колекция** - не единичен елемент!
+
+Note:
+NodeList е подобен на масив, но не е истински масив.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Сравнение на методите
+
+| Метод | Връща | Скорост |
+|-------|-------|---------|
+| `getElementById` | Element / null | ⚡⚡⚡ |
+| `querySelector` | Element / null | ⚡⚡ |
+| `querySelectorAll` | NodeList | ⚡ |
+| `getElementsByClassName` | HTMLCollection | ⚡⚡ |
+
+Note:
+getElementById е най-бърз, но querySelector е по-гъвкав.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## DOM Манипулация
+
+✏️ Промяна на съдържание и атрибути
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### textContent vs innerHTML
+
+```javascript
+const div = document.querySelector('.content');
+
+// textContent - само текст (безопасно)
+div.textContent = '<b>Hello</b>';
+// Показва: <b>Hello</b> като текст
+
+// innerHTML - парсва HTML (внимание!)
+div.innerHTML = '<b>Hello</b>';
+// Показва: Hello (bold)
+```
+
+Note:
+textContent е по-бърз и по-сигурен.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### ⚠️ innerHTML и XSS
+
+```javascript
+// ОПАСНО! Никога не правете това:
+const userInput = '<script>alert("Hacked!")<\/script>';
+div.innerHTML = userInput; // XSS уязвимост!
+
+// БЕЗОПАСНО:
+div.textContent = userInput; // Escape-ва HTML
+```
+
+🛡️ **Правило:** Винаги санитизирайте потребителски вход!
+
+Note:
+XSS атаките са сериозен проблем. Използвайте textContent за потребителски данни.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Промяна на атрибути
+
+```javascript
+const img = document.querySelector('img');
+
+// Четене
+const src = img.getAttribute('src');
+
+// Записване
+img.setAttribute('alt', 'Profile picture');
+
+// Премахване
+img.removeAttribute('data-temp');
+
+// Директен достъп (за стандартни атрибути)
+img.src = 'new-image.jpg';
+img.id = 'profile-img';
+```
+
+Note:
+getAttribute/setAttribute работят с всички атрибути, директният достъп - само със стандартните.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Работа с класове
+
+```javascript
+const btn = document.querySelector('.btn');
+
+// Добавяне
+btn.classList.add('active', 'highlighted');
+
+// Премахване
+btn.classList.remove('disabled');
+
+// Toggle (добави/премахни)
+btn.classList.toggle('expanded');
+
+// Проверка
+if (btn.classList.contains('active')) {
+  console.log('Button is active');
+}
+```
+
+Note:
+classList е модерният начин за работа с класове. Избягвайте className.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Промяна на стилове
+
+```javascript
+const box = document.querySelector('.box');
+
+// Inline стилове
+box.style.backgroundColor = '#3498db';
+box.style.padding = '20px';
+box.style.borderRadius = '8px';
+
+// Множество стилове наведнъж
+box.style.cssText = `
+  background: #3498db;
+  padding: 20px;
+  border-radius: 8px;
+`;
+```
+
+Note:
+CSS свойствата в JavaScript са camelCase - backgroundColor вместо background-color.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Създаване и Премахване на Елементи
+
+🏗️ Динамична промяна на структурата
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### createElement и appendChild
+
+```javascript
+// 1. Създаване на елемент
+const newDiv = document.createElement('div');
+
+// 2. Настройка на съдържание и атрибути
+newDiv.textContent = 'Hello World';
+newDiv.classList.add('card');
+
+// 3. Добавяне към DOM
+document.body.appendChild(newDiv);
+```
+
+Note:
+Елементът съществува в паметта, докато не го добавим към DOM.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Вмъкване на определена позиция
+
+```javascript
+const container = document.querySelector('.container');
+const newItem = document.createElement('li');
+newItem.textContent = 'New Item';
+
+// В началото
+container.prepend(newItem);
+
+// Преди конкретен елемент
+const reference = container.querySelector('.item-3');
+container.insertBefore(newItem, reference);
+
+// След конкретен елемент
+reference.after(newItem);
+```
+
+Note:
+prepend, append, before, after са модерни методи.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Премахване на елементи
+
+```javascript
+// Модерен начин
+const element = document.querySelector('.to-remove');
+element.remove();
+
+// Стар начин (за съвместимост)
+const parent = element.parentNode;
+parent.removeChild(element);
+
+// Изчистване на съдържание
+container.innerHTML = ''; // Внимание: бавно!
+
+// По-добре:
+while (container.firstChild) {
+  container.removeChild(container.firstChild);
+}
+```
+
+Note:
+remove() е по-чист синтаксис, но removeChild има по-добра съвместимост.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Клониране на елементи
+
+```javascript
+const original = document.querySelector('.template');
+
+// Плитко копие (без деца)
+const shallow = original.cloneNode(false);
+
+// Дълбоко копие (с всички деца)
+const deep = original.cloneNode(true);
+
+document.body.appendChild(deep);
+```
+
+Note:
+Клонирането е полезно за шаблони. Не забравяйте да промените ID-тата!
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Събития (Events)
+
+📡 Интерактивност чрез event listeners
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### addEventListener Синтаксис
+
+```javascript
+element.addEventListener(eventType, handler, options);
+
+// Пример
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', function(event) {
+  console.log('Button clicked!');
+  console.log(event.target); // Кликнатият елемент
+});
+```
+
+Note:
+addEventListener е предпочитаният начин за слушане на събития.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Често използвани събития
+
+| Събитие | Описание |
+|---------|----------|
+| `click` | Клик с мишка |
+| `dblclick` | Двоен клик |
+| `mouseover` / `mouseout` | Hover |
+| `keydown` / `keyup` | Натискане на клавиш |
+| `input` | Промяна в input поле |
+| `submit` | Изпращане на форма |
+| `load` | Зареждане завършено |
+| `DOMContentLoaded` | DOM е готов |
+
+Note:
+input се тригерира при всяка промяна, change - само при blur.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Event Object
+
+```javascript
+document.addEventListener('click', function(event) {
+  // Информация за събитието
+  console.log(event.type);        // "click"
+  console.log(event.target);      // Кликнатият елемент
+  console.log(event.currentTarget); // Елементът с listener-а
+
+  // Позиция на мишката
+  console.log(event.clientX, event.clientY);
+
+  // Предотвратяване на default поведение
+  event.preventDefault();
+});
+```
+
+Note:
+event обектът съдържа цялата информация за събитието.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Премахване на event listener
+
+```javascript
+// Handler трябва да е именувана функция
+function handleClick(event) {
+  console.log('Clicked!');
+}
+
+// Добавяне
+btn.addEventListener('click', handleClick);
+
+// Премахване (същата функция!)
+btn.removeEventListener('click', handleClick);
+
+// НЕ работи с анонимни функции!
+btn.addEventListener('click', () => console.log('Hi'));
+btn.removeEventListener('click', () => console.log('Hi')); // Различна функция!
+```
+
+Note:
+За removeEventListener трябва да подадете точно същата референция към функцията.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Event Bubbling
+
+🫧 Как събитията се разпространяват в DOM дървото
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Bubbling диаграма
+
+<svg viewBox="0 0 300 250" style="max-width: 300px; margin: 0 auto; display: block;">
+  <rect x="20" y="20" width="260" height="210" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="35" y="40" fill="#3498db" font-size="10">document</text>
+  <rect x="40" y="50" width="220" height="165" rx="8" fill="#e67e22" fill-opacity="0.15" stroke="#e67e22" stroke-width="2"/>
+  <text x="55" y="70" fill="#e67e22" font-size="10">&lt;body&gt;</text>
+  <rect x="60" y="80" width="180" height="120" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="75" y="100" fill="#27ae60" font-size="10">&lt;div&gt;</text>
+  <rect x="100" y="120" width="100" height="60" rx="8" fill="#e74c3c"/>
+  <text x="150" y="155" text-anchor="middle" fill="white" font-size="11">&lt;button&gt;</text>
+  <text x="150" y="170" text-anchor="middle" fill="white" font-size="9">Click!</text>
+  <path d="M220 150 L250 120 L250 50 L260 40" stroke="#e74c3c" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <text x="265" y="90" fill="#e74c3c" font-size="9">bubbles</text>
+</svg>
+
+**Събитието се разпространява нагоре!**
+
+Note:
+Когато кликнете на button, събитието минава през div, body, document.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Практически пример
+
+```javascript
+document.querySelector('.outer').addEventListener('click', () => {
+  console.log('Outer clicked');
+});
+
+document.querySelector('.inner').addEventListener('click', () => {
+  console.log('Inner clicked');
+});
+
+// Клик на .inner извежда:
+// "Inner clicked"
+// "Outer clicked"
+```
+
+Note:
+Bubbling позволява event delegation - мощна техника.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### stopPropagation
+
+```javascript
+document.querySelector('.inner').addEventListener('click', (e) => {
+  e.stopPropagation(); // Спира bubbling
+  console.log('Inner clicked');
+});
+
+// Сега клик на .inner извежда само:
+// "Inner clicked"
+```
+
+⚠️ Използвайте внимателно - може да счупи event delegation!
+
+Note:
+stopPropagation предотвратява разпространението нагоре.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Event Delegation
+
+```javascript
+// Вместо listener на всеки бутон...
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', handleClick);
+});
+
+// ...един listener на родителя!
+document.querySelector('.button-container').addEventListener('click', (e) => {
+  if (e.target.classList.contains('btn')) {
+    handleClick(e);
+  }
+});
+```
+
+✅ По-ефективно за динамични елементи!
+
+Note:
+Event delegation работи и за елементи, добавени по-късно.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Практически Примери
+
+💻 Реални сценарии
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Todo List
+
+```javascript
+const form = document.querySelector('#todo-form');
+const input = document.querySelector('#todo-input');
+const list = document.querySelector('#todo-list');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (input.value.trim()) {
+    const li = document.createElement('li');
+    li.textContent = input.value;
+
+    // Бутон за изтриване
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'X';
+    deleteBtn.onclick = () => li.remove();
+
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
+    input.value = '';
+  }
+});
+```
+
+Note:
+Прост, но пълен пример за CRUD операции с DOM.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Form Validation
+
+```javascript
+const form = document.querySelector('#signup-form');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
+
+email.addEventListener('input', (e) => {
+  const isValid = e.target.value.includes('@');
+  e.target.classList.toggle('invalid', !isValid);
+});
+
+password.addEventListener('input', (e) => {
+  const isStrong = e.target.value.length >= 8;
+  e.target.classList.toggle('weak', !isStrong);
+});
+
+form.addEventListener('submit', (e) => {
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    alert('Please fix the errors');
+  }
+});
+```
+
+Note:
+Real-time validation подобрява потребителското изживяване.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Modal Dialog
+
+```javascript
+const modal = document.querySelector('.modal');
+const openBtn = document.querySelector('.open-modal');
+const closeBtn = document.querySelector('.close-modal');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+// Затваряне при клик извън модала
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Затваряне с Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+```
+
+Note:
+Множество начини за затваряне подобряват UX.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Performance Tips
+
+⚡ Оптимизации за по-бърз код
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Cache DOM селекции
+
+```javascript
+// ❌ Бавно - селектира всеки път
+function updateUI() {
+  document.querySelector('.counter').textContent = count;
+  document.querySelector('.counter').classList.add('updated');
+}
+
+// ✅ Бързо - селектира веднъж
+const counter = document.querySelector('.counter');
+
+function updateUI() {
+  counter.textContent = count;
+  counter.classList.add('updated');
+}
+```
+
+Note:
+DOM селекциите са бавни. Кеширайте резултатите в променливи.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### DocumentFragment
+
+```javascript
+// ❌ Бавно - множество reflow-ове
+items.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  list.appendChild(li); // Reflow!
+});
+
+// ✅ Бързо - един reflow
+const fragment = document.createDocumentFragment();
+
+items.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  fragment.appendChild(li); // В паметта
+});
+
+list.appendChild(fragment); // Един reflow!
+```
+
+Note:
+DocumentFragment е виртуален контейнер, който не причинява reflow.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Избягвайте layout thrashing
+
+```javascript
+// ❌ Layout thrashing
+elements.forEach(el => {
+  el.style.width = el.offsetWidth + 10 + 'px'; // Read + Write
+});
+
+// ✅ Batch reads, then writes
+const widths = elements.map(el => el.offsetWidth); // All reads
+
+elements.forEach((el, i) => {
+  el.style.width = widths[i] + 10 + 'px'; // All writes
+});
+```
+
+Note:
+Смесването на четене и писане причинява принудителни layout изчисления.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## DevTools за DOM
+
+🐛 Дебъгване в браузъра
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Elements Panel
+
+📋 **Inspect** - десен клик > Inspect <!-- .element: class="fragment" -->
+
+🔍 **Search** - Ctrl/Cmd + F в Elements panel <!-- .element: class="fragment" -->
+
+✏️ **Edit** - двоен клик за редактиране на атрибути <!-- .element: class="fragment" -->
+
+📌 **$0** - последно селектираният елемент в Console <!-- .element: class="fragment" -->
+
+Note:
+Elements panel е основният инструмент за DOM инспекция.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Console трикове
+
+```javascript
+// $() е alias за querySelector
+$('.my-class')
+
+// $$() е alias за querySelectorAll (връща Array!)
+$$('.item')
+
+// $0 - последно селектираният елемент
+$0.classList.add('highlighted')
+
+// monitor events
+monitorEvents($0, 'click')
+unmonitorEvents($0)
+```
+
+Note:
+Тези shortcuts работят само в DevTools Console.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Обобщение
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Какво научихме днес?
+
+🌳 **DOM е дърво** - представя HTML като обекти <!-- .element: class="fragment" -->
+
+🔍 **Селектиране** - querySelector е модерният стандарт <!-- .element: class="fragment" -->
+
+✏️ **Манипулация** - textContent е по-безопасен от innerHTML <!-- .element: class="fragment" -->
+
+📡 **События** - addEventListener + event delegation <!-- .element: class="fragment" -->
+
+⚡ **Performance** - кеширайте селекции, използвайте fragments <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Ключови методи
+
+| Задача | Метод |
+|--------|-------|
+| Намиране | `querySelector`, `querySelectorAll` |
+| Съдържание | `textContent`, `innerHTML` |
+| Класове | `classList.add/remove/toggle` |
+| Създаване | `createElement`, `appendChild` |
+| Събития | `addEventListener` |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Следващи стъпки
+
+📚 Практикувайте с упражненията <!-- .element: class="fragment" -->
+
+🔧 Създайте малък проект (todo list, quiz app) <!-- .element: class="fragment" -->
+
+🎯 Научете за async DOM операции <!-- .element: class="fragment" -->
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Въпроси?
+
+### 🙋 Питайте сега или в дискусиите
+
+Note:
+Благодаря за вниманието! Готов съм за въпроси.
+</script>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Navigation Helper -->
+    <a href="/fmi-web-tech/docs/web-dom-model/lecture" class="back-button">
+        ← Back to Lecture
+    </a>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+
+    <!-- marked library required by reveal.js markdown plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.0/marked.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            history: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            controls: true,
+            progress: true,
+            center: true,
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            markdown: {
+                smartypants: false,
+                gfm: true,
+                breaks: false,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true
+            },
+            highlight: {
+                highlightOnLoad: true,
+                escapeHTML: false
+            }
+        });
+    </script>
+</body>
+</html>

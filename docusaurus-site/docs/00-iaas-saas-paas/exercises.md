@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+slug: exercises
 title: "Упражнения"
 tags: [exercises, practice, cloud, iaas, paas, saas]
 ---
@@ -9,14 +10,19 @@ import ProgressTracker from '@site/src/components/Exercise/ProgressTracker';
 import CollapsibleSection from '@site/src/components/CollapsibleSection';
 import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Упражнения: Cloud Service Models
+
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/header-cloud-service-models.svg')} alt="Cloud Service Models Header" style={{width: '100%', maxWidth: '800px', margin: '0 auto 24px', display: 'block'}} />
 
 <ProgressTracker />
 
 ---
 
 ## Лесни Упражнения (EASY)
+
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/service-models-stack.svg')} alt="Service Models Stack" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
 <ExerciseCard difficulty="easy">
 
@@ -30,7 +36,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 | B. PaaS | 2. Предоставя on-demand достъп до виртуални машини, storage и networking |
 | C. SaaS | 3. Предоставя managed runtime среда за разработка и deployment |
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за нивото на абстракция:
 - Най-ниско ниво = raw infrastructure
@@ -39,7 +45,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Модел | Отговор |
 |-------|---------|
@@ -71,7 +77,7 @@ d) PaaS позволява на разработчиците да се фоку�
 
 e) Virtualization позволява на множество изолирани среди да работят на един физически сървър.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за responsibility модела:
 - Кой управлява какво при всеки модел?
@@ -79,7 +85,7 @@ e) Virtualization позволява на множество изолирани 
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Твърдение | Отговор | Обяснение |
 |-----------|---------|-----------|
@@ -110,7 +116,7 @@ e) Virtualization позволява на множество изолирани 
 7. Gmail
 8. GCP Compute Engine
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Питайте се:
 - Ако е ready-to-use app → SaaS
@@ -119,7 +125,7 @@ e) Virtualization позволява на множество изолирани 
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | № | Услуга | Модел | Обяснение |
 |---|--------|-------|-----------|
@@ -152,7 +158,7 @@ e) Virtualization позволява на множество изолирани 
 
 4. SaaS обикновено използва _____________ pricing модел, често таксуван per user на месец.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 1. **Horizontal** scaling добавя повече инстанции, **Vertical** scaling увеличава ресурсите на съществуващи
 
@@ -172,6 +178,8 @@ e) Virtualization позволява на множество изолирани 
 
 ### Задача 5: Responsibility Identification
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/shared-responsibility-model.svg')} alt="Shared Responsibility Model - IaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 За всяка отговорност посочете кой е отговорен в IaaS среда - Provider (P) или Customer (C):
 
 1. Физически сървъри и data centers
@@ -181,7 +189,7 @@ e) Virtualization позволява на множество изолирани 
 5. Data backup и security
 6. Network hardware
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | № | Отговорност | Отговорен |
 |---|-------------|-----------|
@@ -202,6 +210,8 @@ e) Virtualization позволява на множество изолирани 
 
 ## Средни Упражнения (MEDIUM)
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/big-three-cloud-providers.svg')} alt="The Big Three Cloud Providers" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 6: Provider Comparison Table
@@ -214,7 +224,7 @@ e) Virtualization позволява на множество изолирани 
 | PaaS Web/App | ? | App Service | App Engine |
 | Serverless | Lambda | ? | ? |
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за:
 - Azure VM услугата
@@ -223,7 +233,7 @@ e) Virtualization позволява на множество изолирани 
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Service Category | AWS | Azure | GCP |
 |-----------------|-----|-------|-----|
@@ -253,7 +263,7 @@ e) Virtualization позволява на множество изолирани 
 
 **Сценарий E:** Data science екип има нужда от пълен контрол над computing средата за инсталиране на custom ML frameworks.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Сценарий | Модел | Обосновка |
 |----------|-------|-----------|
@@ -284,7 +294,7 @@ e) Virtualization позволява на множество изолирани 
 | Built-in auto-scaling | ? |
 | Suitable for legacy application migration | ? |
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Критерий | Предимство | Обяснение |
 |----------|------------|-----------|
@@ -315,7 +325,7 @@ e) Virtualization позволява на множество изолирани 
 
 4. Защо голямо enterprise с съществуваща Microsoft инфраструктура може да предпочете Azure пред други cloud providers?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Shared Responsibility Model:**
 Shared responsibility model дефинира кои security и management задачи са отговорност на cloud provider-а и кои са на клиента. Важен е, защото clarifies boundaries и предотвратява security gaps между това, което provider-ът управлява и това, което клиентът трябва да осигури.
@@ -349,7 +359,7 @@ Azure предлага seamless интеграция с Microsoft продукт
 
 **Създайте recommendation table, указващa кой cloud service модел (IaaS, PaaS или SaaS) бихте препоръчали за всяко изискване, заедно със специфичен service пример.**
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Изискване | Модел | Service Пример | Обосновка |
 |-----------|-------|----------------|-----------|
@@ -388,7 +398,7 @@ b) В PaaS, кои layers се управляват от provider?
 
 c) В SaaS, над кои layer(s) customer може все още да има някакъв configuration контрол?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **a) IaaS Customer Layers:** **3, 4, 5, 6, 7** (OS, Middleware, Runtime, Applications, Data)
 
@@ -412,6 +422,8 @@ Customer управлява само Layers 6-7 (Applications, Data)
 
 ### Задача 12: Scaling Concepts Application
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/horizontal-vs-vertical-scaling.svg')} alt="Horizontal vs Vertical Scaling" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 Web application experience следните traffic patterns:
 - Нормален дневен трафик: 1,000 потребители
 - Weekend sale events: 10,000 потребители (spikes от 6-8 часа)
@@ -425,7 +437,7 @@ Web application experience следните traffic patterns:
 
 3. Как би се различил scaling подходът ако приложението е hosted на IaaS versus PaaS?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Horizontal scaling е по-подходящо:**
 - 50x увеличение на трафика изисква много повече capacity от един сървър може да предостави
@@ -454,6 +466,8 @@ Web application experience следните traffic patterns:
 
 ## Трудни Упражнения (HARD)
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/iaas-vs-paas-decision.svg')} alt="IaaS vs PaaS Decision Framework" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 13: Case Study Analysis
@@ -475,7 +489,7 @@ Web application experience следните traffic patterns:
 
 4. Какви trade-offs би трябвало TechStart да приеме при миграция към PaaS?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Pain Points в текущия IaaS setup:**
 - **High operational overhead:** 2 full-time DevOps engineers + 4-hour deployments
@@ -517,6 +531,8 @@ Phase 5: Decommission EC2 instances
 
 ### Задача 14: Total Cost of Ownership Calculation
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/tco-comparison.svg')} alt="TCO Comparison: IaaS vs PaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 **Задача:** Изчислете и сравнете приблизителния Total Cost of Ownership (TCO) за следните два сценария за 12-месечен период:
 
 **Сценарий A - IaaS Approach:**
@@ -539,7 +555,7 @@ Phase 5: Decommission EC2 instances
 
 3. Освен директните разходи, изброете три qualitative фактора, които трябва да повлияят на това решение.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Годишни разходи:**
 
@@ -586,6 +602,8 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 ### Задача 15: Multi-Cloud Architecture Design
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/multi-cloud-architecture.svg')} alt="Multi-Cloud Architecture Pattern" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 **Сценарий:** Healthcare компания трябва да design-не cloud architecture, която:
 - Спазва HIPAA regulations
 - Избягва single-vendor lock-in
@@ -604,7 +622,7 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 4. Идентифицирайте две потенциални предизвикателства с multi-cloud подхода.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Cloud Provider Selection:**
 
@@ -648,6 +666,8 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 ### Задача 16: Migration Strategy Development
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/cloud-migration-journey.svg')} alt="Cloud Migration Journey: On-Prem to Cloud" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
+
 **Сценарий:** Financial services компания стартира monolithic application на традиционни on-premises сървъри. Приложението се състои от:
 - Java-based web frontend
 - Transaction processing engine със специфични performance изисквания
@@ -666,7 +686,7 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 4. Идентифицирайте три рискове в тази миграция и предложете mitigation strategies.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Phased Migration Strategy:**
 
@@ -740,6 +760,8 @@ Month 8-18: Hybrid Phase 2
 
 ### Задача 17: Serverless vs Traditional PaaS Evaluation
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/serverless-vs-traditional-paas.svg')} alt="Serverless (FaaS) vs Traditional PaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 **Въпрос:** Компания решава между deploying на новото си microservices приложение на:
 - **Option A:** Traditional PaaS (AWS Elastic Beanstalk)
 - **Option B:** Serverless (AWS Lambda + API Gateway)
@@ -758,7 +780,7 @@ Month 8-18: Hybrid Phase 2
 
 3. При какви обстоятелства бихте променили препоръката си?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Comparison Table:**
 
@@ -826,7 +848,7 @@ Cold start concern е manageable:
 **Synthesis:**
 Базирано на аргументите, създайте decision framework (flowchart или decision tree), който помага на екип систематично да избере между IaaS и PaaS.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Position A - IaaS Arguments:**
 
@@ -902,6 +924,8 @@ Start: New Cloud Project Decision
 
 ### Задача 19: Future Trends Analysis
 
+<img src={useBaseUrl('/img/diagrams/iaas-saas-paas/cloud-computing-evolution.svg')} alt="Cloud Computing Evolution: Future Trends" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
+
 **Въпрос:** Базирано на лекционния материал за бъдещи тенденции (hybrid/multi-cloud, serverless, edge computing, AI/ML as a Service):
 
 1. Как може традиционните граници между IaaS, PaaS и SaaS да се размият през следващите 5 години? Дайте два конкретни примера.
@@ -910,7 +934,7 @@ Start: New Cloud Project Decision
 
 3. Оценете как serverless computing предизвиква традиционното IaaS vs. PaaS разграничение. Къде се вписва serverless в "as-a-Service" спектъра?
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Blurring Boundaries (2 примера):**
 
@@ -997,7 +1021,7 @@ Serverless показва, че spectrum-ът не е линеен - разли�
 
 5. Идентифицирайте три metrics, които бихте следили за оценка на успеха на cloud strategy след 6 месеца.
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Primary Provider: Azure**
 

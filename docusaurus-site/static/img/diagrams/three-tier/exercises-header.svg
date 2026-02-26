@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+  <defs>
+    <linearGradient id="threeTierGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="50%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <filter id="tierGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="800" height="120" rx="16" fill="url(#threeTierGrad)"/>
+  <text x="400" y="45" text-anchor="middle" fill="white" font-size="28" font-weight="bold" filter="url(#tierGlow)">🏗️ Three-Tier Architecture</text>
+  <text x="400" y="75" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="16">Presentation • Application • Data</text>
+  <text x="400" y="100" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="14">19 упражнения • Separation of Concerns • Scalability</text>
+</svg>

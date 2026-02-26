@@ -1,0 +1,9 @@
+{
+  "label": "02. Основи на JavaScript",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Въведение в JavaScript - променливи, типове данни, оператори, условни конструкции, цикли, функции, масиви и обекти."
+  }
+}

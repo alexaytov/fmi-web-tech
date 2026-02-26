@@ -1,0 +1,57 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#43e97b"/>
+      <stop offset="100%" stop-color="#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="cacheGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f093fb"/>
+      <stop offset="100%" stop-color="#f5576c"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fa709a"/>
+      <stop offset="100%" stop-color="#fee140"/>
+    </linearGradient>
+  </defs>
+
+  <text x="350" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">&#x1F680; Horizontal Scaling Architecture</text>
+
+  <rect x="250" y="45" width="200" height="45" rx="8" fill="url(#lbGrad)"/>
+  <text x="350" y="72" text-anchor="middle" font-size="13" fill="white" font-weight="bold">&#x2696;&#xFE0F; Load Balancer</text>
+
+  <path d="M280 90 L150 140" stroke="#667eea" stroke-width="2"/>
+  <path d="M350 90 L350 140" stroke="#667eea" stroke-width="2"/>
+  <path d="M420 90 L550 140" stroke="#667eea" stroke-width="2"/>
+
+  <rect x="80" y="140" width="140" height="70" rx="8" fill="url(#serverGrad)"/>
+  <text x="150" y="170" text-anchor="middle" font-size="11" fill="white" font-weight="bold">App Server 1</text>
+  <text x="150" y="190" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Node.js</text>
+
+  <rect x="280" y="140" width="140" height="70" rx="8" fill="url(#serverGrad)"/>
+  <text x="350" y="170" text-anchor="middle" font-size="11" fill="white" font-weight="bold">App Server 2</text>
+  <text x="350" y="190" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Node.js</text>
+
+  <rect x="480" y="140" width="140" height="70" rx="8" fill="url(#serverGrad)"/>
+  <text x="550" y="170" text-anchor="middle" font-size="11" fill="white" font-weight="bold">App Server N</text>
+  <text x="550" y="190" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Node.js</text>
+
+  <path d="M150 210 L150 260 L350 260" stroke="#667eea" stroke-width="2" stroke-dasharray="4,4"/>
+  <path d="M350 210 L350 260" stroke="#667eea" stroke-width="2" stroke-dasharray="4,4"/>
+  <path d="M550 210 L550 260 L350 260" stroke="#667eea" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <rect x="250" y="260" width="200" height="45" rx="8" fill="url(#cacheGrad)"/>
+  <text x="350" y="287" text-anchor="middle" font-size="13" fill="white" font-weight="bold">&#x26A1; Redis Cache</text>
+
+  <path d="M350 305 L350 340" stroke="#667eea" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <rect x="250" y="340" width="200" height="45" rx="8" fill="url(#dbGrad)"/>
+  <text x="350" y="367" text-anchor="middle" font-size="13" fill="white" font-weight="bold">&#x1F5C4;&#xFE0F; Database</text>
+
+  <text x="650" y="180" text-anchor="middle" font-size="10" fill="#43e97b" font-weight="bold">SCALE</text>
+  <text x="650" y="195" text-anchor="middle" font-size="10" fill="#43e97b">HERE</text>
+  <path d="M620 175 L595 175" stroke="#43e97b" stroke-width="2"/>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "label": "03. Основи на TypeScript",
+  "position": 3,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Въведение в TypeScript - типова система, интерфейси, type aliases, функции с типове, настройка на проект и tsconfig.json."
+  }
+}

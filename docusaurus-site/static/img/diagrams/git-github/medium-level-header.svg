@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 80">
+  <defs>
+    <linearGradient id="mediumGradGit" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fdcb6e"/>
+      <stop offset="100%" stop-color="#e17055"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="700" height="80" rx="12" fill="url(#mediumGradGit)"/>
+  <text x="350" y="35" text-anchor="middle" fill="white" font-size="20" font-weight="bold">⚡ Средно Ниво</text>
+  <text x="350" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14">Практически workflow • Branching • Remote operations</text>
+</svg>

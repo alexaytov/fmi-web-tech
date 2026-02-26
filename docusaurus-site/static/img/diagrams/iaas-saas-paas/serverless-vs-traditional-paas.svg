@@ -1,0 +1,44 @@
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" fill="#1e293b" font-size="14" font-weight="bold">⚡ Serverless (FaaS) vs Traditional PaaS</text>
+
+  <!-- Traditional PaaS -->
+  <rect x="50" y="40" width="280" height="130" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+  <text x="190" y="65" text-anchor="middle" fill="#1e40af" font-size="12" font-weight="bold">Traditional PaaS</text>
+  <text x="190" y="80" text-anchor="middle" fill="#3b82f6" font-size="9">(Elastic Beanstalk, App Service)</text>
+
+  <!-- Running instances -->
+  <rect x="70" y="95" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="87" y="117" text-anchor="middle" fill="white" font-size="9">🔵</text>
+  <rect x="115" y="95" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="132" y="117" text-anchor="middle" fill="white" font-size="9">🔵</text>
+  <rect x="160" y="95" width="35" height="35" rx="4" fill="#3b82f6" />
+  <text x="177" y="117" text-anchor="middle" fill="white" font-size="9">🔵</text>
+  <rect x="205" y="95" width="35" height="35" rx="4" fill="#3b82f6" opacity="0.3" />
+  <text x="222" y="117" text-anchor="middle" fill="white" font-size="9">💤</text>
+  <rect x="250" y="95" width="35" height="35" rx="4" fill="#3b82f6" opacity="0.3" />
+  <text x="267" y="117" text-anchor="middle" fill="white" font-size="9">💤</text>
+
+  <text x="190" y="150" text-anchor="middle" fill="#1e40af" font-size="9">💰 Pay for running instances 24/7</text>
+  <text x="190" y="165" text-anchor="middle" fill="#64748b" font-size="8">Always on, even when idle</text>
+
+  <!-- Serverless -->
+  <rect x="370" y="40" width="280" height="130" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" />
+  <text x="510" y="65" text-anchor="middle" fill="#b45309" font-size="12" font-weight="bold">Serverless (FaaS)</text>
+  <text x="510" y="80" text-anchor="middle" fill="#f59e0b" font-size="9">(Lambda, Azure Functions)</text>
+
+  <!-- Event triggers -->
+  <text x="400" y="105" fill="#b45309" font-size="16">→</text>
+  <rect x="420" y="95" width="30" height="30" rx="4" fill="#f59e0b" />
+  <text x="435" y="115" text-anchor="middle" fill="white" font-size="10">⚡</text>
+  <text x="460" y="105" fill="#b45309" font-size="16">→</text>
+  <rect x="480" y="95" width="30" height="30" rx="4" fill="#f59e0b" />
+  <text x="495" y="115" text-anchor="middle" fill="white" font-size="10">⚡</text>
+  <text x="520" y="105" fill="#b45309" font-size="16">→</text>
+  <rect x="540" y="95" width="30" height="30" rx="4" fill="#f59e0b" />
+  <text x="555" y="115" text-anchor="middle" fill="white" font-size="10">⚡</text>
+  <text x="580" y="115" fill="#b45309" font-size="12">...</text>
+
+  <text x="510" y="150" text-anchor="middle" fill="#b45309" font-size="9">💰 Pay per invocation only</text>
+  <text x="510" y="165" text-anchor="middle" fill="#64748b" font-size="8">$0 when not running!</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" fill="#1e293b" font-size="14" font-weight="bold">💰 TCO Comparison: IaaS vs PaaS</text>
+
+  <!-- IaaS Cost Breakdown -->
+  <rect x="50" y="45" width="280" height="120" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="2" />
+  <text x="190" y="68" text-anchor="middle" fill="#dc2626" font-size="12" font-weight="bold">IaaS Total Cost</text>
+
+  <!-- Cost bars -->
+  <rect x="70" y="80" width="180" height="14" rx="3" fill="#ef4444" />
+  <text x="160" y="91" text-anchor="middle" fill="white" font-size="8" font-weight="bold">DevOps Engineer: $96k/yr</text>
+
+  <rect x="70" y="98" width="30" height="14" rx="3" fill="#f87171" />
+  <text x="110" y="109" fill="#7f1d1d" font-size="8">VMs: $9.6k</text>
+
+  <rect x="70" y="116" width="20" height="14" rx="3" fill="#fca5a5" />
+  <text x="100" y="127" fill="#7f1d1d" font-size="8">Downtime: $6k</text>
+
+  <text x="190" y="150" text-anchor="middle" fill="#dc2626" font-size="14" font-weight="bold">~$112,800/year</text>
+
+  <!-- Arrow -->
+  <text x="350" y="105" text-anchor="middle" fill="#22c55e" font-size="24">→</text>
+  <text x="350" y="125" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">91% savings!</text>
+
+  <!-- PaaS Cost Breakdown -->
+  <rect x="370" y="45" width="280" height="120" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="2" />
+  <text x="510" y="68" text-anchor="middle" fill="#166534" font-size="12" font-weight="bold">PaaS Total Cost</text>
+
+  <rect x="390" y="80" width="25" height="14" rx="3" fill="#22c55e" />
+  <text x="430" y="91" fill="#14532d" font-size="8">Platform: $7.2k</text>
+
+  <rect x="390" y="98" width="8" height="14" rx="3" fill="#4ade80" />
+  <text x="418" y="109" fill="#14532d" font-size="8">Storage: $1.8k</text>
+
+  <rect x="390" y="116" width="5" height="14" rx="3" fill="#86efac" />
+  <text x="415" y="127" fill="#14532d" font-size="8">Downtime: $1.2k</text>
+
+  <text x="510" y="150" text-anchor="middle" fill="#166534" font-size="14" font-weight="bold">~$10,200/year</text>
+</svg>

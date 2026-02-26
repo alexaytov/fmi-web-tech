@@ -136,7 +136,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Начало"
-      description="Курс по Уеб Технологии във ФМИ към СУ „Св. Климент Охридски"">
+      description="Курс по Уеб Технологии във ФМИ към СУ Св. Климент Охридски">
       <HomepageHeader />
       <main>
         <LecturesSection />

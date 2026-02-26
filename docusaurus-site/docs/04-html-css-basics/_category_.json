@@ -1,0 +1,9 @@
+{
+  "label": "04. HTML и CSS основи",
+  "position": 4,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "HTML семантика, CSS селектори и специфичност, Flexbox и Grid, адаптивен дизайн, Mobile-First подход и достъпност."
+  }
+}

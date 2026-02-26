@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+  <defs>
+    <linearGradient id="jsHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7df1e"/>
+      <stop offset="100%" stop-color="#f0db4f"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="120" rx="12" fill="#323330"/>
+  <rect x="20" y="20" width="80" height="80" rx="8" fill="url(#jsHeaderGrad)"/>
+  <text x="60" y="75" text-anchor="middle" fill="#323330" font-size="36" font-weight="bold">JS</text>
+  <text x="450" y="50" text-anchor="middle" fill="#f7df1e" font-size="26" font-weight="bold">JavaScript Fundamentals</text>
+  <text x="450" y="80" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14">Variables • Functions • Arrays • Objects • DOM</text>
+  <text x="450" y="105" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="12">21 Exercises • Easy → Medium → Hard</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 650 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#61dafb"/>
+      <stop offset="100%" stop-color="#21a1f1"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#68a063"/>
+      <stop offset="100%" stop-color="#3c873a"/>
+    </linearGradient>
+    <linearGradient id="mysqlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00758f"/>
+      <stop offset="100%" stop-color="#f29111"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="20" y="30" width="180" height="60" rx="10" fill="url(#reactGrad)"/>
+  <text x="110" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">&#x269B;&#xFE0F; React</text>
+  <text x="110" y="75" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.9)">Presentation</text>
+
+  <path d="M200 60 C280 60, 280 60, 360 60" stroke="#61dafb" stroke-width="2" fill="none"/>
+
+  <rect x="235" y="110" width="180" height="60" rx="10" fill="url(#nodeGrad)"/>
+  <text x="325" y="135" text-anchor="middle" font-size="14" fill="white" font-weight="bold">&#x1F7E2; Node.js</text>
+  <text x="325" y="155" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.9)">Application</text>
+
+  <rect x="450" y="30" width="180" height="60" rx="10" fill="url(#mysqlGrad)"/>
+  <text x="540" y="55" text-anchor="middle" font-size="14" fill="white" font-weight="bold">&#x1F42C; MySQL</text>
+  <text x="540" y="75" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.9)">Data</text>
+
+  <path d="M110 90 L110 140 L235 140" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M415 140 L540 140 L540 90" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+</svg>

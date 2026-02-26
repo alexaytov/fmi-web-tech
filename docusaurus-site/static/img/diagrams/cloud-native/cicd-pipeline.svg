@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 180">
+  <defs>
+    <linearGradient id="ciCode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="ciBuild" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="ciTest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="ciDeploy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="ciMonitor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="ciShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="ciArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#95a5a6"/>
+    </marker>
+  </defs>
+  <style>
+    .ci-stage { opacity: 0; transform: translateY(15px); }
+    .ci-code { animation: ciSlideUp 0.4s ease-out 0.2s forwards; }
+    .ci-build { animation: ciSlideUp 0.4s ease-out 0.35s forwards; }
+    .ci-test { animation: ciSlideUp 0.4s ease-out 0.5s forwards; }
+    .ci-deploy { animation: ciSlideUp 0.4s ease-out 0.65s forwards; }
+    .ci-monitor { animation: ciSlideUp 0.4s ease-out 0.8s forwards; }
+    .ci-arrow { stroke-dasharray: 40; stroke-dashoffset: 40; }
+    .ci-arr1 { animation: ciDrawArrow 0.3s ease-out 0.5s forwards; }
+    .ci-arr2 { animation: ciDrawArrow 0.3s ease-out 0.65s forwards; }
+    .ci-arr3 { animation: ciDrawArrow 0.3s ease-out 0.8s forwards; }
+    .ci-arr4 { animation: ciDrawArrow 0.3s ease-out 0.95s forwards; }
+    .ci-pipe { stroke-dasharray: 550; stroke-dashoffset: 550; animation: ciDrawPipe 1s ease-out 1.0s forwards; }
+    .ci-label { opacity: 0; animation: ciFadeIn 0.4s ease-out 1.2s forwards; }
+    .ci-particle { opacity: 0; }
+    .ci-p1 { animation: ciParticleFlow 3s linear 1.3s infinite; }
+    .ci-p2 { animation: ciParticleFlow 3s linear 2s infinite; }
+    @keyframes ciSlideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes ciDrawArrow { to { stroke-dashoffset: 0; } }
+    @keyframes ciDrawPipe { to { stroke-dashoffset: 0; } }
+    @keyframes ciFadeIn { to { opacity: 1; } }
+    @keyframes ciParticleFlow { 0% { opacity: 0; transform: translateX(0); } 5% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; transform: translateX(500px); } }
+  </style>
+  <!-- Pipeline stages -->
+  <g class="ci-stage ci-code" filter="url(#ciShadow)">
+    <rect x="30" y="40" width="90" height="60" rx="8" fill="url(#ciCode)"/>
+    <text x="75" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Code</text>
+    <text x="75" y="88" font-size="18" text-anchor="middle">💻</text>
+  </g>
+  <g class="ci-stage ci-build" filter="url(#ciShadow)">
+    <rect x="155" y="40" width="90" height="60" rx="8" fill="url(#ciBuild)"/>
+    <text x="200" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Build</text>
+    <text x="200" y="88" font-size="18" text-anchor="middle">🔨</text>
+  </g>
+  <g class="ci-stage ci-test" filter="url(#ciShadow)">
+    <rect x="280" y="40" width="90" height="60" rx="8" fill="url(#ciTest)"/>
+    <text x="325" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Test</text>
+    <text x="325" y="88" font-size="18" text-anchor="middle">🧪</text>
+  </g>
+  <g class="ci-stage ci-deploy" filter="url(#ciShadow)">
+    <rect x="405" y="40" width="90" height="60" rx="8" fill="url(#ciDeploy)"/>
+    <text x="450" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Deploy</text>
+    <text x="450" y="88" font-size="18" text-anchor="middle">🚀</text>
+  </g>
+  <g class="ci-stage ci-monitor" filter="url(#ciShadow)">
+    <rect x="530" y="40" width="90" height="60" rx="8" fill="url(#ciMonitor)"/>
+    <text x="575" y="68" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Monitor</text>
+    <text x="575" y="88" font-size="18" text-anchor="middle">📊</text>
+  </g>
+  <!-- Arrows between stages -->
+  <line class="ci-arrow ci-arr1" x1="120" y1="70" x2="150" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr2" x1="245" y1="70" x2="275" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr3" x1="370" y1="70" x2="400" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <line class="ci-arrow ci-arr4" x1="495" y1="70" x2="525" y2="70" stroke="#95a5a6" stroke-width="3" marker-end="url(#ciArrow)"/>
+  <!-- Bottom connecting pipe -->
+  <path class="ci-pipe" d="M 75 105 L 75 140 L 575 140 L 575 105" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+  <!-- AUTOMATED label -->
+  <g class="ci-label">
+    <rect x="260" y="128" width="130" height="26" rx="13" fill="#2c3e50"/>
+    <text x="325" y="146" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">AUTOMATED 🤖</text>
+  </g>
+  <!-- Flow particles -->
+  <circle class="ci-particle ci-p1" cx="75" cy="70" r="5" fill="#3498db"/>
+  <circle class="ci-particle ci-p2" cx="75" cy="70" r="5" fill="#27ae60"/>
+</svg>

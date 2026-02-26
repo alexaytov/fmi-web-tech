@@ -3,7 +3,13 @@
     "allow": [
       "WebSearch",
       "mcp__searxng__searxng_web_search",
-      "mcp__searxng__web_url_read"
+      "mcp__searxng__web_url_read",
+      "Bash(tail:*)",
+      "Bash(npm run:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(echo ✓ $dir exists:*)",
+      "Bash(grep:*)"
     ]
   }
 }

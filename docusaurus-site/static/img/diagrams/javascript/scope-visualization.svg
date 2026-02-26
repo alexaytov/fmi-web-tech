@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350">
+  <defs>
+    <linearGradient id="globalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="funcGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="blockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="scopeShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Global Scope (outer, blue) -->
+  <g filter="url(#scopeShadow)">
+    <rect x="30" y="20" width="640" height="310" rx="15" fill="url(#globalGrad)" fill-opacity="0.15" stroke="url(#globalGrad)" stroke-width="3"/>
+    <text x="60" y="55" fill="#3498db" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Global Scope</text>
+    <text x="60" y="75" fill="#666" font-family="monospace" font-size="12">const APP_NAME = "MyApp";</text>
+    <text x="60" y="95" fill="#666" font-family="monospace" font-size="12">var globalVar = "accessible everywhere";</text>
+  </g>
+
+  <!-- Function Scope (middle, orange) -->
+  <g filter="url(#scopeShadow)">
+    <rect x="70" y="115" width="560" height="180" rx="12" fill="url(#funcGrad)" fill-opacity="0.15" stroke="url(#funcGrad)" stroke-width="2"/>
+    <text x="100" y="145" fill="#e67e22" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Function Scope</text>
+    <text x="100" y="165" fill="#666" font-family="monospace" font-size="11">function myFunction() {</text>
+    <text x="120" y="185" fill="#666" font-family="monospace" font-size="11">let functionVar = "visible in function";</text>
+    <text x="120" y="205" fill="#666" font-family="monospace" font-size="11">var anotherVar = "also function scoped";</text>
+  </g>
+
+  <!-- Block Scope (inner, green) -->
+  <g filter="url(#scopeShadow)">
+    <rect x="140" y="220" width="440" height="55" rx="10" fill="url(#blockGrad)" fill-opacity="0.15" stroke="url(#blockGrad)" stroke-width="2"/>
+    <text x="170" y="245" fill="#27ae60" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Block Scope</text>
+    <text x="300" y="245" fill="#666" font-family="monospace" font-size="11">if (true) { let blockVar = "only in block"; }</text>
+    <text x="170" y="263" fill="#666" font-family="monospace" font-size="10">const also = "block scoped with const";</text>
+  </g>
+
+  <!-- Closing braces -->
+  <text x="100" y="285" fill="#666" font-family="monospace" font-size="11">}</text>
+
+  <!-- Access arrows -->
+  <g>
+    <line x1="600" y1="55" x2="600" y2="140" stroke="#3498db" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="610" y="100" fill="#3498db" font-family="system-ui, sans-serif" font-size="10">access</text>
+    <line x1="550" y1="165" x2="550" y2="235" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="555" y="200" fill="#e67e22" font-family="system-ui, sans-serif" font-size="10">access</text>
+  </g>
+
+  <!-- Legend -->
+  <text x="350" y="340" fill="#666" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Inner scopes can access outer scope variables, but not vice versa</text>
+</svg>

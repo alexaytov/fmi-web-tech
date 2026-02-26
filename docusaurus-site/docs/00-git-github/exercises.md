@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+slug: exercises
 title: "Упражнения"
 tags: [exercises, practice, git, github]
 ---
@@ -10,12 +11,15 @@ import CollapsibleSection from '@site/src/components/CollapsibleSection';
 import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
 import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Упражнения: Git и GitHub
 
+<img src={useBaseUrl('/img/diagrams/git-github/exercises-header.svg')} alt="Git и GitHub Exercises" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
+
 <ProgressTracker />
 
-<InfoBox title="Инструкции">
+<InfoBox title="📋 Инструкции">
 
 - Решете упражненията последователно - те са подредени по трудност
 - Използвайте **подсказките** ако се затрудните
@@ -23,6 +27,12 @@ import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
 - За практическите задачи ви е нужен терминал и Git инсталиран на компютъра
 
 </InfoBox>
+
+---
+
+## Git Three Stages
+
+<img src={useBaseUrl('/img/diagrams/git-github/git-three-stages-detailed.svg')} alt="Git Three Stages" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
 ---
 
@@ -41,17 +51,19 @@ B) Да записва всяка промяна направена върху �
 C) Да поправя автоматично бъгове в кода
 D) Да замени нуждата от backups
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете какво означава "version" в "version control" - системата трябва да следи различните версии на вашите файлове във времето.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Верен отговор: B**
 
 Git записва всяка промяна направена върху файлове и създава пълна история на проекта.
+
+<img src={useBaseUrl('/img/diagrams/git-github/version-history.svg')} alt="Version History" style={{width: '100%', maxWidth: '500px', margin: '15px auto', display: 'block'}} />
 
 **Защо другите са грешни:**
 - A) Git не компресира файлове за по-малко място
@@ -72,13 +84,15 @@ Git записва всяка промяна направена върху фа�
 
 В по едно изречение обяснете разликата между Git и GitHub. Използвайте аналогията от лекцията ако ви помага.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/git-vs-github.svg')} alt="Git vs GitHub" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за Git като инструмент, а за GitHub като място/услуга. Един работи локално, другият е в облака.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Примерен отговор:**
 
@@ -107,13 +121,13 @@ Git записва всяка промяна направена върху фа�
 
 Кои команди преместват файлове между тези етапи?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Започнете от там където създавате и редактирате файлове. Помислете за процеса като "подготовка преди запис".
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Правилен ред:**
 1. **Working Directory** (вашите файлове)
@@ -150,7 +164,7 @@ cd subfolder
 pwd
 ```
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 - `mkdir` създава нова директория
 - `cd` влиза в директория
@@ -158,7 +172,7 @@ pwd
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Очакван изход:**
 ```
@@ -192,13 +206,13 @@ pwd
 2. За да зададете вашия email: `git config --global __________ "email@example.com"`
 3. За да проверите настройките си: `git config __________`
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Настройките се наричат `user.name` и `user.email`. За преглед на всички настройки има специална опция.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 1. `git config --global user.name "Your Name"`
 2. `git config --global user.email "email@example.com"`
@@ -231,7 +245,9 @@ D) `asdfasdf`
 E) `Update README with installation steps`
 F) `WIP`
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/commit-messages.svg')} alt="Good vs Bad Commit Messages" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 Добрите commit съобщения трябва да:
 - Описват какво прави промяната
@@ -240,7 +256,7 @@ F) `WIP`
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Верни отговори: A, C, E**
 
@@ -261,6 +277,8 @@ F) `WIP`
 
 ## Средни Упражнения (MEDIUM)
 
+<img src={useBaseUrl('/img/diagrams/git-github/medium-level-header.svg')} alt="Medium Level" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="medium">
 
 ### Задача 7: Инициализация и първи Commit
@@ -280,7 +298,7 @@ F) `WIP`
 
 Запишете всички команди които използвате.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Последователността е:
 1. `mkdir` за създаване на директория
@@ -293,7 +311,7 @@ F) `WIP`
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # 1-2. Създаване и влизане в директория
@@ -339,13 +357,15 @@ a1b2c3d Add hello.txt file
 
 Обяснете защо Git има staging area вместо да commit-ва всички промени директно. Дайте практически сценарий където staging area е полезна.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/staging-area-selective.svg')} alt="Staging Area Selective Commits" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 Помислете за ситуация където сте променили много файлове, но искате да запазите промените в няколко отделни, логически групирани commit-а.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Защо съществува Staging Area:**
 
@@ -393,7 +413,9 @@ git commit -m "Update login page styles"
 | `git pull` | B. Качва локални commits към remote | 2. Преди да започнете работа |
 | `git fetch` | C. Сваля + слива remote промени | 3. Когато искате да прегледате първо |
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/local-remote-push-pull.svg')} alt="Local vs Remote" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 - Push = "бутам" нагоре към сървъра
 - Pull = "дърпам" надолу от сървъра (и сливам)
@@ -401,7 +423,7 @@ git commit -m "Update login page styles"
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 | Команда | Описание | Кога да използвате |
 |---------|----------|-------------------|
@@ -437,7 +459,9 @@ git commit -m "Update login page styles"
 
 Запишете всички команди. Какво забелязвате за файла `feature.py` когато сте на `main` branch?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/branching-basic.svg')} alt="Git Branching" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 - `git checkout -b name` създава И превключва към нов branch
 - `git branch` показва всички локални branches
@@ -445,7 +469,7 @@ git commit -m "Update login page styles"
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # 1-2. Създаване и преминаване към нов branch
@@ -487,13 +511,13 @@ git checkout main
 1. Добавите remote repository наречено "origin"?
 2. Проверите дали remote е добавено правилно?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 "Origin" е просто конвенционално име - можете да използвате всяко име. Командата `git remote` управлява remote connections.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Какво е "origin":**
 
@@ -531,22 +555,14 @@ origin  https://github.com/USERNAME/REPO-NAME.git (push)
 
 Дадена е следната branch диаграма:
 
-```
-        feature-A
-            ┌───●───●
-           /
-main ●───●───●───●
-              \
-               └───●
-           feature-B
-```
+<img src={useBaseUrl('/img/diagrams/git-github/branch-interpretation.svg')} alt="Branch Interpretation" style={{width: '100%', maxWidth: '600px', margin: '15px auto', display: 'block'}} />
 
 Отговорете на следните въпроси:
 1. Колко общо commits съществуват във всички branches?
 2. Ако сте на `main` и изпълните `git merge feature-A`, какъв тип merge би настъпил (fast-forward или three-way)?
 3. Кой branch е diverged от `main`?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 - Всяка точка (●) е един commit
 - Fast-forward merge е възможен когато main не е напреднал след създаването на branch
@@ -554,7 +570,7 @@ main ●───●───●───●
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Общо commits:**
 
@@ -602,7 +618,7 @@ main ●───●───●───●
 
 Документирайте всяка команда която използвате.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Последователност:
 1. `mkdir` + `cd` + `git init`
@@ -614,7 +630,7 @@ main ●───●───●───●
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # 1. Създаване на локално repository
@@ -671,12 +687,14 @@ Untracked files:
         temp.log
 ```
 
+<img src={useBaseUrl('/img/diagrams/git-github/git-status-interpretation.svg')} alt="Git Status Interpretation" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
 Отговорете на следните въпроси:
 1. Кой файл/файлове ще бъдат включени в следващия commit ако изпълните `git commit -m "message"` сега?
 2. Каква команда би stage-нала `config.txt`?
 3. Каква е разликата между `config.txt` и `temp.log` от гледна точка на Git tracking?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 - "Changes to be committed" = staged файлове
 - "Changes not staged" = tracked файлове с промени, но не staged
@@ -684,7 +702,7 @@ Untracked files:
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Кой файл ще влезе в commit:**
 
@@ -712,6 +730,8 @@ git add config.txt
 
 ## Трудни Упражнения (HARD)
 
+<img src={useBaseUrl('/img/diagrams/git-github/hard-level-header.svg')} alt="Hard Level" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
+
 <ExerciseCard difficulty="hard">
 
 ### Задача 15: Разрешаване на Merge Conflict
@@ -738,7 +758,9 @@ git add config.txt
 
 Документирайте всички команди и покажете крайното съдържание на `greeting.py`.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/merge-conflict.svg')} alt="Merge Conflict Resolution" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 Конфликтът ще изглежда така:
 ```python
@@ -753,7 +775,7 @@ git add config.txt
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # 1. Създаване на repository и начален commit
@@ -832,18 +854,20 @@ def greet():
 - Колегата ви е push-нал промени към remote `main` branch
 - Когато се опитате да push-нете, Git отказва с: "Updates were rejected because the remote contains work that you do not have locally"
 
+<img src={useBaseUrl('/img/diagrams/git-github/push-rejection.svg')} alt="Push Rejection" style={{width: '100%', maxWidth: '650px', margin: '15px auto', display: 'block'}} />
+
 Обяснете:
 1. Защо възникна тази грешка?
 2. Каква е правилната последователност от команди за разрешаване?
 3. Какво може да се случи по време на разрешаването и как бихте го handle-нали?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Git не позволява push който би "презаписал" commit-и на колегата. Трябва първо да получите техните промени и да ги интегрирате с вашите.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Защо възникна грешката:**
 
@@ -914,14 +938,16 @@ git push origin main
 
 Запишете всички команди и обяснете защо всяка стъпка е важна в екипна среда.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<img src={useBaseUrl('/img/diagrams/git-github/professional-workflow.svg')} alt="Professional Git Workflow" style={{width: '100%', maxWidth: '700px', margin: '15px auto', display: 'block'}} />
+
+<CollapsibleSection title="💡 Подсказка">
 
 За изтриване на remote branch: `git push origin --delete branch-name`
 За изтриване на локален branch: `git branch -d branch-name`
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # 1. Клониране на repository
@@ -996,7 +1022,7 @@ git push origin --delete feature/user-profile  # remote
 
 **Сценарий C:** Вашият `git log` показва commits от колегата ви, но не виждате неговите нови файлове в работната си директория. Каква команда вероятно сте използвали и какво трябва да направите след това?
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 - A: `git reset` може да отмени commits
 - B: `git stash` може временно да съхрани промени
@@ -1004,7 +1030,7 @@ git push origin --delete feature/user-profile  # remote
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **Сценарий A - Чувствителни данни в commit:**
 
@@ -1098,7 +1124,7 @@ git pull origin main
 
 Документирайте целия процес с команди и обяснения.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 Структура на добър .gitignore за Python:
 - `__pycache__/`
@@ -1109,7 +1135,7 @@ git pull origin main
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 ```bash
 # Създаване на основна структура
@@ -1125,7 +1151,7 @@ touch src/.gitkeep tests/.gitkeep docs/.gitkeep
 ```
 
 **README.md:**
-```markdown
+````markdown
 # My Awesome Project
 
 A brief description of what this project does.
@@ -1159,7 +1185,7 @@ run()
 ## License
 
 MIT
-```
+````
 
 **.gitignore:**
 ```gitignore
@@ -1246,6 +1272,8 @@ git branch -d feature/analytics
 git push origin --delete feature/analytics
 ```
 
+<img src={useBaseUrl('/img/diagrams/git-github/workflow-timeline.svg')} alt="Workflow Timeline" style={{width: '100%', maxWidth: '700px', margin: '15px auto', display: 'block'}} />
+
 **Въпроси:**
 1. Каква е целта на всяка команда в контекста на екипно сътрудничество?
 2. Защо разработчикът прави pull от main преди merge?
@@ -1253,7 +1281,7 @@ git push origin --delete feature/analytics
 4. Ако възникне конфликт по време на merge, на кой ред ще спре процесът? Какви допълнителни команди ще са нужни?
 5. Предложете едно подобрение на този workflow което е често срещано в професионални среди.
 
-<CollapsibleSection title="💡 Подсказка" icon="💡">
+<CollapsibleSection title="💡 Подсказка">
 
 - Помислете за Pull Requests като допълнителна стъпка
 - Конфликтите се случват при `merge` командата
@@ -1261,7 +1289,7 @@ git push origin --delete feature/analytics
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Решение" icon="✅">
+<CollapsibleSection title="✅ Решение">
 
 **1. Цел на всяка команда:**
 
@@ -1343,7 +1371,7 @@ git push -u origin feature/analytics
 
 ---
 
-<SuccessBox title="Поздравления!">
+<SuccessBox title="🎉 Поздравления!">
 
 Завършихте всички 20 упражнения по Git и GitHub! Вече имате солидна основа за работа с version control системи и екипна колаборация.
 
