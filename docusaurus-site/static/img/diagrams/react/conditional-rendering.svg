@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300">
+  <defs>
+    <linearGradient id="condAnd" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="condTernary" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="condIf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="condCodeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+    <filter id="condShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="30" fill="#1e293b" font-family="system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Conditional Rendering Patterns</text>
+
+  <!-- Pattern 1: && Operator -->
+  <g filter="url(#condShadow)">
+    <rect x="25" y="55" width="220" height="230" rx="10" fill="white" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="25" y="55" width="220" height="40" rx="10" fill="url(#condAnd)"/>
+    <rect x="25" y="83" width="220" height="12" fill="url(#condAnd)"/>
+    <text x="135" y="80" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">&amp;&amp; (Logical AND)</text>
+
+    <text x="135" y="115" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Показва ако условието е true</text>
+
+    <rect x="40" y="130" width="190" height="60" rx="6" fill="url(#condCodeBg)"/>
+    <text x="135" y="155" fill="#a6accd" font-family="monospace" font-size="10" text-anchor="middle">{isLoggedIn &amp;&amp;</text>
+    <text x="135" y="175" fill="#89ddff" font-family="monospace" font-size="10" text-anchor="middle">  &lt;UserMenu /&gt;}</text>
+
+    <rect x="40" y="200" width="190" height="70" rx="6" fill="#f8fafc"/>
+    <text x="135" y="222" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">true → рендира UserMenu</text>
+    <text x="135" y="240" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">false → нищо (null)</text>
+    <rect x="60" y="252" width="150" height="14" rx="3" fill="#dbeafe"/>
+    <text x="135" y="262" fill="#2563eb" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">За показване/скриване</text>
+  </g>
+
+  <!-- Pattern 2: Ternary -->
+  <g filter="url(#condShadow)">
+    <rect x="265" y="55" width="220" height="230" rx="10" fill="white" stroke="#10b981" stroke-width="2"/>
+    <rect x="265" y="55" width="220" height="40" rx="10" fill="url(#condTernary)"/>
+    <rect x="265" y="83" width="220" height="12" fill="url(#condTernary)"/>
+    <text x="375" y="80" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">? : (Ternary)</text>
+
+    <text x="375" y="115" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Избира между две опции</text>
+
+    <rect x="280" y="130" width="190" height="60" rx="6" fill="url(#condCodeBg)"/>
+    <text x="375" y="155" fill="#a6accd" font-family="monospace" font-size="10" text-anchor="middle">{isAdmin</text>
+    <text x="375" y="175" fill="#a6accd" font-family="monospace" font-size="10" text-anchor="middle">  ? <tspan fill="#89ddff">&lt;Admin/&gt;</tspan> : <tspan fill="#89ddff">&lt;User/&gt;</tspan>}</text>
+
+    <rect x="280" y="200" width="190" height="70" rx="6" fill="#f8fafc"/>
+    <text x="375" y="222" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">true → Admin компонент</text>
+    <text x="375" y="240" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">false → User компонент</text>
+    <rect x="300" y="252" width="150" height="14" rx="3" fill="#dcfce7"/>
+    <text x="375" y="262" fill="#166534" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">За избор A или B</text>
+  </g>
+
+  <!-- Pattern 3: Early Return -->
+  <g filter="url(#condShadow)">
+    <rect x="505" y="55" width="220" height="230" rx="10" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="505" y="55" width="220" height="40" rx="10" fill="url(#condIf)"/>
+    <rect x="505" y="83" width="220" height="12" fill="url(#condIf)"/>
+    <text x="615" y="80" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">if (Early Return)</text>
+
+    <text x="615" y="115" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Връща рано при условие</text>
+
+    <rect x="520" y="130" width="190" height="60" rx="6" fill="url(#condCodeBg)"/>
+    <text x="615" y="150" fill="#c792ea" font-family="monospace" font-size="9" text-anchor="middle">if</text>
+    <text x="615" y="165" fill="#a6accd" font-family="monospace" font-size="9" text-anchor="middle">(!user) <tspan fill="#c792ea">return</tspan> <tspan fill="#89ddff">&lt;Login/&gt;</tspan>;</text>
+    <text x="615" y="180" fill="#c792ea" font-family="monospace" font-size="9" text-anchor="middle">return <tspan fill="#89ddff">&lt;Dashboard/&gt;</tspan>;</text>
+
+    <rect x="520" y="200" width="190" height="70" rx="6" fill="#f8fafc"/>
+    <text x="615" y="222" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">!user → Login форма</text>
+    <text x="615" y="240" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">user → Dashboard</text>
+    <rect x="540" y="252" width="150" height="14" rx="3" fill="#f3e8ff"/>
+    <text x="615" y="262" fill="#6b21a8" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">За guard условия</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="375" y="295" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Изберете pattern според случая: &amp;&amp; за toggle, ternary за A/B, if за guards</text>
+</svg>

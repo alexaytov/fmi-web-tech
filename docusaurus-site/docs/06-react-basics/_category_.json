@@ -1,0 +1,9 @@
+{
+  "label": "06. React Основи",
+  "position": 6,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Въведение в React - JavaScript библиотека за изграждане на потребителски интерфейси чрез компонентна архитектура, Virtual DOM, JSX и hooks"
+  }
+}

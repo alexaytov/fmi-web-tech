@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="reactHeaderBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="reactBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#61dafb"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <filter id="reactGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="url(#reactHeaderBg)" rx="12"/>
+
+  <!-- React Logo - Orbits -->
+  <g transform="translate(120, 100)" filter="url(#reactGlow)">
+    <!-- Ellipse orbits -->
+    <ellipse cx="0" cy="0" rx="60" ry="24" fill="none" stroke="#61dafb" stroke-width="2" transform="rotate(0)"/>
+    <ellipse cx="0" cy="0" rx="60" ry="24" fill="none" stroke="#61dafb" stroke-width="2" transform="rotate(60)"/>
+    <ellipse cx="0" cy="0" rx="60" ry="24" fill="none" stroke="#61dafb" stroke-width="2" transform="rotate(-60)"/>
+    <!-- Center nucleus -->
+    <circle cx="0" cy="0" r="12" fill="#61dafb"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="85" fill="#61dafb" font-family="system-ui, sans-serif" font-size="36" font-weight="700" text-anchor="middle">React Упражнения</text>
+  <text x="400" y="120" fill="#8892b0" font-family="system-ui, sans-serif" font-size="16" text-anchor="middle">Components • JSX • Hooks • State Management</text>
+
+  <!-- Decorative code snippets -->
+  <g transform="translate(600, 60)" opacity="0.6">
+    <text fill="#61dafb" font-family="monospace" font-size="11">const [state, setState]</text>
+    <text y="18" fill="#64ffda" font-family="monospace" font-size="11">  = useState(0);</text>
+  </g>
+
+  <g transform="translate(620, 120)" opacity="0.6">
+    <text fill="#c792ea" font-family="monospace" font-size="11">&lt;Component /&gt;</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="170" width="600" height="3" rx="1.5" fill="url(#reactBlue)" opacity="0.5"/>
+</svg>
