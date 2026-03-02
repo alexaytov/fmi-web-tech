@@ -1,0 +1,34 @@
+<svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nosqlExHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#2ecc71"/>
+    </linearGradient>
+    <filter id="nosqlExHeaderShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="760" height="140" rx="16" fill="url(#nosqlExHeaderGrad)" filter="url(#nosqlExHeaderShadow)"/>
+
+  <!-- Practice icon -->
+  <g transform="translate(100, 55)">
+    <rect x="0" y="0" width="50" height="60" rx="6" fill="white" fill-opacity="0.95"/>
+    <line x1="10" y1="15" x2="40" y2="15" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="28" x2="35" y2="28" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="41" x2="30" y2="41" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="42" cy="52" r="10" fill="#27ae60"/>
+    <text x="42" y="57" text-anchor="middle" fill="white" font-size="14" font-weight="bold">✓</text>
+  </g>
+
+  <!-- Database icon -->
+  <g transform="translate(180, 60)">
+    <ellipse cx="25" cy="8" rx="25" ry="8" fill="white" fill-opacity="0.9"/>
+    <rect x="0" y="8" width="50" height="35" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="25" cy="43" rx="25" ry="8" fill="white" fill-opacity="0.9"/>
+    <ellipse cx="25" cy="25" rx="25" ry="8" fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,4"/>
+  </g>
+
+  <text x="450" y="80" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Упражнения: NoSQL Бази Данни</text>
+  <text x="450" y="115" text-anchor="middle" fill="white" fill-opacity="0.9" font-family="system-ui, sans-serif" font-size="16">20 задачи • EASY • MEDIUM • HARD</text>
+</svg>

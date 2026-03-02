@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 750 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cfIfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="cfForGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="cfSwitchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <filter id="cfShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="375" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Modern Control Flow (Angular 17+)</text>
+  <text x="375" y="52" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="13">Заменя *ngIf, *ngFor, *ngSwitch</text>
+
+  <!-- @if -->
+  <g transform="translate(30, 75)" filter="url(#cfShadow)">
+    <rect width="220" height="280" rx="14" fill="url(#cfIfGrad)"/>
+    <text x="110" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="600">@if / @else</text>
+    <text x="110" y="50" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Условно рендериране</text>
+
+    <rect x="15" y="65" width="190" height="195" rx="10" fill="white" fill-opacity="0.95"/>
+
+    <text x="110" y="90" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="11" font-weight="600">@if (isLoggedIn()) {</text>
+    <text x="110" y="108" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">  &lt;p&gt;Welcome!&lt;/p&gt;</text>
+    <text x="110" y="126" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="11" font-weight="600">} @else {</text>
+    <text x="110" y="144" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">  &lt;p&gt;Please login&lt;/p&gt;</text>
+    <text x="110" y="162" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="11" font-weight="600">}</text>
+
+    <line x1="25" y1="180" x2="195" y2="180" stroke="#ecf0f1" stroke-width="2"/>
+
+    <text x="110" y="200" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Поддържа и @else if:</text>
+    <text x="110" y="218" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="10">@if (a) {...}</text>
+    <text x="110" y="234" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="10">@else if (b) {...}</text>
+    <text x="110" y="250" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="10">@else {...}</text>
+  </g>
+
+  <!-- @for -->
+  <g transform="translate(265, 75)" filter="url(#cfShadow)">
+    <rect width="220" height="280" rx="14" fill="url(#cfForGrad)"/>
+    <text x="110" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="600">@for / @empty</text>
+    <text x="110" y="50" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Итерация по колекции</text>
+
+    <rect x="15" y="65" width="190" height="195" rx="10" fill="white" fill-opacity="0.95"/>
+
+    <text x="110" y="90" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="10" font-weight="600">@for (item of items();</text>
+    <text x="110" y="106" text-anchor="middle" fill="#e74c3c" font-family="monospace" font-size="10" font-weight="600">     track item.id) {</text>
+    <text x="110" y="124" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">  &lt;li&gt;{{ item.name }}&lt;/li&gt;</text>
+    <text x="110" y="142" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="11" font-weight="600">} @empty {</text>
+    <text x="110" y="160" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">  &lt;p&gt;No items&lt;/p&gt;</text>
+    <text x="110" y="178" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="11" font-weight="600">}</text>
+
+    <line x1="25" y1="195" x2="195" y2="195" stroke="#ecf0f1" stroke-width="2"/>
+
+    <text x="110" y="215" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="10" font-weight="600">⚠️ track е ЗАДЪЛЖИТЕЛЕН!</text>
+    <text x="110" y="235" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Подобрява performance</text>
+    <text x="110" y="252" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">чрез уникална идентификация</text>
+  </g>
+
+  <!-- @switch -->
+  <g transform="translate(500, 75)" filter="url(#cfShadow)">
+    <rect width="220" height="280" rx="14" fill="url(#cfSwitchGrad)"/>
+    <text x="110" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="16" font-weight="600">@switch / @case</text>
+    <text x="110" y="50" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="11">Множество условия</text>
+
+    <rect x="15" y="65" width="190" height="195" rx="10" fill="white" fill-opacity="0.95"/>
+
+    <text x="110" y="90" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="11" font-weight="600">@switch (theme()) {</text>
+    <text x="110" y="110" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">  @case ('dark') {</text>
+    <text x="110" y="126" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">    &lt;div&gt;🌙&lt;/div&gt;</text>
+    <text x="110" y="142" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">  }</text>
+    <text x="110" y="158" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">  @case ('light') {</text>
+    <text x="110" y="174" text-anchor="middle" fill="#2c3e50" font-family="monospace" font-size="10">    &lt;div&gt;☀️&lt;/div&gt;</text>
+    <text x="110" y="190" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">  }</text>
+    <text x="110" y="206" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">  @default { ... }</text>
+    <text x="110" y="222" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="11" font-weight="600">}</text>
+
+    <text x="110" y="250" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Чисто и четимо за</text>
+    <text x="110" y="265" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">множество условия</text>
+  </g>
+</svg>

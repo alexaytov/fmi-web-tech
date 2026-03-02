@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <defs>
+    <linearGradient id="createGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="readGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="updateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="deleteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="crudShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="30" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">HTTP Methods → CRUD Operations</text>
+
+  <!-- CREATE / POST -->
+  <g filter="url(#crudShadow)">
+    <rect x="30" y="55" width="145" height="120" rx="10" fill="url(#createGrad)"/>
+    <text x="102" y="85" fill="white" font-family="system-ui, sans-serif" font-size="28" text-anchor="middle">➕</text>
+    <text x="102" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">POST</text>
+    <text x="102" y="140" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Create</text>
+    <text x="102" y="160" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Създаване</text>
+  </g>
+
+  <!-- READ / GET -->
+  <g filter="url(#crudShadow)">
+    <rect x="195" y="55" width="145" height="120" rx="10" fill="url(#readGrad)"/>
+    <text x="267" y="85" fill="white" font-family="system-ui, sans-serif" font-size="28" text-anchor="middle">📖</text>
+    <text x="267" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">GET</text>
+    <text x="267" y="140" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Read</text>
+    <text x="267" y="160" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Извличане</text>
+  </g>
+
+  <!-- UPDATE / PUT -->
+  <g filter="url(#crudShadow)">
+    <rect x="360" y="55" width="145" height="120" rx="10" fill="url(#updateGrad)"/>
+    <text x="432" y="85" fill="white" font-family="system-ui, sans-serif" font-size="28" text-anchor="middle">✏️</text>
+    <text x="432" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">PUT / PATCH</text>
+    <text x="432" y="140" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Update</text>
+    <text x="432" y="160" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Обновяване</text>
+  </g>
+
+  <!-- DELETE / DELETE -->
+  <g filter="url(#crudShadow)">
+    <rect x="525" y="55" width="145" height="120" rx="10" fill="url(#deleteGrad)"/>
+    <text x="597" y="85" fill="white" font-family="system-ui, sans-serif" font-size="28" text-anchor="middle">🗑️</text>
+    <text x="597" y="115" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">DELETE</text>
+    <text x="597" y="140" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Delete</text>
+    <text x="597" y="160" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Изтриване</text>
+  </g>
+</svg>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="comp-title comp-desc">
+  <title id="comp-title">Cookies vs Sessions Comparison</title>
+  <desc id="comp-desc">Side-by-side comparison of cookies and sessions showing storage, size, security, usage, and lifetime differences</desc>
+
+  <defs>
+    <linearGradient id="comp-cookie-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#e67e22"/>
+    </linearGradient>
+    <linearGradient id="comp-session-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <filter id="comp-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#fafbfc"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#2c3e50"
+        font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">
+    Cookies vs Sessions
+  </text>
+
+  <!-- Cookies Column -->
+  <g id="cookies-column" transform="translate(40, 50)" filter="url(#comp-shadow)">
+    <!-- Header -->
+    <rect width="340" height="48" rx="10" fill="url(#comp-cookie-grad)"/>
+    <text x="170" y="31" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">
+      Cookies
+    </text>
+
+    <!-- Content box -->
+    <rect y="52" width="340" height="280" rx="10" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+
+    <!-- Items -->
+    <g transform="translate(20, 75)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Съхранение
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Браузър (клиентска страна)
+      </text>
+    </g>
+
+    <g transform="translate(20, 125)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Размер
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        ~4KB максимум
+      </text>
+    </g>
+
+    <g transform="translate(20, 175)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Сигурност
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Видими/редактируеми от потребител
+      </text>
+    </g>
+
+    <g transform="translate(20, 225)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Използване
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Предпочитания, tracking, теми
+      </text>
+    </g>
+
+    <g transform="translate(20, 275)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Живот
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Конфигурируем (дни/години)
+      </text>
+    </g>
+  </g>
+
+  <!-- Sessions Column -->
+  <g id="sessions-column" transform="translate(420, 50)" filter="url(#comp-shadow)">
+    <!-- Header -->
+    <rect width="340" height="48" rx="10" fill="url(#comp-session-grad)"/>
+    <text x="170" y="31" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">
+      Sessions
+    </text>
+
+    <!-- Content box -->
+    <rect y="52" width="340" height="280" rx="10" fill="#ebf5fb" stroke="#3498db" stroke-width="2"/>
+
+    <!-- Items -->
+    <g transform="translate(20, 75)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Съхранение
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Сървър (само ID в cookie)
+      </text>
+    </g>
+
+    <g transform="translate(20, 125)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Размер
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Неограничен (server memory)
+      </text>
+    </g>
+
+    <g transform="translate(20, 175)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Сигурност
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Данните са скрити от клиента
+      </text>
+    </g>
+
+    <g transform="translate(20, 225)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Използване
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Login, cart, чувствителни данни
+      </text>
+    </g>
+
+    <g transform="translate(20, 275)">
+      <text x="0" y="0" fill="#2c3e50" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+        Живот
+      </text>
+      <text x="0" y="20" fill="#666" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+        Кратък (20-30 мин неактивност)
+      </text>
+    </g>
+  </g>
+
+  <!-- VS divider -->
+  <g id="vs-badge" transform="translate(375, 175)">
+    <circle cx="25" cy="25" r="25" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="25" y="32" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">
+      VS
+    </text>
+  </g>
+
+  <!-- Key insight box at bottom -->
+  <g id="insight-box" transform="translate(100, 400)">
+    <rect width="600" height="40" rx="8" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2"/>
+    <text x="300" y="26" text-anchor="middle" fill="#16a085"
+          font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">
+      Sessions използват cookie само за Session ID, данните са на сървъра
+    </text>
+  </g>
+</svg>

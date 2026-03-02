@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 850 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">Client-Server Session Flow</title>
+  <desc id="flow-desc">Diagram showing how session data flows between client, server, and session store</desc>
+
+  <defs>
+    <linearGradient id="flow-client-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="flow-server-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="flow-store-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <filter id="flow-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="flow-arrow-right" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+    <marker id="flow-arrow-left" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="850" height="520" fill="#fafbfc"/>
+
+  <!-- Title -->
+  <text x="425" y="35" text-anchor="middle" fill="#2c3e50"
+        font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">
+    Поток на Данни: Клиент ↔ Сървър ↔ Session Store
+  </text>
+
+  <!-- Column 1: Client Box -->
+  <g id="client-column" filter="url(#flow-shadow)">
+    <rect x="30" y="60" width="160" height="180" rx="12" fill="url(#flow-client-grad)"/>
+    <text x="110" y="95" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">
+      Клиент
+    </text>
+    <text x="110" y="115" text-anchor="middle" fill="rgba(255,255,255,0.8)"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11">
+      (Браузър)
+    </text>
+    <!-- Cookie box -->
+    <rect x="45" y="135" width="130" height="50" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="110" y="158" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+      Cookie
+    </text>
+    <text x="110" y="175" text-anchor="middle" fill="rgba(255,255,255,0.95)"
+          font-family="monospace, monospace" font-size="9">
+      sessionId=abc123
+    </text>
+    <!-- Client icon -->
+    <rect x="70" y="195" width="80" height="35" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <text x="110" y="218" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="10">
+      Browser
+    </text>
+  </g>
+
+  <!-- Column 2: Server Box -->
+  <g id="server-column" filter="url(#flow-shadow)">
+    <rect x="345" y="60" width="160" height="180" rx="12" fill="url(#flow-server-grad)"/>
+    <text x="425" y="95" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">
+      Сървър
+    </text>
+    <text x="425" y="115" text-anchor="middle" fill="rgba(255,255,255,0.8)"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11">
+      (Express / PHP)
+    </text>
+    <!-- Middleware box -->
+    <rect x="360" y="135" width="130" height="40" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="425" y="160" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">
+      Session Middleware
+    </text>
+    <!-- Process box -->
+    <rect x="360" y="185" width="130" height="45" rx="6" fill="rgba(255,255,255,0.15)"/>
+    <text x="425" y="205" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="10">
+      req.session
+    </text>
+    <text x="425" y="220" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="monospace, monospace" font-size="9">
+      read / write
+    </text>
+  </g>
+
+  <!-- Column 3: Session Store Box -->
+  <g id="store-column" filter="url(#flow-shadow)">
+    <rect x="660" y="60" width="160" height="180" rx="12" fill="url(#flow-store-grad)"/>
+    <text x="740" y="95" text-anchor="middle" fill="white"
+          font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">
+      Session Store
+    </text>
+    <text x="740" y="115" text-anchor="middle" fill="rgba(255,255,255,0.8)"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11">
+      (Redis / Memory)
+    </text>
+    <!-- Data box -->
+    <rect x="675" y="130" width="130" height="100" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="740" y="150" text-anchor="middle" fill="white"
+          font-family="monospace, monospace" font-size="10" font-weight="600">
+      abc123:
+    </text>
+    <text x="740" y="170" text-anchor="middle" fill="rgba(255,255,255,0.95)"
+          font-family="monospace, monospace" font-size="9">
+      user: "ivan"
+    </text>
+    <text x="740" y="188" text-anchor="middle" fill="rgba(255,255,255,0.95)"
+          font-family="monospace, monospace" font-size="9">
+      cart: [item1, ...]
+    </text>
+    <text x="740" y="206" text-anchor="middle" fill="rgba(255,255,255,0.95)"
+          font-family="monospace, monospace" font-size="9">
+      expires: 30min
+    </text>
+    <text x="740" y="224" text-anchor="middle" fill="rgba(255,255,255,0.95)"
+          font-family="monospace, monospace" font-size="9">
+      ...
+    </text>
+  </g>
+
+  <!-- Flow Steps Section -->
+  <g id="flow-steps">
+    <!-- Step backgrounds for better readability -->
+    <rect x="20" y="265" width="810" height="235" rx="8" fill="#f8f9fa" stroke="#e1e4e8" stroke-width="1"/>
+
+    <!-- Step 1: Request with Cookie -->
+    <g id="step-1" transform="translate(0, 290)">
+      <rect x="30" y="-8" width="90" height="24" rx="4" fill="#9b59b6"/>
+      <text x="75" y="8" text-anchor="middle" fill="white"
+            font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+        1. Заявка
+      </text>
+      <path d="M195,0 L340,0" stroke="#e67e22" stroke-width="3"
+            marker-end="url(#flow-arrow-right)" fill="none"/>
+      <text x="267" y="18" text-anchor="middle" fill="#5d6d7e"
+            font-family="system-ui, -apple-system, sans-serif" font-size="10">
+        + Session ID Cookie
+      </text>
+    </g>
+
+    <!-- Step 2: Lookup Session -->
+    <g id="step-2" transform="translate(0, 335)">
+      <rect x="345" y="-8" width="90" height="24" rx="4" fill="#3498db"/>
+      <text x="390" y="8" text-anchor="middle" fill="white"
+            font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+        2. Търсене
+      </text>
+      <path d="M510,0 L655,0" stroke="#e67e22" stroke-width="3"
+            marker-end="url(#flow-arrow-right)" fill="none"/>
+      <text x="582" y="18" text-anchor="middle" fill="#5d6d7e"
+            font-family="system-ui, -apple-system, sans-serif" font-size="10">
+        GET session abc123
+      </text>
+    </g>
+
+    <!-- Step 3: Return Data -->
+    <g id="step-3" transform="translate(0, 380)">
+      <rect x="720" y="-8" width="90" height="24" rx="4" fill="#27ae60"/>
+      <text x="765" y="8" text-anchor="middle" fill="white"
+            font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+        3. Данни
+      </text>
+      <path d="M655,0 L510,0" stroke="#3498db" stroke-width="3"
+            marker-end="url(#flow-arrow-left)" fill="none"/>
+      <text x="582" y="18" text-anchor="middle" fill="#5d6d7e"
+            font-family="system-ui, -apple-system, sans-serif" font-size="10">
+        {user, cart, ...}
+      </text>
+    </g>
+
+    <!-- Step 4: Process & Update -->
+    <g id="step-4" transform="translate(0, 425)">
+      <rect x="345" y="-8" width="110" height="24" rx="4" fill="#3498db"/>
+      <text x="400" y="8" text-anchor="middle" fill="white"
+            font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+        4. Обработка
+      </text>
+      <path d="M510,0 L655,0" stroke="#e67e22" stroke-width="3"
+            marker-end="url(#flow-arrow-right)" fill="none"/>
+      <text x="582" y="18" text-anchor="middle" fill="#5d6d7e"
+            font-family="system-ui, -apple-system, sans-serif" font-size="10">
+        UPDATE session
+      </text>
+    </g>
+
+    <!-- Step 5: Response -->
+    <g id="step-5" transform="translate(0, 470)">
+      <rect x="30" y="-8" width="100" height="24" rx="4" fill="#9b59b6"/>
+      <text x="80" y="8" text-anchor="middle" fill="white"
+            font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+        5. Отговор
+      </text>
+      <path d="M340,0 L195,0" stroke="#3498db" stroke-width="3"
+            marker-end="url(#flow-arrow-left)" fill="none"/>
+      <text x="267" y="18" text-anchor="middle" fill="#5d6d7e"
+            font-family="system-ui, -apple-system, sans-serif" font-size="10">
+        HTML + Set-Cookie
+      </text>
+    </g>
+  </g>
+
+  <!-- Column Labels at Bottom -->
+  <g id="column-labels">
+    <text x="110" y="255" text-anchor="middle" fill="#8e44ad"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+      КЛИЕНТ
+    </text>
+    <text x="425" y="255" text-anchor="middle" fill="#2980b9"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+      СЪРВЪР
+    </text>
+    <text x="740" y="255" text-anchor="middle" fill="#27ae60"
+          font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">
+      SESSION STORE
+    </text>
+  </g>
+</svg>

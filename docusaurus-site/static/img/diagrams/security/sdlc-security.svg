@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sdlcPlanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="sdlcCodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="sdlcTestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="sdlcDeployGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="sdlcMonitorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="sdlcShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="sdlcArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#bdc3c7"/>
+    </marker>
+  </defs>
+
+  <style>
+    /* Flow animations for the lifecycle */
+    .sdlc-flow { animation: sdlcFlow 1s linear infinite; }
+    .sdlc-loop-flow { animation: sdlcLoopFlow 2s linear infinite; }
+    .sdlc-phase-glow { animation: sdlcPhaseGlow 3s ease-in-out infinite; }
+
+    @keyframes sdlcFlow {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes sdlcLoopFlow {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes sdlcPhaseGlow {
+      0%, 25%, 100% { filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2)); }
+      12.5% { filter: drop-shadow(0 3px 12px rgba(52,152,219,0.5)); }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Secure Development Lifecycle (SDLC)</text>
+  <text x="400" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">"Shift-Left" Security - Вградена сигурност от началото</text>
+
+  <!-- Phase 1: Plan -->
+  <g transform="translate(30, 80)" filter="url(#sdlcShadow)" class="sdlc-phase-glow">
+    <rect width="130" height="100" rx="10" fill="url(#sdlcPlanGrad)"/>
+    <text x="65" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">📋 PLAN</text>
+    <rect x="10" y="35" width="110" height="55" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="65" y="52" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="8">Threat Modeling</text>
+    <text x="65" y="65" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="8">Security Requirements</text>
+    <text x="65" y="78" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="8">Risk Assessment</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M170,130 L195,130" stroke="#bdc3c7" stroke-width="3" stroke-dasharray="8,4" class="sdlc-flow" marker-end="url(#sdlcArrow)"/>
+
+  <!-- Phase 2: Code -->
+  <g transform="translate(205, 80)" filter="url(#sdlcShadow)">
+    <rect width="130" height="100" rx="10" fill="url(#sdlcCodeGrad)"/>
+    <text x="65" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">💻 CODE</text>
+    <rect x="10" y="35" width="110" height="55" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="65" y="52" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">Secure Coding</text>
+    <text x="65" y="65" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">Code Reviews</text>
+    <text x="65" y="78" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">SAST Analysis</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M345,130 L370,130" stroke="#bdc3c7" stroke-width="3" stroke-dasharray="8,4" class="sdlc-flow" marker-end="url(#sdlcArrow)"/>
+
+  <!-- Phase 3: Test -->
+  <g transform="translate(380, 80)" filter="url(#sdlcShadow)">
+    <rect width="130" height="100" rx="10" fill="url(#sdlcTestGrad)"/>
+    <text x="65" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🧪 TEST</text>
+    <rect x="10" y="35" width="110" height="55" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="65" y="52" text-anchor="middle" fill="#d35400" font-family="system-ui, sans-serif" font-size="8">DAST Scanning</text>
+    <text x="65" y="65" text-anchor="middle" fill="#d35400" font-family="system-ui, sans-serif" font-size="8">Penetration Testing</text>
+    <text x="65" y="78" text-anchor="middle" fill="#d35400" font-family="system-ui, sans-serif" font-size="8">Dependency Audit</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M520,130 L545,130" stroke="#bdc3c7" stroke-width="3" stroke-dasharray="8,4" class="sdlc-flow" marker-end="url(#sdlcArrow)"/>
+
+  <!-- Phase 4: Deploy -->
+  <g transform="translate(555, 80)" filter="url(#sdlcShadow)">
+    <rect width="130" height="100" rx="10" fill="url(#sdlcDeployGrad)"/>
+    <text x="65" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🚀 DEPLOY</text>
+    <rect x="10" y="35" width="110" height="55" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="65" y="52" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="8">Secure Config</text>
+    <text x="65" y="65" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="8">Secrets Management</text>
+    <text x="65" y="78" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="8">Infrastructure as Code</text>
+  </g>
+
+  <!-- Curve back arrow (loop) with animation -->
+  <path d="M695,130 L730,130 L730,250 L95,250 L95,190" stroke="#bdc3c7" stroke-width="2" fill="none" stroke-dasharray="10,5" class="sdlc-loop-flow" marker-end="url(#sdlcArrow)"/>
+
+  <!-- Phase 5: Monitor -->
+  <g transform="translate(30, 195)" filter="url(#sdlcShadow)">
+    <rect width="130" height="100" rx="10" fill="url(#sdlcMonitorGrad)"/>
+    <text x="65" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">👁️ MONITOR</text>
+    <rect x="10" y="35" width="110" height="55" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="65" y="52" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="8">Runtime Protection</text>
+    <text x="65" y="65" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="8">Incident Response</text>
+    <text x="65" y="78" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="8">Continuous Scanning</text>
+  </g>
+
+  <!-- Tools box -->
+  <g transform="translate(200, 195)">
+    <rect width="560" height="100" rx="10" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="280" y="22" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="13" font-weight="600">🔧 Security Tools по фаза</text>
+
+    <g>
+      <rect x="15" y="35" width="125" height="55" rx="6" fill="#ebf5fb"/>
+      <text x="77" y="52" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="9" font-weight="600">SAST</text>
+      <text x="77" y="68" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">SonarQube, Semgrep</text>
+      <text x="77" y="80" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">CodeQL, Checkmarx</text>
+    </g>
+
+    <g>
+      <rect x="155" y="35" width="125" height="55" rx="6" fill="#fef9e7"/>
+      <text x="217" y="52" text-anchor="middle" fill="#d35400" font-family="system-ui, sans-serif" font-size="9" font-weight="600">DAST</text>
+      <text x="217" y="68" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">OWASP ZAP, Burp</text>
+      <text x="217" y="80" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Nikto, Nuclei</text>
+    </g>
+
+    <g>
+      <rect x="295" y="35" width="125" height="55" rx="6" fill="#eafaf1"/>
+      <text x="357" y="52" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="9" font-weight="600">SCA</text>
+      <text x="357" y="68" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Snyk, Dependabot</text>
+      <text x="357" y="80" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">npm audit</text>
+    </g>
+
+    <g>
+      <rect x="435" y="35" width="110" height="55" rx="6" fill="#fdf2f2"/>
+      <text x="490" y="52" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Pentest</text>
+      <text x="490" y="68" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Metasploit</text>
+      <text x="490" y="80" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Kali Linux</text>
+    </g>
+  </g>
+</svg>

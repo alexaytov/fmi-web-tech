@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cfgHttpsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="cfgHeadersGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="cfgServerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="cfgWafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <filter id="cfgShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Subtle glow animations for security items */
+    .cfg-secure { animation: cfgSecure 3s ease-in-out infinite; }
+    .cfg-check { animation: cfgCheck 2s ease-in-out infinite; }
+
+    @keyframes cfgSecure {
+      0%, 100% { filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2)); }
+      50% { filter: drop-shadow(0 3px 10px rgba(39,174,96,0.4)); }
+    }
+    @keyframes cfgCheck {
+      0%, 100% { fill: #27ae60; }
+      50% { fill: #2ecc71; }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Secure Configuration Checklist</text>
+  <text x="400" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">Hardening на сървъри и инфраструктура</text>
+
+  <!-- HTTPS Box -->
+  <g transform="translate(30, 80)" class="cfg-secure">
+    <rect width="235" height="140" rx="12" fill="url(#cfgHttpsGrad)"/>
+    <text x="117" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🔒 HTTPS &amp; TLS</text>
+    <rect x="15" y="35" width="205" height="90" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="25" y="55" font-family="system-ui, sans-serif" font-size="10" class="cfg-check">✓ TLS 1.2 / 1.3 само</text>
+    <text x="25" y="72" font-family="system-ui, sans-serif" font-size="10" class="cfg-check">✓ HTTP → HTTPS redirect</text>
+    <text x="25" y="89" font-family="system-ui, sans-serif" font-size="10" class="cfg-check">✓ HSTS header активиран</text>
+    <text x="25" y="106" font-family="system-ui, sans-serif" font-size="10" class="cfg-check">✓ Валиден SSL сертификат</text>
+    <text x="25" y="120" fill="#7f8c8d" font-family="monospace" font-size="8">Strict-Transport-Security</text>
+  </g>
+
+  <!-- Security Headers -->
+  <g transform="translate(282, 80)" filter="url(#cfgShadow)">
+    <rect width="235" height="140" rx="12" fill="url(#cfgHeadersGrad)"/>
+    <text x="117" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">📋 Security Headers</text>
+    <rect x="15" y="35" width="205" height="90" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="25" y="55" fill="#8e44ad" font-family="monospace" font-size="9">X-Frame-Options: DENY</text>
+    <text x="25" y="72" fill="#8e44ad" font-family="monospace" font-size="9">X-Content-Type-Options</text>
+    <text x="25" y="89" fill="#8e44ad" font-family="monospace" font-size="9">Content-Security-Policy</text>
+    <text x="25" y="106" fill="#8e44ad" font-family="monospace" font-size="9">X-XSS-Protection: 1</text>
+    <text x="25" y="120" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Защита от XSS, Clickjacking</text>
+  </g>
+
+  <!-- Server Hardening -->
+  <g transform="translate(534, 80)" filter="url(#cfgShadow)">
+    <rect width="235" height="140" rx="12" fill="url(#cfgServerGrad)"/>
+    <text x="117" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🖥️ Server Hardening</text>
+    <rect x="15" y="35" width="205" height="90" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="25" y="55" fill="#2980b9" font-family="system-ui, sans-serif" font-size="10">✓ Disable directory listing</text>
+    <text x="25" y="72" fill="#2980b9" font-family="system-ui, sans-serif" font-size="10">✓ Remove server banners</text>
+    <text x="25" y="89" fill="#2980b9" font-family="system-ui, sans-serif" font-size="10">✓ Least privilege principle</text>
+    <text x="25" y="106" fill="#2980b9" font-family="system-ui, sans-serif" font-size="10">✓ Regular patching</text>
+    <text x="25" y="120" fill="#7f8c8d" font-family="monospace" font-size="8">server_tokens off;</text>
+  </g>
+
+  <!-- WAF & Firewall -->
+  <g transform="translate(155, 235)" filter="url(#cfgShadow)">
+    <rect width="235" height="130" rx="12" fill="url(#cfgWafGrad)"/>
+    <text x="117" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🛡️ WAF &amp; Firewall</text>
+    <rect x="15" y="35" width="205" height="80" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="25" y="55" fill="#d35400" font-family="system-ui, sans-serif" font-size="10">✓ Web Application Firewall</text>
+    <text x="25" y="72" fill="#d35400" font-family="system-ui, sans-serif" font-size="10">✓ IP whitelisting за admin</text>
+    <text x="25" y="89" fill="#d35400" font-family="system-ui, sans-serif" font-size="10">✓ Rate limiting по IP</text>
+    <text x="25" y="106" fill="#d35400" font-family="system-ui, sans-serif" font-size="10">✓ DDoS protection</text>
+  </g>
+
+  <!-- Monitoring -->
+  <g transform="translate(407, 235)" filter="url(#cfgShadow)">
+    <rect width="235" height="130" rx="12" fill="#34495e"/>
+    <text x="117" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">📊 Logging &amp; Monitoring</text>
+    <rect x="15" y="35" width="205" height="80" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="25" y="55" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="10">✓ Централизирани логове</text>
+    <text x="25" y="72" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="10">✓ Alert при аномалии</text>
+    <text x="25" y="89" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="10">✓ Audit trails</text>
+    <text x="25" y="106" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="10">✓ SIEM integration</text>
+  </g>
+</svg>

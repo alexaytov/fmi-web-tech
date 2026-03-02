@@ -1,0 +1,9 @@
+{
+  "label": "11. Уеб Сигурност",
+  "position": 12,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "OWASP Top 10 уязвимости, атаки като SQL Injection и XSS, и най-добри практики за сигурна разработка"
+  }
+}

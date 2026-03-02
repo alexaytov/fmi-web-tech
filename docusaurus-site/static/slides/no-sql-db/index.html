@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoSQL Бази Данни</title>
+
+    <!-- Reveal.js Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+
+    <!-- Code Highlighting - using highlight.js directly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .reveal .slides {
+            text-align: left;
+        }
+        .reveal h1 {
+            font-size: 2.2em;
+            text-transform: none;
+        }
+        .reveal h2 {
+            font-size: 1.8em;
+            text-transform: none;
+        }
+        .reveal h3 {
+            font-size: 1.4em;
+            text-transform: none;
+        }
+        .reveal p, .reveal li {
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .reveal pre code {
+            max-height: 500px;
+            font-size: 0.75em;
+        }
+        .reveal code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .reveal {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+        .reveal ul, .reveal ol {
+            margin-left: 1em;
+        }
+        .reveal li {
+            margin-bottom: 0.4em;
+        }
+        .reveal table {
+            font-size: 0.8em;
+        }
+        .reveal img {
+            max-width: 70%;
+            max-height: 400px;
+            margin: 0.5em auto;
+            display: block;
+            object-fit: contain;
+        }
+        /* Two-column layout */
+        .reveal .columns {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+        .reveal .column {
+            flex: 1;
+        }
+        .reveal .column img {
+            max-width: 100%;
+            max-height: 450px;
+            margin: 0;
+        }
+        .reveal .column.left {
+            text-align: left;
+        }
+        .reveal .column.right {
+            text-align: center;
+        }
+        /* Back to lecture button */
+        .back-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 100;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,1);
+            color: #333;
+            border-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+<script type="text/template">
+# NoSQL Бази Данни
+
+### Типове, Trade-offs и Приложения
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Какво ще научим днес?
+
+🎯 **Цели:**
+
+📊 Четирите типа NoSQL бази <!-- .element: class="fragment" -->
+
+⚖️ CAP теорема и trade-offs <!-- .element: class="fragment" -->
+
+🔧 Кога NoSQL, кога RDBMS <!-- .element: class="fragment" -->
+
+🚀 Практически примери <!-- .element: class="fragment" -->
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Какво е NoSQL?
+
+**"Not only SQL"**
+
+Не заместват SQL, а предлагат **алтернативи**
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Характеристики
+
+🔓 **Гъвкави схеми** <!-- .element: class="fragment" -->
+
+📈 **Хоризонтално мащабиране** <!-- .element: class="fragment" -->
+
+🌐 **Разпределени архитектури** <!-- .element: class="fragment" -->
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Защо се появиха?
+
+**Ограничения на RDBMS:**
+
+❌ Милиони concurrent заявки <!-- .element: class="fragment" -->
+
+❌ Твърди схеми <!-- .element: class="fragment" -->
+
+❌ Вертикално мащабиране = скъпо <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Пионерите
+
+🔵 **Google Bigtable** (2006)
+
+🟠 **Amazon Dynamo** (2007)
+
+→ Вдъхновиха open-source NoSQL движението
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## 3V-тата на Big Data
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Volume (Обем)
+
+📊 **Петабайти данни**
+
+- RDBMS: Скъпо вертикално мащабиране
+- NoSQL: Хоризонтално разпределение
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Velocity (Скорост)
+
+⚡ **Милиони операции/секунда**
+
+- RDBMS: Бавни JOINs
+- NoSQL: Оптимизирано за throughput
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Variety (Разнообразие)
+
+🎨 **JSON, изображения, графи**
+
+- RDBMS: Твърди схеми
+- NoSQL: Гъвкави модели
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## ACID vs BASE
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### ACID (RDBMS)
+
+**A**tomicity - Всичко или нищо
+
+**C**onsistency - Валидни данни
+
+**I**solation - Независими транзакции
+
+**D**urability - Промените се запазват
+
+🎯 **Фокус: Силен интегритет**
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### BASE (NoSQL)
+
+**B**asically Available
+
+**S**oft State
+
+**E**ventual Consistency
+
+🚀 **Фокус: Висока достъпност**
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Четирите Типа NoSQL
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## 1. Document Stores
+
+📄 JSON/BSON документи
+
+```json
+{
+  "name": "Ivan",
+  "age": 25,
+  "skills": ["JS", "Python"]
+}
+```
+
+**Примери:** MongoDB, Couchbase
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Document - Приложения
+
+✅ CMS системи
+
+✅ E-commerce каталози
+
+✅ Потребителски профили
+
+✅ Мобилни приложения
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## 2. Key-Value Stores
+
+🔑 Прости ключ-стойност двойки
+
+```python
+redis.set("user:123", "{...}")
+redis.get("user:123")
+```
+
+**Примери:** Redis, DynamoDB
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Key-Value - Приложения
+
+✅ Кеширане
+
+✅ Session management
+
+✅ Leaderboards
+
+✅ Message queues
+
+⚡ **O(1) lookups!**
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## 3. Wide-Column Stores
+
+📊 Column families, sparse данни
+
+```
+sensor_001:2024-01-15
+  ├── temp:08:00 → 22.5
+  ├── temp:09:00 → 23.1
+  └── humidity:08:00 → 45%
+```
+
+**Примери:** Cassandra, ScyllaDB
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Wide-Column - Приложения
+
+✅ IoT сензорни данни
+
+✅ Time-series
+
+✅ Log aggregation
+
+✅ Analytics
+
+🔥 **Масивен write throughput**
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## 4. Graph Databases
+
+🕸️ Nodes + Edges + Properties
+
+```cypher
+MATCH (user)-[:FRIEND]->(friend)
+WHERE user.name = "Ivan"
+RETURN friend.name
+```
+
+**Примери:** Neo4j, Neptune
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Graph - Приложения
+
+✅ Социални мрежи
+
+✅ Fraud detection
+
+✅ Препоръчващи системи
+
+✅ Knowledge graphs
+
+🔗 **Ефективни traversals**
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Сравнителна Таблица
+
+| Тип | Модел | Силни страни | Use Case |
+|-----|-------|-------------|----------|
+| Document | JSON | Гъвкавост | Каталози |
+| Key-Value | K→V | Скорост | Cache |
+| Column | Sparse | Throughput | IoT |
+| Graph | Nodes | Relationships | Social |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+# CAP Теорема
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## CAP: Трите Свойства
+
+**C**onsistency - Еднакви данни навсякъде
+
+**A**vailability - Системата отговаря
+
+**P**artition Tolerance - Работи при network split
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Изберете ДВЕ
+
+⚠️ **Невъзможно е да имате и трите**
+
+За NoSQL: **P е задължително**
+
+→ Избор между **C** и **A**
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### CP Системи
+
+🔒 **Приоритет: Консистентност**
+
+- При partition → спира да пише
+- Примери: MongoDB, Redis
+- За: Банкови системи
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### AP Системи
+
+🟢 **Приоритет: Достъпност**
+
+- При partition → продължава да работи
+- Примери: Cassandra, DynamoDB
+- За: Social feeds, analytics
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Модели на Консистентност
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Strong Consistency
+
+🔒 Всички четат последния запис
+
+- Quorum writes
+- По-ниска availability
+
+**Пример:** Банкови транзакции
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Eventual Consistency
+
+⏳ Данните се синхронизират с времето
+
+- Асинхронна репликация
+- Висока availability
+
+**Пример:** Social media feeds
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Tunable Consistency
+
+🎛️ Избирате ниво per-operation
+
+```
+ONE → QUORUM → ALL
+Бързо        Консистентно
+```
+
+**Пример:** Cassandra
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Мащабиране
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Vertical vs Horizontal
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Вертикално (Scale-Up)
+
+⬆️ По-мощен сървър
+
+- По-лесно
+- ❌ Има физически лимит
+- ❌ Скъпо
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Хоризонтално (Scale-Out)
+
+↔️ Повече сървъри
+
+- ✅ Почти неограничено
+- ✅ Евтин hardware
+- NoSQL е проектиран за това!
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Managed vs Self-Managed
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Managed Services
+
+☁️ **MongoDB Atlas, DynamoDB**
+
+✅ Автоматично мащабиране
+
+✅ Backups, patching
+
+✅ По-бърза разработка
+
+❌ По-малко контрол
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Self-Managed
+
+🔧 **Self-hosted**
+
+✅ Пълен контрол
+
+✅ Потенциално по-евтино
+
+❌ Изисква експертиза
+
+❌ Голям operational burden
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Case Study: MongoDB
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## E-commerce Каталог
+
+**Проблем:** Продуктите имат различни атрибути
+
+- Тениска: размер, цвят
+- Лаптоп: CPU, RAM
+- Книга: автор, ISBN
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Релационно Решение
+
+```sql
+-- 5+ таблици + JOINs
+SELECT * FROM products p
+JOIN laptop_specs ON ...
+JOIN clothing_specs ON ...
+```
+
+😰 Сложно и бавно
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### MongoDB Решение
+
+```json
+{
+  "productId": "LAPTOP-001",
+  "name": "ProBook",
+  "specs": {
+    "cpu": "i7",
+    "ram": "16GB"
+  },
+  "schemaVersion": 2
+}
+```
+
+✅ Всичко в един документ
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Schema Evolution
+
+**1. Versioning**
+```json
+{ "schemaVersion": 2 }
+```
+
+**2. Lazy Migration**
+```python
+if doc.version < CURRENT:
+    migrate(doc)
+```
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Кога NoSQL vs RDBMS?
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Използвайте NoSQL
+
+✅ Гъвкави схеми
+
+✅ Масивен мащаб
+
+✅ High throughput
+
+✅ Географско разпределение
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Използвайте RDBMS
+
+✅ Комплексни транзакции
+
+✅ Силен интегритет
+
+✅ Сложни JOINs
+
+✅ Регулаторни изисквания
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Polyglot Persistence
+
+🔀 **Комбинирайте бази данни!**
+
+- PostgreSQL → Транзакции
+- MongoDB → Каталози
+- Redis → Кеш
+- Neo4j → Препоръки
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Тенденции 2026
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Multi-Model
+
+🔀 Document + Graph + Key-Value
+
+**В една система**
+
+Примери: ArangoDB, CosmosDB
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Cloud-Native
+
+☁️ Serverless, auto-sharding
+
+**Pay-per-query pricing**
+
+MongoDB Atlas, DynamoDB
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## AI Integration
+
+🤖 Vector search, ML pipelines
+
+**Generative AI workloads**
+
+Redis като AI data platform
+</script>
+</section>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Обобщение
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Ключови Точки
+
+📊 **4 типа NoSQL** - Document, Key-Value, Column, Graph
+
+⚖️ **CAP trade-off** - Изберете C или A
+
+📈 **Хоризонтално мащабиране** - Ключово предимство
+
+🔀 **Polyglot persistence** - Правилният инструмент за задачата
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Матрица за Избор
+
+| Нужда | Избор |
+|-------|-------|
+| Гъвкави данни | Document |
+| Ултра бързо | Key-Value |
+| Масивен запис | Wide-Column |
+| Връзки | Graph |
+| Транзакции | RDBMS |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Въпроси?
+
+🙋 Какво ще питате?
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Допълнителни Ресурси
+
+📚 **MongoDB University** - Безплатни курсове
+
+📚 **DataStax Academy** - Cassandra обучение
+
+🔧 **Redis Documentation** - redis.io/docs
+
+🔧 **Neo4j Sandbox** - Безплатен playground
+</script>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Navigation Helper -->
+    <a href="/fmi-web-tech/docs/no-sql-db/lecture" class="back-button">
+        ← Back to Lecture
+    </a>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+
+    <!-- marked library required by reveal.js markdown plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.0/marked.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            history: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            controls: true,
+            progress: true,
+            center: true,
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            markdown: {
+                smartypants: false,
+                gfm: true,
+                breaks: false,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true
+            },
+            highlight: {
+                highlightOnLoad: true,
+                escapeHTML: false
+            }
+        });
+    </script>
+</body>
+</html>

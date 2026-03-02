@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 750 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rtRouterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="rtHomeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="rtAboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="rtUserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="rtShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="375" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Angular Routing - SPA Навигация</text>
+
+  <!-- URL Bar -->
+  <g transform="translate(100, 55)">
+    <rect width="550" height="45" rx="22" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    <circle cx="30" cy="22" r="8" fill="#e74c3c"/>
+    <circle cx="55" cy="22" r="8" fill="#f39c12"/>
+    <circle cx="80" cy="22" r="8" fill="#2ecc71"/>
+    <rect x="100" y="10" width="430" height="25" rx="4" fill="white"/>
+    <text x="315" y="28" text-anchor="middle" fill="#7f8c8d" font-family="monospace" font-size="12">localhost:4200/home</text>
+  </g>
+
+  <!-- Router -->
+  <g transform="translate(275, 115)" filter="url(#rtShadow)">
+    <rect width="200" height="50" rx="10" fill="url(#rtRouterGrad)"/>
+    <text x="100" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🔀 Angular Router</text>
+  </g>
+
+  <!-- Arrows to components -->
+  <path d="M275,165 L150,205" stroke="#8e44ad" stroke-width="2" fill="none"/>
+  <path d="M375,165 L375,205" stroke="#8e44ad" stroke-width="2" fill="none"/>
+  <path d="M475,165 L600,205" stroke="#8e44ad" stroke-width="2" fill="none"/>
+
+  <!-- Route labels -->
+  <text x="180" y="190" fill="#8e44ad" font-family="monospace" font-size="10" transform="rotate(-20, 180, 190)">/home</text>
+  <text x="375" y="195" text-anchor="middle" fill="#8e44ad" font-family="monospace" font-size="10">/about</text>
+  <text x="560" y="190" fill="#8e44ad" font-family="monospace" font-size="10" transform="rotate(20, 560, 190)">/user/:id</text>
+
+  <!-- Components -->
+  <g transform="translate(50, 210)" filter="url(#rtShadow)">
+    <rect width="160" height="70" rx="10" fill="url(#rtHomeGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🏠 HomeComponent</text>
+    <rect x="10" y="35" width="140" height="25" rx="4" fill="white" fill-opacity="0.9"/>
+    <text x="80" y="52" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="9">path: 'home'</text>
+  </g>
+
+  <g transform="translate(295, 210)" filter="url(#rtShadow)">
+    <rect width="160" height="70" rx="10" fill="url(#rtAboutGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ℹ️ AboutComponent</text>
+    <rect x="10" y="35" width="140" height="25" rx="4" fill="white" fill-opacity="0.9"/>
+    <text x="80" y="52" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="9">path: 'about'</text>
+  </g>
+
+  <g transform="translate(540, 210)" filter="url(#rtShadow)">
+    <rect width="160" height="70" rx="10" fill="url(#rtUserGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">👤 UserComponent</text>
+    <rect x="10" y="35" width="140" height="25" rx="4" fill="white" fill-opacity="0.9"/>
+    <text x="80" y="52" text-anchor="middle" fill="#c0392b" font-family="monospace" font-size="9">path: 'user/:id'</text>
+  </g>
+
+  <!-- router-outlet -->
+  <text x="375" y="295" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">&lt;router-outlet&gt; рендерира активния компонент</text>
+</svg>

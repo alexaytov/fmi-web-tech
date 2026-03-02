@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 750 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ccParentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dd0031"/>
+      <stop offset="100%" stop-color="#c3002f"/>
+    </linearGradient>
+    <linearGradient id="ccChildGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <filter id="ccShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="375" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Комуникация между Компоненти</text>
+
+  <!-- Parent Component -->
+  <g transform="translate(225, 55)" filter="url(#ccShadow)">
+    <rect width="300" height="100" rx="14" fill="url(#ccParentGrad)"/>
+    <text x="150" y="28" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="15" font-weight="600">👨 Parent Component</text>
+
+    <rect x="15" y="40" width="270" height="45" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="150" y="58" text-anchor="middle" fill="#c3002f" font-family="monospace" font-size="9">parentData = signal('Hello from parent')</text>
+    <text x="150" y="74" text-anchor="middle" fill="#c3002f" font-family="monospace" font-size="9">&lt;app-child [message]="parentData()"&gt;</text>
+  </g>
+
+  <!-- input() arrow -->
+  <g transform="translate(300, 160)">
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#2ecc71" stroke-width="3"/>
+    <polygon points="0,58 -5,48 5,48" fill="#2ecc71"/>
+    <rect x="12" y="12" width="70" height="26" rx="6" fill="#2ecc71"/>
+    <text x="47" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">input()</text>
+  </g>
+
+  <!-- model() two-way arrow -->
+  <g transform="translate(420, 160)">
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#9b59b6" stroke-width="4"/>
+    <line x1="12" y1="50" x2="12" y2="0" stroke="#9b59b6" stroke-width="4"/>
+    <polygon points="0,57 -5,47 5,47" fill="#9b59b6"/>
+    <polygon points="12,-7 7,3 17,3" fill="#9b59b6"/>
+    <rect x="25" y="10" width="80" height="30" rx="6" fill="#9b59b6"/>
+    <text x="65" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">model()</text>
+  </g>
+
+  <!-- Child Component -->
+  <g transform="translate(225, 220)" filter="url(#ccShadow)">
+    <rect width="300" height="110" rx="14" fill="url(#ccChildGrad)"/>
+    <text x="150" y="28" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="15" font-weight="600">👶 Child Component</text>
+
+    <rect x="15" y="40" width="270" height="55" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="150" y="58" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="9">message = input&lt;string&gt;('default')</text>
+    <text x="150" y="74" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="9">count = model&lt;number&gt;(0) // two-way</text>
+    <text x="150" y="90" text-anchor="middle" fill="#7f8c8d" font-family="monospace" font-size="9">{{ message() }} • {{ count() }}</text>
+  </g>
+
+  <!-- Legend boxes -->
+  <g transform="translate(50, 170)">
+    <rect width="140" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600">input()</text>
+    <text x="70" y="40" text-anchor="middle" fill="#2ecc71" font-family="system-ui, sans-serif" font-size="10">↓ Parent → Child</text>
+    <text x="70" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">Read-only signal</text>
+    <text x="70" y="70" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">input.required()</text>
+  </g>
+
+  <g transform="translate(560, 170)">
+    <rect width="140" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600">model()</text>
+    <text x="70" y="40" text-anchor="middle" fill="#9b59b6" font-family="system-ui, sans-serif" font-size="10">↕ Two-way binding</text>
+    <text x="70" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">Writable signal</text>
+    <text x="70" y="70" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">[(prop)]="signal"</text>
+  </g>
+</svg>

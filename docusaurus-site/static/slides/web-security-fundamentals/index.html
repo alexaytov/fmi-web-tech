@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уеб Сигурност - OWASP Top 10</title>
+
+    <!-- Reveal.js Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css">
+
+    <!-- Code Highlighting - using highlight.js directly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .reveal .slides {
+            text-align: left;
+        }
+        .reveal h1 {
+            font-size: 2.2em;
+            text-transform: none;
+        }
+        .reveal h2 {
+            font-size: 1.8em;
+            text-transform: none;
+        }
+        .reveal h3 {
+            font-size: 1.4em;
+            text-transform: none;
+        }
+        .reveal p, .reveal li {
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        .reveal pre code {
+            max-height: 500px;
+            font-size: 0.75em;
+        }
+        .reveal code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .reveal {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+        .reveal ul, .reveal ol {
+            margin-left: 1em;
+        }
+        .reveal li {
+            margin-bottom: 0.4em;
+        }
+        .reveal table {
+            font-size: 0.8em;
+        }
+        .reveal img {
+            max-width: 70%;
+            max-height: 400px;
+            margin: 0.5em auto;
+            display: block;
+            object-fit: contain;
+        }
+        /* Two-column layout */
+        .reveal .columns {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+        .reveal .column {
+            flex: 1;
+        }
+        .reveal .column img {
+            max-width: 100%;
+            max-height: 450px;
+            margin: 0;
+        }
+        .reveal .column.left {
+            text-align: left;
+        }
+        .reveal .column.right {
+            text-align: center;
+        }
+        /* Back to lecture button */
+        .back-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 100;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,1);
+            color: #333;
+            border-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+<script type="text/template">
+# Уеб Сигурност
+
+### OWASP Top 10 и Best Practices
+
+🔒 Защитете вашите приложения
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Защо е важна уеб сигурността?
+
+Уеб приложенията са **главна мишена** за атаки
+
+💰 **$5.9M** - средна цена на data breach (finance) <!-- .element: class="fragment" -->
+
+🤖 **Автоматизирани атаки** - AI-driven scanning <!-- .element: class="fragment" -->
+
+📈 **Растящи заплахи** - APIs, cloud, mobile <!-- .element: class="fragment" -->
+
+⚖️ **GDPR глоби** - до 4% от годишния оборот <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Какво е OWASP?
+
+**Open Web Application Security Project**
+
+📊 Evidence-based ranking на рискове <!-- .element: class="fragment" -->
+
+🔄 Редовно обновяван (2025) <!-- .element: class="fragment" -->
+
+📖 Индустриален стандарт <!-- .element: class="fragment" -->
+
+🆓 Безплатни ресурси <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## OWASP Top 10 (2025)
+
+| # | Риск | Описание |
+|---|------|----------|
+| A01 | Broken Access Control | Неоторизиран достъп |
+| A02 | Security Misconfiguration | Грешна конфигурация |
+| A03 | Injection | SQL, Command injection |
+| A04 | Cryptographic Failures | Слаба криптография |
+| A05-A10 | SSRF, Components, Auth... | Допълнителни рискове |
+</script>
+</section>
+<section data-background="#c0392b" data-markdown>
+<script type="text/template">
+# Златно Правило
+
+## НИКОГА не се доверявайте на потребителски вход!
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Input Handling
+
+**Validation** - Проверка на формат <!-- .element: class="fragment" -->
+
+**Sanitization** - Премахване на опасни символи <!-- .element: class="fragment" -->
+
+**Whitelist** > Blacklist <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Validation vs Sanitization
+
+| Validation | Sanitization |
+|------------|--------------|
+| Проверява формат | Почиства данни |
+| Отхвърля невалидни | Обезврежда опасни |
+| Whitelist подход | Context-specific |
+| `email.match(regex)` | `htmlspecialchars()` |
+</script>
+</section>
+<section data-background="#e74c3c" data-markdown>
+<script type="text/template">
+# SQL Injection
+
+### A03:2025
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Как работи SQL Injection?
+
+```java
+// ❌ Уязвим код
+String query = "SELECT * FROM users WHERE id = '"
+             + userId + "'";
+```
+
+Ако userId = `' OR '1'='1' --`
+
+```sql
+SELECT * FROM users WHERE id = '' OR '1'='1' --'
+```
+
+💀 Връща ВСИЧКИ записи!
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Prepared Statements
+
+```java
+// ✅ Сигурен код
+String sql = "SELECT * FROM users WHERE id = ?";
+PreparedStatement pstmt = conn.prepareStatement(sql);
+pstmt.setString(1, userId);
+ResultSet results = pstmt.executeQuery();
+```
+
+Базата данни третира входа като **DATA**, не като **CODE**
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## SQL Injection Защита
+
+✅ **Prepared Statements** - златен стандарт <!-- .element: class="fragment" -->
+
+✅ **Input Validation** - whitelist <!-- .element: class="fragment" -->
+
+✅ **Least Privilege** - минимални права за DB user <!-- .element: class="fragment" -->
+
+✅ **Escaping** - като допълнителна защита <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-background="#9b59b6" data-markdown>
+<script type="text/template">
+# Cross-Site Scripting (XSS)
+
+### Инжектиране на JavaScript
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## XSS Атака
+
+```php
+// ❌ Уязвим код
+echo "Hello, " . $_GET['name'];
+```
+
+Ако name = `<script>steal(cookie)<\/script>`
+
+Скриптът се изпълнява в **браузъра на жертвата**!
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Типове XSS
+
+| Тип | Описание |
+|-----|----------|
+| **Stored** | Записан в DB, засяга всички |
+| **Reflected** | Чрез URL, изисква клик |
+| **DOM-based** | Изцяло client-side |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## XSS Защита
+
+```php
+// ✅ Output Encoding
+echo htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+```
+
+```http
+# Content Security Policy
+Content-Security-Policy: default-src 'self'
+```
+
+```http
+# HttpOnly cookies
+Set-Cookie: session=abc; HttpOnly; Secure
+```
+</script>
+</section>
+<section data-background="#e67e22" data-markdown>
+<script type="text/template">
+# CSRF
+
+### Cross-Site Request Forgery
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Как работи CSRF?
+
+1. Жертва е логната в bank.com <!-- .element: class="fragment" -->
+
+2. Посещава evil.com (друг таб) <!-- .element: class="fragment" -->
+
+3. evil.com съдържа: <!-- .element: class="fragment" -->
+
+```html
+<img src="bank.com/transfer?to=hacker&amount=10000">
+```
+
+4. Браузърът изпраща **автоматично** session cookie <!-- .element: class="fragment" -->
+
+5. 💸 Парите изчезват! <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## XSS vs CSRF
+
+| | XSS | CSRF |
+|---|-----|------|
+| **Инжектира** | JavaScript код | HTTP заявка |
+| **Жертва** | Други потребители | Логнат потребител |
+| **Цел** | Кражба на данни | Изпълнение на действие |
+| **Защита** | Output encoding | CSRF token |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## CSRF Защита
+
+```html
+<!-- CSRF Token -->
+<input type="hidden" name="csrf_token"
+       value="random_unique_xyz">
+```
+
+```http
+# SameSite Cookie
+Set-Cookie: session=abc; SameSite=Strict; Secure
+```
+</script>
+</section>
+<section data-background="#27ae60" data-markdown>
+<script type="text/template">
+# Authentication
+
+### A07:2025
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Password Security
+
+❌ **НИКОГА** plain text или MD5 <!-- .element: class="fragment" -->
+
+✅ **bcrypt** или **Argon2** <!-- .element: class="fragment" -->
+
+✅ Unique **salt** per user <!-- .element: class="fragment" -->
+
+✅ **MFA** за важни акаунти <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Secure Password Hashing
+
+```python
+import bcrypt
+
+# При регистрация
+hashed = bcrypt.hashpw(
+    password.encode(),
+    bcrypt.gensalt(rounds=12)
+)
+
+# При login
+if bcrypt.checkpw(input_password.encode(), stored_hash):
+    # Valid!
+```
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Session Security
+
+```http
+Set-Cookie: session_id=xyz123;
+  Secure;        # HTTPS only
+  HttpOnly;      # No JS access
+  SameSite=Strict;
+  Max-Age=3600;
+```
+
+🔑 Regenerate session ID при login <!-- .element: class="fragment" -->
+
+🚪 Invalidate при logout <!-- .element: class="fragment" -->
+
+⏰ Short timeouts <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-background="#3498db" data-markdown>
+<script type="text/template">
+# Broken Access Control
+
+### A01:2025
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## IDOR пример
+
+```
+https://app.com/invoice?id=1542
+```
+
+Промяна на `id=1543` показва **чужда** фактура!
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Правилен Access Control
+
+```php
+// ✅ Server-side проверка
+$requestedUserId = $_GET['userId'];
+
+if ($_SESSION['user_id'] !== $requestedUserId
+    && !isAdmin()) {
+    http_response_code(403);
+    exit("Access denied");
+}
+```
+
+**Винаги** проверявайте права на сървъра!
+</script>
+</section>
+<section data-background="#34495e" data-markdown>
+<script type="text/template">
+# Secure Configuration
+
+### A02:2025
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Common Misconfigurations
+
+📂 Directory listing enabled <!-- .element: class="fragment" -->
+
+🏷️ Server version в headers <!-- .element: class="fragment" -->
+
+⚠️ Verbose error messages <!-- .element: class="fragment" -->
+
+🔓 Default credentials <!-- .element: class="fragment" -->
+
+📜 TLS 1.0/1.1 enabled <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Security Headers
+
+```nginx
+# Nginx configuration
+add_header X-Frame-Options "DENY";
+add_header X-Content-Type-Options "nosniff";
+add_header X-XSS-Protection "1; mode=block";
+add_header Strict-Transport-Security
+           "max-age=31536000; includeSubDomains";
+add_header Content-Security-Policy "default-src 'self'";
+
+server_tokens off;
+```
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## TLS Configuration
+
+```nginx
+# ✅ Modern TLS
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ciphers EECDH+AESGCM:EDH+AESGCM;
+ssl_prefer_server_ciphers on;
+```
+
+❌ Никога TLSv1 или TLSv1.1
+</script>
+</section>
+<section data-background="#2c3e50" data-markdown>
+<script type="text/template">
+# Real-World Breaches
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Sony PSN (2011)
+
+**Риск:** SQL Injection
+
+**Въздействие:** 77M компрометирани акаунти
+
+**Урок:** Prepared statements
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Equifax (2017)
+
+**Риск:** Vulnerable Components (Apache Struts)
+
+**Въздействие:** 147M изложени записи
+
+**Урок:** Regular patching!
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Capital One (2019)
+
+**Риск:** SSRF + Misconfiguration
+
+**Въздействие:** 100M кредитни заявления
+
+**Урок:** Cloud security + segmentation
+</script>
+</section>
+<section data-background="#8e44ad" data-markdown>
+<script type="text/template">
+# Secure SDLC
+
+### Shift-Left Security
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Security в Development
+
+| Фаза | Дейност |
+|------|---------|
+| **Plan** | Threat Modeling |
+| **Code** | SAST, Code Review |
+| **Test** | DAST, Pen Testing |
+| **Deploy** | Secure Config |
+| **Monitor** | Logging, Alerts |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Security Tools
+
+| Tool | Тип | Кога |
+|------|-----|------|
+| SonarQube | SAST | При commit |
+| OWASP ZAP | DAST | При тестване |
+| Snyk | SCA | При build |
+| Burp Suite | Pentest | Преди release |
+</script>
+</section>
+<section data-background="#16a085" data-markdown>
+<script type="text/template">
+# Zero Trust
+
+### "Never Trust, Always Verify"
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Zero Trust Principles
+
+🔒 **Continuous Verification** - всяка заявка <!-- .element: class="fragment" -->
+
+🎯 **Least Privilege** - минимален достъп <!-- .element: class="fragment" -->
+
+🔲 **Micro-segmentation** - изолация <!-- .element: class="fragment" -->
+
+📊 **Context-based Access** - identity + device + location <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## AI в Security
+
+**Защита:**
+
+🛡️ AI-enhanced WAFs <!-- .element: class="fragment" -->
+
+🔍 Anomaly detection <!-- .element: class="fragment" -->
+
+⚡ Automated response <!-- .element: class="fragment" -->
+
+**Заплахи:**
+
+🤖 AI-powered attacks <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+# Обобщение
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Ключови Защити
+
+| Атака | Защита |
+|-------|--------|
+| SQL Injection | Prepared Statements |
+| XSS | Output Encoding + CSP |
+| CSRF | Tokens + SameSite |
+| Auth Failures | bcrypt + MFA |
+| Misconfig | Hardening + Updates |
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Security Checklist
+
+✅ Never trust user input <!-- .element: class="fragment" -->
+
+✅ Prepared statements за SQL <!-- .element: class="fragment" -->
+
+✅ Output encoding за HTML <!-- .element: class="fragment" -->
+
+✅ HTTPS everywhere <!-- .element: class="fragment" -->
+
+✅ Strong password hashing <!-- .element: class="fragment" -->
+
+✅ Regular patching <!-- .element: class="fragment" -->
+
+✅ Security logging <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Ресурси
+
+📖 [OWASP Top 10](https://owasp.org/Top10/)
+
+🎮 [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)
+
+📚 [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/)
+
+🔧 [OWASP ZAP](https://www.zaproxy.org/)
+</script>
+</section>
+<section data-background="#c0392b" data-markdown>
+<script type="text/template">
+# Въпроси?
+
+### 🔒 Stay Secure!
+</script>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Navigation Helper -->
+    <a href="/fmi-web-tech/docs/web-security-fundamentals/lecture" class="back-button">
+        ← Back to Lecture
+    </a>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+
+    <!-- marked library required by reveal.js markdown plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.0/marked.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            history: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            controls: true,
+            progress: true,
+            center: true,
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            markdown: {
+                smartypants: false,
+                gfm: true,
+                breaks: false,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true
+            },
+            highlight: {
+                highlightOnLoad: true,
+                escapeHTML: false
+            }
+        });
+    </script>
+</body>
+</html>

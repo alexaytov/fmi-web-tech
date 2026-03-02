@@ -1,0 +1,61 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="velGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="varGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <filter id="vShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="350" y="35" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">3V-тата на Big Data</text>
+  <text x="350" y="58" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="13">Защо NoSQL е необходим за съвременните приложения</text>
+
+  <!-- Volume -->
+  <g transform="translate(50, 85)">
+    <rect width="180" height="180" rx="16" fill="url(#volGrad)" filter="url(#vShadow)"/>
+    <text x="90" y="40" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="36" font-weight="700">📊</text>
+    <text x="90" y="75" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Volume</text>
+    <text x="90" y="95" text-anchor="middle" fill="white" fill-opacity="0.9" font-family="system-ui, sans-serif" font-size="12">Обем</text>
+
+    <rect x="15" y="110" width="150" height="55" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="130" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Петабайти данни</text>
+    <text x="90" y="148" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Хоризонтално</text>
+    <text x="90" y="162" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">разпределение</text>
+  </g>
+
+  <!-- Velocity -->
+  <g transform="translate(260, 85)">
+    <rect width="180" height="180" rx="16" fill="url(#velGrad)" filter="url(#vShadow)"/>
+    <text x="90" y="40" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="36" font-weight="700">⚡</text>
+    <text x="90" y="75" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Velocity</text>
+    <text x="90" y="95" text-anchor="middle" fill="white" fill-opacity="0.9" font-family="system-ui, sans-serif" font-size="12">Скорост</text>
+
+    <rect x="15" y="110" width="150" height="55" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="130" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Милиони ops/sec</text>
+    <text x="90" y="148" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Ниска латентност</text>
+    <text x="90" y="162" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Real-time обработка</text>
+  </g>
+
+  <!-- Variety -->
+  <g transform="translate(470, 85)">
+    <rect width="180" height="180" rx="16" fill="url(#varGrad)" filter="url(#vShadow)"/>
+    <text x="90" y="40" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="36" font-weight="700">🎨</text>
+    <text x="90" y="75" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Variety</text>
+    <text x="90" y="95" text-anchor="middle" fill="white" fill-opacity="0.9" font-family="system-ui, sans-serif" font-size="12">Разнообразие</text>
+
+    <rect x="15" y="110" width="150" height="55" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="130" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">JSON, изображения, графи</text>
+    <text x="90" y="148" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Гъвкава схема</text>
+    <text x="90" y="162" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Полуструктурирани данни</text>
+  </g>
+</svg>

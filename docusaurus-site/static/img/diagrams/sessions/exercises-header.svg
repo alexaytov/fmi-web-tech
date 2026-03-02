@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="exHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#667eea"/>
+    </linearGradient>
+    <filter id="exHeaderShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="#f8f9fa"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="60" fill="rgba(102, 126, 234, 0.1)"/>
+  <circle cx="700" cy="100" r="80" fill="rgba(118, 75, 162, 0.1)"/>
+  <circle cx="200" cy="150" r="40" fill="rgba(102, 126, 234, 0.08)"/>
+  <circle cx="600" cy="50" r="35" fill="rgba(118, 75, 162, 0.08)"/>
+
+  <!-- Main content box -->
+  <g transform="translate(150, 40)" filter="url(#exHeaderShadow)">
+    <rect width="500" height="120" rx="20" fill="url(#exHeaderGrad)"/>
+
+    <!-- Icons -->
+    <text x="60" y="70" text-anchor="middle" fill="white" font-size="40">
+      🔐
+    </text>
+
+    <text x="440" y="70" text-anchor="middle" fill="white" font-size="40">
+      💻
+    </text>
+
+    <!-- Title -->
+    <text x="250" y="55" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="26" font-weight="700">
+      Упражнения
+    </text>
+    <text x="250" y="85" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="16">
+      Уеб Сесии
+    </text>
+    <text x="250" y="105" text-anchor="middle" fill="rgba(255,255,255,0.7)"
+          font-family="system-ui, sans-serif" font-size="12">
+      Sessions • Cookies • Security • Implementation
+    </text>
+  </g>
+</svg>

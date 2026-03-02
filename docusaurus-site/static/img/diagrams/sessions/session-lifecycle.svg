@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sessionGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="sessionGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="sessionGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#e67e22"/>
+    </linearGradient>
+    <linearGradient id="sessionGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="sessionShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="sessionArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#2c3e50"
+        font-family="system-ui, sans-serif" font-size="24" font-weight="700">
+    Жизнен Цикъл на Уеб Сесия
+  </text>
+
+  <!-- Step 1: Creation -->
+  <g transform="translate(50, 80)" filter="url(#sessionShadow)">
+    <rect width="160" height="100" rx="12" fill="url(#sessionGrad1)"/>
+    <text x="80" y="35" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="14" font-weight="600">
+      1. Създаване
+    </text>
+    <text x="80" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      Генериране на
+    </text>
+    <text x="80" y="73" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      уникален Session ID
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M220,130 L270,130" stroke="#7f8c8d" stroke-width="3"
+        marker-end="url(#sessionArrow)" fill="none"/>
+
+  <!-- Step 2: Active Use -->
+  <g transform="translate(280, 80)" filter="url(#sessionShadow)">
+    <rect width="160" height="100" rx="12" fill="url(#sessionGrad2)"/>
+    <text x="80" y="35" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="14" font-weight="600">
+      2. Активна Употреба
+    </text>
+    <text x="80" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      Четене/Запис на
+    </text>
+    <text x="80" y="73" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      сесийни данни
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M450,130 L500,130" stroke="#7f8c8d" stroke-width="3"
+        marker-end="url(#sessionArrow)" fill="none"/>
+
+  <!-- Step 3: Timeout -->
+  <g transform="translate(510, 80)" filter="url(#sessionShadow)">
+    <rect width="160" height="100" rx="12" fill="url(#sessionGrad3)"/>
+    <text x="80" y="35" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="14" font-weight="600">
+      3. Timeout
+    </text>
+    <text x="80" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      Изтичане при
+    </text>
+    <text x="80" y="73" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      неактивност
+    </text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M680,130 L730,130" stroke="#7f8c8d" stroke-width="3"
+        marker-end="url(#sessionArrow)" fill="none"/>
+
+  <!-- Step 4: Destruction -->
+  <g transform="translate(740, 80)" filter="url(#sessionShadow)">
+    <rect width="140" height="100" rx="12" fill="url(#sessionGrad4)"/>
+    <text x="70" y="35" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="14" font-weight="600">
+      4. Унищожаване
+    </text>
+    <text x="70" y="58" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      Logout или
+    </text>
+    <text x="70" y="73" text-anchor="middle" fill="rgba(255,255,255,0.9)"
+          font-family="system-ui, sans-serif" font-size="11">
+      cleanup
+    </text>
+  </g>
+
+  <!-- Details boxes below -->
+  <g transform="translate(50, 210)">
+    <rect width="160" height="80" rx="8" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#2c3e50"
+          font-family="system-ui, sans-serif" font-size="11" font-weight="600">
+      session_start()
+    </text>
+    <text x="80" y="45" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      ID → Cookie
+    </text>
+    <text x="80" y="60" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      Data → Server
+    </text>
+  </g>
+
+  <g transform="translate(280, 210)">
+    <rect width="160" height="80" rx="8" fill="#ecf0f1" stroke="#2ecc71" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#2c3e50"
+          font-family="system-ui, sans-serif" font-size="11" font-weight="600">
+      $_SESSION['key']
+    </text>
+    <text x="80" y="45" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      req.session.data
+    </text>
+    <text x="80" y="60" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      Read/Write операции
+    </text>
+  </g>
+
+  <g transform="translate(510, 210)">
+    <rect width="160" height="80" rx="8" fill="#ecf0f1" stroke="#f39c12" stroke-width="2"/>
+    <text x="80" y="25" text-anchor="middle" fill="#2c3e50"
+          font-family="system-ui, sans-serif" font-size="11" font-weight="600">
+      maxAge: 1800000
+    </text>
+    <text x="80" y="45" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      ~30 мин неактивност
+    </text>
+    <text x="80" y="60" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      Автоматично изтичане
+    </text>
+  </g>
+
+  <g transform="translate(740, 210)">
+    <rect width="140" height="80" rx="8" fill="#ecf0f1" stroke="#e74c3c" stroke-width="2"/>
+    <text x="70" y="25" text-anchor="middle" fill="#2c3e50"
+          font-family="system-ui, sans-serif" font-size="11" font-weight="600">
+      session_destroy()
+    </text>
+    <text x="70" y="45" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      req.session.destroy()
+    </text>
+    <text x="70" y="60" text-anchor="middle" fill="#7f8c8d"
+          font-family="system-ui, sans-serif" font-size="10">
+      Изтриване на данни
+    </text>
+  </g>
+
+  <!-- Loop arrow for active use -->
+  <path d="M360,185 C360,200 360,195 360,205" stroke="#2ecc71" stroke-width="2"
+        stroke-dasharray="4,2" fill="none"/>
+  <text x="395" y="200" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10">
+    Множество заявки
+  </text>
+</svg>

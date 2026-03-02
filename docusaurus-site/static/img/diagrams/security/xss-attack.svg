@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="xssVictimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="xssAttackerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="xssServerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="xssDefenseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="xssShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <filter id="xssGlowRed">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#e74c3c" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="xssArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="xssArrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <style>
+    .xss-glow-text { animation: xssGlowText 2s ease-in-out infinite; }
+    .xss-pulse-warning { animation: xssPulseWarning 1.5s ease-in-out infinite; }
+    .xss-flow-1 { animation: xssFlowDash 1.2s linear infinite; }
+    .xss-flow-2 { animation: xssFlowDash 1.2s linear infinite; animation-delay: -0.6s; }
+    .xss-shake { animation: xssShake 0.15s ease-in-out infinite; }
+    .xss-danger-box { animation: xssDangerBox 2s ease-in-out infinite; }
+
+    @keyframes xssGlowText {
+      0%, 100% { filter: drop-shadow(0 0 2px #e74c3c); }
+      50% { filter: drop-shadow(0 0 8px #ff6b6b) drop-shadow(0 0 12px #e74c3c); }
+    }
+    @keyframes xssPulseWarning {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    @keyframes xssFlowDash {
+      from { stroke-dashoffset: 20; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes xssShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-1px); }
+      75% { transform: translateX(1px); }
+    }
+    @keyframes xssDangerBox {
+      0%, 100% { filter: drop-shadow(0 0 4px rgba(231,76,60,0.3)); }
+      50% { filter: drop-shadow(0 0 12px rgba(231,76,60,0.6)); }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Cross-Site Scripting (XSS) Атака</text>
+  <text x="400" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">Инжектиране на злонамерен JavaScript код</text>
+
+  <!-- Step 1: Attacker -->
+  <g transform="translate(50, 80)" filter="url(#xssShadow)">
+    <rect width="180" height="90" rx="10" fill="url(#xssAttackerGrad)"/>
+    <text x="90" y="22" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">1️⃣ Атакуващ</text>
+    <rect x="10" y="30" width="160" height="50" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="48" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="9">Публикува коментар:</text>
+    <text x="90" y="65" text-anchor="middle" fill="#c0392b" font-family="monospace" font-size="8" class="xss-glow-text">&lt;script&gt;steal(cookie)&lt;/script&gt;</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M240,125 L300,125" stroke="#e74c3c" stroke-width="2" stroke-dasharray="10,10" class="xss-flow-1" marker-end="url(#xssArrowRed)"/>
+
+  <!-- Step 2: Server -->
+  <g transform="translate(310, 80)" filter="url(#xssShadow)">
+    <rect width="180" height="90" rx="10" fill="url(#xssServerGrad)"/>
+    <text x="90" y="22" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">2️⃣ Web Server</text>
+    <rect x="10" y="30" width="160" height="50" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="48" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="9">Записва коментара</text>
+    <text x="90" y="65" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="9" class="xss-pulse-warning">БЕЗ encoding ⚠️</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M500,125 L560,125" stroke="#9b59b6" stroke-width="2" stroke-dasharray="10,10" class="xss-flow-2" marker-end="url(#xssArrowPurple)"/>
+
+  <!-- Step 3: Victim -->
+  <g transform="translate(570, 80)" filter="url(#xssShadow)">
+    <rect width="180" height="90" rx="10" fill="url(#xssVictimGrad)"/>
+    <text x="90" y="22" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">3️⃣ Жертва</text>
+    <rect x="10" y="30" width="160" height="50" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="90" y="48" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="9">Отваря страницата</text>
+    <g class="xss-shake">
+      <text x="90" y="65" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="9">Script се изпълнява! 💀</text>
+    </g>
+  </g>
+
+  <!-- Cookie steal path -->
+  <path d="M660,180 C660,220 400,220 400,260" stroke="#e74c3c" stroke-width="2" stroke-dasharray="8,6" fill="none" class="xss-flow-1" marker-end="url(#xssArrowRed)"/>
+  <text x="550" y="225" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="10" class="xss-pulse-warning">Cookie → атакуващия</text>
+
+  <!-- Impact box -->
+  <g transform="translate(270, 260)" class="xss-danger-box">
+    <rect width="260" height="70" rx="10" fill="#fdf2f2" stroke="#e74c3c" stroke-width="2"/>
+    <text x="130" y="22" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="12" font-weight="600">⚠️ Последици от XSS</text>
+    <text x="130" y="42" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">• Кражба на session cookies</text>
+    <text x="130" y="58" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">• Keylogging • Phishing • Defacement</text>
+  </g>
+
+  <!-- Defense box -->
+  <g transform="translate(50, 200)">
+    <rect width="200" height="120" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+    <text x="100" y="22" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="12" font-weight="600">✅ Защита от XSS</text>
+    <text x="15" y="45" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10">• Output Encoding</text>
+    <text x="15" y="62" fill="#27ae60" font-family="monospace" font-size="9">  htmlspecialchars()</text>
+    <text x="15" y="82" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10">• Content Security Policy</text>
+    <text x="15" y="100" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10">• HttpOnly Cookies</text>
+    <text x="15" y="115" fill="#27ae60" font-family="system-ui, sans-serif" font-size="10">• Input Validation</text>
+  </g>
+
+  <!-- Types box -->
+  <g transform="translate(550, 200)">
+    <rect width="200" height="120" rx="10" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="100" y="22" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Типове XSS</text>
+    <text x="15" y="45" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Stored XSS</text>
+    <text x="15" y="60" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">Записан в DB, засяга всички</text>
+    <text x="15" y="80" fill="#e67e22" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Reflected XSS</text>
+    <text x="15" y="95" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="9">Чрез URL параметър</text>
+    <text x="15" y="115" fill="#f39c12" font-family="system-ui, sans-serif" font-size="10" font-weight="600">DOM-based XSS</text>
+  </g>
+</svg>

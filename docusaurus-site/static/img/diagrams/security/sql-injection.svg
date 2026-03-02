@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sqlAttackerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="sqlServerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="sqlDbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="sqlSafeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="sqlShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="sqlArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="sqlArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <style>
+    .sql-flow-red { animation: sqlFlow 0.8s linear infinite; }
+    .sql-flow-green { animation: sqlFlow 0.8s linear infinite; }
+    .sql-danger-text { animation: sqlDangerText 1s ease-in-out infinite; }
+    .sql-safe-text { animation: sqlSafeText 1.5s ease-in-out infinite; }
+    .sql-code-glow { animation: sqlCodeGlow 2s ease-in-out infinite; }
+    .sql-breach-pulse { animation: sqlBreachPulse 0.8s ease-in-out infinite; }
+
+    @keyframes sqlFlow {
+      from { stroke-dashoffset: 20; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes sqlDangerText {
+      0%, 100% { fill: #e74c3c; }
+      50% { fill: #ff6b6b; }
+    }
+    @keyframes sqlSafeText {
+      0%, 100% { fill: #27ae60; }
+      50% { fill: #2ecc71; }
+    }
+    @keyframes sqlCodeGlow {
+      0%, 100% { filter: drop-shadow(0 0 1px #c0392b); }
+      50% { filter: drop-shadow(0 0 6px #e74c3c); }
+    }
+    @keyframes sqlBreachPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">SQL Injection Атака</text>
+  <text x="400" y="60" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="14" font-weight="600">❌ Уязвим Код (Без Prepared Statements)</text>
+
+  <!-- Attacker -->
+  <g transform="translate(50, 85)" filter="url(#sqlShadow)">
+    <rect width="150" height="80" rx="10" fill="url(#sqlAttackerGrad)"/>
+    <text x="75" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🦹 Атакуващ</text>
+    <rect x="10" y="35" width="130" height="35" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="75" y="57" text-anchor="middle" fill="#c0392b" font-family="monospace" font-size="9" class="sql-code-glow">' OR '1'='1' --</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M210,125 L280,125" stroke="#e74c3c" stroke-width="3" stroke-dasharray="10,10" class="sql-flow-red" marker-end="url(#sqlArrowRed)"/>
+
+  <!-- Server -->
+  <g transform="translate(290, 85)" filter="url(#sqlShadow)">
+    <rect width="200" height="80" rx="10" fill="url(#sqlServerGrad)"/>
+    <text x="100" y="22" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🖥️ Web Server</text>
+    <rect x="10" y="32" width="180" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="50" text-anchor="middle" fill="#c0392b" font-family="monospace" font-size="8">SELECT * FROM users</text>
+    <text x="100" y="64" text-anchor="middle" fill="#c0392b" font-family="monospace" font-size="8">WHERE id = '' OR '1'='1' --'</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M500,125 L570,125" stroke="#e74c3c" stroke-width="3" stroke-dasharray="10,10" class="sql-flow-red" marker-end="url(#sqlArrowRed)"/>
+
+  <!-- Database Vulnerable -->
+  <g transform="translate(580, 85)" filter="url(#sqlShadow)">
+    <g class="sql-breach-pulse">
+      <rect width="160" height="80" rx="10" fill="url(#sqlDbGrad)"/>
+      <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🗄️ Database</text>
+      <rect x="10" y="35" width="140" height="35" rx="5" fill="white" fill-opacity="0.95"/>
+      <text x="80" y="52" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="9">Връща ВСИЧКИ данни!</text>
+      <text x="80" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="600" class="sql-danger-text">⚠️ Data Breach</text>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="50" y1="195" x2="750" y2="195" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <text x="400" y="225" text-anchor="middle" fill="#27ae60" font-family="system-ui, sans-serif" font-size="14" font-weight="600">✅ Защитен Код (Prepared Statements)</text>
+
+  <!-- User Safe -->
+  <g transform="translate(50, 250)" filter="url(#sqlShadow)">
+    <rect width="150" height="80" rx="10" fill="url(#sqlSafeGrad)"/>
+    <text x="75" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">👤 Потребител</text>
+    <rect x="10" y="35" width="130" height="35" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="75" y="57" text-anchor="middle" fill="#1e8449" font-family="monospace" font-size="9">' OR '1'='1' --</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M210,290 L280,290" stroke="#27ae60" stroke-width="3" stroke-dasharray="10,10" class="sql-flow-green" marker-end="url(#sqlArrowGreen)"/>
+
+  <!-- Server Safe -->
+  <g transform="translate(290, 250)" filter="url(#sqlShadow)">
+    <rect width="200" height="80" rx="10" fill="url(#sqlSafeGrad)"/>
+    <text x="100" y="22" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🖥️ Web Server</text>
+    <rect x="10" y="32" width="180" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="50" text-anchor="middle" fill="#1e8449" font-family="monospace" font-size="8">SELECT * FROM users WHERE id = ?</text>
+    <text x="100" y="64" text-anchor="middle" fill="#1e8449" font-family="monospace" font-size="8">param: "..." (string literal)</text>
+  </g>
+
+  <!-- Arrow 4 -->
+  <path d="M500,290 L570,290" stroke="#27ae60" stroke-width="3" stroke-dasharray="10,10" class="sql-flow-green" marker-end="url(#sqlArrowGreen)"/>
+
+  <!-- Database Safe -->
+  <g transform="translate(580, 250)" filter="url(#sqlShadow)">
+    <rect width="160" height="80" rx="10" fill="url(#sqlSafeGrad)"/>
+    <text x="80" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="600">🗄️ Database</text>
+    <rect x="10" y="35" width="140" height="35" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="80" y="52" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="9">Търси literal string</text>
+    <text x="80" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="600" class="sql-safe-text">✓ Safe (No Match)</text>
+  </g>
+
+  <!-- Note -->
+  <g>
+    <rect x="200" y="350" width="400" height="25" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+    <text x="400" y="367" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Prepared Statements третират входа като DATA, не като CODE</text>
+  </g>
+</svg>

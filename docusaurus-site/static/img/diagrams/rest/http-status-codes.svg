@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs>
+    <linearGradient id="success2xx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="redirect3xx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="clientErr4xx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="serverErr5xx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="codeShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="30" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">HTTP Status Codes</text>
+
+  <!-- 2xx Success -->
+  <g filter="url(#codeShadow)">
+    <rect x="30" y="55" width="150" height="220" rx="10" fill="white" stroke="#27ae60" stroke-width="2"/>
+    <rect x="30" y="55" width="150" height="45" rx="10" fill="url(#success2xx)"/>
+    <rect x="30" y="90" width="150" height="10" fill="url(#success2xx)"/>
+    <text x="105" y="85" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">✅ 2xx Success</text>
+
+    <text x="105" y="125" fill="#27ae60" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">200 OK</text>
+    <text x="105" y="145" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Успешна заявка</text>
+
+    <line x1="50" y1="160" x2="160" y2="160" stroke="#eee" stroke-width="1"/>
+
+    <text x="105" y="180" fill="#27ae60" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">201 Created</text>
+    <text x="105" y="200" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Ресурс създаден</text>
+
+    <line x1="50" y1="215" x2="160" y2="215" stroke="#eee" stroke-width="1"/>
+
+    <text x="105" y="235" fill="#27ae60" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">204 No Content</text>
+    <text x="105" y="255" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Успех, без тяло</text>
+  </g>
+
+  <!-- 3xx Redirect -->
+  <g filter="url(#codeShadow)">
+    <rect x="200" y="55" width="150" height="150" rx="10" fill="white" stroke="#3498db" stroke-width="2"/>
+    <rect x="200" y="55" width="150" height="45" rx="10" fill="url(#redirect3xx)"/>
+    <rect x="200" y="90" width="150" height="10" fill="url(#redirect3xx)"/>
+    <text x="275" y="85" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">↪️ 3xx Redirect</text>
+
+    <text x="275" y="125" fill="#3498db" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">301 Moved</text>
+    <text x="275" y="145" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Преместен постоянно</text>
+
+    <line x1="220" y1="160" x2="330" y2="160" stroke="#eee" stroke-width="1"/>
+
+    <text x="275" y="180" fill="#3498db" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">302 Found</text>
+    <text x="275" y="200" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Временно пренасочване</text>
+  </g>
+
+  <!-- 4xx Client Error -->
+  <g filter="url(#codeShadow)">
+    <rect x="370" y="55" width="150" height="220" rx="10" fill="white" stroke="#e67e22" stroke-width="2"/>
+    <rect x="370" y="55" width="150" height="45" rx="10" fill="url(#clientErr4xx)"/>
+    <rect x="370" y="90" width="150" height="10" fill="url(#clientErr4xx)"/>
+    <text x="445" y="85" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">⚠️ 4xx Client</text>
+
+    <text x="445" y="125" fill="#e67e22" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">400 Bad Request</text>
+    <text x="445" y="145" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Невалидна заявка</text>
+
+    <line x1="390" y1="160" x2="500" y2="160" stroke="#eee" stroke-width="1"/>
+
+    <text x="445" y="180" fill="#e67e22" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">401 Unauthorized</text>
+    <text x="445" y="200" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Нужна автентикация</text>
+
+    <line x1="390" y1="215" x2="500" y2="215" stroke="#eee" stroke-width="1"/>
+
+    <text x="445" y="235" fill="#e67e22" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">404 Not Found</text>
+    <text x="445" y="255" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Ресурсът не съществува</text>
+  </g>
+
+  <!-- 5xx Server Error -->
+  <g filter="url(#codeShadow)">
+    <rect x="540" y="55" width="150" height="150" rx="10" fill="white" stroke="#e74c3c" stroke-width="2"/>
+    <rect x="540" y="55" width="150" height="45" rx="10" fill="url(#serverErr5xx)"/>
+    <rect x="540" y="90" width="150" height="10" fill="url(#serverErr5xx)"/>
+    <text x="615" y="85" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">❌ 5xx Server</text>
+
+    <text x="615" y="125" fill="#e74c3c" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">500 Internal</text>
+    <text x="615" y="145" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Грешка на сървъра</text>
+
+    <line x1="560" y1="160" x2="670" y2="160" stroke="#eee" stroke-width="1"/>
+
+    <text x="615" y="180" fill="#e74c3c" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">503 Unavailable</text>
+    <text x="615" y="200" fill="#666" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Сървърът е недостъпен</text>
+  </g>
+</svg>

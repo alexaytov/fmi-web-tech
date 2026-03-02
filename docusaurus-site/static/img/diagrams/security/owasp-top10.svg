@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="owaspGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="owaspGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <linearGradient id="owaspGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1c40f"/>
+      <stop offset="100%" stop-color="#f39c12"/>
+    </linearGradient>
+    <linearGradient id="owaspGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="owaspGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <filter id="owaspShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* Subtle hover-like animations */
+    .owasp-critical { animation: owaspCritical 3s ease-in-out infinite; }
+    .owasp-high { animation: owaspHigh 3s ease-in-out infinite -2s; }
+    .owasp-medium { animation: owaspMedium 3s ease-in-out infinite -1s; }
+
+    @keyframes owaspCritical {
+      0%, 100% { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+      50% { filter: drop-shadow(0 4px 8px rgba(231,76,60,0.4)); }
+    }
+    @keyframes owaspHigh {
+      0%, 100% { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+      50% { filter: drop-shadow(0 4px 8px rgba(230,126,34,0.4)); }
+    }
+    @keyframes owaspMedium {
+      0%, 100% { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+      50% { filter: drop-shadow(0 4px 8px rgba(241,196,15,0.4)); }
+    }
+  </style>
+
+  <text x="400" y="35" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="24" font-weight="700">OWASP Top 10 (2025)</text>
+  <text x="400" y="58" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="13">Най-критичните рискове за сигурността на уеб приложения</text>
+
+  <!-- Row 1 - Critical -->
+  <g transform="translate(30, 80)" class="owasp-critical">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad1)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A01</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Broken Access</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Control</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">Неоторизиран достъп</text>
+  </g>
+
+  <g transform="translate(185, 80)" class="owasp-critical">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad1)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A02</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Security</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Misconfiguration</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">Грешна конфигурация</text>
+  </g>
+
+  <g transform="translate(340, 80)" class="owasp-high">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad2)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A03</text>
+    <text x="72" y="50" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Injection</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">SQL, Command, LDAP</text>
+  </g>
+
+  <g transform="translate(495, 80)" class="owasp-high">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad2)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A04</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Cryptographic</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Failures</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">Слаба криптография</text>
+  </g>
+
+  <g transform="translate(650, 80)" class="owasp-medium">
+    <rect width="120" height="90" rx="10" fill="url(#owaspGrad3)"/>
+    <text x="60" y="25" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A05</text>
+    <text x="60" y="50" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SSRF</text>
+    <text x="60" y="80" text-anchor="middle" fill="#2c3e50" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">Server-Side Request</text>
+  </g>
+
+  <!-- Row 2 - Medium -->
+  <g transform="translate(30, 185)" class="owasp-medium">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad3)"/>
+    <text x="72" y="25" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A06</text>
+    <text x="72" y="45" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Vulnerable</text>
+    <text x="72" y="60" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Components</text>
+    <text x="72" y="80" text-anchor="middle" fill="#2c3e50" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="9">Остарели библиотеки</text>
+  </g>
+
+  <g transform="translate(185, 185)" filter="url(#owaspShadow)">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad4)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A07</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Authentication</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Failures</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">Слаба автентикация</text>
+  </g>
+
+  <g transform="translate(340, 185)" filter="url(#owaspShadow)">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad4)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A08</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Software &amp; Data</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Integrity Failures</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">CI/CD уязвимости</text>
+  </g>
+
+  <g transform="translate(495, 185)" filter="url(#owaspShadow)">
+    <rect width="145" height="90" rx="10" fill="url(#owaspGrad5)"/>
+    <text x="72" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A09</text>
+    <text x="72" y="45" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Security Logging</text>
+    <text x="72" y="60" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700">&amp; Monitoring</text>
+    <text x="72" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">Липса на логове</text>
+  </g>
+
+  <g transform="translate(650, 185)" filter="url(#owaspShadow)">
+    <rect width="120" height="90" rx="10" fill="url(#owaspGrad5)"/>
+    <text x="60" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="600">A10</text>
+    <text x="60" y="50" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="11" font-weight="700">XSS/CSRF</text>
+    <text x="60" y="80" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="8">Client-side атаки</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 310)">
+    <rect width="600" height="120" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="300" y="28" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Ниво на Риск</text>
+
+    <rect x="30" y="50" width="20" height="20" rx="4" fill="url(#owaspGrad1)"/>
+    <text x="60" y="65" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Критичен</text>
+
+    <rect x="150" y="50" width="20" height="20" rx="4" fill="url(#owaspGrad2)"/>
+    <text x="180" y="65" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Висок</text>
+
+    <rect x="270" y="50" width="20" height="20" rx="4" fill="url(#owaspGrad3)"/>
+    <text x="300" y="65" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Среден</text>
+
+    <rect x="390" y="50" width="20" height="20" rx="4" fill="url(#owaspGrad4)"/>
+    <text x="420" y="65" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Нисък</text>
+
+    <rect x="510" y="50" width="20" height="20" rx="4" fill="url(#owaspGrad5)"/>
+    <text x="540" y="65" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="11">Информационен</text>
+
+    <text x="300" y="100" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Източник: owasp.org/Top10 • Базирано на реални данни за експлоатируемост и въздействие</text>
+  </g>
+</svg>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="authUserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="authServerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="authDbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="authMfaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#d68910"/>
+    </linearGradient>
+    <filter id="authShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <marker id="authArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <style>
+    /* Flow animations for arrows */
+    .auth-flow { animation: authFlow 1s linear infinite; }
+    .auth-success { animation: authSuccess 2s ease-in-out infinite; }
+    .auth-step-highlight { animation: authStepHighlight 3s ease-in-out infinite; }
+
+    @keyframes authFlow {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes authSuccess {
+      0%, 100% { fill: #27ae60; }
+      50% { fill: #2ecc71; }
+    }
+    @keyframes authStepHighlight {
+      0%, 20%, 100% { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+      10% { filter: drop-shadow(0 4px 10px rgba(52,152,219,0.5)); }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Secure Authentication Flow</text>
+
+  <!-- Step 1 -->
+  <g transform="translate(50, 60)" filter="url(#authShadow)" class="auth-step-highlight">
+    <rect width="140" height="80" rx="10" fill="url(#authUserGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">1️⃣ Потребител</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="48" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="9">username + password</text>
+    <text x="70" y="62" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">HTTPS заявка</text>
+  </g>
+
+  <path d="M200,100 L260,100" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="8,4" class="auth-flow" marker-end="url(#authArrow)"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(270, 60)" filter="url(#authShadow)">
+    <rect width="140" height="80" rx="10" fill="url(#authServerGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">2️⃣ Rate Limiting</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="48" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="9">Проверка за</text>
+    <text x="70" y="62" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="9">brute-force</text>
+  </g>
+
+  <path d="M420,100 L480,100" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="8,4" class="auth-flow" marker-end="url(#authArrow)"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(490, 60)" filter="url(#authShadow)">
+    <rect width="140" height="80" rx="10" fill="url(#authDbGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">3️⃣ Password Hash</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="48" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="9">bcrypt.verify()</text>
+    <text x="70" y="62" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">hash + salt от DB</text>
+  </g>
+
+  <path d="M640,100 L700,100 L700,170 L640,170" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="8,4" class="auth-flow" marker-end="url(#authArrow)" fill="none"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(490, 160)" filter="url(#authShadow)">
+    <rect width="140" height="80" rx="10" fill="url(#authMfaGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">4️⃣ MFA Проверка</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="48" text-anchor="middle" fill="#d68910" font-family="system-ui, sans-serif" font-size="9">TOTP / SMS / Push</text>
+    <text x="70" y="62" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Втори фактор</text>
+  </g>
+
+  <path d="M480,200 L420,200" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="8,4" class="auth-flow" marker-end="url(#authArrow)"/>
+
+  <!-- Step 5 -->
+  <g transform="translate(270, 160)" filter="url(#authShadow)">
+    <rect width="140" height="80" rx="10" fill="url(#authServerGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">5️⃣ Session Create</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="45" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">Нов session ID</text>
+    <text x="70" y="57" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">Secure, HttpOnly</text>
+    <text x="70" y="68" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="8">SameSite=Strict</text>
+  </g>
+
+  <path d="M260,200 L200,200" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="8,4" class="auth-flow" marker-end="url(#authArrow)"/>
+
+  <!-- Step 6 -->
+  <g transform="translate(50, 160)" filter="url(#authShadow)">
+    <rect width="140" height="80" rx="10" fill="url(#authUserGrad)"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">6️⃣ Login Success</text>
+    <rect x="10" y="30" width="120" height="40" rx="5" fill="white" fill-opacity="0.95"/>
+    <text x="70" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" class="auth-success">✓ Автентикиран</text>
+    <text x="70" y="62" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Redirect to app</text>
+  </g>
+
+  <!-- Best Practices -->
+  <g transform="translate(50, 270)">
+    <rect width="700" height="110" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🔐 Best Practices за Authentication</text>
+
+    <g transform="translate(20, 40)">
+      <rect width="155" height="55" rx="6" fill="#eafaf1"/>
+      <text x="77" y="18" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Password Storage</text>
+      <text x="77" y="35" text-anchor="middle" fill="#27ae60" font-family="system-ui, sans-serif" font-size="8">bcrypt / Argon2</text>
+      <text x="77" y="48" text-anchor="middle" fill="#27ae60" font-family="system-ui, sans-serif" font-size="8">Unique salt per user</text>
+    </g>
+
+    <g transform="translate(190, 40)">
+      <rect width="155" height="55" rx="6" fill="#fef9e7"/>
+      <text x="77" y="18" text-anchor="middle" fill="#d68910" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Session Security</text>
+      <text x="77" y="35" text-anchor="middle" fill="#f39c12" font-family="system-ui, sans-serif" font-size="8">Regenerate on login</text>
+      <text x="77" y="48" text-anchor="middle" fill="#f39c12" font-family="system-ui, sans-serif" font-size="8">Short expiration</text>
+    </g>
+
+    <g transform="translate(360, 40)">
+      <rect width="155" height="55" rx="6" fill="#ebf5fb"/>
+      <text x="77" y="18" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Rate Limiting</text>
+      <text x="77" y="35" text-anchor="middle" fill="#3498db" font-family="system-ui, sans-serif" font-size="8">Max 5 attempts</text>
+      <text x="77" y="48" text-anchor="middle" fill="#3498db" font-family="system-ui, sans-serif" font-size="8">Exponential backoff</text>
+    </g>
+
+    <g transform="translate(530, 40)">
+      <rect width="155" height="55" rx="6" fill="#f5eef8"/>
+      <text x="77" y="18" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Account Security</text>
+      <text x="77" y="35" text-anchor="middle" fill="#9b59b6" font-family="system-ui, sans-serif" font-size="8">MFA enabled</text>
+      <text x="77" y="48" text-anchor="middle" fill="#9b59b6" font-family="system-ui, sans-serif" font-size="8">Account lockout</text>
+    </g>
+  </g>
+</svg>

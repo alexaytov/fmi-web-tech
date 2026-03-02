@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 750 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="diServiceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#d68910"/>
+    </linearGradient>
+    <linearGradient id="diCompAGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="diCompBGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <filter id="diShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="375" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Services и Dependency Injection</text>
+
+  <!-- Service (Singleton) -->
+  <g transform="translate(275, 55)" filter="url(#diShadow)">
+    <rect width="200" height="130" rx="14" fill="url(#diServiceGrad)"/>
+    <text x="100" y="28" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🔧 DataService</text>
+    <text x="100" y="45" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="system-ui, sans-serif" font-size="9">@Injectable({providedIn: 'root'})</text>
+
+    <rect x="15" y="55" width="170" height="60" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="75" text-anchor="middle" fill="#d68910" font-family="monospace" font-size="10">items = signal([])</text>
+    <text x="100" y="92" text-anchor="middle" fill="#d68910" font-family="monospace" font-size="10">addItem(item)</text>
+    <text x="100" y="106" text-anchor="middle" fill="#d68910" font-family="monospace" font-size="10">getItems()</text>
+  </g>
+
+  <!-- Arrows from Service to Components -->
+  <path d="M275,140 L150,200" stroke="#f39c12" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+  <path d="M475,140 L600,200" stroke="#f39c12" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+
+  <!-- inject() labels -->
+  <text x="180" y="175" fill="#f39c12" font-family="system-ui, sans-serif" font-size="11" font-weight="600" transform="rotate(-25, 180, 175)">inject()</text>
+  <text x="540" y="175" fill="#f39c12" font-family="system-ui, sans-serif" font-size="11" font-weight="600" transform="rotate(25, 540, 175)">inject()</text>
+
+  <!-- Component A -->
+  <g transform="translate(30, 200)" filter="url(#diShadow)">
+    <rect width="220" height="100" rx="12" fill="url(#diCompAGrad)"/>
+    <text x="110" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">📦 ComponentA</text>
+
+    <rect x="10" y="40" width="200" height="45" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="110" y="57" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="8">dataService = inject(DataService)</text>
+    <text x="110" y="74" text-anchor="middle" fill="#7f8c8d" font-family="monospace" font-size="8">this.dataService.addItem(...)</text>
+  </g>
+
+  <!-- Component B -->
+  <g transform="translate(500, 200)" filter="url(#diShadow)">
+    <rect width="220" height="100" rx="12" fill="url(#diCompBGrad)"/>
+    <text x="110" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">📦 ComponentB</text>
+
+    <rect x="10" y="40" width="200" height="45" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="110" y="57" text-anchor="middle" fill="#27ae60" font-family="monospace" font-size="8">dataService = inject(DataService)</text>
+    <text x="110" y="74" text-anchor="middle" fill="#7f8c8d" font-family="monospace" font-size="8">@for (item of dataService.items())</text>
+  </g>
+
+  <!-- Benefits box -->
+  <g transform="translate(260, 210)">
+    <rect width="230" height="80" rx="10" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="115" y="22" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="12" font-weight="600">✓ Предимства на DI</text>
+    <text x="20" y="42" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">• Singleton - споделено състояние</text>
+    <text x="20" y="57" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">• Лесно тестване с mock-ове</text>
+    <text x="20" y="72" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">• Разделение на concerns</text>
+  </g>
+</svg>

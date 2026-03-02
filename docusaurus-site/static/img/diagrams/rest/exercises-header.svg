@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160">
+  <defs>
+    <linearGradient id="exHeaderBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11998e"/>
+      <stop offset="100%" stop-color="#38ef7d"/>
+    </linearGradient>
+    <linearGradient id="exIconBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.3)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
+    <filter id="exShadow" x="-5%" y="-5%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#11998e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="160" rx="16" fill="url(#exHeaderBg)" filter="url(#exShadow)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="80" cy="80" r="120" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="720" cy="80" r="100" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Left icon group -->
+  <g transform="translate(80, 50)">
+    <rect x="0" y="0" width="50" height="50" rx="10" fill="url(#exIconBg)"/>
+    <text x="25" y="35" fill="white" font-size="24" text-anchor="middle">💻</text>
+  </g>
+
+  <g transform="translate(150, 50)">
+    <rect x="0" y="0" width="50" height="50" rx="10" fill="url(#exIconBg)"/>
+    <text x="25" y="35" fill="white" font-size="24" text-anchor="middle">🔧</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="400" y="65" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="800" text-anchor="middle">REST API Exercises</text>
+  <text x="400" y="95" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Practice GET &amp; POST Requests</text>
+  <text x="400" y="120" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">22 задачи • Easy → Hard</text>
+
+  <!-- Right icon group -->
+  <g transform="translate(600, 50)">
+    <rect x="0" y="0" width="50" height="50" rx="10" fill="url(#exIconBg)"/>
+    <text x="25" y="35" fill="white" font-size="24" text-anchor="middle">🐍</text>
+  </g>
+
+  <g transform="translate(670, 50)">
+    <rect x="0" y="0" width="50" height="50" rx="10" fill="url(#exIconBg)"/>
+    <text x="25" y="35" fill="white" font-size="24" text-anchor="middle">📮</text>
+  </g>
+</svg>

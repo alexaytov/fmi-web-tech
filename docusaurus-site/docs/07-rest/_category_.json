@@ -1,0 +1,9 @@
+{
+  "label": "07. REST API",
+  "position": 8,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "REST GET и POST заявки - основи на Web API комуникацията"
+  }
+}

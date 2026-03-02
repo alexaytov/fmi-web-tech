@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="capCGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="capAGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="capPGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="capShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="24" font-weight="700">CAP Теорема</text>
+  <text x="350" y="58" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="14">Изберете две от три в разпределени системи</text>
+
+  <!-- Triangle -->
+  <polygon points="350,120 130,380 570,380" fill="none" stroke="#bdc3c7" stroke-width="3" stroke-dasharray="10,5"/>
+
+  <!-- C - Consistency (top) -->
+  <g transform="translate(350, 120)" filter="url(#capShadow)">
+    <circle r="50" fill="url(#capCGrad)"/>
+    <text y="8" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700">C</text>
+  </g>
+  <text x="350" y="85" text-anchor="middle" fill="#3498db" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Consistency</text>
+  <text x="350" y="190" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Всички виждат еднакви данни</text>
+
+  <!-- A - Availability (bottom left) -->
+  <g transform="translate(130, 380)" filter="url(#capShadow)">
+    <circle r="50" fill="url(#capAGrad)"/>
+    <text y="8" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700">A</text>
+  </g>
+  <text x="130" y="450" text-anchor="middle" fill="#2ecc71" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Availability</text>
+  <text x="130" y="468" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Системата винаги отговаря</text>
+
+  <!-- P - Partition Tolerance (bottom right) -->
+  <g transform="translate(570, 380)" filter="url(#capShadow)">
+    <circle r="50" fill="url(#capPGrad)"/>
+    <text y="8" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700">P</text>
+  </g>
+  <text x="570" y="450" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Partition Tolerance</text>
+  <text x="570" y="468" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Работи при мрежови проблеми</text>
+
+  <!-- Edge labels -->
+  <text x="220" y="235" text-anchor="middle" fill="#8e44ad" font-family="system-ui, sans-serif" font-size="13" font-weight="600" transform="rotate(-55, 220, 235)">CP: MongoDB</text>
+  <text x="480" y="235" text-anchor="middle" fill="#e67e22" font-family="system-ui, sans-serif" font-size="13" font-weight="600" transform="rotate(55, 480, 235)">AP: Cassandra</text>
+  <text x="350" y="410" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">(P е задължително за NoSQL)</text>
+
+  <!-- Info box -->
+  <rect x="175" y="260" width="350" height="80" rx="10" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+  <text x="350" y="290" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="13" font-weight="600">⚡ Ключов избор:</text>
+  <text x="350" y="312" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">CP → Силна консистентност, по-ниска достъпност</text>
+  <text x="350" y="332" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">AP → Висока достъпност, евентуална консистентност</text>
+</svg>

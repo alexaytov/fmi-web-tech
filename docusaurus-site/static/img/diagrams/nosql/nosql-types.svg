@@ -1,0 +1,120 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="kvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="colGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#27ae60"/>
+    </linearGradient>
+    <linearGradient id="graphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <text x="400" y="35" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Четири Типа NoSQL Бази Данни</text>
+
+  <!-- Document Store -->
+  <g transform="translate(30, 60)">
+    <rect width="170" height="160" rx="12" fill="url(#docGrad)" filter="url(#cardShadow)"/>
+    <text x="85" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">📄 Document</text>
+    <rect x="20" y="45" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="30" y="65" fill="#333" font-family="monospace" font-size="10">{"name": "Ivan",</text>
+    <text x="30" y="80" fill="#333" font-family="monospace" font-size="10"> "age": 25,</text>
+    <text x="30" y="95" fill="#333" font-family="monospace" font-size="10"> "skills": [</text>
+    <text x="30" y="110" fill="#333" font-family="monospace" font-size="10">   "JS", "DB"</text>
+    <text x="30" y="125" fill="#333" font-family="monospace" font-size="10"> ]}</text>
+    <text x="85" y="190" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">MongoDB, Couchbase</text>
+  </g>
+
+  <!-- Key-Value Store -->
+  <g transform="translate(220, 60)">
+    <rect width="170" height="160" rx="12" fill="url(#kvGrad)" filter="url(#cardShadow)"/>
+    <text x="85" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🔑 Key-Value</text>
+    <rect x="20" y="45" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <rect x="30" y="55" width="45" height="22" rx="4" fill="#3498db" fill-opacity="0.2"/>
+    <text x="52" y="70" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="11">user:1</text>
+    <text x="88" y="70" fill="#333" font-size="14">→</text>
+    <text x="100" y="70" fill="#333" font-family="monospace" font-size="10">{...}</text>
+    <rect x="30" y="85" width="45" height="22" rx="4" fill="#3498db" fill-opacity="0.2"/>
+    <text x="52" y="100" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="11">sess:A</text>
+    <text x="88" y="100" fill="#333" font-size="14">→</text>
+    <text x="100" y="100" fill="#333" font-family="monospace" font-size="10">token</text>
+    <rect x="30" y="115" width="45" height="22" rx="4" fill="#3498db" fill-opacity="0.2"/>
+    <text x="52" y="130" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="11">cache</text>
+    <text x="88" y="130" fill="#333" font-size="14">→</text>
+    <text x="100" y="130" fill="#333" font-family="monospace" font-size="10">data</text>
+    <text x="85" y="190" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Redis, DynamoDB</text>
+  </g>
+
+  <!-- Wide-Column Store -->
+  <g transform="translate(410, 60)">
+    <rect width="170" height="160" rx="12" fill="url(#colGrad)" filter="url(#cardShadow)"/>
+    <text x="85" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">📊 Wide-Column</text>
+    <rect x="20" y="45" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <!-- Column headers -->
+    <rect x="28" y="52" width="35" height="16" rx="3" fill="#2ecc71" fill-opacity="0.3"/>
+    <rect x="68" y="52" width="35" height="16" rx="3" fill="#2ecc71" fill-opacity="0.3"/>
+    <rect x="108" y="52" width="35" height="16" rx="3" fill="#2ecc71" fill-opacity="0.3"/>
+    <text x="45" y="64" text-anchor="middle" fill="#27ae60" font-size="9" font-weight="600">Col1</text>
+    <text x="85" y="64" text-anchor="middle" fill="#27ae60" font-size="9" font-weight="600">Col2</text>
+    <text x="125" y="64" text-anchor="middle" fill="#27ae60" font-size="9" font-weight="600">Col3</text>
+    <!-- Row 1 -->
+    <rect x="28" y="72" width="35" height="20" rx="3" fill="#ecf0f1"/>
+    <rect x="68" y="72" width="35" height="20" rx="3" fill="#ecf0f1"/>
+    <text x="45" y="86" text-anchor="middle" fill="#333" font-size="9">val</text>
+    <text x="85" y="86" text-anchor="middle" fill="#333" font-size="9">val</text>
+    <!-- Row 2 -->
+    <rect x="28" y="96" width="35" height="20" rx="3" fill="#ecf0f1"/>
+    <rect x="108" y="96" width="35" height="20" rx="3" fill="#ecf0f1"/>
+    <text x="45" y="110" text-anchor="middle" fill="#333" font-size="9">val</text>
+    <text x="125" y="110" text-anchor="middle" fill="#333" font-size="9">val</text>
+    <!-- Row 3 -->
+    <rect x="68" y="120" width="35" height="20" rx="3" fill="#ecf0f1"/>
+    <text x="85" y="134" text-anchor="middle" fill="#333" font-size="9">val</text>
+    <text x="85" y="190" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Cassandra, ScyllaDB</text>
+  </g>
+
+  <!-- Graph Store -->
+  <g transform="translate(600, 60)">
+    <rect width="170" height="160" rx="12" fill="url(#graphGrad)" filter="url(#cardShadow)"/>
+    <text x="85" y="30" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">🕸️ Graph</text>
+    <rect x="20" y="45" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <!-- Nodes -->
+    <circle cx="55" cy="75" r="15" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="2"/>
+    <text x="55" y="79" text-anchor="middle" fill="#8e44ad" font-size="10" font-weight="600">A</text>
+    <circle cx="115" cy="75" r="15" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="2"/>
+    <text x="115" y="79" text-anchor="middle" fill="#8e44ad" font-size="10" font-weight="600">B</text>
+    <circle cx="85" cy="120" r="15" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="2"/>
+    <text x="85" y="124" text-anchor="middle" fill="#8e44ad" font-size="10" font-weight="600">C</text>
+    <!-- Edges -->
+    <line x1="70" y1="75" x2="100" y2="75" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowGraph)"/>
+    <line x1="55" y1="90" x2="75" y2="108" stroke="#9b59b6" stroke-width="2"/>
+    <line x1="115" y1="90" x2="95" y2="108" stroke="#9b59b6" stroke-width="2"/>
+    <text x="85" y="190" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="11">Neo4j, Neptune</text>
+  </g>
+
+  <!-- Use cases row -->
+  <g transform="translate(0, 270)">
+    <text x="115" y="20" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Каталози, CMS</text>
+    <text x="115" y="38" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Гъвкава схема</text>
+
+    <text x="305" y="20" text-anchor="middle" fill="#3498db" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Кеширане, Сесии</text>
+    <text x="305" y="38" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Ултра бързо</text>
+
+    <text x="495" y="20" text-anchor="middle" fill="#2ecc71" font-family="system-ui, sans-serif" font-size="11" font-weight="600">IoT, Time-series</text>
+    <text x="495" y="38" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Масивен запис</text>
+
+    <text x="685" y="20" text-anchor="middle" fill="#9b59b6" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Социални мрежи</text>
+    <text x="685" y="38" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="10">Връзки и графи</text>
+  </g>
+</svg>

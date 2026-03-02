@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <linearGradient id="requestGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9b59b6"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="responseGrad" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#e67e22"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="30" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">HTTP Request-Response Cycle</text>
+
+  <!-- Client Box -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="70" width="180" height="160" rx="12" fill="url(#clientGrad)"/>
+    <text x="130" y="100" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">CLIENT</text>
+    <text x="130" y="130" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Browser / Postman</text>
+    <text x="130" y="148" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Python / cURL</text>
+    <text x="130" y="190" font-size="40" text-anchor="middle">💻</text>
+  </g>
+
+  <!-- Server Box -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="70" width="180" height="160" rx="12" fill="url(#serverGrad)"/>
+    <text x="570" y="100" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">SERVER</text>
+    <text x="570" y="130" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">REST API</text>
+    <text x="570" y="148" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Database</text>
+    <text x="570" y="190" font-size="40" text-anchor="middle">🖥️</text>
+  </g>
+
+  <!-- Request Arrow -->
+  <line x1="225" y1="120" x2="475" y2="120" stroke="#9b59b6" stroke-width="3" marker-end="url(#arrowRight)"/>
+  <rect x="280" y="100" width="140" height="40" rx="6" fill="url(#requestGrad)" opacity="0.9"/>
+  <text x="350" y="116" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HTTP REQUEST</text>
+  <text x="350" y="132" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="9" text-anchor="middle">GET /api/users</text>
+
+  <!-- Response Arrow -->
+  <line x1="475" y1="180" x2="225" y2="180" stroke="#e67e22" stroke-width="3" marker-end="url(#arrowLeft)"/>
+  <rect x="280" y="160" width="140" height="40" rx="6" fill="url(#responseGrad)" opacity="0.9"/>
+  <text x="350" y="176" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HTTP RESPONSE</text>
+  <text x="350" y="192" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="9" text-anchor="middle">200 OK + JSON</text>
+
+  <!-- Legend -->
+  <g transform="translate(250, 250)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#9b59b6"/>
+    <text x="18" y="10" fill="#666" font-family="system-ui, sans-serif" font-size="11">Request (Client → Server)</text>
+    <rect x="150" y="0" width="12" height="12" rx="2" fill="#e67e22"/>
+    <text x="168" y="10" fill="#666" font-family="system-ui, sans-serif" font-size="11">Response (Server → Client)</text>
+  </g>
+</svg>

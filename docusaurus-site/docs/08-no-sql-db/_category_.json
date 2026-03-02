@@ -1,0 +1,9 @@
+{
+  "label": "08. NoSQL Бази Данни",
+  "position": 9,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Въведение в NoSQL бази данни - типове, CAP теорема и приложения"
+  }
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="csrfVictimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <linearGradient id="csrfEvilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="csrfBankGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="csrfShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+    <marker id="csrfArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <style>
+    .csrf-flow { animation: csrfFlow 0.8s linear infinite; }
+    .csrf-evil-glow { animation: csrfEvilGlow 1.5s ease-in-out infinite; }
+    .csrf-code-blink { animation: csrfCodeBlink 1.2s ease-in-out infinite; }
+    .csrf-warning { animation: csrfWarning 1s ease-in-out infinite; }
+    .csrf-money-flow { animation: csrfMoneyFlow 0.6s ease-in-out infinite; }
+
+    @keyframes csrfFlow {
+      from { stroke-dashoffset: 20; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes csrfEvilGlow {
+      0%, 100% { filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2)) drop-shadow(0 0 8px rgba(231,76,60,0.3)); }
+      50% { filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2)) drop-shadow(0 0 20px rgba(231,76,60,0.6)); }
+    }
+    @keyframes csrfCodeBlink {
+      0%, 100% { fill: #c0392b; }
+      50% { fill: #e74c3c; }
+    }
+    @keyframes csrfWarning {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes csrfMoneyFlow {
+      0%, 100% { fill: #e74c3c; }
+      50% { fill: #ff6b6b; }
+    }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Cross-Site Request Forgery (CSRF)</text>
+  <text x="400" y="55" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="12">Изпълнение на нежелани действия от името на автентикиран потребител</text>
+
+  <!-- Victim Browser -->
+  <g transform="translate(50, 90)" filter="url(#csrfShadow)">
+    <rect width="200" height="130" rx="12" fill="url(#csrfVictimGrad)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">👤 Жертва (Браузър)</text>
+    <rect x="15" y="40" width="170" height="35" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="55" text-anchor="middle" fill="#2980b9" font-family="system-ui, sans-serif" font-size="9">Логнат в bank.com</text>
+    <text x="100" y="68" text-anchor="middle" fill="#2980b9" font-family="monospace" font-size="8">Cookie: session=abc123</text>
+    <rect x="15" y="85" width="170" height="35" rx="6" fill="#ffeaa7"/>
+    <text x="100" y="100" text-anchor="middle" fill="#2c3e50" font-family="system-ui, sans-serif" font-size="9">Посещава evil.com</text>
+    <text x="100" y="113" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="8" class="csrf-warning">⚠️ (друг таб)</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M260,155 L290,155" stroke="#e74c3c" stroke-width="2" stroke-dasharray="10,10" class="csrf-flow" marker-end="url(#csrfArrowRed)"/>
+  <text x="275" y="145" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="8">1. Зарежда</text>
+
+  <!-- Evil Site -->
+  <g transform="translate(300, 90)" class="csrf-evil-glow">
+    <rect width="200" height="130" rx="12" fill="url(#csrfEvilGrad)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">😈 evil.com</text>
+    <rect x="15" y="40" width="170" height="75" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="58" text-anchor="middle" fill="#c0392b" font-family="system-ui, sans-serif" font-size="9">Скрит HTML:</text>
+    <text x="100" y="75" text-anchor="middle" font-family="monospace" font-size="7" class="csrf-code-blink">&lt;img src="bank.com/</text>
+    <text x="100" y="87" text-anchor="middle" font-family="monospace" font-size="7" class="csrf-code-blink">transfer?to=hacker</text>
+    <text x="100" y="99" text-anchor="middle" font-family="monospace" font-size="7" class="csrf-code-blink">&amp;amount=10000"&gt;</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M510,155 L540,155" stroke="#e74c3c" stroke-width="2" stroke-dasharray="10,10" class="csrf-flow" marker-end="url(#csrfArrowRed)"/>
+  <text x="525" y="145" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="8">2. Auto Request</text>
+
+  <!-- Bank Server -->
+  <g transform="translate(550, 90)" filter="url(#csrfShadow)">
+    <rect width="200" height="130" rx="12" fill="url(#csrfBankGrad)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="600">🏦 bank.com</text>
+    <rect x="15" y="40" width="170" height="75" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="100" y="58" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="9">Получава заявка:</text>
+    <text x="100" y="75" text-anchor="middle" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">✓ Валиден session cookie</text>
+    <text x="100" y="92" text-anchor="middle" fill="#e74c3c" font-family="system-ui, sans-serif" font-size="9" class="csrf-warning">⚠️ Изпълнява трансфер!</text>
+    <text x="100" y="107" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" class="csrf-money-flow">$10,000 → hacker</text>
+  </g>
+
+  <!-- Defense Section -->
+  <text x="400" y="255" text-anchor="middle" fill="#27ae60" font-family="system-ui, sans-serif" font-size="16" font-weight="600">✅ Защита от CSRF</text>
+
+  <g transform="translate(50, 275)">
+    <rect width="220" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+    <text x="110" y="22" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="11" font-weight="600">CSRF Token</text>
+    <text x="15" y="42" fill="#27ae60" font-family="monospace" font-size="8">&lt;input type="hidden"</text>
+    <text x="15" y="55" fill="#27ae60" font-family="monospace" font-size="8">  name="csrf_token"</text>
+    <text x="15" y="68" fill="#27ae60" font-family="monospace" font-size="8">  value="random_xyz"&gt;</text>
+    <text x="15" y="82" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Сървърът валидира токена</text>
+  </g>
+
+  <g transform="translate(290, 275)">
+    <rect width="220" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+    <text x="110" y="22" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="11" font-weight="600">SameSite Cookie</text>
+    <text x="15" y="42" fill="#27ae60" font-family="monospace" font-size="8">Set-Cookie: session=abc;</text>
+    <text x="15" y="55" fill="#27ae60" font-family="monospace" font-size="8">  SameSite=Strict;</text>
+    <text x="15" y="68" fill="#27ae60" font-family="monospace" font-size="8">  Secure; HttpOnly</text>
+    <text x="15" y="82" fill="#7f8c8d" font-family="system-ui, sans-serif" font-size="8">Браузърът не изпраща cookie</text>
+  </g>
+
+  <g transform="translate(530, 275)">
+    <rect width="220" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+    <text x="110" y="22" text-anchor="middle" fill="#1e8449" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Допълнителни мерки</text>
+    <text x="15" y="42" fill="#27ae60" font-family="system-ui, sans-serif" font-size="9">• Проверка на Referer header</text>
+    <text x="15" y="57" fill="#27ae60" font-family="system-ui, sans-serif" font-size="9">• Double-submit cookies</text>
+    <text x="15" y="72" fill="#27ae60" font-family="system-ui, sans-serif" font-size="9">• Re-auth за критични действия</text>
+    <text x="15" y="87" fill="#27ae60" font-family="system-ui, sans-serif" font-size="9">• CAPTCHA за чувствителни форми</text>
+  </g>
+</svg>

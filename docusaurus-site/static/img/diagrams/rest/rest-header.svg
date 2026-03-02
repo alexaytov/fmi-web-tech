@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180">
+  <defs>
+    <linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#f093fb"/>
+    </linearGradient>
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
+    <filter id="headerShadow" x="-5%" y="-5%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#764ba2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="180" rx="16" fill="url(#headerBg)" filter="url(#headerShadow)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="50" cy="30" r="80" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="750" cy="150" r="100" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="650" cy="40" r="50" fill="rgba(255,255,255,0.03)"/>
+
+  <!-- Icons Row -->
+  <g transform="translate(100, 70)">
+    <!-- GET Icon -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#iconBg)"/>
+    <text x="30" y="42" fill="white" font-size="28" text-anchor="middle">📖</text>
+    <text x="30" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">GET</text>
+  </g>
+
+  <g transform="translate(200, 70)">
+    <!-- POST Icon -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#iconBg)"/>
+    <text x="30" y="42" fill="white" font-size="28" text-anchor="middle">➕</text>
+    <text x="30" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">POST</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="400" y="75" fill="white" font-family="system-ui, sans-serif" font-size="32" font-weight="800" text-anchor="middle">REST API</text>
+  <text x="400" y="105" fill="rgba(255,255,255,0.85)" font-family="system-ui, sans-serif" font-size="16" font-weight="500" text-anchor="middle">GET &amp; POST Requests</text>
+  <text x="400" y="130" fill="rgba(255,255,255,0.6)" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Fundamentals for Web APIs</text>
+
+  <g transform="translate(540, 70)">
+    <!-- JSON Icon -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#iconBg)"/>
+    <text x="30" y="42" fill="white" font-size="28" text-anchor="middle">📄</text>
+    <text x="30" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">JSON</text>
+  </g>
+
+  <g transform="translate(640, 70)">
+    <!-- HTTP Icon -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#iconBg)"/>
+    <text x="30" y="42" fill="white" font-size="28" text-anchor="middle">🌐</text>
+    <text x="30" y="80" fill="rgba(255,255,255,0.8)" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">HTTP</text>
+  </g>
+</svg>
