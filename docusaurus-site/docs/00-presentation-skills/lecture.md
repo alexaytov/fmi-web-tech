@@ -1,313 +1,431 @@
+---
+title: "Лекция"
+sidebar_position: 1
+slug: lecture
+tags: [presentations, communication, soft-skills]
+---
 
-Topic: Basic Presentation Skills for Programmers
-Description: This lecture equips university students with programmer-focused presentation skills, covering structure, delivery, visuals, and engagement to effectively communicate technical ideas in talks, demos, and meetings.
+import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
+import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
+import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
+import WhyBox from '@site/src/components/InfoBoxes/WhyBox';
+import LearningObjectives from '@site/src/components/LearningObjectives';
+import QuickSummary from '@site/src/components/QuickSummary';
+import CollapsibleSection from '@site/src/components/CollapsibleSection';
+import ComparisonBox from '@site/src/components/Comparison/ComparisonBox';
+import Grid from '@site/src/components/Grid/Grid';
+import Card from '@site/src/components/Grid/Card';
 
-Learning Objectives:
-- By the end, students will be able to structure a technical presentation using proven frameworks.(Apply Problem-Agitate-Solution or similar to organize code demos and talks.)
-- By the end, students will be able to deliver with confident body language and voice control.(Use open postures, eye contact, and pacing suitable for tech audiences.)
-- By the end, students will be able to design effective slides for programming content.(Prioritize visuals, minimize text, and adapt for non-technical viewers.)
-- By the end, students will be able to incorporate interactivity into presentations.(Use questions and activities to engage listeners during technical explanations.)
-- By the end, students will be able to critique and improve a sample tech presentation.(Identify strengths/weaknesses in delivery and content for self-application.)
-$json.lectureOutline[0].sub_topics[1].properties.details
-Lecture Outline:
-- 1. Introduction and Motivation
-Why presentation skills matter for programmers (Teacher explains relevance; students recognize need beyond coding.),Common challenges for programmers in presenting (Students identify personal gaps.)
-- 2. Prerequisite Recap
-Basic communication principles (Quick review; students recall tailoring info to non-tech audiences.),Simple slide design basics (Students confirm understanding of code demo slides.)
-- 3. Core Concepts: Structure and Content
-Effective presentation frameworks (Teacher demonstrates; students select framework for tech talks.),Content focus for technical talks (Students learn to prioritize meaningful demo elements.)
-- 4. Core Concepts: Delivery and Body Language
-Open body language and eye contact (Teacher models; students practice confident presence.),Voice, pace, and handling fillers (Students understand vocal techniques for authority.)
-- 5. Visuals and Interactivity
-Slide design for programmers (Teacher shows examples; students critique tech slides.),Adding interactivity (Students learn to engage audiences in demos.)
-- 6. Examples and Case Studies
-Tech talk demo: Before/After code refactor (Teacher presents; students note structure effectiveness.),Poor vs. good programmer presentation (Students analyze differences.)
-- 7. Summary and Key Takeaways
-Recap core elements (Reinforce for retention.),Practice tips and next steps (Students plan personal improvement.)
+# Основи на Презентационните Умения за Програмисти
 
-Content:
-## Lecture: Basic Presentation Skills for Programmers
+<QuickSummary>
 
-**Lecture Topic:** Basic Presentation Skills for Programmers
+**Ключови познания:**
+- Презентационните умения са критични за кариерното развитие на програмистите
+- Структурата на презентацията е също толкова важна, колкото и съдържанието
+- Езикът на тялото и гласовият контрол изграждат увереност и доверие
+- Визуалният дизайн трябва да подкрепя, а не да замества посланието
+- Интерактивността държи аудиторията ангажирана
 
-**Description:** This lecture equips university students with programmer-focused presentation skills, covering structure, delivery, visuals, and engagement to effectively communicate technical ideas in talks, demos, and meetings.
+</QuickSummary>
 
-**Learning Objectives:**
-*   By the end, students will be able to structure a technical presentation using proven frameworks.
-*   By the end, students will be able to deliver with confident body language and voice control.
-*   By the end, students will be able to design effective slides for programming content.
-*   By the end, students will be able to incorporate interactivity into presentations.
-*   By the end, students will be able to critique and improve a sample tech presentation.
+<LearningObjectives objectives={[
+  "Да структурирате техническа презентация, използвайки доказани рамки (frameworks)",
+  "Да представяте с уверен език на тялото и гласов контрол",
+  "Да проектирате ефективни слайдове за програмистко съдържание",
+  "Да включвате интерактивност в презентациите си",
+  "Да критикувате и подобрявате технически презентации"
+]} />
 
 ---
 
-**(Slide 1: Title Slide)**
-*   **Title:** Basic Presentation Skills for Programmers
-*   **Subtitle:** Communicating Your Code and Ideas Effectively
-*   **Presenter:** [Your Name/University Department]
-*   **Date:** [Date]
+## Въведение: Защо Презентационните Умения са Важни
+
+<WhyBox title="Защо програмистите трябва да умеят да презентират?">
+
+Пишете страхотен код, създавате иновативен софтуер и решавате сложни проблеми. Но какво се случва, ако не можете ефективно да споделите тези решения?
+
+В света на технологиите вашето влияние не се измерва само с редове код - то се измерва и с способността ви да артикулирате идеите си, да демонстрирате работата си и да влияете на другите.
+
+</WhyBox>
+
+### Кариерно Развитие и Влияние
+
+<InfoBox title="Реални Сценарии">
+
+- **Представяне на нови функционалности** или предложения за проекти
+- **Демонстриране на софтуер** пред клиенти, заинтересовани страни или потребители
+- **Споделяне на експертиза** на конференции, meetups или вътрешни технически срещи
+- **Обясняване на сложни решения** на нетехнически екипи (маркетинг, продажби, мениджмънт)
+- **Водене на екипни срещи** или stand-ups
+
+</InfoBox>
+
+<SuccessBox title="Ползи от Добрите Презентационни Умения">
+
+Силните презентационни умения демонстрират вашата стойност, изграждат доверие и създават възможности. Те повишават вашата пригодност за работа, като показват компетентност в опростяването на сложни концепции, използването на визуализации и демонстрации, както и проявяването на лидерство по време на интервюта или повишения.
+
+</SuccessBox>
 
 ---
 
-**(Slide 2: Introduction - Why are we here?)**
-*   **Headline:** Beyond the Code: Why Presentation Skills Matter
-*   **Content:**
-    *   You write great code, build innovative software, and solve complex problems. But what happens if you can't effectively share those solutions?
-    *   In the world of tech, your impact isn't just measured by lines of code; it's also measured by your ability to articulate your ideas, demonstrate your work, and influence others.
-    *   Today, we're going to bridge that gap, transforming you from just coders into powerful communicators.
+## Често Срещани Предизвикателства за Програмисти
+
+<Grid columns={3}>
+  <Card title="Жаргонно Претоварване" icon="🗣️">
+    Разчитане на технически термини вместо на ясен език, аналогии или истории
+  </Card>
+  <Card title="Пропуски в Представянето" icon="😰">
+    Липса на увереност, слаба адаптация към аудиторията
+  </Card>
+  <Card title="Недостатъчна Подготовка" icon="📝">
+    Подценяване на нуждата от практика, обратна връзка или структура
+  </Card>
+</Grid>
+
+<CollapsibleSection title="💭 Упражнение за Самоанализ">
+
+Помислете за минала техническа презентация или демо, които сте направили или наблюдавали:
+- Какво мина добре?
+- Какво беше объркващо?
+- Изглеждаше ли аудиторията ангажирана?
+- Кое беше най-голямото предизвикателство?
+
+</CollapsibleSection>
 
 ---
 
-**(Slide 3: Lecture Overview & Learning Objectives)**
-*   **Headline:** Today's Roadmap
-*   **Content:**
-    *   **Why it Matters:** Understanding the necessity of these skills.
-    *   **The Foundation:** Communication principles & basic slide design.
-    *   **Crafting Your Message:** Frameworks & content focus.
-    *   **Your Presence:** Delivery, body language & voice control.
-    *   **Visual Impact:** Advanced slide design & interactivity.
-    *   **Learning from Others:** Critiquing & improving.
-    *   **Next Steps:** Practical tips for continuous improvement.
-*   **Learning Objectives (as listed in prompt):**
-    *   Structure a technical presentation using proven frameworks.
-    *   Deliver with confident body language and voice control.
-    *   Design effective slides for programming content.
-    *   Incorporate interactivity into presentations.
-    *   Critique and improve a sample tech presentation.
+## Основни Комуникационни Принципи
+
+### Познайте Своята Аудитория
+
+<ComparisonBox
+  left={{
+    title: "Техническа Аудитория",
+    content: (
+      <ul>
+        <li>Колеги, инженери</li>
+        <li>Можете да използвате специфичен жаргон</li>
+        <li>Навлизайте по-дълбоко в детайлите на имплементацията</li>
+        <li>Фокусирайте се върху техническите решения</li>
+      </ul>
+    )
+  }}
+  right={{
+    title: "Нетехническа Аудитория",
+    content: (
+      <ul>
+        <li>Маркетинг, HR, мениджъри, клиенти</li>
+        <li>Заменяйте сложните термини с прост език</li>
+        <li>Използвайте аналогии (напр. API = "начин различен софтуер да комуникира")</li>
+        <li>Фокусирайте се върху ползите и резултатите</li>
+      </ul>
+    )
+  }}
+/>
+
+### Яснота и Простота
+
+<InfoBox title="Принципи за Ясна Комуникация">
+
+- **Разбийте информацията** на кратки блокове
+- **Избягвайте** да заравяте идеи в сложност
+- **Фокусирайте се върху ползите** вместо върху функционалностите
+  - Вместо: "Нашият нов алгоритъм оптимизира заявките към базата данни"
+  - Кажете: "Това намалява административното време с 60%"
+
+</InfoBox>
 
 ---
 
-### 1. Why Presentation Skills Matter for Programmers (10-12 mins)
+## Основи на Дизайна на Слайдове
 
-**(Slide 4: The Programmer's Edge: Why Presenting Matters)**
-*   **Headline:** Beyond the Code: Why Programmers Need Presentation Skills
-*   **Content:**
-    *   **Career Advancement & Influence:** Presentation skills are essential for programmers because they enable effective communication of complex technical ideas to diverse audiences, boosting career success, teamwork, and leadership beyond just coding.
-    *   **Real-World Scenarios:**
-        *   Pitching new features or project proposals.
-        *   Demonstrating software to clients, stakeholders, or users.
-        *   Sharing expertise at conferences, meetups, or internal tech talks.
-        *   Explaining complex solutions to non-technical teams (marketing, sales, management).
-        *   Leading team meetings or stand-ups.
-    *   **Employability & Credibility:** Strong presentation skills showcase your value, build credibility, and create opportunities. They enhance employability by demonstrating competence in simplifying complex concepts for non-technical stakeholders, using visuals or demos, and projecting leadership during interviews or promotions. They foster collaboration and prepare you for leadership roles.
+### Правилото на Петте Секунди
 
-**(Slide 5: Common Challenges for Programmers)**
-*   **Headline:** Overcoming Presentation Hurdles
-*   **Content:**
-    *   **Jargon Overload:** Programmers often struggle with conveying technical details clearly to non-experts, relying on jargon instead of plain language, analogies, or stories, which hinders audience understanding.
-    *   **Delivery Gaps:** Lacking confidence in delivery, poor audience adaptation (e.g., not tailoring depth for technical vs. executive groups).
-    *   **Underestimating Preparation:** Underestimating the need for practice, feedback, or structure, leading to disengaged talks.
-    *   **Self-Reflection Activity (2 mins):** Think about a past technical presentation or demo you gave or witnessed. What went well? What was confusing? Did the audience seem engaged? What was the biggest challenge? *(Brief discussion/share if time permits)*
+<WarningBox title="Ключов Въпрос">
 
----
+Може ли вашата аудитория да схване основната точка на слайда за 5 секунди?
 
-### 2. Basic Communication Principles & Simple Slide Design (15-20 mins)
+</WarningBox>
 
-**(Slide 6: Basic Communication Principles: Know Your Audience)**
-*   **Headline:** The Foundation: Communicating with Clarity
-*   **Content:**
-    *   **Know Your Audience:** This is paramount. Assess their technical background and tailor content accordingly.
-        *   **Technical Audience:** Peers, fellow engineers. You can use more specific jargon, dive deeper into implementation details.
-        *   **Non-Technical Audience:** Marketing, HR, executives, clients. Replace complex terms with plain language or analogies (e.g., explain "API" as "a way for different software to talk to each other"). Focus on *benefits* and *outcomes*, not just features.
-    *   **Clarity and Simplicity:** Ensure messages are clear, concise, and easy to grasp.
-        *   Break down information into short blocks.
-        *   Avoid burying ideas in complexity.
-        *   Focus on benefits over features (e.g., "This reduces admin time by 60%" instead of "Our new algorithm optimizes database queries").
-    *   **Audience Connection:** Build empathy by putting yourself in their position. Use relatable stories (Problem → Solution → Impact) and emphasize how technology helps *them*.
+<Grid columns={2}>
+  <Card title="Чиста Йерархия" icon="📐">
+    Използвайте големи шрифтове (18-30+ pt), висок контраст и последователна типография. Sans-serif шрифтове като Calibri, Arial или Helvetica са отличен избор.
+  </Card>
+  <Card title="Визуализации за Код" icon="💻">
+    Използвайте ясни диаграми, flowcharts или опростени code snippets. Изследванията показват, че опростените визуализации подобряват разбирането с 50%.
+  </Card>
+</Grid>
 
-**(Slide 7: Simple Slide Design Basics: Visuals for Programmers)**
-*   **Headline:** Designing for Impact: Code & Concepts
-*   **Content:**
-    *   **The Five-Second Rule:** Can your audience grasp the main point of your slide in 5 seconds? Use clear titles, visual emphasis, and minimal content. Use separate slides for distinct insights.
-    *   **Clean Hierarchy & Readability:**
-        *   **Fonts:** Employ large fonts (18-30+ pt), high-contrast colors (dark text on light background), and consistent typography. Sans-serif fonts like Calibri, Arial, or Helvetica are excellent choices.
-        *   **Clutter:** Eliminate unnecessary decorative elements.
-        *   **Accessibility:** Add alt text for images; avoid using color as the *only* cue for information.
-    *   **Visuals for Code Demos:** Crucial for technical talks!
-        *   Use clear charts, diagrams, flowcharts, or simplified code snippets. Research shows simplified visuals improve comprehension by 50%.
-        *   Focus on "graphical excellence" – maximal ideas in minimal space.
-        *   *Avoid screenshots of unformatted code.* Use syntax highlighting tools.
-    *   **"Less is More":** Slides support your narrative; they are not your script. High-contrast, large text ensures readability from afar.
-*   **Quick Activity (2 mins):** Look at a typical code demo slide you've used or seen. Does it pass the 5-second test for a *non-technical* viewer? Why or why not?
+<SuccessBox title="По-малко е Повече">
+
+Слайдовете подкрепят вашия разказ - те не са вашият скрипт. Висок контраст и голям текст осигуряват четливост от разстояние.
+
+</SuccessBox>
 
 ---
 
-### 3. Effective Presentation Frameworks & Content Focus (15-20 mins)
+## Рамки за Структуриране на Презентации
 
-**(Slide 8: Structuring Your Technical Narrative)**
-*   **Headline:** Proven Frameworks for Programmers
-*   **Content:**
-    *   Proven frameworks provide clear, logical flows for complex topics like code, algorithms, or projects, adapting well to programmer demos and meetings.
-    *   **Problem-Solution-Benefit:** (Especially for demos/pitching tools)
-        *   **Problem:** What challenge are you addressing?
-        *   **Solution:** How does your code/tool solve it?
-        *   **Benefit:** What value does it bring (e.g., "60% faster runtime," "reduces admin time")?
-    *   **Pyramid Principle:** (Ideal for executive briefings, quick summaries)
-        *   Start with your main recommendation/conclusion.
-        *   Follow with 3 supporting points.
-        *   Provide evidence for each.
-    *   **What-So What-Now What:** (Great for data-heavy tech presentations)
-        *   **What:** Describe the data/situation.
-        *   **So What:** Explain its significance/implications.
-        *   **Now What:** Outline the recommended actions.
-    *   **SCQA (Situation-Complication-Question-Answer):** (For problem-solving narratives)
-        *   **Situation:** Set the context.
-        *   **Complication:** Identify the issues/challenges.
-        *   **Question:** Pose the central problem.
-        *   **Answer:** Deliver your solution (with code or demo).
-    *   **Modular Deck:** (Flexible for meetings where topics might shift)
-        *   Opening → Reorderable Modules (each a self-contained topic) → Closing.
+### Problem-Solution-Benefit (Проблем-Решение-Полза)
 
-**(Slide 9: Content Focus: What to Show, What to Skip)**
-*   **Headline:** Prioritizing Meaningful Demo Elements
-*   **Content:**
-    *   **Context First:** Always start with the *problem context*. Why does this solution matter?
-    *   **High-Level Solution:** Explain the approach simply before diving into details.
-    *   **Live Code Snippets:** Not full code dumps! Use syntax highlighting. Reveal code step-by-step.
-    *   **Proof & Metrics:** Back up claims with quantifiable results (e.g., performance gains, reduced errors, time saved).
-    *   **Next Steps:** What should the audience do or know after your talk?
-    *   **Avoid Overload:** Resist the urge to show every line of code or every possible detail. Focus on the core message.
-    *   **Interactive Elements:** Emphasize line-by-line code animations or simulations to demonstrate functionality. Use diagrams, analogies, or short live runs to highlight impact.
-*   **Activity (3 mins):** Think of a small coding project or algorithm you're familiar with. Which framework would you choose to explain it to:
-    1.  Your technical lead?
-    2.  A new intern?
-    3.  A product manager?
-    *Briefly explain your choice.*
+<InfoBox title="Идеална за демонстрации и представяне на инструменти">
 
----
+1. **Проблем:** Какво предизвикателство адресирате?
+2. **Решение:** Как вашият код/инструмент го решава?
+3. **Полза:** Каква стойност носи? (напр. "60% по-бързо изпълнение", "намалено административно време")
 
-### 4. Delivery: Body Language & Voice Control (15-20 mins)
+</InfoBox>
 
-**(Slide 10: Projecting Confidence: Body Language)**
-*   **Headline:** Your Physical Presence: Open Body Language & Eye Contact
-*   **Teacher Note:** *Model these techniques while explaining them.*
-*   **Content:**
-    *   **Open Body Language:**
-        *   **Posture:** Maintain an upright posture with feet shoulder-width apart. This projects authority and self-assurance.
-        *   **Gestures:** Use open hand gestures. Upward-facing palms convey honesty; downward palms communicate certainty. Synchronize speech with purposeful gestures (e.g., spread arms for "huge," hold up fingers for "steps").
-        *   **Avoid:** Crossed arms, clenched fists (signal defensiveness), or aggressive pointing.
-    *   **Eye Contact:** A cornerstone nonverbal cue.
-        *   **Live:** Maintain direct eye contact for 3 to 5 seconds before smoothly transitioning to another audience member. This creates a sense of inclusiveness and builds trust.
-        *   **Virtual:** Focus on the camera lens to simulate direct eye contact with remote audiences.
+### Pyramid Principle (Принцип на Пирамидата)
 
-**(Slide 11: Mastering Your Voice and Pace)**
-*   **Headline:** Vocal Power: Voice, Pace, and Handling Fillers
-*   **Content:**
-    *   **Voice Control:**
-        *   **Warm-up:** Briefly warm up your voice before presenting to reduce tension and add vocal variety. A dynamic tone keeps technical content engaging.
-        *   **Volume & Pitch:** Vary your volume and pitch to emphasize key points and prevent monotone delivery.
-    *   **Pacing:**
-        *   **Deliberate Delivery:** Pace your delivery deliberately. Allow pauses between key technical points rather than rushing.
-        *   **Q&A Composure:** When answering tough questions, pause and breathe slowly before answering while maintaining eye contact. This projects composure and confidence.
-    *   **Minimize Filler Words:** "Um," "uh," "like," "you know." These undermine authority. Thorough preparation naturally reduces fillers.
-        *   **Practice Tip:** Record yourself explaining technical concepts to identify and eliminate these patterns.
-*   **Activity (5 mins):** In pairs, take turns explaining a simple technical concept (e.g., what is a variable, how does a loop work). Focus only on:
-    *   Maintaining open posture and eye contact.
-    *   Using deliberate pace and vocal variety.
-    *   *Give constructive peer feedback on these specific points.*
+<InfoBox title="Идеален за брифинги с мениджмънт, бързи резюмета">
+
+1. Започнете с основната препоръка/заключение
+2. Следвайте с 3 подкрепящи точки
+3. Предоставете доказателства за всяка
+
+</InfoBox>
+
+### What-So What-Now What (Какво-Какво от това-Какво сега)
+
+<InfoBox title="Отличен за презентации с много данни">
+
+1. **What (Какво):** Опишете данните/ситуацията
+2. **So What (Какво от това):** Обяснете значението/последиците
+3. **Now What (Какво сега):** Очертайте препоръчаните действия
+
+</InfoBox>
+
+### SCQA (Situation-Complication-Question-Answer)
+
+<InfoBox title="За наративи за решаване на проблеми">
+
+1. **Situation (Ситуация):** Задайте контекста
+2. **Complication (Усложнение):** Идентифицирайте проблемите/предизвикателствата
+3. **Question (Въпрос):** Поставете централния проблем
+4. **Answer (Отговор):** Представете вашето решение (с код или демо)
+
+</InfoBox>
+
+### Фокус върху Съдържанието
+
+<Grid columns={2}>
+  <Card title="Какво да Покажете" icon="✅">
+    Контекст на проблема, high-level решение, code snippets със syntax highlighting, метрики и доказателства, следващи стъпки
+  </Card>
+  <Card title="Какво да Пропуснете" icon="❌">
+    Пълни code dumps, всеки възможен детайл, нефокусирани технически подробности
+  </Card>
+</Grid>
 
 ---
 
-### 5. Advanced Slide Design & Interactivity (15-20 mins)
+## Представяне: Език на Тялото и Глас
 
-**(Slide 12: Advanced Slide Design for Programmers)**
-*   **Headline:** Refining Your Visual Storytelling
-*   **Content:**
-    *   **Limit Text Density:** Apply rules like "6x6" (no more than 6 bullets or 6 words per bullet per slide) or even fewer (e.g., 4 bullets max, 1 key idea per slide). Use keywords or action words, not full sentences. Avoid "death by PowerPoint."
-    *   **Prioritize Visuals:** Replace text with high-resolution images, diagrams, icons, and charts.
-        *   **Charts:** Bar charts for comparisons, line charts for trends.
-        *   **Code Snippets:** Ensure they are clean, labeled, and syntax-highlighted.
-    *   **Maintain Clean Layout:**
-        *   **Whitespace:** Use ample whitespace to make content breathe.
-        *   **Consistency:** Consistent subtle backgrounds, single font families.
-        *   **Grid Alignment:** Use grids for precise alignment and scannability.
-        *   **Avoid:** Italics, all caps (except titles), flashy animations, or more than 4 colors per slide.
-    *   **Build Progressively:** Use simple animations (e.g., fade-ins) to reveal bullets, code lines, or graphs only when you discuss them. This reduces cognitive load.
-    *   **Programmer-Specific Tips:** Label code clearly, use one-column or two-column formats effectively, include paper/title/presenter info (e.g., footer), and test projections for color accuracy (especially for code syntax highlighting).
+### Отворен Език на Тялото
 
-**(Slide 13: Adding Interactivity for Engagement)**
-*   **Headline:** Turning Passive Viewers into Active Participants
-*   **Content:**
-    *   **Demo Engagement:** Don't just show, *ask*.
-        *   Pause after revealing a code block or graph: "What output do you predict?" or "How would you debug this?"
-        *   Use subtle animations to build code step-by-step, prompting audience input on next steps.
-    *   **Audience Tools:** Leverage tools for real-time interaction.
-        *   **Polls:** "Vote on this algorithm's efficiency," "Which approach is better?"
-        *   **Shared Screens:** For collaborative problem-solving or quick edits.
-        *   **Pair Discussions:** Quick "turn-to-your-neighbor" questions about slide visuals or code.
-    *   **Visual Cues for Interaction:** Dim past elements and highlight current ones with arrows/circles to focus group responses. Limit effects to maintain flow.
-    *   **Timing & Structure:** Allocate 1-2 slides per minute. End sections with interactive slides (e.g., thank you/Q&A format) to sustain energy in tech talks.
-*   **Activity (5 mins):**
-    *   *(Teacher shows 2-3 "bad" example slides with too much text, poor contrast, or unformatted code.)*
-    *   **Critique:** As a class, quickly point out 1-2 design flaws based on our rules.
-    *   **Improve:** How would you add one interactive element to make one of these "bad" slides more engaging if it were part of a live demo?
+<SuccessBox title="Поза и Жестове">
 
----
+- **Поза:** Поддържайте изправена стойка с крака на ширината на раменете
+- **Жестове:** Използвайте отворени жестове с ръце. Длани нагоре = честност; длани надолу = увереност
+- **Избягвайте:** Кръстосани ръце, стиснати юмруци (сигнализират отбранителност) или агресивно сочене
 
-### 6. Critique & Improve: Examples and Case Studies (15-20 mins)
+</SuccessBox>
 
-**(Slide 14: Learning from Real-World Examples)**
-*   **Headline:** Case Studies: Analyzing What Works (and What Doesn't)
-*   **Content:**
-    *   **Why Case Studies?** They make abstract concepts concrete, providing real-world instances that you can analyze and learn from. They show how structure, delivery, and visual design directly impact audience understanding.
-    *   **Tech Talk Demo: Before/After Code Refactor:**
-        *   Imagine a scenario: You're presenting a code refactor.
-        *   **"Before" (Ineffective):** Straight into the code, no context, just showing lines of change. Audience is lost.
-        *   **"After" (Effective):**
-            1.  **Problem:** Clearly articulate *why* the refactor was needed (e.g., "our old code was slow/buggy/hard to maintain").
-            2.  **Solution Approach:** Explain the high-level strategy for refactoring.
-            3.  **Implementation (Simplified):** Show key *before* code snippets, then key *after* code snippets, highlighting the *differences* and *benefits*. Use clear visuals and progressive reveals.
-            4.  **Impact:** Quantify the improvement (e.g., "reduced latency by 30%," "improved readability by X%").
-        *   This demonstrates how structure, narrative, and visual aids support understanding.
+### Очен Контакт
 
-**(Slide 15: Analyzing Good vs. Poor Presentations)**
-*   **Headline:** Dissecting Presentation Effectiveness
-*   **Content:**
-    *   **Comparative Analysis:** By comparing effective vs. ineffective presentations, you can identify concrete differences across all elements:
-        *   **Delivery:** Observe confident vs. uncertain body language, vocal variety vs. monotone.
-        *   **Slide Design:** Evaluate clarity, code formatting, visual hierarchy vs. clutter and poor contrast.
-        *   **Engagement:** How do good presentations incorporate Q&A, polls, or interactive elements, versus passive, lecture-style talks?
-    *   This analysis helps you understand not just *what* makes a presentation effective, but *why*.
-    *   **Implementation Considerations:**
-        *   Choose examples with realistic programming scenarios (actual code, system architectures, or technical problems).
-        *   Select examples that vary in quality to highlight both strengths and weaknesses.
-        *   Ensure they address programming contexts you will encounter.
-*   **Activity (7-10 mins):**
-    *   *(Teacher plays a short (3-5 min) video clip of a sample tech presentation – ideally one with a mix of strengths and weaknesses, or a "poor" example.)*
-    *   **Group Critique:** In small groups, use the learning objectives and lecture points as a guide. Identify:
-        *   **One strength** of the presentation (e.g., good use of an analogy, confident voice).
-        *   **One area for improvement** (e.g., too much text on slides, nervous gestures).
-        *   **Suggest one actionable change** to address the improvement area.
-    *   *(Brief class share-out of key findings.)*
+<InfoBox title="Изграждане на Връзка с Аудиторията">
+
+- **На живо:** Поддържайте директен очен контакт за 3-5 секунди, преди плавно да преминете към друг слушател
+- **Виртуално:** Фокусирайте се върху обектива на камерата, за да симулирате директен очен контакт
+
+</InfoBox>
+
+### Гласов Контрол
+
+<Grid columns={2}>
+  <Card title="Глас и Темпо" icon="🎤">
+    Загрейте гласа си преди презентацията. Варирайте силата и височината за акцентиране. Давайте паузи между ключовите технически точки.
+  </Card>
+  <Card title="Пълнежни Думи" icon="🚫">
+    Минимизирайте "ъъъ", "нали", "като че ли". Задълбочената подготовка естествено намалява тези навици.
+  </Card>
+</Grid>
+
+<CollapsibleSection title="💡 Съвет за Практика">
+
+Запишете се, докато обяснявате технически концепции, за да идентифицирате и елиминирате пълнежните думи.
+
+</CollapsibleSection>
 
 ---
 
-### 7. Summary and Key Takeaways (5-7 mins)
+## Напреднал Дизайн на Слайдове
 
-**(Slide 16: Recap: Core Elements for Programmer Presenters)**
-*   **Headline:** Your Toolkit for Powerful Presentations
-*   **Content:**
-    *   **Structure:** Use proven frameworks (Problem-Solution-Benefit, SCQA, Pyramid Principle) to create a clear, logical flow. Repeat your main message at the beginning, middle, and end.
-    *   **Delivery:** Practice aloud for pacing, clarity, and body language. Record yourself to eliminate filler words and ensure confident eye contact.
-    *   **Slide Design:** Limit to one key idea per slide. Prioritize visuals (charts, diagrams, clean code snippets) over dense text. Apply principles like the 10-20-30 rule (10 slides max, 20 minutes, 30-point font minimum).
-    *   **Interactivity:** Incorporate stories, questions, polls, and audience participation to maintain engagement. Use "pattern disruptions" like blanking the screen to regain focus.
-    *   **Critique:** Focus on audience-centric takeaways—what they should *know*, *feel*, or *do*—rather than overwhelming them with details.
+### Правила за Текстовата Плътност
 
-**(Slide 17: Practice Tips & Next Steps: Your Action Plan)**
-*   **Headline:** Becoming a Presentation Pro: Your Next Steps
-*   **Content:**
-    *   **Review & Revise:** Take a recent tech talk or demo you've given. Identify one element (e.g., slide clutter, weak structure, nervous habit) and revise it using today's frameworks and tips.
-    *   **Record & Reflect:** Record a 5-minute practice presentation on a coding project. Self-critique your body language, voice, and visuals. Then, seek peer feedback.
-    *   **Design for Engagement:** Create 3-5 slides for a mock programmer meeting. Include at least one interactive element, like a quick poll or a live code snippet demo.
-    *   **Prepare for the Unexpected:** Develop a "reset strategy" (e.g., a one-click demo backup, a go-to joke) and rehearse for mixed audiences: provide a big-picture overview first, then a technical deep dive.
-    *   **Consistent Practice:** Schedule weekly 20-minute practice sessions, building towards a full presentation. Actively track your progress by focusing on repeating your main message 3 times per session.
+<WarningBox title="Избягвайте 'Смърт чрез PowerPoint'">
+
+- Прилагайте правила като "6x6" (не повече от 6 точки или 6 думи на точка на слайд)
+- Използвайте ключови думи или глаголи, не пълни изречения
+- Една ключова идея на слайд
+
+</WarningBox>
+
+### Визуален Приоритет
+
+<Grid columns={2}>
+  <Card title="Графики и Диаграми" icon="📊">
+    Bar charts за сравнения, line charts за тенденции. Чисти, етикетирани code snippets със syntax highlighting.
+  </Card>
+  <Card title="Чист Layout" icon="🎨">
+    Достатъчно whitespace, последователни фонове, единни font families, grid alignment.
+  </Card>
+</Grid>
+
+<SuccessBox title="Прогресивно Изграждане">
+
+Използвайте прости анимации (fade-ins), за да разкривате точки, редове код или графики само когато ги обсъждате. Това намалява когнитивното натоварване.
+
+</SuccessBox>
+
+### Съвети Специфични за Програмисти
+
+<InfoBox title="Технически Презентации">
+
+- Етикетирайте кода ясно
+- Използвайте едноколонен или двуколонен формат ефективно
+- Включете footer информация (заглавие, презентатор)
+- Тествайте проекциите за цветова точност (особено за syntax highlighting)
+
+</InfoBox>
 
 ---
 
-**(Slide 18: Q&A)**
-*   **Headline:** Questions & Discussion
-*   **Content:**
-    *   "What questions do you have?"
-    *   "What's one thing you'll try differently in your next presentation?"
-*   **Contact Info (Optional):** [Your Email/Website]
-*   **Thank You!**
+## Добавяне на Интерактивност
+
+### Ангажиране по Време на Демото
+
+<InfoBox title="Превърнете Пасивните Зрители в Активни Участници">
+
+- Не просто показвайте - **питайте**!
+- След като разкриете code block или графика: "Какъв output очаквате?" или "Как бихте debug-нали това?"
+- Използвайте анимации, за да изграждате кода стъпка по стъпка
+
+</InfoBox>
+
+### Инструменти за Аудиторията
+
+<Grid columns={3}>
+  <Card title="Анкети (Polls)" icon="📊">
+    "Гласувайте за ефективността на този алгоритъм", "Кой подход е по-добър?"
+  </Card>
+  <Card title="Споделени Екрани" icon="🖥️">
+    За съвместно решаване на проблеми или бързи редакции
+  </Card>
+  <Card title="Дискусии по Двойки" icon="👥">
+    Бързи "обърнете се към съседа" въпроси за визуализации или код
+  </Card>
+</Grid>
+
+---
+
+## Анализ на Примери: Преди и След
+
+### Демо на Code Refactor
+
+<ComparisonBox
+  wrong={{
+    title: "Неефективен Подход",
+    content: (
+      <ul>
+        <li>Директно навлизане в кода без контекст</li>
+        <li>Просто показване на редове промени</li>
+        <li>Аудиторията е загубена</li>
+        <li>Няма ясна структура</li>
+      </ul>
+    )
+  }}
+  correct={{
+    title: "Ефективен Подход",
+    content: (
+      <ul>
+        <li><strong>Проблем:</strong> Защо беше нужен refactor</li>
+        <li><strong>Подход:</strong> High-level стратегия</li>
+        <li><strong>Имплементация:</strong> Ключови snippets преди/след</li>
+        <li><strong>Влияние:</strong> "Намалена латентност с 30%"</li>
+      </ul>
+    )
+  }}
+/>
+
+### Сравнителен Анализ на Презентации
+
+<Grid columns={2}>
+  <Card title="Представяне" icon="🎭">
+    Уверен vs несигурен език на тялото, гласово разнообразие vs монотонност
+  </Card>
+  <Card title="Слайд Дизайн" icon="🖼️">
+    Яснота, форматиране на код, визуална йерархия vs безпорядък и слаб контраст
+  </Card>
+</Grid>
+
+---
+
+## Обобщение: Вашият Инструментариум
+
+<Grid columns={2}>
+  <Card title="Структура" icon="🏗️">
+    Използвайте доказани рамки (Problem-Solution-Benefit, SCQA, Pyramid Principle). Повтаряйте основното послание в началото, средата и края.
+  </Card>
+  <Card title="Представяне" icon="🎤">
+    Практикувайте на глас за темпо, яснота и език на тялото. Записвайте се, за да елиминирате пълнежни думи.
+  </Card>
+</Grid>
+
+<Grid columns={2}>
+  <Card title="Слайд Дизайн" icon="🎨">
+    Една ключова идея на слайд. Приоритизирайте визуализации над плътен текст. Прилагайте правилото 10-20-30.
+  </Card>
+  <Card title="Интерактивност" icon="🤝">
+    Включвайте истории, въпроси, polls и участие на аудиторията. Използвайте "pattern disruptions" за фокус.
+  </Card>
+</Grid>
+
+---
+
+## Следващи Стъпки: Вашият План за Действие
+
+<SuccessBox title="Станете Презентационен Професионалист">
+
+1. **Преглед и Ревизия:** Вземете скорошна техническа презентация и идентифицирайте един елемент за подобрение
+
+2. **Запис и Рефлексия:** Запишете 5-минутна практическа презентация и анализирайте език на тялото, глас и визуализации
+
+3. **Дизайн за Ангажираност:** Създайте 3-5 слайда с поне един интерактивен елемент
+
+4. **Подгответе се за Неочакваното:** Разработете "reset стратегия" (backup демо, готова шега) и репетирайте за смесени аудитории
+
+5. **Последователна Практика:** Планирайте седмични 20-минутни сесии за практика
+
+</SuccessBox>
+
+---
+
+## Допълнителни Ресурси
+
+### Онлайн Материали
+
+- [TED Talks: Как да Говорим](https://www.ted.com/topics/presentation) - Примери за отлични презентации
+- [Presentation Zen](https://www.presentationzen.com/) - Ресурси за минималистичен дизайн
+
+### Книги
+
+- "Slide:ology" - Nancy Duarte
+- "Talk Like TED" - Carmine Gallo
+- "The Presentation Secrets of Steve Jobs" - Carmine Gallo
+
+### Видео Уроци
+
+- [Speaking.io](https://speaking.io/) - Съвети за технически презентации
