@@ -12,7 +12,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Упражнения: Angular Fundamentals
+# Упражнения: Основи на Angular
 
 <img src={useBaseUrl('/img/diagrams/angular/exercises-header.svg')} alt="Angular Exercises Header" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
 

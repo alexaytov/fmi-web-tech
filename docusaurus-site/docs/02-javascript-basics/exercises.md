@@ -24,7 +24,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 1: Деклариране на променливи
+### Задача 1: Деклариране на променливи
 
 **Въпрос:** Кой от следните начини за деклариране на променлива е препоръчителен в съвременния JavaScript за стойност, която НЯМА да се променя?
 
@@ -52,7 +52,7 @@ appName = "NewName";      // ❌ TypeError: Assignment to constant variable
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 2: Типове данни
+### Задача 2: Типове данни
 
 **Задача:** Определете типа на всяка от следните стойности:
 
@@ -88,7 +88,7 @@ console.log(typeof f); // "object"
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 3: Аритметични оператори
+### Задача 3: Аритметични оператори
 
 **Задача:** Изчислете резултата от всеки израз:
 
@@ -123,7 +123,7 @@ console.log(x % y);   // 3   (остатък: 15 = 4*3 + 3)
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 4: Оператори за сравнение
+### Задача 4: Оператори за сравнение
 
 **Въпрос:** Какъв ще бъде резултатът от всеки израз?
 
@@ -153,7 +153,7 @@ console.log(3 !== "3");   // true  (строго различно)
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 5: Прост if/else
+### Задача 5: Прост if/else
 
 **Задача:** Напишете JavaScript код, който проверява дали числото `age` е по-голямо или равно на 18. Ако е - изведете "Пълнолетен", в противен случай - "Непълнолетен".
 
@@ -190,7 +190,7 @@ console.log(age >= 18 ? "Пълнолетен" : "Непълнолетен");
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 6: Прост for цикъл
+### Задача 6: Прост for цикъл
 
 **Задача:** Напишете `for` цикъл, който извежда числата от 1 до 5 в конзолата.
 
@@ -215,7 +215,7 @@ for (let i = 1; i <= 5; i++) {
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 7: Логически оператори
+### Задача 7: Логически оператори
 
 **Задача:** Дадени са следните променливи:
 
@@ -253,7 +253,7 @@ console.log(!isAdmin);                    // true
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 8: Switch statement
+### Задача 8: Switch statement
 
 **Задача:** Напишете `switch` конструкция, която приема номер на ден (1-7) и извежда името на деня на български.
 
@@ -296,7 +296,7 @@ switch (dayNumber) {
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 9: Работа с масиви
+### Задача 9: Работа с масиви
 
 **Задача:** Даден е масив:
 
@@ -331,7 +331,7 @@ console.log(fruits.length); // 5
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 10: Работа с обекти
+### Задача 10: Работа с обекти
 
 **Задача:** Създайте обект `student` със свойства:
 - `name` - "Иван"
@@ -365,7 +365,7 @@ console.log(student.grades[0]); // 5
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 11: Функция с параметри
+### Задача 11: Функция с параметри
 
 **Задача:** Напишете функция `calculateArea`, която приема `width` и `height` и връща площта.
 
@@ -395,7 +395,7 @@ const calculateArea = (width, height) => width * height;
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 12: Цикъл с масив
+### Задача 12: Цикъл с масив
 
 **Задача:** Изчислете сумата на числата в масива:
 
@@ -428,7 +428,7 @@ let sum = numbers.reduce((acc, num) => acc + num, 0);
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 13: Тернарен оператор
+### Задача 13: Тернарен оператор
 
 **Задача:** Пренапишете с тернарен оператор:
 
@@ -463,7 +463,7 @@ console.log(result); // "Издържал"
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 14: Валидация на вход
+### Задача 14: Валидация на вход
 
 **Задача:** Напишете функция `validateUsername`, която проверява:
 - Не е празен стринг
@@ -502,7 +502,7 @@ console.log(validateUsername("validUser")); // { isValid: true, message: "OK" }
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 15: Филтриране на масив
+### Задача 15: Филтриране на масив
 
 **Задача:** Напишете функция `filterEvenNumbers`, която връща само четните числа.
 
@@ -536,7 +536,7 @@ const filterEvenNumbers = numbers => numbers.filter(n => n % 2 === 0);
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 16: Arrow функции
+### Задача 16: Arrow функции
 
 **Задача:** Преобразувайте в arrow function и приложете върху масив:
 
@@ -572,7 +572,7 @@ let squares = numbers.map(n => n * n);
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 17: Обект с методи
+### Задача 17: Обект с методи
 
 **Задача:** Създайте обект `calculator` с методи: `add`, `subtract`, `multiply`, `divide` (с проверка за 0).
 
@@ -602,7 +602,7 @@ console.log(calculator.divide(10, 0));  // "Грешка: деление на 0"
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 18: Closure - Брояч
+### Задача 18: Closure - Брояч
 
 **Задача:** Имплементирайте `createCounter` с closure, връщащ обект с:
 - `increment()` - увеличава и връща
@@ -639,7 +639,7 @@ console.log(counter.getValue());  // 1
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 19: DOM манипулация
+### Задача 19: DOM манипулация
 
 **Задача:** При клик на бутон, toggle текста между "Оригинален текст" и "Текстът е променен!".
 
@@ -671,7 +671,7 @@ changeBtn.addEventListener('click', () => {
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 20: Todo система
+### Задача 20: Todo система
 
 **Задача:** Създайте функции за управление на задачи:
 - `createTask(title)` - връща обект с id, title, completed
@@ -716,7 +716,7 @@ console.log(getActiveTasks(myTasks)); // Only task 2
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 21: Debugging практика
+### Задача 21: Debugging практика
 
 **Задача:** Намерете 4-те грешки в кода:
 

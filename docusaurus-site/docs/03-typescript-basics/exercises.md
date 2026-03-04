@@ -13,7 +13,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# TypeScript Fundamentals - Exercises
+# Упражнения: TypeScript Основи
 
 <img src={useBaseUrl('/img/diagrams/typescript/header-banner.svg')} alt="TypeScript Fundamentals Banner" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
 
@@ -25,25 +25,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 1: Multiple Choice - TypeScript Definition
+### Задача 1: Дефиниция на TypeScript
 
-What is TypeScript?
+Какво е TypeScript?
 
-A) A completely different programming language from JavaScript
-B) A statically typed superset of JavaScript that compiles to plain JavaScript
-C) A runtime environment for JavaScript
-D) A JavaScript framework like React or Angular
+A) Напълно различен език за програмиране от JavaScript
+B) Статично типизиран superset на JavaScript, който се компилира до обикновен JavaScript
+C) Runtime среда за JavaScript
+D) JavaScript framework като React или Angular
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: B) A statically typed superset of JavaScript that compiles to plain JavaScript**
+**Отговор: B) Статично типизиран superset на JavaScript, който се компилира до обикновен JavaScript**
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise1-js-to-ts.svg')} alt="JavaScript to TypeScript relationship diagram" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-**Key Points:**
-- TypeScript is a **superset** - all valid JS is valid TS
-- Types are checked at **compile time**, not runtime
-- TS compiler (tsc) outputs plain JavaScript
+**Ключови точки:**
+- TypeScript е **superset** - всеки валиден JS е валиден TS
+- Типовете се проверяват по **време на компилация**, не при изпълнение
+- TS компилаторът (tsc) генерира обикновен JavaScript
 
 </CollapsibleSection>
 
@@ -53,9 +53,9 @@ D) A JavaScript framework like React or Angular
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 2: Fill in the Blank - Basic Type Declaration
+### Задача 2: Основни декларации на типове
 
-Complete the TypeScript variable declarations:
+Попълнете декларациите на TypeScript променливи:
 
 ```typescript
 let username: _______ = "alice_dev";
@@ -63,7 +63,7 @@ let userAge: _______ = 25;
 let isLoggedIn: _______ = true;
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise2-basic-types.svg')} alt="Basic TypeScript types: string, number, boolean" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -81,25 +81,25 @@ let isLoggedIn: boolean = true;
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 3: True or False - TypeScript Benefits
+### Задача 3: Вярно или Невярно - Предимства на TypeScript
 
-Mark each statement as True or False:
+Отбележете всяко твърдение като Вярно или Невярно:
 
-1. TypeScript catches type errors at runtime, just like JavaScript. _____
-2. Any valid JavaScript code is also valid TypeScript code. _____
-3. TypeScript provides better IDE support with autocompletion. _____
-4. The `any` type is recommended for all variables. _____
+1. TypeScript улавя грешки с типове при изпълнение, както JavaScript. _____
+2. Всеки валиден JavaScript код е също валиден TypeScript код. _____
+3. TypeScript предоставя по-добра IDE поддръжка с автоматично довършване. _____
+4. Типът `any` е препоръчителен за всички променливи. _____
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise3-true-false.svg')} alt="True/False answers for TypeScript benefits" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-| Statement | Answer | Explanation |
-|-----------|--------|-------------|
-| 1 | **False** | TypeScript catches errors at **compile time** |
-| 2 | **True** | TypeScript is a superset of JavaScript |
-| 3 | **True** | IntelliSense, autocompletion, inline errors |
-| 4 | **False** | `any` defeats the purpose of TypeScript |
+| Твърдение | Отговор | Обяснение |
+|-----------|---------|-----------|
+| 1 | **Невярно** | TypeScript улавя грешки по **време на компилация** |
+| 2 | **Вярно** | TypeScript е superset на JavaScript |
+| 3 | **Вярно** | IntelliSense, автоматично довършване, inline грешки |
+| 4 | **Невярно** | `any` обезсмисля целта на TypeScript |
 
 </CollapsibleSection>
 
@@ -109,20 +109,20 @@ Mark each statement as True or False:
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 4: Error Detection Timing
+### Задача 4: Време на откриване на грешки
 
-Explain when TypeScript catches type errors compared to JavaScript. Why is this beneficial?
+Обяснете кога TypeScript улавя грешки с типове в сравнение с JavaScript. Защо това е полезно?
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise4-error-timing.svg')} alt="Error detection timing comparison between JavaScript and TypeScript" style={{width: '100%', maxWidth: '650px', margin: '20px auto', display: 'block'}} />
 
-TypeScript catches errors at **compile time**, while JavaScript only catches errors at **runtime**.
+TypeScript улавя грешки по **време на компилация**, докато JavaScript ги улавя само при **изпълнение**.
 
-**Benefits:**
-- Errors found before deployment
-- Faster debugging in IDE
-- Prevents bugs from reaching production
+**Предимства:**
+- Грешките се откриват преди deployment
+- По-бързо дебъгване в IDE
+- Предотвратява достигането на бъгове до production
 
 </CollapsibleSection>
 
@@ -132,27 +132,27 @@ TypeScript catches errors at **compile time**, while JavaScript only catches err
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 5: Special Types Matching
+### Задача 5: Съпоставяне на специални типове
 
-Match each type with its description:
+Свържете всеки тип с неговото описание:
 
-| Type | Description |
-|------|-------------|
-| 1. `void` | A. Accepts any value but requires type checks |
-| 2. `any` | B. Intentional absence of value |
-| 3. `unknown` | C. Functions with no return value |
-| 4. `null` | D. Disables type checking |
+| Тип | Описание |
+|-----|----------|
+| 1. `void` | A. Приема всякаква стойност, но изисква проверки на типа |
+| 2. `any` | B. Умишлена липса на стойност |
+| 3. `unknown` | C. Функции без връщана стойност |
+| 4. `null` | D. Деактивира проверката на типове |
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise5-special-types.svg')} alt="Special TypeScript types: void, any, unknown, null" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-| Type | Answer | Description |
-|------|--------|-------------|
-| `void` | **C** | Functions with no return value |
-| `any` | **D** | Disables type checking (avoid!) |
-| `unknown` | **A** | Safe alternative to any |
-| `null` | **B** | Intentional absence of value |
+| Тип | Отговор | Описание |
+|-----|---------|----------|
+| `void` | **C** | Функции без връщана стойност |
+| `any` | **D** | Деактивира проверката на типове (избягвайте!) |
+| `unknown` | **A** | Безопасна алтернатива на any |
+| `null` | **B** | Умишлена липса на стойност |
 
 </CollapsibleSection>
 
@@ -162,24 +162,24 @@ Match each type with its description:
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 6: Array Declaration
+### Задача 6: Деклариране на масив
 
-Declare a TypeScript array `colors` that only contains strings with three color names.
+Декларирайте TypeScript масив `colors`, който съдържа само strings с три имена на цветове.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise6-array-syntax.svg')} alt="Two array type syntaxes in TypeScript" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
 ```typescript
-// Syntax 1: Type[] (most common)
+// Синтаксис 1: Type[] (най-често използван)
 let colors: string[] = ["red", "green", "blue"];
 
-// Syntax 2: Array<Type> (generic)
+// Синтаксис 2: Array<Type> (generic)
 let colors: Array<string> = ["red", "green", "blue"];
 
 // Type safety:
 colors.push("yellow");  // ✅ OK
-colors.push(42);        // ❌ Error: number not assignable to string
+colors.push(42);        // ❌ Грешка: number не може да се присвои на string
 ```
 
 </CollapsibleSection>
@@ -192,28 +192,28 @@ colors.push(42);        // ❌ Error: number not assignable to string
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 7: Error Spotting
+### Задача 7: Откриване на грешка
 
-Identify the TypeScript error:
+Идентифицирайте TypeScript грешката:
 
 ```typescript
 let scores: number[] = [85, 92, 78, 95];
 scores.push("excellent");
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise7-error-spotting.svg')} alt="TypeScript error: string not assignable to number" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
-**Error:** The array `scores` is `number[]`, but we're trying to push a `string`.
+**Грешка:** Масивът `scores` е `number[]`, но се опитваме да добавим `string`.
 
 ```typescript
-// Fix options:
-scores.push(100);  // ✅ Add a number
+// Варианти за поправка:
+scores.push(100);  // ✅ Добавяне на число
 
-// Or declare as union type:
+// Или деклариране като union type:
 let scores: (number | string)[] = [85, 92, 78, 95];
-scores.push("excellent");  // ✅ Now allowed
+scores.push("excellent");  // ✅ Вече е позволено
 ```
 
 </CollapsibleSection>
@@ -224,24 +224,24 @@ scores.push("excellent");  // ✅ Now allowed
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 8: Tuple Declaration
+### Задача 8: Деклариране на Tuple
 
-Create a tuple `StudentRecord` with: ID (number), name (string), enrolled (boolean).
+Създайте tuple `StudentRecord` с: ID (number), name (string), enrolled (boolean).
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise8-tuple.svg')} alt="Tuple: Fixed-length typed array" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
 ```typescript
-// Define tuple type
+// Дефиниране на tuple тип
 type StudentRecord = [number, string, boolean];
 
-// Create variable
-let student: StudentRecord = [12345, "Ivan Petrov", true];
+// Създаване на променлива
+let student: StudentRecord = [12345, "Иван Петров", true];
 
-// Access elements
+// Достъп до елементи
 console.log(student[0]); // 12345 (number)
-console.log(student[1]); // "Ivan Petrov" (string)
+console.log(student[1]); // "Иван Петров" (string)
 console.log(student[2]); // true (boolean)
 ```
 
@@ -253,11 +253,11 @@ console.log(student[2]); // true (boolean)
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 9: Type Alias Creation
+### Задача 9: Създаване на Type Alias
 
-Create type alias `Book` with: title (string), author (string), pages (number), isbn (optional string).
+Създайте type alias `Book` с: title (string), author (string), pages (number), isbn (опционален string).
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise9-type-alias.svg')} alt="Type alias Book with properties" style={{width: '100%', maxWidth: '500px', margin: '20px auto', display: 'block'}} />
 
@@ -266,7 +266,7 @@ type Book = {
     title: string;
     author: string;
     pages: number;
-    isbn?: string;  // Optional (?)
+    isbn?: string;  // Опционален (?)
 };
 
 const book1: Book = {
@@ -280,7 +280,7 @@ const book2: Book = {
     title: "The Pragmatic Programmer",
     author: "David Thomas",
     pages: 352
-    // isbn is optional
+    // isbn е опционален
 };
 ```
 
@@ -292,11 +292,11 @@ const book2: Book = {
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 10: Function with Type Annotations
+### Задача 10: Функция с типови анотации
 
-Write `calculateDiscount(price: number, discountPercent: number)` that returns the discounted price.
+Напишете `calculateDiscount(price: number, discountPercent: number)`, която връща намалената цена.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise10-function-types.svg')} alt="Function type with input and output types" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -305,7 +305,7 @@ function calculateDiscount(price: number, discountPercent: number): number {
     return price - (price * discountPercent / 100);
 }
 
-// Arrow function version
+// Arrow function версия
 const calculateDiscount = (price: number, discountPercent: number): number =>
     price - (price * discountPercent / 100);
 
@@ -320,26 +320,26 @@ console.log(calculateDiscount(100, 20)); // 80
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 11: tsconfig.json Strict Mode
+### Задача 11: tsconfig.json Strict Mode
 
-Which option enables all strict type-checking options?
+Коя опция активира всички стриктни проверки на типовете?
 
 A) `"strictMode": true`
 B) `"strict": true`
 C) `"typeChecking": "strict"`
 D) `"enableStrict": true`
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: B) `"strict": true`**
+**Отговор: B) `"strict": true`**
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise11-tsconfig.svg')} alt="tsconfig.json with strict mode enabled" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
-`"strict": true` enables:
+`"strict": true` активира:
 - `strictNullChecks`
 - `strictFunctionTypes`
 - `noImplicitAny`
-- And more...
+- И още...
 
 </CollapsibleSection>
 
@@ -349,16 +349,16 @@ D) `"enableStrict": true`
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 12: Function Type Expression
+### Задача 12: Function Type Expression
 
-Complete the function type:
+Попълнете типа на функцията:
 
 ```typescript
 type StringToNumber = _______________________
 let getLength: StringToNumber = (s) => s.length;
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```typescript
 type StringToNumber = (input: string) => number;
@@ -378,9 +378,9 @@ console.log(parseToInt("42"));   // 42
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 13: Project Setup Order
+### Задача 13: Ред на настройка на проект
 
-Order these TypeScript setup steps (1-5):
+Подредете тези стъпки за настройка на TypeScript (1-5):
 
 ___ `npm install --save-dev typescript`
 ___ `mkdir my-project`
@@ -388,11 +388,11 @@ ___ `npx tsc --init`
 ___ `npm init -y`
 ___ `npx tsc`
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise13-setup-order.svg')} alt="TypeScript project setup order: 5 steps" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-**Order:**
+**Ред:**
 1. `mkdir my-project`
 2. `npm init -y`
 3. `npm install --save-dev typescript`
@@ -407,18 +407,18 @@ ___ `npx tsc`
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 14: void vs undefined
+### Задача 14: void срещу undefined
 
-Explain the difference between `void` and `undefined` in TypeScript.
+Обяснете разликата между `void` и `undefined` в TypeScript.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise14-void-vs-undefined.svg')} alt="Comparison of void vs undefined in TypeScript" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
 | `void` | `undefined` |
 |--------|-------------|
-| Function return type | Variable value |
-| "No return value" | "Value is undefined" |
+| Тип на връщане на функция | Стойност на променлива |
+| "Няма връщана стойност" | "Стойността е undefined" |
 | `function log(): void` | `let x: string \| undefined` |
 
 </CollapsibleSection>
@@ -431,13 +431,13 @@ Explain the difference between `void` and `undefined` in TypeScript.
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 15: Interface Implementation
+### Задача 15: Имплементация на Interface
 
-Create interface `IProduct` with: id (string), name (string), price (number), category (string), inStock (boolean).
+Създайте interface `IProduct` с: id (string), name (string), price (number), category (string), inStock (boolean).
 
-Implement `createProduct` function and `addToInventory` function.
+Имплементирайте функции `createProduct` и `addToInventory`.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise15-interface.svg')} alt="Interface IProduct with properties" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
@@ -463,7 +463,7 @@ function addToInventory(product: IProduct): void {
     inventory.push(product);
 }
 
-// Usage
+// Използване
 const laptop = createProduct("P001", "MacBook", 1999, "Electronics", true);
 addToInventory(laptop);
 ```
@@ -476,9 +476,9 @@ addToInventory(laptop);
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 16: Type Safety Analysis
+### Задача 16: Анализ на Type Safety
 
-Find bugs in this JavaScript and rewrite in TypeScript:
+Намерете бъговете в този JavaScript и пренапишете в TypeScript:
 
 ```javascript
 function processOrder(order) {
@@ -494,7 +494,7 @@ const myOrder = {
 };
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise16-type-safety.svg')} alt="JavaScript bugs vs TypeScript fixes comparison" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -526,13 +526,13 @@ const myOrder: IOrder = {
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 17: Union Types and Type Guards
+### Задача 17: Union Types и Type Guards
 
-Create `formatInput` that accepts `string | number`:
-- If string → return uppercase
-- If number → return formatted with 2 decimals
+Създайте `formatInput`, която приема `string | number`:
+- Ако е string → върнете в главни букви
+- Ако е number → върнете форматирано с 2 десетични знака
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise17-union-types.svg')} alt="Union types with type guards" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
@@ -556,14 +556,14 @@ console.log(formatInput(42.5678));   // "42.57"
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 18: User Management Module
+### Задача 18: Модул за управление на потребители
 
-Build a user management system with:
-1. Interface `IUser` with id, username, email, role, createdAt, lastLogin?
+Изградете система за управление на потребители с:
+1. Interface `IUser` с id, username, email, role, createdAt, lastLogin?
 2. Type alias `UserRole` = "admin" | "editor" | "viewer"
-3. Functions: `createUser`, `updateLastLogin`, `filterUsersByRole`
+3. Функции: `createUser`, `updateLastLogin`, `filterUsersByRole`
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```typescript
 type UserRole = "admin" | "editor" | "viewer";
@@ -598,7 +598,7 @@ function filterUsersByRole(users: IUser[], role: UserRole): IUser[] {
     return users.filter(u => u.role === role);
 }
 
-// Usage
+// Използване
 const admin = createUser("admin", "admin@example.com", "admin");
 const editor = createUser("john", "john@example.com", "editor");
 users.push(admin, editor);
@@ -614,11 +614,11 @@ const editors = filterUsersByRole(users, "editor");
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 19: tsconfig.json Configuration
+### Задача 19: Конфигурация на tsconfig.json
 
-Write tsconfig.json for Node.js with: ES2020, CommonJS, strict, src→dist, source maps.
+Напишете tsconfig.json за Node.js с: ES2020, CommonJS, strict, src→dist, source maps.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```json
 {
@@ -646,9 +646,9 @@ Write tsconfig.json for Node.js with: ES2020, CommonJS, strict, src→dist, sour
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 20: Debugging Challenge
+### Задача 20: Предизвикателство за дебъгване
 
-Find all errors in this code:
+Намерете всички грешки в този код:
 
 ```typescript
 interface IEmployee {
@@ -670,24 +670,24 @@ function findEmployee(id: string): IEmployee { // Bug
 addEmployee({ id: "E001", name: "John", salary: 50000 }); // Bug
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/typescript/exercise20-debugging.svg')} alt="5 bugs found in TypeScript code" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-**Corrected Code:**
+**Коригиран код:**
 
 ```typescript
-function getTotalSalary(): number {  // Fix: return number
+function getTotalSalary(): number {  // Поправка: return number
     let total = 0;
-    employees.forEach(emp => { total += emp.salary; }); // Fix: salary
+    employees.forEach(emp => { total += emp.salary; }); // Поправка: salary
     return total;
 }
 
-function findEmployee(id: number): IEmployee | undefined { // Fix: id is number, can return undefined
+function findEmployee(id: number): IEmployee | undefined { // Поправка: id е number, може да върне undefined
     return employees.find(emp => emp.id === id);
 }
 
-addEmployee({ id: 1, name: "John", salary: 50000 }); // Fix: id is number
+addEmployee({ id: 1, name: "John", salary: 50000 }); // Поправка: id е number
 ```
 
 </CollapsibleSection>

@@ -13,7 +13,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# HTML & CSS Fundamentals - Exercises
+# Упражнения: HTML и CSS Основи
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/header-banner.svg')} alt="HTML and CSS Fundamentals Banner" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
 
@@ -25,22 +25,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 1: Mobile Traffic Statistics
+### Задача 1: Статистика за мобилен трафик
 
-What percentage of global internet traffic comes from mobile devices in Q1 2025?
+Какъв процент от глобалния интернет трафик идва от мобилни устройства през Q1 2025?
 
 A) 45%
 B) 54%
 C) 64%
 D) 74%
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: C) 64%**
+**Отговор: C) 64%**
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/mobile-traffic-stats.svg')} alt="Mobile vs Desktop traffic statistics" style={{width: '100%', maxWidth: '500px', margin: '20px auto', display: 'block'}} />
 
-This highlights the importance of **Mobile-First design** and **responsive development**.
+Това подчертава важността на **Mobile-First дизайна** и **респонсивната разработка**.
 
 </CollapsibleSection>
 
@@ -50,13 +50,13 @@ This highlights the importance of **Mobile-First design** and **responsive devel
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 2: Main Content Tag
+### Задача 2: Таг за основно съдържание
 
-Which HTML tag should be used for the main content, and how many times can it appear on a page?
+Кой HTML таг трябва да се използва за основното съдържание и колко пъти може да се появи на страница?
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer:** `<main>` - appears only **once** per page.
+**Отговор:** `<main>` - появява се само **веднъж** на страница.
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/main-content-tag.svg')} alt="HTML page structure with main tag" style={{width: '100%', maxWidth: '400px', margin: '20px auto', display: 'block'}} />
 
@@ -68,18 +68,18 @@ Which HTML tag should be used for the main content, and how many times can it ap
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 3: Semantic Tags Matching
+### Задача 3: Съпоставяне на семантични тагове
 
-Match tags with their purpose:
+Свържете таговете с тяхното предназначение:
 
-| Tag | Purpose |
-|-----|---------|
-| 1. `<header>` | A. Navigation links |
-| 2. `<nav>` | B. Self-contained content |
-| 3. `<article>` | C. Top section |
-| 4. `<footer>` | D. Bottom section |
+| Таг | Предназначение |
+|-----|----------------|
+| 1. `<header>` | A. Навигационни връзки |
+| 2. `<nav>` | B. Самостоятелно съдържание |
+| 3. `<article>` | C. Горна секция |
+| 4. `<footer>` | D. Долна секция |
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/semantic-tags-matching.svg')} alt="Semantic HTML tags matching" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -91,9 +91,9 @@ Match tags with their purpose:
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 4: CSS Inheritance
+### Задача 4: CSS Наследяване
 
-Which CSS properties are inherited? Choose all correct:
+Кои CSS свойства се наследяват? Изберете всички правилни:
 
 A) `color`
 B) `border`
@@ -101,9 +101,9 @@ C) `font-family`
 D) `margin`
 E) `font-size`
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answers: A, C, E** (color, font-family, font-size)
+**Отговори: A, C, E** (color, font-family, font-size)
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/css-inheritance.svg')} alt="CSS inheritance diagram" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -115,9 +115,9 @@ E) `font-size`
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 5: Convert to Semantic HTML
+### Задача 5: Преобразуване към семантичен HTML
 
-Convert this non-semantic code:
+Преобразувайте този несемантичен код:
 
 ```html
 <div id="header">My Site</div>
@@ -126,7 +126,7 @@ Convert this non-semantic code:
 <div id="footer">© 2026</div>
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```html
 <header>
@@ -147,26 +147,26 @@ Convert this non-semantic code:
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 6: Mobile-First Definition
+### Задача 6: Дефиниция на Mobile-First
 
-What does "Mobile-First" mean?
+Какво означава "Mobile-First"?
 
-A) Create separate mobile version
-B) Start with desktop, adapt to mobile
-C) Start with mobile, expand to desktop
-D) Use only mobile frameworks
+A) Създаване на отделна мобилна версия
+B) Започване от десктоп, адаптиране за мобилни
+C) Започване от мобилни, разширяване за десктоп
+D) Използване само на мобилни frameworks
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: C) Start with mobile, expand to desktop**
+**Отговор: C) Започване от мобилни, разширяване за десктоп**
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/mobile-first-approach.svg')} alt="Mobile-First approach diagram" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
 ```css
-/* Mobile-First: Base styles */
+/* Mobile-First: Базови стилове */
 .content { font-size: 14px; }
 
-/* Add features for larger screens */
+/* Добавяне на функции за по-големи екрани */
 @media (min-width: 768px) { .content { font-size: 16px; } }
 @media (min-width: 1024px) { .content { font-size: 18px; } }
 ```
@@ -181,16 +181,16 @@ D) Use only mobile frameworks
 
 <ExerciseCard difficulty="easy-medium">
 
-### Exercise 7: CSS Specificity
+### Задача 7: CSS Специфичност
 
-Calculate specificity and order from lowest to highest:
+Изчислете специфичността и подредете от най-ниска до най-висока:
 
 1. `.header`
 2. `#main`
 3. `div`
 4. `div.content#sidebar`
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/css-specificity.svg')} alt="CSS specificity calculation" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -202,11 +202,11 @@ Calculate specificity and order from lowest to highest:
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 8: Flexbox Navigation
+### Задача 8: Flexbox Навигация
 
-Create horizontal navigation with Flexbox: items evenly distributed, centered vertically, 60px height.
+Създайте хоризонтална навигация с Flexbox: елементи равномерно разпределени, центрирани вертикално, 60px височина.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/flexbox-navigation.svg')} alt="Flexbox navigation example" style={{width: '100%', maxWidth: '550px', margin: '20px auto', display: 'block'}} />
 
@@ -228,16 +228,16 @@ Create horizontal navigation with Flexbox: items evenly distributed, centered ve
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 9: Flexbox vs CSS Grid
+### Задача 9: Flexbox срещу CSS Grid
 
-Fill in the comparison table:
+Попълнете таблицата за сравнение:
 
-| Feature | Flexbox | CSS Grid |
-|---------|---------|----------|
-| Dimension | ? | ? |
-| Best for | ? | ? |
+| Характеристика | Flexbox | CSS Grid |
+|----------------|---------|----------|
+| Измерение | ? | ? |
+| Най-добър за | ? | ? |
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/flexbox-vs-grid.svg')} alt="Flexbox vs CSS Grid comparison" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
@@ -249,15 +249,15 @@ Fill in the comparison table:
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 10: Mobile-First Media Queries
+### Задача 10: Mobile-First Media Queries
 
-Write media queries: base (mobile), ≥768px (tablet), ≥1024px (desktop).
-Change `.content` font-size: 14px → 16px → 18px.
+Напишете media queries: база (мобилни), ≥768px (таблет), ≥1024px (десктоп).
+Променете `.content` font-size: 14px → 16px → 18px.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```css
-/* Mobile-First: Base styles */
+/* Mobile-First: Базови стилове */
 .content { font-size: 14px; }
 
 /* Tablet (≥768px) */
@@ -281,15 +281,15 @@ Change `.content` font-size: 14px → 16px → 18px.
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 11: Lazy Loading Images
+### Задача 11: Lazy Loading на изображения
 
-What attribute enables lazy loading, and why is it important?
+Кой атрибут активира lazy loading и защо е важен?
 
 ```html
 <img src="photo.jpg" ??? alt="Description">
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```html
 <img src="photo.jpg" loading="lazy" alt="Description">
@@ -305,13 +305,13 @@ What attribute enables lazy loading, and why is it important?
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 12: CSS @layer
+### Задача 12: CSS @layer
 
-What is `@layer` and what problem does it solve? Write example with: base, components, utilities.
+Какво е `@layer` и какъв проблем решава? Напишете пример с: base, components, utilities.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-`@layer` controls cascade priority regardless of specificity.
+`@layer` контролира приоритета на каскадата независимо от специфичността.
 
 ```css
 @layer base, components, utilities;
@@ -329,15 +329,15 @@ What is `@layer` and what problem does it solve? Write example with: base, compo
 
 ---
 
-## Средно-Трудни Упражнения (MEDIUM-HARD)
+## Средно-трудни Упражнения (MEDIUM-HARD)
 
 <ExerciseCard difficulty="medium-hard">
 
-### Exercise 13: Responsive Grid Gallery
+### Задача 13: Респонсивна Grid галерия
 
-Create responsive grid: 1 column (mobile), 2 columns (tablet), 4 columns (desktop), 20px gap.
+Създайте респонсивен grid: 1 колона (мобилни), 2 колони (таблет), 4 колони (десктоп), 20px разстояние.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```css
 .gallery {
@@ -365,9 +365,9 @@ Create responsive grid: 1 column (mobile), 2 columns (tablet), 4 columns (deskto
 
 <ExerciseCard difficulty="medium-hard">
 
-### Exercise 14: Accessibility Audit
+### Задача 14: Одит за достъпност
 
-Find 4 accessibility problems and fix them:
+Намерете 4 проблема с достъпността и ги поправете:
 
 ```html
 <div onclick="navigate()">Go to article</div>
@@ -376,11 +376,11 @@ Find 4 accessibility problems and fix them:
 <input type="text" placeholder="Enter name">
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/accessibility-audit.svg')} alt="Accessibility audit issues" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-**Fixed:**
+**Поправено:**
 ```html
 <button onclick="navigate()">Go to article</button>
 <img src="graph.png" alt="Sales graph for Q1 2025">
@@ -399,13 +399,13 @@ Find 4 accessibility problems and fix them:
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 15: Container Queries Card
+### Задача 15: Карта с Container Queries
 
-Create card with Container Queries:
-- Narrow (\<300px): vertical layout
-- Wide (≥300px): horizontal layout (1fr 2fr)
+Създайте карта с Container Queries:
+- Тясна (\<300px): вертикално оформление
+- Широка (≥300px): хоризонтално оформление (1fr 2fr)
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```css
 .card-container {
@@ -434,14 +434,14 @@ Create card with Container Queries:
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 16: Accessible Hover Animation
+### Задача 16: Достъпна Hover Анимация
 
-Create button hover animation with:
-1. Background change (0.3s)
+Създайте hover анимация за бутон с:
+1. Промяна на фона (0.3s)
 2. Scale 1.05
-3. Disable for prefers-reduced-motion
+3. Деактивиране за prefers-reduced-motion
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```css
 .cta-button {
@@ -464,9 +464,9 @@ Create button hover animation with:
 }
 ```
 
-<SuccessBox title="Performance Tip">
+<SuccessBox title="Съвет за производителност">
 
-Use `transform` and `opacity` for animations - they use GPU and don't trigger layout recalculation!
+Използвайте `transform` и `opacity` за анимации - те използват GPU и не предизвикват преизчисляване на layout!
 
 </SuccessBox>
 
@@ -478,18 +478,18 @@ Use `transform` and `opacity` for animations - they use GPU and don't trigger la
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 17: async vs defer
+### Задача 17: async срещу defer
 
-Explain the difference between `async` and `defer` for script loading.
+Обяснете разликата между `async` и `defer` за зареждане на скриптове.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/async-vs-defer.svg')} alt="async vs defer script loading timeline" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-| Attribute | Loading | Execution | Order |
-|-----------|---------|-----------|-------|
-| `async` | Parallel | Immediately | Random |
-| `defer` | Parallel | After DOM | Preserved |
+| Атрибут | Зареждане | Изпълнение | Ред |
+|---------|-----------|------------|-----|
+| `async` | Паралелно | Веднага | Случаен |
+| `defer` | Паралелно | След DOM | Запазен |
 
 </CollapsibleSection>
 
@@ -499,16 +499,16 @@ Explain the difference between `async` and `defer` for script loading.
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 18: Complete Blog Page
+### Задача 18: Пълна блог страница
 
-Create blog page with:
-1. Semantic HTML (header, nav, main, article, aside, footer)
-2. Mobile-First CSS with Grid layout
-3. Flexbox navigation
-4. ARIA attributes
-5. Optimized image with srcset and loading="lazy"
+Създайте блог страница с:
+1. Семантичен HTML (header, nav, main, article, aside, footer)
+2. Mobile-First CSS с Grid layout
+3. Flexbox навигация
+4. ARIA атрибути
+5. Оптимизирано изображение със srcset и loading="lazy"
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```html
 <header>
@@ -556,11 +556,11 @@ nav { display: flex; gap: 20px; }
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 19: Scroll-Driven Animation
+### Задача 19: Scroll-Driven Анимация
 
-Create fade-in animation on scroll using CSS `animation-timeline: view()`.
+Създайте fade-in анимация при скролиране използвайки CSS `animation-timeline: view()`.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 ```css
 .fade-section {
@@ -576,20 +576,20 @@ Create fade-in animation on scroll using CSS `animation-timeline: view()`.
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fallback for older browsers */
+/* Резервен вариант за по-стари браузъри */
 @supports not (animation-timeline: view()) {
     .fade-section { opacity: 1; transform: none; }
 }
 
-/* Accessibility */
+/* Достъпност */
 @media (prefers-reduced-motion: reduce) {
     .fade-section { animation: none; opacity: 1; }
 }
 ```
 
-<WarningBox title="Browser Support">
+<WarningBox title="Поддръжка от браузъри">
 
-Scroll-driven animations are new (Chrome 115+, Edge 115+). Always include fallbacks!
+Scroll-driven анимациите са нови (Chrome 115+, Edge 115+). Винаги включвайте резервни варианти!
 
 </WarningBox>
 
@@ -601,26 +601,26 @@ Scroll-driven animations are new (Chrome 115+, Edge 115+). Always include fallba
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 20: Performance & Accessibility Checklist
+### Задача 20: Чеклист за производителност и достъпност
 
-Create 10-item checklist for a page that must:
-- Load in under 3 seconds on 3G
-- Have 4.5:1 contrast
-- Be keyboard accessible
-- Work on 320px-1920px screens
+Създайте чеклист от 10 точки за страница, която трябва да:
+- Се зарежда за под 3 секунди на 3G
+- Има контраст 4.5:1
+- Е достъпна с клавиатура
+- Работи на екрани от 320px до 1920px
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/html-css-basics/performance-accessibility-checklist.svg')} alt="Performance and Accessibility Checklist" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-**Tools for Testing:**
+**Инструменти за тестване:**
 
-| Category | Tools |
-|----------|-------|
-| Performance | Lighthouse, WebPageTest, GTmetrix |
-| Accessibility | axe DevTools, WAVE, VoiceOver |
-| Contrast | WebAIM Contrast Checker |
-| Responsive | Chrome DevTools, BrowserStack |
+| Категория | Инструменти |
+|-----------|-------------|
+| Производителност | Lighthouse, WebPageTest, GTmetrix |
+| Достъпност | axe DevTools, WAVE, VoiceOver |
+| Контраст | WebAIM Contrast Checker |
+| Респонсивност | Chrome DevTools, BrowserStack |
 
 </CollapsibleSection>
 

@@ -26,7 +26,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Задача 1: Definition Matching
+### Задача 1: Съпоставяне на дефиниции
 
 Свържете всеки cloud service модел с правилната дефиниция:
 
@@ -63,7 +63,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Задача 2: True or False
+### Задача 2: Вярно или Невярно
 
 Определете дали всяко твърдение е Вярно (True) или Невярно (False):
 
@@ -103,7 +103,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="easy">
 
-### Задача 3: Identify the Service Model
+### Задача 3: Идентифициране на Service Model
 
 За всеки пример определете дали е IaaS, PaaS или SaaS:
 
@@ -146,7 +146,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="easy">
 
-### Задача 4: Fill in the Blanks
+### Задача 4: Попълване на празните места
 
 Попълнете празните места с подходящите термини:
 
@@ -176,7 +176,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="easy">
 
-### Задача 5: Responsibility Identification
+### Задача 5: Идентифициране на отговорности
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/shared-responsibility-model.svg')} alt="Shared Responsibility Model - IaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
@@ -214,7 +214,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="medium">
 
-### Задача 6: Provider Comparison Table
+### Задача 6: Таблица за сравнение на доставчици
 
 Попълнете липсващите service имена за всеки provider:
 
@@ -249,7 +249,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="medium">
 
-### Задача 7: Scenario Classification
+### Задача 7: Класификация на сценарии
 
 За всеки сценарий препоръчайте най-подходящия cloud service модел (IaaS, PaaS или SaaS) и дайте кратка обосновка:
 
@@ -281,7 +281,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="medium">
 
-### Задача 8: Trade-off Analysis
+### Задача 8: Анализ на компромиси
 
 Определете кой модел има предимство за всеки критерий (напишете "IaaS" или "PaaS"):
 
@@ -313,7 +313,7 @@ e) Virtualization позволява на множество изолирани 
 
 <ExerciseCard difficulty="medium">
 
-### Задача 9: Short Answer Questions
+### Задача 9: Кратки въпроси
 
 Отговорете на всеки въпрос в 2-3 изречения:
 
@@ -348,7 +348,7 @@ Azure предлага seamless интеграция с Microsoft продукт
 
 <ExerciseCard difficulty="medium">
 
-### Задача 10: Service Selection
+### Задача 10: Избор на услуга
 
 Съветвате средно голяма e-commerce компания, която в момента хоства всичко on-premises. Те имат следните изисквания:
 
@@ -378,7 +378,7 @@ Azure предлага seamless интеграция с Microsoft продукт
 
 <ExerciseCard difficulty="medium">
 
-### Задача 11: Diagram Interpretation
+### Задача 11: Интерпретация на диаграма
 
 Разгледайте responsibility stack-а и отговорете на въпросите:
 
@@ -420,7 +420,7 @@ Customer управлява само Layers 6-7 (Applications, Data)
 
 <ExerciseCard difficulty="medium">
 
-### Задача 12: Scaling Concepts Application
+### Задача 12: Прилагане на концепции за скалиране
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/horizontal-vs-vertical-scaling.svg')} alt="Horizontal vs Vertical Scaling" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
@@ -470,7 +470,7 @@ Web application experience следните traffic patterns:
 
 <ExerciseCard difficulty="hard">
 
-### Задача 13: Case Study Analysis
+### Задача 13: Анализ на казус
 
 **Case Study:** TechStart Inc. е 2-годишен startup, който първоначално deploy-на своя SaaS продукт на AWS EC2 instances. Текущият им setup включва:
 - 10 EC2 instances running Ubuntu с custom configurations
@@ -529,7 +529,7 @@ Phase 5: Decommission EC2 instances
 
 <ExerciseCard difficulty="hard">
 
-### Задача 14: Total Cost of Ownership Calculation
+### Задача 14: Изчисляване на обща цена на притежание
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/tco-comparison.svg')} alt="TCO Comparison: IaaS vs PaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
@@ -600,7 +600,7 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 <ExerciseCard difficulty="hard">
 
-### Задача 15: Multi-Cloud Architecture Design
+### Задача 15: Проектиране на Multi-Cloud архитектура
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/multi-cloud-architecture.svg')} alt="Multi-Cloud Architecture Pattern" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
@@ -664,7 +664,7 @@ PaaS спестява **$102,600 годишно** (91% reduction!)
 
 <ExerciseCard difficulty="hard">
 
-### Задача 16: Migration Strategy Development
+### Задача 16: Разработване на миграционна стратегия
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/cloud-migration-journey.svg')} alt="Cloud Migration Journey: On-Prem to Cloud" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
@@ -758,7 +758,7 @@ Month 8-18: Hybrid Phase 2
 
 <ExerciseCard difficulty="hard">
 
-### Задача 17: Serverless vs Traditional PaaS Evaluation
+### Задача 17: Оценка на Serverless срещу Traditional PaaS
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/serverless-vs-traditional-paas.svg')} alt="Serverless (FaaS) vs Traditional PaaS" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
@@ -835,7 +835,7 @@ Cold start concern е manageable:
 
 <ExerciseCard difficulty="hard">
 
-### Задача 18: Real-World Trade-off Debate
+### Задача 18: Дебат за реални компромиси
 
 **Задача:** Екипът ви е разделен дали да използва IaaS или PaaS за нов проект. Подгответе аргументи за ДВЕТЕ страни:
 
@@ -922,7 +922,7 @@ Start: New Cloud Project Decision
 
 <ExerciseCard difficulty="hard">
 
-### Задача 19: Future Trends Analysis
+### Задача 19: Анализ на бъдещи тенденции
 
 <img src={useBaseUrl('/img/diagrams/iaas-saas-paas/cloud-computing-evolution.svg')} alt="Cloud Computing Evolution: Future Trends" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
@@ -998,7 +998,7 @@ Serverless показва, че spectrum-ът не е линеен - разли�
 
 <ExerciseCard difficulty="hard">
 
-### Задача 20: Comprehensive Provider Selection
+### Задача 20: Комплексен избор на доставчик
 
 **Сценарий:** Вие сте cloud architect за глобална retail компания със следните изисквания:
 

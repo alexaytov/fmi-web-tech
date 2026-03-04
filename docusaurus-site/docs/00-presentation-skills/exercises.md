@@ -1,261 +1,980 @@
-# Exercises: Basic Presentation Skills for Programmers
+---
+sidebar_position: 2
+slug: exercises
+title: "Упражнения"
+tags: [exercises, practice, presentations, communication]
+---
+
+import ExerciseCard from '@site/src/components/Exercise/ExerciseCard';
+import ProgressTracker from '@site/src/components/Exercise/ProgressTracker';
+import CollapsibleSection from '@site/src/components/CollapsibleSection';
+import InfoBox from '@site/src/components/InfoBoxes/InfoBox';
+
+# Упражнения: Основни Презентационни Умения за Програмисти
+
+<ProgressTracker />
 
 ---
 
-## Exercise 1 [EASY]: 
-**Multiple Choice - Why Presentations Matter**
+## Лесни Упражнения
 
-Why are presentation skills considered essential for programmers beyond just coding abilities?
+<ExerciseCard difficulty="easy">
 
-A) They help programmers write better code  
-B) They enable effective communication of complex technical ideas to diverse audiences  
-C) They are only needed for job interviews  
-D) They replace the need for documentation  
+### Задача 1: Защо Презентациите Имат Значение
 
----
+**Въпрос с избор на отговор**
 
-## Exercise 2 [EASY]: 
-**Short Answer - Audience Identification**
+Защо презентационните умения се считат за съществени за програмистите, освен способността да пишат код?
 
-List three real-world scenarios where a programmer would need to give a presentation or demo.
+A) Помагат на програмистите да пишат по-добър код
+B) Позволяват ефективна комуникация на сложни технически идеи към разнообразна аудитория
+C) Необходими са само за интервюта за работа
+D) Заместват нуждата от документация
 
----
+<CollapsibleSection title="✅ Отговор">
 
-## Exercise 3 [EASY]: 
-**True/False - Slide Design Basics**
+**Правилен отговор: B**
 
-Determine whether each statement is True or False:
+Презентационните умения позволяват ефективна комуникация на сложни технически идеи към разнообразна аудитория. Това е ключово умение, защото програмистите често трябва да обясняват техническите си решения на колеги, мениджъри и клиенти с различно ниво на техническа подготовка.
 
-1. The "Five-Second Rule" means your audience should grasp the main point of a slide in 5 seconds.
-2. Using screenshots of unformatted code is recommended for technical presentations.
-3. Sans-serif fonts like Arial or Calibri are good choices for presentation slides.
-4. Slides should serve as your complete script during a presentation.
+</CollapsibleSection>
 
----
+</ExerciseCard>
 
-## Exercise 4 [EASY]: 
-**Matching - Presentation Frameworks**
+<ExerciseCard difficulty="easy">
 
-Match each framework to its best use case:
+### Задача 2: Идентифициране на Аудиторията
 
-| Framework | Use Case |
-|-----------|----------|
-| 1. Problem-Solution-Benefit | A. Executive briefings and quick summaries |
-| 2. Pyramid Principle | B. Data-heavy tech presentations |
-| 3. What-So What-Now What | C. Demos and pitching tools |
-| 4. SCQA | D. Problem-solving narratives |
+**Кратък отговор**
 
----
+Избройте три реални сценария, в които програмист би трябвало да изнесе презентация или демо.
 
-## Exercise 5 [EASY]: 
-**Fill in the Blank - Body Language**
+<CollapsibleSection title="💡 Подсказка">
 
-Complete the following statements about body language during presentations:
+Помислете за различни контексти: вътрешни срещи, външни клиенти, конференции, обучения...
 
-1. Maintain direct eye contact for _____ to _____ seconds before transitioning to another audience member.
-2. An upright posture with feet ___________-width apart projects authority.
-3. ___________-facing palms convey honesty, while ___________-facing palms communicate certainty.
+</CollapsibleSection>
 
----
+<CollapsibleSection title="✅ Примерен отговор">
 
-## Exercise 6 [MEDIUM]: 
-**Scenario Analysis - Audience Adaptation**
+1. **Sprint Demo** - Представяне на завършени функционалности пред екипа и stakeholders в края на спринт
+2. **Техническо интервю** - Презентиране на минал проект или решаване на проблем пред интервюиращи
+3. **Конференция/Meetup** - Споделяне на опит или нова технология пред техническа общност
+4. **Клиентска среща** - Демонстрация на продукт или нова функционалност пред клиенти
+5. **Onboarding** - Въвеждане на нови членове на екипа в архитектурата на проекта
 
-You need to explain what an API does to two different audiences. Write a one-sentence explanation for each:
+</CollapsibleSection>
 
-1. **Technical Audience** (fellow software engineers):
-2. **Non-Technical Audience** (marketing team members):
+</ExerciseCard>
 
----
+<ExerciseCard difficulty="easy">
 
-## Exercise 7 [MEDIUM]: 
-**Framework Application**
+### Задача 3: Основи на Дизайна на Слайдове
 
-You've built a script that automates weekly report generation, reducing the task from 3 hours to 10 minutes. Structure a brief outline (3-5 bullet points) using the **Problem-Solution-Benefit** framework to present this to your manager.
+**Вярно/Невярно**
 
----
+Определете дали всяко твърдение е Вярно или Невярно:
 
-## Exercise 8 [MEDIUM]: 
-**Slide Critique Exercise**
+1. "Правилото за 5 секунди" означава, че аудиторията трябва да схване основната идея на слайда за 5 секунди.
+2. Използването на screenshots с неформатиран код се препоръчва за технически презентации.
+3. Sans-serif шрифтове като Arial или Calibri са добър избор за презентационни слайдове.
+4. Слайдовете трябва да служат като пълен скрипт по време на презентация.
 
-A slide contains the following text:
+<CollapsibleSection title="✅ Отговори">
 
-> "Our new implementation utilizes a sophisticated machine learning algorithm that leverages neural network architectures with multiple hidden layers to process and analyze large datasets, resulting in improved prediction accuracy through iterative training cycles that optimize weight parameters via backpropagation, ultimately delivering enhanced performance metrics across various benchmark tests."
+1. **Вярно** - Правилото за 5 секунди е основен принцип за ефективен слайд дизайн
+2. **Невярно** - Кодът трябва да бъде форматиран и оцветен за по-добра четимост
+3. **Вярно** - Sans-serif шрифтовете са по-четими на екран
+4. **Невярно** - Слайдовете трябва да подкрепят речта, не да я заместват
 
-Identify **three specific problems** with this slide based on the lecture principles, and suggest how to fix each.
+</CollapsibleSection>
 
----
+</ExerciseCard>
 
-## Exercise 9 [MEDIUM]: 
-**Voice and Delivery Identification**
+<ExerciseCard difficulty="easy">
 
-List four common filler words that undermine a presenter's authority, and describe **two specific techniques** from the lecture to reduce their usage.
+### Задача 4: Презентационни Рамки
 
----
+**Съпоставяне**
 
-## Exercise 10 [MEDIUM]: 
-**Interactivity Design**
+Съпоставете всяка рамка с най-подходящия случай на употреба:
 
-You're presenting a code snippet that sorts an array. Design **two different interactive elements** you could incorporate at this moment to engage your audience. Be specific about what you would say or do.
+| Рамка | Случай на употреба |
+|-------|-------------------|
+| 1. Problem-Solution-Benefit | A. Кратки резюмета за ръководство |
+| 2. Pyramid Principle | B. Технически презентации с много данни |
+| 3. What-So What-Now What | C. Демонстрации и представяне на инструменти |
+| 4. SCQA | D. Наративи за решаване на проблеми |
 
----
+<CollapsibleSection title="✅ Отговори">
 
-## Exercise 11 [MEDIUM]: 
-**Framework Selection Exercise**
+- **1 → C** (Problem-Solution-Benefit е идеална за демонстрации)
+- **2 → A** (Pyramid Principle започва с извода, идеална за executives)
+- **3 → B** (What-So What-Now What структурира данните ефективно)
+- **4 → D** (SCQA - Situation, Complication, Question, Answer - перфектна за проблемни наративи)
 
-For each scenario below, identify which presentation framework would be most appropriate and briefly explain why (1-2 sentences):
+</CollapsibleSection>
 
-1. Presenting quarterly performance metrics to the executive team
-2. Explaining why your team chose React over Angular for a new project
-3. Walking a new team member through the codebase architecture
+</ExerciseCard>
 
----
+<ExerciseCard difficulty="easy">
 
-## Exercise 12 [MEDIUM]: 
-**Slide Redesign - The 6x6 Rule**
+### Задача 5: Езикът на Тялото
 
-The following slide violates the 6x6 rule. Rewrite it to comply with the rule (no more than 6 bullets, no more than 6 words per bullet):
+**Попълване на празните места**
 
-**Original Slide - "Benefits of Code Reviews":**
-- Code reviews help identify bugs and errors early in the development process before they reach production
-- They facilitate knowledge sharing among team members and help junior developers learn from senior engineers
-- Code reviews ensure consistency in coding standards and best practices across the entire codebase
-- They improve overall code quality and maintainability of the software over time
-- Reviews create documentation of decisions and changes made to the code
-- They help build team communication and collaboration skills among developers
-- Code reviews can identify security vulnerabilities before deployment
-- They reduce technical debt by catching issues early
+Попълнете следните твърдения за езика на тялото по време на презентации:
 
----
+1. Поддържайте директен контакт с очи за _____ до _____ секунди преди да преминете към друг член на аудиторията.
+2. Изправена стойка с крака на ширината на ___________ проектира авторитет.
+3. Длани, обърнати ___________  изразяват честност, докато длани, обърнати ___________ комуникират увереност.
 
-## Exercise 13 [HARD]: 
-**Complete Presentation Outline**
+<CollapsibleSection title="✅ Отговори">
 
-You've developed a feature that uses caching to reduce database load by 40%. Create a complete presentation outline using the **SCQA framework** that includes:
+1. **3** до **5** секунди
+2. **раменете** (shoulder-width)
+3. **нагоре** (upward) изразяват честност, **надолу** (downward) комуникират увереност
 
-- The four SCQA components with 2-3 bullet points each
-- One suggested visual/diagram for each section
-- One interactive element to include during the presentation
+</CollapsibleSection>
+
+</ExerciseCard>
 
 ---
 
-## Exercise 14 [HARD]: 
-**Comprehensive Slide Deck Design**
+## Средни Упражнения
 
-Design a 4-slide mini-deck to present a debugging solution you implemented. For each slide, specify:
+<ExerciseCard difficulty="medium">
 
-1. The headline
-2. The key content (following the "one idea per slide" principle)
-3. The visual element you would include
-4. How you would use progressive reveal/animation
+### Задача 6: Адаптация към Аудиторията
 
-Your slides should follow this structure: Problem → Investigation → Solution → Results
+**Анализ на сценарий**
+
+Трябва да обясните какво е API на две различни аудитории. Напишете едноизречно обяснение за всяка:
+
+1. **Техническа аудитория** (колеги софтуерни инженери)
+2. **Нетехническа аудитория** (членове на маркетинг екипа)
+
+<CollapsibleSection title="💡 Подсказка">
+
+За техническа аудитория можете да използвате технически термини. За нетехническа аудитория използвайте аналогии от ежедневието.
+
+</CollapsibleSection>
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Техническа аудитория:**
+"API-то е RESTful интерфейс с JSON payload, който експоузва CRUD операции за нашите domain entities чрез HTTP endpoints с OAuth 2.0 автентикация."
+
+**Нетехническа аудитория:**
+"API-то е като сервитьор в ресторант - взема вашата поръчка (заявка), отива в кухнята (сървъра), и ви донася храната (данните), без да е нужно вие да влизате в кухнята."
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 7: Прилагане на Рамка
+
+**Problem-Solution-Benefit**
+
+Разработили сте скрипт, който автоматизира седмичното генериране на отчети, намалявайки задачата от 3 часа на 10 минути. Структурирайте кратък план (3-5 точки) използвайки рамката **Problem-Solution-Benefit**, за да представите това на вашия мениджър.
+
+<CollapsibleSection title="💡 Подсказка">
+
+- **Problem**: Какъв беше проблемът? (време, грешки, ресурси)
+- **Solution**: Какво създадохте?
+- **Benefit**: Какви са ползите? (спестено време, по-малко грешки, възможност за скалиране)
+
+</CollapsibleSection>
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Problem:**
+- Седмичното генериране на отчети отнема 3 часа ръчна работа
+- Процесът е податлив на човешки грешки
+- Отнема ценно време от по-важни задачи
+
+**Solution:**
+- Разработих Python скрипт за автоматизация на целия процес
+- Скриптът се интегрира директно с нашата база данни
+- Включва автоматична валидация на данните
+
+**Benefit:**
+- Намаляване на времето от 3 часа на 10 минути (94% спестено време)
+- Елиминиране на ръчните грешки
+- Освобождаване на 12+ часа месечно за стратегически задачи
+- Възможност за генериране на отчети при поискване
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 8: Критика на Слайд
+
+**Упражнение**
+
+Слайд съдържа следния текст:
+
+> "Нашата нова имплементация използва софистициран machine learning алгоритъм, който прилага neural network архитектури с множество скрити слоеве за обработка и анализ на големи datasets, което води до подобрена точност на предвиждане чрез итеративни training цикли, които оптимизират weight параметри чрез backpropagation, в крайна сметка доставяйки подобрени performance метрики през различни benchmark тестове."
+
+Идентифицирайте **три конкретни проблема** с този слайд, базирани на принципите от лекцията, и предложете как да поправите всеки.
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Проблем 1: Прекалено много текст**
+- Нарушава правилото 6x6 и правилото за 5 секунди
+- **Решение**: Разбийте на 3-4 къси bullet точки
+
+**Проблем 2: Липса на визуална йерархия**
+- Всичко е един параграф без структура
+- **Решение**: Използвайте заглавие + подточки + диаграма
+
+**Проблем 3: Твърде технически без контекст**
+- Липсва "защо" и "какво означава това за аудиторията"
+- **Решение**: Започнете с резултата (подобрена точност), после обяснете как
+
+**Подобрен слайд:**
+```
+ML Модел: 40% По-добра Точност
+
+• Neural network с 3 скрити слоя
+• Оптимизиран чрез backpropagation
+• Тестван на 5 benchmark datasets
+
+[Диаграма: преди/след сравнение]
+```
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 9: Глас и Изпълнение
+
+**Идентификация**
+
+Избройте четири често срещани думи-пълнежи, които подкопават авторитета на презентатора, и опишете **две конкретни техники** от лекцията за намаляване на употребата им.
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Думи-пълнежи:**
+1. "ъъъ" / "ммм"
+2. "значи" / "като"
+3. "basically" / "basically"
+4. "you know" / "нали"
+
+**Техники за намаляване:**
+
+**1. Стратегическа пауза:**
+- Вместо да кажете "ъъъ", просто направете пауза
+- Паузата изглежда уверено и дава време за мислене
+- Практикувайте замяна на filler думите с 1-2 секундна тишина
+
+**2. Записване и преглед:**
+- Запишете се докато презентирате
+- Идентифицирайте кои filler думи използвате най-често
+- Практикувайте специално тези моменти
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 10: Дизайн на Интерактивност
+
+**Упражнение**
+
+Представяте код snippet, който сортира масив. Създайте **два различни интерактивни елемента**, които можете да включите в този момент, за да ангажирате аудиторията. Бъдете конкретни какво бихте казали или направили.
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Интерактивен елемент 1: Въпрос към аудиторията**
+
+*Преди да покажете решението:*
+"Преди да покажа имплементацията, нека видим - каква мислите, че е времевата сложност на bubble sort за масив с n елемента? Вдигнете ръка който мисли O(n)... O(n log n)... O(n²)?"
+
+*След отговорите:*
+"Интересно разпределение! Нека видим защо правилният отговор е O(n²)..."
+
+**Интерактивен елемент 2: Live coding challenge**
+
+"Сега ще видим bubble sort имплементация. Но първо - дайте ми един масив от 5 числа, който да сортираме заедно. Някой? ... [записва на дъската] Отлично! Нека проследим алгоритъма стъпка по стъпка с този пример."
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 11: Избор на Рамка
+
+**Упражнение**
+
+За всеки сценарий по-долу идентифицирайте коя презентационна рамка би била най-подходяща и кратко обяснете защо (1-2 изречения):
+
+1. Представяне на тримесечни performance метрики пред ръководния екип
+2. Обяснение защо вашият екип избра React вместо Angular за нов проект
+3. Въвеждане на нов член на екипа в архитектурата на codebase-а
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**1. Тримесечни метрики → Pyramid Principle**
+
+Executives искат да чуят извода първо, после детайлите. Започнете с "Постигнахме 120% от целите", после покажете подкрепящите данни.
+
+**2. React vs Angular → Problem-Solution-Benefit или SCQA**
+
+Трябва да обясните контекста (какъв проблем решавахте), какви опции разгледахте, защо React беше по-добрият избор, и какви ползи очаквате.
+
+**3. Codebase архитектура → What-So What-Now What**
+
+Покажете какво е (архитектурата), защо е важно (как им помага да разберат проекта), и какво следва (как да започнат да contribut-ват).
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="medium">
+
+### Задача 12: Редизайн на Слайд - Правилото 6x6
+
+**Упражнение**
+
+Следният слайд нарушава правилото 6x6. Пренапишете го, за да спазва правилото (не повече от 6 точки, не повече от 6 думи на точка):
+
+**Оригинален слайд - "Ползи от Code Reviews":**
+- Code reviews помагат да се идентифицират бъгове и грешки рано в процеса на разработка преди да достигнат production
+- Те улесняват споделянето на знания между членовете на екипа и помагат на junior developers да учат от senior engineers
+- Code reviews осигуряват консистентност в coding standards и best practices в целия codebase
+- Те подобряват цялостното качество на кода и maintainability на софтуера с времето
+- Reviews създават документация на решенията и промените, направени в кода
+- Те помагат за изграждане на екипна комуникация и умения за сътрудничество между developers
+- Code reviews могат да идентифицират security уязвимости преди deployment
+- Те намаляват technical debt като хващат проблемите рано
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Редизайниран слайд - "Ползи от Code Reviews":**
+
+- Ранно откриване на бъгове
+- Споделяне на знания в екипа
+- Консистентни coding стандарти
+- По-добро качество на кода
+- Документация на решенията
+- Превенция на security уязвимости
+
+**Бележка:** Премахнахме 2 точки и съкратихме всяка до максимум 6 думи. "Technical debt" и "team communication" могат да се споменат устно като допълнение.
+
+</CollapsibleSection>
+
+</ExerciseCard>
 
 ---
 
-## Exercise 15 [HARD]: 
-**Presentation Critique and Improvement**
+## Трудни Упражнения
 
-Read the following presentation transcript excerpt and provide a detailed critique:
+<ExerciseCard difficulty="hard">
 
-> *[Presenter looking at screen, arms crossed]* "So, um, basically what we did was, like, we refactored the authentication module. The old code was, you know, pretty bad. Here's all 200 lines of the new implementation. *[Shows dense code slide]* As you can see, we changed a lot of stuff. The main thing is, uh, it's better now. Any questions?"
+### Задача 13: Пълен План на Презентация
 
-Identify:
-1. **Three delivery problems** and how to fix each
-2. **Two content/structure problems** and how to fix each  
-3. **Two slide design problems** (implied) and how to fix each
-4. Rewrite the opening two sentences using better techniques
+**SCQA Framework**
 
----
+Разработили сте функционалност, която използва caching за намаляване на натоварването на базата данни с 40%. Създайте пълен план на презентация, използвайки **SCQA рамката**, който включва:
 
-## Exercise 16 [HARD]: 
-**Mixed Audience Presentation Planning**
+- Четирите SCQA компонента с 2-3 точки всеки
+- Една предложена визуализация/диаграма за всяка секция
+- Един интерактивен елемент за включване по време на презентацията
 
-You must present a new microservices architecture to an audience containing both technical engineers and business stakeholders in a single 15-minute presentation. 
+<CollapsibleSection title="✅ Примерен отговор">
 
-Create a detailed plan that includes:
-1. How you will structure the presentation to serve both audiences
-2. Which framework(s) you will use and why
-3. How you will handle technical depth without losing non-technical attendees
-4. Two specific interactive elements appropriate for this mixed audience
-5. Your strategy for the Q&A session
+**S - Situation (Ситуация):**
+- Приложението ни обслужва 10,000+ заявки дневно
+- Всяка заявка изисква database query за потребителски данни
+- Текущата инфраструктура работи на 85% капацитет
+
+*Визуализация: Dashboard показващ текущото натоварване*
 
 ---
 
-## Exercise 17 [HARD]: 
-**Before/After Transformation Exercise**
+**C - Complication (Усложнение):**
+- Database response times се увеличиха с 300% през последните 3 месеца
+- Peak часовете причиняват timeout грешки
+- Скалирането на database е скъпо ($5000/месец)
 
-Transform the following "bad" presentation approach into an effective one:
-
-**Original Approach:**
-A developer presents a new logging system by immediately showing 15 slides of code, using 10-point font, reading directly from the slides in a monotone voice, never making eye contact, and ending with "So yeah, that's the logging system."
-
-Write out:
-1. A restructured outline using an appropriate framework
-2. A description of 3 redesigned slides (headline, content approach, visuals)
-3. Specific delivery techniques the presenter should employ
-4. How to create an engaging opening and closing
-5. Two metrics or proof points to include
+*Визуализация: Графика на response times с тренд линия нагоре*
 
 ---
 
-## Exercise 18 [HARD]: 
-**Full Presentation Simulation Exercise**
+**Q - Question (Въпрос):**
+- Как можем да намалим database натоварването без скъпо хардуерно upgrade?
+- Как да подобрим response times за крайните потребители?
 
-Prepare and practice a 3-minute presentation on any small coding project or concept you know well. Your preparation should include:
-
-1. **Written outline** using one of the five frameworks from the lecture
-2. **3-4 slide descriptions** following all design principles covered
-3. **Self-assessment checklist** covering:
-   - Body language goals (list 3 specific things you'll focus on)
-   - Voice control goals (list 2 specific things you'll focus on)
-   - Interactive element(s) planned
-4. **Recording and reflection**: Record yourself delivering the presentation, then write a 150-word self-critique identifying one strength and two areas for improvement with specific action items
+*Визуализация: Въпросителни знаци с ключови метрики*
 
 ---
 
-## Exercise 19 [HARD]: 
-**Comparative Analysis Case Study**
+**A - Answer (Отговор):**
+- Имплементирахме Redis caching layer за често заявявани данни
+- Cache hit rate: 78% на production
+- Резултат: 40% намаление на database load, 60% по-бързи response times
 
-Two programmers present the same project—a REST API optimization that improved response times.
-
-**Presenter A's approach:**
-- Opens with technical implementation details
-- Shows complete code changes across 12 slides
-- Uses consistent monotone delivery
-- Ends with "Questions?"
-
-**Presenter B's approach:**
-- Opens with "Last month, users complained about 8-second load times"
-- Shows before/after performance graphs
-- Highlights 3 key code changes with syntax highlighting
-- Asks audience "What do you think caused the bottleneck?" mid-presentation
-- Ends with "Response times dropped 70%—here's how you can apply this to your modules"
-
-Write a detailed analysis (300-400 words) comparing both approaches across:
-- Structure and framework usage
-- Slide design effectiveness
-- Delivery and engagement techniques
-- Audience focus
-
-Conclude with three specific lessons other programmers should learn from this comparison.
+*Визуализация: Архитектурна диаграма преди/след с caching layer*
 
 ---
 
-## Exercise 20 [HARD]: 
-**Presentation Recovery Scenarios**
+**Интерактивен елемент:**
 
-For each challenging scenario below, describe specifically how you would handle it using techniques from the lecture:
+*Преди Answer секцията:*
+"Какви решения бихте предложили? Имаме 30 секунди - обсъдете с човека до вас."
 
-1. **Technical failure**: Your live demo crashes in front of 50 people.
+</CollapsibleSection>
 
-2. **Hostile question**: An audience member aggressively challenges your technical approach, saying "This will never scale."
+</ExerciseCard>
 
-3. **Lost audience**: Midway through your presentation, you notice most of the non-technical stakeholders look confused and disengaged.
+<ExerciseCard difficulty="hard">
 
-4. **Time cut**: You're told 10 minutes before your 20-minute presentation that you now only have 8 minutes.
+### Задача 14: Цялостен Дизайн на Слайд Презентация
 
-For each scenario, provide:
-- Immediate response action
-- Recovery technique using lecture principles
-- How to maintain confident delivery throughout
+**Упражнение**
+
+Създайте мини-презентация от 4 слайда, за да представите debugging решение, което сте имплементирали. За всеки слайд посочете:
+
+1. Заглавието
+2. Ключовото съдържание (следвайки принципа "една идея на слайд")
+3. Визуалния елемент, който бихте включили
+4. Как бихте използвали progressive reveal/анимация
+
+Вашите слайдове трябва да следват структурата: Problem → Investigation → Solution → Results
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Слайд 1: Problem**
+
+*Заглавие:* "500 Error Spike: 23% от Заявките Failing"
+
+*Съдържание:*
+- Production alert в 14:30
+- Засегнати 2,300 потребители
+- Revenue impact: $1,200/час
+
+*Визуален елемент:* Screenshot от monitoring dashboard с червена spike
+
+*Animation:* Числата се появяват едно по едно за драматичен ефект
+
+---
+
+**Слайд 2: Investigation**
+
+*Заглавие:* "Root Cause: Memory Leak в Payment Service"
+
+*Съдържание:*
+- Анализ на логовете показа memory growth pattern
+- Heap dump разкри неосвободени connection objects
+- Проблемът започна след deploy v2.3.1
+
+*Визуален елемент:* Memory usage график с анотация на момента на deploy
+
+*Animation:* Reveal на всяка стъпка от разследването последователно
+
+---
+
+**Слайд 3: Solution**
+
+*Заглавие:* "Fix: Connection Pool с Auto-cleanup"
+
+*Съдържание:*
+```java
+connectionPool.setMaxIdle(10);
+connectionPool.setTimeBetweenEviction(30000);
+```
+
+*Визуален елемент:* Code snippet с highlighting на ключовите редове
+
+*Animation:* Първо показва проблемния код, после fade към решението
+
+---
+
+**Слайд 4: Results**
+
+*Заглавие:* "Резултат: 0% Errors, 40% По-добра Performance"
+
+*Съдържание:*
+- Error rate: 23% → 0%
+- Memory usage: Стабилен
+- Response time: -40%
+
+*Визуален елемент:* Before/After comparison графики
+
+*Animation:* Before графиката, пауза, после After с зелен checkmark
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 15: Критика и Подобрение на Презентация
+
+**Упражнение**
+
+Прочетете следния откъс от презентация и предоставете детайлна критика:
+
+> *[Презентаторът гледа екрана, със скръстени ръце]* "И така, ъъъ, basically това, което направихме беше, като, refactor-нахме authentication модула. Старият код беше, нали, доста лош. Ето всичките 200 реда от новата имплементация. *[Показва гъст слайд с код]* Както виждате, променихме много неща. Основното е, че ъъъ, е по-добре сега. Въпроси?"
+
+Идентифицирайте:
+1. **Три проблема с изпълнението** и как да поправите всеки
+2. **Два проблема със съдържанието/структурата** и как да поправите всеки
+3. **Два проблема с дизайна на слайдовете** (подразбиращи се) и как да поправите всеки
+4. Пренапишете началните две изречения, използвайки по-добри техники
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Проблеми с изпълнението:**
+
+1. **Гледане на екрана вместо аудиторията**
+   - *Fix:* Обърнете се към аудиторията, използвайте presenter view, познавайте материала
+
+2. **Скръстени ръце (затворена поза)**
+   - *Fix:* Отворена поза, ръце встрани или жестикулиращи, заемане на пространство
+
+3. **Filler думи (ъъъ, basically, като, нали)**
+   - *Fix:* Практика, записване, замяна с паузи
+
+---
+
+**Проблеми със съдържанието:**
+
+1. **Липса на структура и контекст**
+   - *Fix:* Използвайте Problem-Solution-Benefit рамка, започнете с "защо"
+
+2. **Неясно заключение ("е по-добре сега")**
+   - *Fix:* Конкретни метрики: "Намалихме login time с 60% и security vulnerabilities с 100%"
+
+---
+
+**Проблеми с дизайна:**
+
+1. **200 реда код на един слайд**
+   - *Fix:* Покажете само ключовите 5-10 реда с syntax highlighting
+
+2. **Липса на визуална йерархия**
+   - *Fix:* Before/After сравнение, архитектурна диаграма, метрики
+
+---
+
+**Пренаписано начало:**
+
+*Оригинал:* "И така, ъъъ, basically това, което направихме беше, като, refactor-нахме authentication модула. Старият код беше, нали, доста лош."
+
+*Подобрено:* "Миналият месец нашите потребители чакаха средно 8 секунди за login. Днес ще ви покажа как намалихме това до 3 секунди чрез refactoring на authentication модула."
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 16: Планиране на Презентация за Смесена Аудитория
+
+**Упражнение**
+
+Трябва да представите нова microservices архитектура пред аудитория, съдържаща едновременно технически инженери и бизнес stakeholders в една 15-минутна презентация.
+
+Създайте детайлен план, който включва:
+1. Как ще структурирате презентацията, за да обслужите и двете аудитории
+2. Коя/кои рамка/и ще използвате и защо
+3. Как ще се справите с техническата дълбочина, без да загубите нетехническите присъстващи
+4. Два конкретни интерактивни елемента, подходящи за тази смесена аудитория
+5. Вашата стратегия за Q&A сесията
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**1. Структура на презентацията (15 минути):**
+
+- **Минути 0-3: Business Context** (за всички)
+  - Защо правим промяната, какъв проблем решаваме
+  - ROI и бизнес ползи
+
+- **Минути 3-8: High-Level Architecture** (визуално за всички)
+  - Диаграми без код
+  - Аналогии за нетехническите
+
+- **Минути 8-12: Technical Deep-Dive** (за инженерите)
+  - Предупредете: "Следващите 4 минути са технически детайли"
+  - Нетехническите могат да слушат за общата представа
+
+- **Минути 12-15: Summary & Next Steps** (за всички)
+  - Резюме на бизнес ползи
+  - Timeline и action items
+
+---
+
+**2. Рамки:**
+
+- **Pyramid Principle** за общата структура (извод → детайли)
+- **Problem-Solution-Benefit** за business context частта
+
+---
+
+**3. Баланс на техническа дълбочина:**
+
+- Използвайте "layered" подход: визуална диаграма → вербално обяснение → технически детайл
+- Аналогии: "Microservices са като LEGO блокове - можем да заменим един без да разглобим всичко"
+- Визуални индикатори: Иконки за "technical section" в слайдовете
+
+---
+
+**4. Интерактивни елементи:**
+
+**За всички:** "Вдигнете ръка, ако сте имали проблем с бавен deploy в последните 3 месеца" (показва relevance)
+
+**За инженерите:** "За техническите колеги - какви challenges очаквате при миграцията?" (ангажира ги специфично)
+
+---
+
+**5. Q&A Стратегия:**
+
+- Предупредете: "Ще има време за въпроси накрая"
+- Разделете: "Първо бизнес въпроси, после технически"
+- За много технически въпроси: "Отличен въпрос, нека го обсъдим след срещата за да не губим времето на всички"
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 17: Упражнение за Before/After Трансформация
+
+**Упражнение**
+
+Трансформирайте следния "лош" презентационен подход в ефективен:
+
+**Оригинален подход:**
+Разработчик представя нова logging система, като веднага показва 15 слайда с код, използвайки 10-point шрифт, чете директно от слайдовете с монотонен глас, никога не осъществява контакт с очите и завършва с "И така да, това е logging системата."
+
+Напишете:
+1. Преструктуриран план, използвайки подходяща рамка
+2. Описание на 3 редизайнирани слайда (заглавие, подход към съдържанието, визуализации)
+3. Конкретни техники за изпълнение, които презентаторът трябва да използва
+4. Как да създадете ангажиращо начало и край
+5. Две метрики или доказателства за включване
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**1. Преструктуриран план (Problem-Solution-Benefit):**
+
+**Problem (2 мин):**
+- Текущото logging ни отнема 4 часа за debug на production issues
+- Нямаме централизиран view на логовете
+- Пропускаме критични errors
+
+**Solution (5 мин):**
+- Нова structured logging система
+- Централен dashboard
+- Alert система
+
+**Benefit (2 мин):**
+- Debug time: 4 часа → 30 минути
+- 100% visibility на errors
+- Автоматични alerts
+
+---
+
+**2. Три редизайнирани слайда:**
+
+**Слайд 1: "4 Часа за Един Bug?"**
+- Съдържание: История за последния production incident
+- Визуализация: Timeline на debugging процеса с болезнени точки
+
+**Слайд 2: "Structured Logging Architecture"**
+- Съдържание: High-level диаграма на системата
+- Визуализация: Архитектурна схема с 4 компонента
+
+**Слайд 3: "Резултат: 87% По-бърз Debugging"**
+- Съдържание: Before/After сравнение
+- Визуализация: Две графики side-by-side
+
+---
+
+**3. Техники за изпълнение:**
+
+- Застанете встрани от екрана, не пред него
+- Движете се по стаята, използвайте жестове
+- Правете пауза след ключови точки
+- Задавайте въпроси на аудиторията
+- Варирайте темпото и тона на гласа
+
+---
+
+**4. Ангажиращо начало и край:**
+
+**Начало:** "Миналата седмица прекарах 4 часа в търсене на един bug в production логовете. Колко от вас са имали подобно преживяване? [пауза за реакция] Днес ще ви покажа как никога повече да не правим това."
+
+**Край:** "Следващият път, когато production гърми в 3 сутринта, вместо 4 часа panic, ще имате отговора за 30 минути. Кой иска да бъде първият, който ще тества новата система?"
+
+---
+
+**5. Метрики:**
+
+- Debug time reduction: 4 часа → 30 минути (87% подобрение)
+- Error detection rate: 67% → 98% на production issues
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 18: Упражнение за Пълна Симулация на Презентация
+
+**Практическо упражнение**
+
+Подгответе и практикувайте 3-минутна презентация на някой малък coding проект или концепция, която познавате добре. Вашата подготовка трябва да включва:
+
+1. **Писмен план** използвайки една от петте рамки от лекцията
+2. **Описания на 3-4 слайда** следвайки всички дизайн принципи, които бяха разгледани
+3. **Чеклист за самооценка**, покриващ:
+   - Цели за език на тялото (избройте 3 конкретни неща, върху които ще се фокусирате)
+   - Цели за контрол на гласа (избройте 2 конкретни неща, върху които ще се фокусирате)
+   - Планиран(и) интерактивен(и) елемент(и)
+4. **Запис и рефлексия**: Запишете се, докато изнасяте презентацията, след това напишете 150-думна самокритика, идентифицираща една силна страна и две области за подобрение с конкретни action items
+
+<CollapsibleSection title="✅ Примерна структура за отговор">
+
+**1. Писмен план (Problem-Solution-Benefit):**
+
+*Тема:* CLI инструмент за автоматизация на git workflow
+
+**Problem:**
+- Повторяеми git команди всеки ден
+- Грешки при manual merge процеси
+- Загубено време в превключване между branches
+
+**Solution:**
+- Bash скрипт с aliases и функции
+- Автоматизирани safety checks
+- Интерактивен mode за сложни операции
+
+**Benefit:**
+- 20 минути спестени дневно
+- 0 accidental force pushes от 6 месеца
+- По-добър developer experience
+
+---
+
+**2. Описания на слайдове:**
+
+**Слайд 1:** "Колко git команди пишете дневно?"
+- Статистика: средно 47 команди/ден
+- Визуализация: Terminal screenshot с типичен workflow
+
+**Слайд 2:** "Git Workflow Automator"
+- 3 ключови features
+- Визуализация: Demo GIF
+
+**Слайд 3:** "Резултати след 6 месеца"
+- Метрики в числа
+- Визуализация: Before/After сравнение
+
+---
+
+**3. Чеклист за самооценка:**
+
+*Език на тялото:*
+- [ ] Контакт с очите - 3-5 секунди на човек
+- [ ] Отворена поза - без скръстени ръце
+- [ ] Движение - използване на пространството
+
+*Глас:*
+- [ ] Вариация в темпото - забавяне при ключови точки
+- [ ] Паузи вместо filler думи
+
+*Интерактивност:*
+- [ ] Начален въпрос към аудиторията
+
+---
+
+**4. Примерна рефлексия (150 думи):**
+
+"След преглед на записа, идентифицирах една силна страна: моето начало беше ангажиращо и въпросът към аудиторията създаде добра връзка. Хората се усмихнаха и кимнаха, което показва, че се идентифицираха с проблема.
+
+Първата ми област за подобрение е езикът на тялото - забелязах, че прекарах 70% от времето гледайки екрана вместо аудиторията. Action item: ще практикувам с бележки в ръка вместо да чета от слайдовете.
+
+Втората област е filler думите - използвах "basically" 8 пъти в 3 минути. Action item: ще направя още 3 записа, фокусирайки се само върху замяна на filler думите с паузи. Ще помоля колега да ме прекъсва всеки път, когато чуе filler дума по време на практиката."
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 19: Сравнителен Анализ Case Study
+
+**Анализ**
+
+Двама програмисти представят един и същ проект - REST API оптимизация, която подобри response times.
+
+**Подход на Презентатор A:**
+- Започва с технически детайли на имплементацията
+- Показва пълните промени в кода в 12 слайда
+- Използва консистентен монотонен глас
+- Завършва с "Въпроси?"
+
+**Подход на Презентатор B:**
+- Започва с "Миналия месец потребителите се оплакваха от 8-секундно време за зареждане"
+- Показва before/after performance графики
+- Подчертава 3 ключови промени в кода със syntax highlighting
+- Пита аудиторията "Какво мислите, че причини bottleneck-а?" по средата на презентацията
+- Завършва с "Response times паднаха със 70% - ето как можете да приложите това във вашите модули"
+
+Напишете детайлен анализ (300-400 думи), сравняващ двата подхода по отношение на:
+- Структура и използване на рамка
+- Ефективност на дизайна на слайдовете
+- Техники за изпълнение и ангажираност
+- Фокус върху аудиторията
+
+Завършете с три конкретни урока, които други програмисти трябва да научат от това сравнение.
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**Сравнителен анализ:**
+
+**Структура и използване на рамка:**
+
+Презентатор A не използва разпознаваема рамка - директно скача в техническите детайли без контекст. Това е класическа грешка на "code dump" презентациите. Липсва отговор на въпроса "защо трябва да ме интересува?".
+
+Презентатор B използва ефективно Problem-Solution-Benefit рамката. Започва с конкретен, релевантен проблем (8-секундно зареждане), показва решението (3 ключови промени), и завършва с измерими ползи (70% подобрение) плюс actionable takeaway за аудиторията.
+
+**Ефективност на дизайна на слайдовете:**
+
+A показва 12 слайда с пълен код - това е претоварване с информация. Аудиторията не може да следи и вероятно губи интерес след 3-ия слайд. Нарушава правилото за 5 секунди и принципа "една идея на слайд".
+
+B използва визуални графики за before/after сравнение - това е много по-ефективно за показване на impact. Фокусирането върху само 3 ключови промени със syntax highlighting позволява на аудиторията да разбере същественото без да се удави в детайли.
+
+**Техники за изпълнение и ангажираност:**
+
+A използва монотонен глас без вариация - това приспива аудиторията и показва липса на ентусиазъм. "Въпроси?" като край е слаб финал без call-to-action.
+
+B демонстрира множество engagement техники: storytelling в началото, интерактивен въпрос по средата ("Какво мислите, че причини bottleneck-а?"), и конкретен, actionable край. Въпросът по средата превръща пасивните слушатели в активни участници.
+
+**Фокус върху аудиторията:**
+
+A е фокусиран върху презентатора и кода - "вижте какво направих". Не адресира нуждите или интересите на аудиторията.
+
+B е фокусиран върху аудиторията - започва с техен проблем, показва как да го решат, и завършва с "как можете да приложите това". Това е презентация, която дава стойност.
+
+---
+
+**Три ключови урока:**
+
+1. **Започвайте с проблема, не с решението** - Аудиторията трябва да разбере "защо" преди "как"
+
+2. **По-малко код, повече impact** - 3 добре подбрани примера са по-ефективни от 200 реда пълен код
+
+3. **Завършвайте с actionable takeaway** - Дайте на аудиторията нещо конкретно, което могат да приложат
+
+</CollapsibleSection>
+
+</ExerciseCard>
+
+<ExerciseCard difficulty="hard">
+
+### Задача 20: Сценарии за Възстановяване от Проблеми
+
+**Ситуационен анализ**
+
+За всеки предизвикателен сценарий по-долу опишете конкретно как бихте се справили, използвайки техники от лекцията:
+
+1. **Технически провал**: Вашето live демо се срива пред 50 души.
+
+2. **Враждебен въпрос**: Член на аудиторията агресивно оспорва техническия ви подход, казвайки "Това никога няма да scale-не."
+
+3. **Загубена аудитория**: По средата на презентацията забелязвате, че повечето нетехнически stakeholders изглеждат объркани и незаинтересовани.
+
+4. **Съкратено време**: Казват ви 10 минути преди вашата 20-минутна презентация, че сега имате само 8 минути.
+
+За всеки сценарий предоставете:
+- Незабавна реакция
+- Техника за възстановяване, използвайки принципи от лекцията
+- Как да поддържате уверено поведение през цялото време
+
+<CollapsibleSection title="✅ Примерен отговор">
+
+**1. Технически провал - Демото се срива**
+
+*Незабавна реакция:*
+"Е, това е перфектен пример защо имаме error handling!" (използвайте хумор за намаляване на напрежението)
+
+*Техника за възстановяване:*
+- Винаги имайте backup: screenshots, записано видео, или статични слайдове
+- Превключете към: "Нека ви покажа какво щеше да видите..." със screenshots
+- Ако е бърз fix, кажете: "Дайте ми 30 секунди" и поправете, докато обяснявате какво правите
+
+*Уверено поведение:*
+- Не се извинявайте прекалено - един път е достатъчно
+- Поддържайте контакт с очите
+- Говорете със същия тон, без паника в гласа
+
+---
+
+**2. Враждебен въпрос - "Това никога няма да scale-не"**
+
+*Незабавна реакция:*
+"Благодаря за въпроса - scaling е критично важен. Позволете ми да адресирам това директно."
+
+*Техника за възстановяване:*
+- Acknowledge: "Разбирам загрижеността"
+- Bridge: "Помислихме за това и..."
+- Доказателство: Конкретни данни - "Тествахме с 10x текущия load и..."
+- Redirect: "Но основната ни цел днес е... Можем да обсъдим scaling детайлно след презентацията"
+
+*Уверено поведение:*
+- Не ставайте defensive
+- Поддържайте отворена поза
+- Говорете по-бавно, не по-бързо
+
+---
+
+**3. Загубена аудитория - Нетехническите са объркани**
+
+*Незабавна реакция:*
+Спрете и адресирайте: "Виждам, че това става много техническо. Нека се върнем назад."
+
+*Техника за възстановяване:*
+- Използвайте аналогия: "Мислете за това като за..."
+- Покажете визуализация вместо код
+- Фокусирайте се на "какво означава това за бизнеса"
+- Попитайте: "Има ли въпроси до тук преди да продължим?"
+
+*Уверено поведение:*
+- Признайте проблема - не го игнорирайте
+- Направете пауза и се адаптирайте
+- Покажете, че ви е грижа аудиторията да разбира
+
+---
+
+**4. Съкратено време - От 20 на 8 минути**
+
+*Незабавна реакция:*
+"Разбирам. Ще се фокусирам върху най-важното."
+
+*Техника за възстановяване:*
+- Използвайте Pyramid Principle - извод първо
+- Пропуснете: подробни обяснения, демо, Q&A
+- Запазете: Проблем, Решение (high-level), Резултат
+- Предложете: "Детайлите са в документа, който ще споделя след срещата"
+
+*Уверено поведение:*
+- Не бързайте - по-добре е да покриете по-малко, но ясно
+- Не се извинявайте за съкратеното съдържание
+- Завършете силно с ясен call-to-action
+
+</CollapsibleSection>
+
+</ExerciseCard>

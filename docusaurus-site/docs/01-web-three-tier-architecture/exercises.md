@@ -13,7 +13,7 @@ import WarningBox from '@site/src/components/InfoBoxes/WarningBox';
 import SuccessBox from '@site/src/components/InfoBoxes/SuccessBox';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Exercises: Three-Tier Architecture in Web Applications
+# Упражнения: Трислойна Архитектура в Уеб Приложения
 
 <img src={useBaseUrl('/img/diagrams/three-tier/exercises-header.svg')} alt="Three-Tier Architecture Exercises Header" style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}} />
 
@@ -25,17 +25,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 1: Three Tiers Identification
+### Задача 1: Идентифициране на Трите Слоя
 
-What are the three tiers in three-tier architecture? List each tier and provide one sentence describing its primary responsibility.
+Кои са трите слоя в трислойната архитектура? Изброй всеки слой и предостави едно изречение, описващо основната му отговорност.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex1-three-tiers.svg')} alt="Three Tiers Diagram" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-1. **Presentation Tier** - Responsible for displaying information to users and gathering their input through the user interface.
-2. **Application/Business Logic Tier** - Processes business rules, handles data validation, and orchestrates communication between tiers.
-3. **Data Tier** - Manages data storage, retrieval, and persistence in databases or other storage systems.
+1. **Presentation Tier** - Отговаря за показването на информация на потребителите и събирането на техния вход чрез потребителския интерфейс.
+2. **Application/Business Logic Tier** - Обработва бизнес правилата, валидира данните и координира комуникацията между слоевете.
+3. **Data Tier** - Управлява съхранението, извличането и устойчивостта на данните в бази данни или други системи за съхранение.
 
 </CollapsibleSection>
 
@@ -45,22 +45,22 @@ What are the three tiers in three-tier architecture? List each tier and provide 
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 2: Multiple Choice - User Interface Tier
+### Задача 2: Избор от Много Варианти - Слой за Потребителски Интерфейс
 
-Which tier is responsible for displaying information to the user and gathering their input?
+Кой слой е отговорен за показването на информация на потребителя и събирането на неговия вход?
 
 A) Data Tier
 B) Application/Business Logic Tier
 C) Presentation Tier
 D) Network Tier
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: C) Presentation Tier**
+**Отговор: C) Presentation Tier**
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex2-multiple-choice.svg')} alt="Multiple Choice Answer" style={{width: '100%', maxWidth: '500px', margin: '20px auto', display: 'block'}} />
 
-The Presentation Tier (also called the UI tier or client tier) is specifically designed to handle all user interactions, including displaying data and collecting user input.
+Presentation Tier (наричан още UI слой или клиентски слой) е специално проектиран да обработва всички взаимодействия с потребителя, включително показване на данни и събиране на потребителски вход.
 
 </CollapsibleSection>
 
@@ -70,20 +70,20 @@ The Presentation Tier (also called the UI tier or client tier) is specifically d
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 3: True or False - Direct Database Access
+### Задача 3: Вярно или Невярно - Директен Достъп до Базата Данни
 
-True or False - In three-tier architecture, the presentation tier can directly query the database to retrieve user information.
+Вярно или Невярно - В трислойната архитектура Presentation Tier може директно да прави заявки към базата данни за извличане на информация за потребителя.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: False**
+**Отговор: Невярно**
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex3-wrong-vs-correct.svg')} alt="Wrong vs Correct Approach" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-In proper three-tier architecture, the presentation tier should **never** directly access the database. All data requests must go through the Application/Business Logic Tier, which then communicates with the Data Tier. This separation ensures:
-- Security (credentials not exposed to client)
-- Centralized business logic
-- Easier maintenance and scalability
+В правилната трислойна архитектура Presentation Tier **никога** не трябва директно да осъществява достъп до базата данни. Всички заявки за данни трябва да минават през Application/Business Logic Tier, който след това комуникира с Data Tier. Това разделение осигурява:
+- Сигурност (идентификационните данни не са изложени на клиента)
+- Централизирана бизнес логика
+- По-лесна поддръжка и мащабируемост
 
 </CollapsibleSection>
 
@@ -93,30 +93,30 @@ In proper three-tier architecture, the presentation tier should **never** direct
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 4: Technology Matching
+### Задача 4: Съпоставяне на Технологии
 
-Match each technology to its most appropriate tier:
+Съпостави всяка технология с най-подходящия слой:
 
-| Technology | Tier |
+| Технология | Слой |
 |------------|------|
 | 1. MySQL | A. Presentation |
 | 2. React | B. Application/Business Logic |
 | 3. Node.js with Express | C. Data |
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex4-technology-matching.svg')} alt="Technology Matching" style={{width: '100%', maxWidth: '650px', margin: '20px auto', display: 'block'}} />
 
-| Technology | Tier |
+| Технология | Слой |
 |------------|------|
 | 1. MySQL | **C. Data** |
 | 2. React | **A. Presentation** |
 | 3. Node.js with Express | **B. Application/Business Logic** |
 
-**Explanation:**
-- **MySQL** is a relational database management system → Data Tier
-- **React** is a frontend JavaScript library for building UIs → Presentation Tier
-- **Node.js with Express** is a backend framework for APIs → Application Tier
+**Обяснение:**
+- **MySQL** е система за управление на релационни бази данни → Data Tier
+- **React** е frontend JavaScript библиотека за изграждане на потребителски интерфейси → Presentation Tier
+- **Node.js with Express** е backend framework за API-та → Application Tier
 
 </CollapsibleSection>
 
@@ -126,21 +126,21 @@ Match each technology to its most appropriate tier:
 
 <ExerciseCard difficulty="easy">
 
-### Exercise 5: Fill in the Blanks
+### Задача 5: Попълни Празните Места
 
-Fill in the blanks: The core principle driving three-tier architecture is called **____________ of ____________**, meaning each tier handles a specific set of responsibilities distinct from the others.
+Попълни празните места: Основният принцип, движещ трислойната архитектура, се нарича **____________ of ____________**, което означава, че всеки слой обработва специфичен набор от отговорности, различни от останалите.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: Separation of Concerns**
+**Отговор: Separation of Concerns**
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex5-separation-of-concerns.svg')} alt="Separation of Concerns" style={{width: '100%', maxWidth: '600px', margin: '20px auto', display: 'block'}} />
 
-This fundamental principle ensures that:
-- Each tier has a single, well-defined responsibility
-- Changes to one tier don't require changes to others
-- Teams can work independently on different tiers
-- Testing and maintenance become easier
+Този фундаментален принцип осигурява:
+- Всеки слой има единствена, добре дефинирана отговорност
+- Промените в един слой не изискват промени в другите
+- Екипите могат да работят независимо по различните слоеве
+- Тестването и поддръжката стават по-лесни
 
 </CollapsibleSection>
 
@@ -152,33 +152,33 @@ This fundamental principle ensures that:
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 6: Login Flow Data Path
+### Задача 6: Път на Данните при Вход в Системата
 
-Describe the complete data flow when a user submits a login form in a three-tier web application. Include all six steps from user interaction to the final response displayed.
+Опиши пълния поток от данни, когато потребител изпраща форма за вход в трислойно уеб приложение. Включи всичките шест стъпки от взаимодействието с потребителя до крайния показан отговор.
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-Think about each tier's role: Where does the user interact? Where is the password validated? Where is user data stored?
+Помисли за ролята на всеки слой: Къде потребителят взаимодейства? Къде се валидира паролата? Къде се съхраняват данните за потребителя?
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex6-login-flow.svg')} alt="Login Flow Diagram" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Complete Login Data Flow:**
+**Пълен Поток на Данните при Вход:**
 
-1. **User Interaction (Presentation):** User enters username and password in the login form and clicks "Submit"
+1. **Взаимодействие с Потребителя (Presentation):** Потребителят въвежда потребителско име и парола във формата за вход и натиска "Submit"
 
-2. **Request to Server (Presentation → Application):** The frontend sends an HTTP POST request with credentials to the API endpoint (e.g., `/api/auth/login`)
+2. **Заявка към Сървъра (Presentation → Application):** Frontend-ът изпраща HTTP POST заявка с идентификационните данни към API endpoint-а (напр. `/api/auth/login`)
 
-3. **Business Logic Processing (Application):** The backend validates input format and hashes the password
+3. **Обработка на Бизнес Логика (Application):** Backend-ът валидира формата на входа и хешира паролата
 
-4. **Database Query (Application → Data):** The database searches for the user and returns the stored password hash
+4. **Заявка към Базата Данни (Application → Data):** Базата данни търси потребителя и връща съхранения хеш на паролата
 
-5. **Authentication Decision (Application):** The backend compares password hashes, generates a session token/JWT if valid
+5. **Решение за Автентикация (Application):** Backend-ът сравнява хешовете на паролите, генерира session token/JWT ако са валидни
 
-6. **Response Display (Presentation):** The frontend stores the token (if successful), redirects to dashboard or shows error message
+6. **Показване на Отговор (Presentation):** Frontend-ът съхранява токена (ако е успешно), пренасочва към dashboard или показва съобщение за грешка
 
 </CollapsibleSection>
 
@@ -188,9 +188,9 @@ Think about each tier's role: Where does the user interact? Where is the passwor
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 7: Architectural Violation Analysis
+### Задача 7: Анализ на Архитектурни Нарушения
 
-A developer writes the following code in their React component (Presentation Tier):
+Разработчик пише следния код в своя React компонент (Presentation Tier):
 
 ```javascript
 const getUserData = async (userId) => {
@@ -205,29 +205,29 @@ const getUserData = async (userId) => {
 }
 ```
 
-Identify what architectural violation is occurring here and explain why this is problematic. How should this be restructured?
+Идентифицирай какво архитектурно нарушение се случва тук и обясни защо това е проблематично. Как трябва да бъде преструктурирано?
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-Consider: Where should database connections live? What security risks exist? What happens if database credentials change?
+Помисли: Къде трябва да живеят връзките към базата данни? Какви рискове за сигурността съществуват? Какво се случва, ако идентификационните данни на базата данни се променят?
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex7-architectural-violation.svg')} alt="Architectural Violation Analysis" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Violations Identified:**
+**Идентифицирани Нарушения:**
 
-1. **Direct Database Access from Presentation Tier** - The frontend should never connect directly to the database
+1. **Директен Достъп до Базата Данни от Presentation Tier** - Frontend-ът никога не трябва да се свързва директно с базата данни
 
-2. **Exposed Credentials** - Database credentials are hardcoded in client-side code, visible to anyone
+2. **Изложени Идентификационни Данни** - Идентификационните данни за базата данни са hardcoded в клиентския код, видими за всички
 
-3. **SQL Injection Vulnerability** - String interpolation allows malicious SQL injection
+3. **SQL Injection Уязвимост** - String интерполацията позволява злонамерена SQL injection атака
 
-4. **No Business Logic Layer** - Bypasses validation and authorization checks
+4. **Липсва Слой за Бизнес Логика** - Заобикаля проверките за валидация и авторизация
 
-**Correct Architecture:**
+**Правилна Архитектура:**
 
 ```javascript
 // Presentation Tier (React)
@@ -260,31 +260,31 @@ class UserRepository {
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 8: Three-Tier vs Monolithic Comparison
+### Задача 8: Сравнение на Трислойна и Монолитна Архитектура
 
-Compare and contrast three-tier architecture with a monolithic application. Provide at least three specific differences and explain when you might choose one approach over the other.
+Сравни трислойната архитектура с монолитно приложение. Предостави поне три конкретни разлики и обясни кога може да избереш единия подход пред другия.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex8-monolith-vs-three-tier.svg')} alt="Monolith vs Three-Tier Comparison" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-| Aspect | Monolithic | Three-Tier |
+| Аспект | Монолитна | Трислойна |
 |--------|------------|------------|
-| **Deployment** | Single deployable unit | Each tier deployed independently |
-| **Scaling** | Scale entire application | Scale individual tiers as needed |
-| **Development** | All code in one codebase | Separate codebases possible |
-| **Complexity** | Simpler initial setup | More infrastructure overhead |
-| **Team Structure** | Single team manages all | Teams can specialize by tier |
+| **Разполагане** | Единична deployable единица | Всеки слой се разполага независимо |
+| **Мащабиране** | Мащабиране на цялото приложение | Мащабиране на отделните слоеве при нужда |
+| **Разработка** | Целият код в една codebase | Възможни са отделни codebases |
+| **Сложност** | По-проста начална настройка | Повече инфраструктурни разходи |
+| **Структура на Екипа** | Един екип управлява всичко | Екипите могат да се специализират по слой |
 
-**Choose Monolithic When:**
-- Building MVP or prototype
-- Small team (1-5 developers)
-- Simple application requirements
+**Избери Монолитна Когато:**
+- Изграждаш MVP или прототип
+- Малък екип (1-5 разработчици)
+- Прости изисквания към приложението
 
-**Choose Three-Tier When:**
-- Application will scale significantly
-- Multiple teams working simultaneously
-- Need independent scaling of components
+**Избери Трислойна Когато:**
+- Приложението ще се мащабира значително
+- Множество екипи работят едновременно
+- Необходимо е независимо мащабиране на компонентите
 
 </CollapsibleSection>
 
@@ -294,34 +294,34 @@ Compare and contrast three-tier architecture with a monolithic application. Prov
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 9: Black Friday Scaling Scenario
+### Задача 9: Сценарий за Мащабиране на Black Friday
 
-An e-commerce website experiences a sudden spike in traffic during a Black Friday sale. The database is handling queries efficiently, but users are experiencing slow page loads. Using your knowledge of three-tier architecture, which tier(s) would you scale and how? Justify your answer.
+Уебсайт за електронна търговия изпитва внезапен скок в трафика по време на Black Friday разпродажба. Базата данни обработва заявките ефективно, но потребителите изпитват бавно зареждане на страниците. Използвайки знанията си за трислойната архитектура, кой слой/слоеве би мащабирал и как? Обоснови отговора си.
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-If the database is fine but pages are slow, where is the bottleneck? Consider what happens between user request and database query.
+Ако базата данни работи добре, но страниците са бавни, къде е тесното място? Помисли какво се случва между заявката на потребителя и заявката към базата данни.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Primary Scaling Target: Application Tier and Presentation Tier**
+**Основна Цел за Мащабиране: Application Tier и Presentation Tier**
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex9-horizontal-scaling.svg')} alt="Horizontal Scaling Architecture" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Reasoning:**
-Since the database is performing well, the bottleneck is likely in:
+**Обосновка:**
+Тъй като базата данни работи добре, тесното място вероятно е в:
 
 1. **Application Tier (Backend):**
-   - Add more server instances behind a load balancer
-   - Implement horizontal scaling with auto-scaling groups
-   - Add caching layer (Redis/Memcached) to reduce redundant processing
+   - Добави повече сървърни инстанции зад load balancer
+   - Имплементирай хоризонтално мащабиране с auto-scaling групи
+   - Добави кеширащ слой (Redis/Memcached) за намаляване на излишната обработка
 
 2. **Presentation Tier (Frontend):**
-   - Deploy static assets to CDN (Content Delivery Network)
-   - Enable browser caching for static resources
-   - Implement server-side rendering caching
+   - Разположи статичните ресурси в CDN (Content Delivery Network)
+   - Активирай кеширане в браузъра за статични ресурси
+   - Имплементирай кеширане на server-side rendering
 
 </CollapsibleSection>
 
@@ -331,32 +331,32 @@ Since the database is performing well, the bottleneck is likely in:
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 10: Three-Tier vs Clean Architecture
+### Задача 10: Трислойна срещу Clean Архитектура
 
-Multiple Choice - What is the primary difference between Three-Tier Architecture and Clean Architecture?
+Избор от Много Варианти - Коя е основната разлика между Трислойната Архитектура и Clean Architecture?
 
-A) Three-tier uses three layers while Clean Architecture uses only two
-B) Three-tier focuses on deployment/scaling separation while Clean Architecture focuses on code organization and testability
-C) Clean Architecture doesn't support databases
-D) Three-tier is only for web applications while Clean Architecture is for mobile apps
+A) Трислойната използва три слоя, докато Clean Architecture използва само два
+B) Трислойната се фокусира върху разделение на deployment/scaling, докато Clean Architecture се фокусира върху организация на кода и тестваемост
+C) Clean Architecture не поддържа бази данни
+D) Трислойната е само за уеб приложения, докато Clean Architecture е за мобилни приложения
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
-**Answer: B) Three-tier focuses on deployment/scaling separation while Clean Architecture focuses on code organization and testability**
+**Отговор: B) Трислойната се фокусира върху разделение на deployment/scaling, докато Clean Architecture се фокусира върху организация на кода и тестваемост**
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex10-three-tier-vs-clean.svg')} alt="Three-Tier vs Clean Architecture" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Key Distinctions:**
+**Ключови Разлики:**
 
-| Three-Tier Architecture | Clean Architecture |
+| Трислойна Архитектура | Clean Architecture |
 |------------------------|-------------------|
-| **Physical separation** of concerns | **Logical separation** of concerns |
-| Focuses on **deployment** | Focuses on **code structure** |
-| Tiers can be on different servers | Layers within same application |
-| Enables **horizontal scaling** | Enables **testability** |
-| Infrastructure-oriented | Domain-oriented |
+| **Физическо разделение** на отговорностите | **Логическо разделение** на отговорностите |
+| Фокус върху **deployment** | Фокус върху **структура на кода** |
+| Слоевете могат да са на различни сървъри | Слоевете са в рамките на същото приложение |
+| Позволява **хоризонтално мащабиране** | Позволява **тестваемост** |
+| Ориентирана към инфраструктурата | Ориентирана към домейна |
 
-**They can be combined:** A three-tier deployment can use Clean Architecture principles within each tier for better code organization.
+**Могат да се комбинират:** Трислойното разполагане може да използва принципите на Clean Architecture във всеки слой за по-добра организация на кода.
 
 </CollapsibleSection>
 
@@ -366,9 +366,9 @@ D) Three-tier is only for web applications while Clean Architecture is for mobil
 
 <ExerciseCard difficulty="medium">
 
-### Exercise 11: Monolithic Code Analysis
+### Задача 11: Анализ на Монолитен Код
 
-Given the following monolithic code snippet, identify which parts belong to each tier and create a table mapping each component:
+Като вземеш следния фрагмент от монолитен код, идентифицирай кои части принадлежат на всеки слой и създай таблица, съпоставяща всеки компонент:
 
 ```php
 <?php
@@ -401,26 +401,26 @@ echo "</body></html>";
 ?>
 ```
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex11-monolithic-code-analysis.svg')} alt="Monolithic Code Analysis" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-| Code Lines | Tier | Responsibility |
+| Редове Код | Слой | Отговорност |
 |------------|------|----------------|
-| `echo "<html><body>"`, `echo "<h1>..."` | **Presentation** | HTML structure and layout |
-| `echo "<div class='product'>..."` | **Presentation** | Rendering product data |
-| `mysqli_connect(...)` | **Data** | Database connection |
-| `mysqli_query(...)`, `mysqli_fetch_assoc()` | **Data** | Data retrieval |
-| `if (isset($_SESSION['user_id']))` | **Application** | Authorization check |
-| `$discount = 0.10` logic | **Application** | Business rule (pricing) |
-| `$final_price = ...` | **Application** | Business calculation |
+| `echo "<html><body>"`, `echo "<h1>..."` | **Presentation** | HTML структура и оформление |
+| `echo "<div class='product'>..."` | **Presentation** | Визуализиране на продуктови данни |
+| `mysqli_connect(...)` | **Data** | Връзка с база данни |
+| `mysqli_query(...)`, `mysqli_fetch_assoc()` | **Data** | Извличане на данни |
+| `if (isset($_SESSION['user_id']))` | **Application** | Проверка за авторизация |
+| `$discount = 0.10` логика | **Application** | Бизнес правило (ценообразуване) |
+| `$final_price = ...` | **Application** | Бизнес изчисление |
 
-**Problems with this approach:**
-- All tiers mixed in single file
-- No separation of concerns
-- Difficult to test individual components
-- Cannot scale tiers independently
-- Security vulnerabilities exposed
+**Проблеми с този подход:**
+- Всички слоеве смесени в един файл
+- Няма разделение на отговорностите
+- Трудно тестване на отделните компоненти
+- Невъзможно независимо мащабиране на слоевете
+- Изложени уязвимости в сигурността
 
 </CollapsibleSection>
 
@@ -432,50 +432,50 @@ echo "</body></html>";
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 12: University Course Registration System Design
+### Задача 12: Проектиране на Университетска Система за Записване за Курсове
 
-Design a three-tier architecture for a university course registration system. Your design should include:
+Проектирай трислойна архитектура за университетска система за записване за курсове. Твоят дизайн трябва да включва:
 
-1. Specific responsibilities for each tier
-2. At least 3 API endpoints the Presentation Tier would call
-3. At least 3 business rules that would be enforced in the Application Tier
-4. The database tables/collections needed in the Data Tier
-5. A diagram showing the data flow for a student registering for a course
+1. Конкретни отговорности за всеки слой
+2. Поне 3 API endpoint-а, които Presentation Tier би извиквал
+3. Поне 3 бизнес правила, които биха се прилагали в Application Tier
+4. Таблиците/колекциите в базата данни, необходими в Data Tier
+5. Диаграма, показваща потока от данни при записване на студент за курс
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-Consider: What information does a student need to see? What rules prevent invalid registrations? What data relationships exist?
+Помисли: Каква информация трябва да вижда студентът? Кои правила предотвратяват невалидни записвания? Какви релации между данните съществуват?
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex12-university-registration.svg')} alt="University Course Registration System" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
-**1. Tier Responsibilities:**
+**1. Отговорности на Слоевете:**
 
-| Tier | Responsibilities |
+| Слой | Отговорности |
 |------|------------------|
-| **Presentation** | Student portal UI, course catalog display, registration forms, schedule view |
-| **Application** | Authentication, enrollment validation, prerequisite checking, capacity management |
-| **Data** | Student records, course catalog, enrollment history, schedule data |
+| **Presentation** | Студентски портал UI, показване на каталог с курсове, форми за записване, изглед на разписание |
+| **Application** | Автентикация, валидация на записването, проверка на предпоставки, управление на капацитета |
+| **Data** | Записи на студенти, каталог с курсове, история на записвания, данни за разписание |
 
-**2. API Endpoints:**
+**2. API Endpoint-и:**
 
 ```
-GET  /api/courses                    - List available courses
-GET  /api/courses/:id/sections       - Get sections for a course
-POST /api/enrollments                - Register for a course
-GET  /api/students/:id/schedule      - Get student's schedule
-DELETE /api/enrollments/:id          - Drop a course
+GET  /api/courses                    - Списък на налични курсове
+GET  /api/courses/:id/sections       - Вземане на секции за курс
+POST /api/enrollments                - Записване за курс
+GET  /api/students/:id/schedule      - Вземане на разписанието на студент
+DELETE /api/enrollments/:id          - Отписване от курс
 ```
 
-**3. Business Rules (Application Tier):**
+**3. Бизнес Правила (Application Tier):**
 
-1. **Prerequisite Validation:** Student must have completed all prerequisite courses with grade C or better
-2. **Capacity Management:** Cannot exceed maximum class size; add to waitlist if full
-3. **Credit Limit:** Students cannot register for more than 18 credits per semester
-4. **Schedule Conflict:** Cannot enroll in courses with overlapping times
+1. **Валидация на Предпоставки:** Студентът трябва да е завършил всички предварителни курсове с оценка C или по-добра
+2. **Управление на Капацитета:** Не може да се надвишава максималният размер на класа; добавяне в списък на чакащи, ако е пълен
+3. **Лимит на Кредити:** Студентите не могат да се записват за повече от 18 кредита на семестър
+4. **Конфликт в Разписанието:** Не може записване за курсове с припокриващо се време
 
 </CollapsibleSection>
 
@@ -485,39 +485,39 @@ DELETE /api/enrollments/:id          - Drop a course
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 13: Banking Application Refactoring Plan
+### Задача 13: План за Рефакториране на Банково Приложение
 
-You are tasked with refactoring a legacy monolithic banking application into a three-tier architecture. The application currently handles: user authentication, account balance checks, fund transfers, transaction history, and fraud detection.
+Възложена ти е задача да рефакторираш наследено монолитно банково приложение в трислойна архитектура. Приложението в момента обработва: автентикация на потребители, проверки на баланс по сметка, преводи на средства, история на транзакции и откриване на измами.
 
-Create a detailed refactoring plan that includes:
-- How you would phase the refactoring (using the Strangler Fig Pattern)
-- Risk mitigation strategies during the transition
-- How you would ensure zero downtime during migration
+Създай детайлен план за рефакториране, който включва:
+- Как би фазирал рефакторирането (използвайки Strangler Fig Pattern)
+- Стратегии за намаляване на риска по време на прехода
+- Как би осигурил нулев престой по време на миграцията
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-The Strangler Fig Pattern involves gradually replacing parts of the old system while keeping it running. Start with the least risky components.
+Strangler Fig Pattern включва постепенна замяна на части от старата система, докато тя продължава да работи. Започни с най-малко рисковите компоненти.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex13-strangler-fig-pattern.svg')} alt="Strangler Fig Pattern - Migration Phases" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
-**Phase-by-Phase Migration:**
+**Миграция Фаза по Фаза:**
 
-| Phase | Duration | Focus | Risk Level |
+| Фаза | Продължителност | Фокус | Ниво на Риск |
 |-------|----------|-------|------------|
-| **Phase 1** | Weeks 1-4 | Infrastructure setup | Low |
-| **Phase 2** | Weeks 5-8 | Read operations | Low |
-| **Phase 3** | Weeks 9-16 | Auth & Transfers | High |
-| **Phase 4** | Weeks 17-24 | Fraud & Cleanup | Medium |
+| **Фаза 1** | Седмици 1-4 | Настройка на инфраструктурата | Нисък |
+| **Фаза 2** | Седмици 5-8 | Операции за четене | Нисък |
+| **Фаза 3** | Седмици 9-16 | Автентикация и Преводи | Висок |
+| **Фаза 4** | Седмици 17-24 | Измами и Почистване | Среден |
 
-**Zero Downtime Approach:**
-1. Run both systems in parallel
-2. Use feature flags to control routing
-3. Gradual traffic shift with monitoring
-4. Instant rollback capability
+**Подход за Нулев Престой:**
+1. Изпълнение на двете системи паралелно
+2. Използване на feature flags за контрол на маршрутизирането
+3. Постепенно прехвърляне на трафика с мониторинг
+4. Възможност за незабавно връщане назад
 
 </CollapsibleSection>
 
@@ -527,36 +527,36 @@ The Strangler Fig Pattern involves gradually replacing parts of the old system w
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 14: Critical Analysis - Startup Architecture Decision
+### Задача 14: Критичен Анализ - Архитектурно Решение за Стартъп
 
-A startup argues that three-tier architecture is unnecessary overhead for their new social media application because "Netflix started as a monolith."
+Стартъп твърди, че трислойната архитектура е ненужно натоварване за тяхното ново приложение за социални медии, защото "Netflix започна като монолит."
 
-Write a detailed response evaluating this argument. Consider:
-- When this argument might be valid
-- When this argument might be flawed
-- A recommended approach with justification
+Напиши детайлен отговор, оценяващ този аргумент. Помисли за:
+- Кога този аргумент може да е валиден
+- Кога този аргумент може да е грешен
+- Препоръчителен подход с обосновка
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex14-startup-architecture-decision.svg')} alt="Startup Architecture Decision Analysis" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Analysis Summary:**
+**Резюме на Анализа:**
 
-| Factor | Monolith OK | Three-Tier Needed |
+| Фактор | Монолит ОК | Нужна е Трислойна |
 |--------|-------------|-------------------|
-| Team Size | 1-5 devs | 10+ devs |
-| Growth | Predictable | Viral potential |
-| Budget | Limited | Adequate |
-| Timeline | MVP/Fast | Long-term product |
+| Размер на Екипа | 1-5 разработчици | 10+ разработчици |
+| Растеж | Предвидим | Вирусен потенциал |
+| Бюджет | Ограничен | Адекватен |
+| График | MVP/Бързо | Дългосрочен продукт |
 
-**Recommended Approach: Modular Monolith**
+**Препоръчан Подход: Модулен Монолит**
 
-Start with a well-structured monolith that has clear internal boundaries. This gives you:
-- Fast initial development
-- Clear extraction path for later
-- Best of both worlds
+Започни с добре структуриран монолит, който има ясни вътрешни граници. Това ти дава:
+- Бърза първоначална разработка
+- Ясен път за извличане по-късно
+- Най-доброто от двата свята
 
-The startup's argument has merit for the initial phase, but they should plan the extraction path from day one and set scaling thresholds that trigger migration.
+Аргументът на стартъпа има основание за началната фаза, но те трябва да планират пътя за извличане от първия ден и да зададат прагове на мащабиране, които задействат миграцията.
 
 </CollapsibleSection>
 
@@ -566,21 +566,21 @@ The startup's argument has merit for the initial phase, but they should plan the
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 15: Ports and Adapters Implementation
+### Задача 15: Имплементация на Ports and Adapters
 
-Explain how you would implement "ports and adapters" within the Application Tier of a three-tier architecture to allow switching from a MySQL database to MongoDB without affecting business logic.
+Обясни как би имплементирал "ports and adapters" в рамките на Application Tier на трислойна архитектура, за да позволиш превключване от MySQL база данни към MongoDB без да засегнеш бизнес логиката.
 
-<CollapsibleSection title="💡 Hint">
+<CollapsibleSection title="💡 Подсказка">
 
-Think of a "port" as an interface that your business logic depends on, and "adapters" as implementations that connect to specific technologies.
+Мисли за "port" като интерфейс, от който бизнес логиката ти зависи, и "adapters" като имплементации, които се свързват с конкретни технологии.
 
 </CollapsibleSection>
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex15-ports-and-adapters.svg')} alt="Ports and Adapters Architecture" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Port (Interface) Definition:**
+**Дефиниция на Port (Interface):**
 
 ```typescript
 // ports/UserRepository.ts - The "Port"
@@ -592,7 +592,7 @@ interface UserRepository {
 }
 ```
 
-**Adapter Implementations:**
+**Имплементации на Adapter:**
 
 ```typescript
 // MySQL Adapter
@@ -614,11 +614,11 @@ class MongoUserRepository implements UserRepository {
 }
 ```
 
-**Benefits:**
-- Technology independence
-- Easy testing with mock adapters
-- Gradual migration support
-- Clean domain focus
+**Предимства:**
+- Независимост от технологията
+- Лесно тестване с mock adapters
+- Поддръжка на постепенна миграция
+- Чист фокус върху домейна
 
 </CollapsibleSection>
 
@@ -628,27 +628,27 @@ class MongoUserRepository implements UserRepository {
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 16: Food Delivery Application Architecture
+### Задача 16: Архитектура на Приложение за Доставка на Храна
 
-Design and document a complete three-tier architecture for a food delivery application (similar to Uber Eats or DoorDash).
+Проектирай и документирай пълна трислойна архитектура за приложение за доставка на храна (подобно на Uber Eats или DoorDash).
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex16-food-delivery.svg')} alt="Food Delivery System Architecture" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
-**Key Components:**
+**Ключови Компоненти:**
 
-| Tier | Components | Technologies |
+| Слой | Компоненти | Технологии |
 |------|------------|--------------|
 | **Presentation** | Customer App, Restaurant Dashboard, Driver App | React Native, React |
 | **Application** | Order Service, Payment Service, Tracking Service | Node.js, WebSocket |
 | **Data** | Users, Orders, Restaurants, Payments, Locations | PostgreSQL, Redis |
 
-**Business Rules:**
-- Delivery radius validation
-- Dynamic pricing during peak hours
-- Driver assignment algorithm
-- Real-time order tracking via WebSocket
+**Бизнес Правила:**
+- Валидация на радиус за доставка
+- Динамично ценообразуване в пиковите часове
+- Алгоритъм за назначаване на шофьор
+- Проследяване на поръчки в реално време чрез WebSocket
 
 </CollapsibleSection>
 
@@ -658,9 +658,9 @@ Design and document a complete three-tier architecture for a food delivery appli
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 17: Debugging Order Duplication
+### Задача 17: Дебъгване на Дублиране на Поръчки
 
-A three-tier application is experiencing intermittent failures where some user orders are being duplicated in the database. The system logs show:
+Трислойно приложение изпитва периодични грешки, при които някои потребителски поръчки се дублират в базата данни. Системните логове показват:
 
 ```
 [Presentation] Order submitted: ORDER-12345
@@ -671,25 +671,25 @@ A three-tier application is experiencing intermittent failures where some user o
 [Data] INSERT order ORDER-12345 - Success (duplicate)
 ```
 
-1. Explain what architectural issue is causing this problem
-2. Propose at least two different solutions at different tiers
-3. How would you prevent this in the future?
+1. Обясни какъв архитектурен проблем причинява този проблем
+2. Предложи поне две различни решения на различни слоеве
+3. Как би предотвратил това в бъдеще?
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex17-order-duplication.svg')} alt="Order Duplication Bug Analysis" style={{width: '100%', maxWidth: '700px', margin: '20px auto', display: 'block'}} />
 
-**Root Cause:** The timeout occurs before the database response, but the INSERT actually succeeds. The retry then creates a duplicate.
+**Коренна Причина:** Timeout-ът настъпва преди отговора от базата данни, но INSERT-ът всъщност успява. Повторният опит след това създава дубликат.
 
-**Solutions:**
+**Решения:**
 
-| Tier | Solution | Benefit |
+| Слой | Решение | Предимство |
 |------|----------|---------|
-| **Data** | `UNIQUE (order_id)` constraint | Guaranteed no duplicates |
-| **Application** | Idempotency key + Redis cache | Fast rejection, no DB hit |
-| **Presentation** | Disable submit button | Prevents double-click |
+| **Data** | `UNIQUE (order_id)` ограничение | Гарантирано няма дубликати |
+| **Application** | Idempotency key + Redis cache | Бързо отхвърляне, без заявка към БД |
+| **Presentation** | Деактивиране на бутона за изпращане | Предотвратява двойно кликване |
 
-**Best Practice:** Use **all three** for defense in depth!
+**Най-добра Практика:** Използвай **и трите** за защита в дълбочина!
 
 </CollapsibleSection>
 
@@ -699,31 +699,31 @@ A three-tier application is experiencing intermittent failures where some user o
 
 <ExerciseCard difficulty="hard">
 
-### Exercise 18: Architecture Comparison - Add to Cart
+### Задача 18: Сравнение на Архитектури - Добавяне в Количка
 
-Compare how the same feature—"User adds item to shopping cart"—would be implemented in:
+Сравни как същата функционалност - "Потребителят добавя артикул в количката за пазаруване" - би се имплементирала в:
 
-A) Monolithic architecture
-B) Three-tier architecture
-C) Microservices architecture
+A) Монолитна архитектура
+B) Трислойна архитектура
+C) Микросървизна архитектура
 
-For each, describe code organization and scaling implications.
+За всяка опиши организацията на кода и импликациите за мащабиране.
 
-<CollapsibleSection title="✅ Solution">
+<CollapsibleSection title="✅ Решение">
 
 <img src={useBaseUrl('/img/diagrams/three-tier/ex18-architecture-comparison.svg')} alt="Architecture Comparison - Add to Cart" style={{width: '100%', maxWidth: '750px', margin: '20px auto', display: 'block'}} />
 
-**Decision Matrix:**
+**Матрица за Решение:**
 
-| Factor | Monolith | Three-Tier | Microservices |
+| Фактор | Монолит | Трислойна | Микросървизи |
 |--------|----------|------------|---------------|
-| Team Size | 1-5 | 5-15 | 15+ |
-| Time to Market | ⭐⭐⭐ | ⭐⭐ | ⭐ |
-| Scalability | ⭐ | ⭐⭐ | ⭐⭐⭐ |
-| Maintainability | ⭐ | ⭐⭐ | ⭐⭐⭐ |
-| Complexity | Low | Medium | High |
+| Размер на Екипа | 1-5 | 5-15 | 15+ |
+| Време до Пазара | ⭐⭐⭐ | ⭐⭐ | ⭐ |
+| Мащабируемост | ⭐ | ⭐⭐ | ⭐⭐⭐ |
+| Поддръжка | ⭐ | ⭐⭐ | ⭐⭐⭐ |
+| Сложност | Ниска | Средна | Висока |
 
-**Recommendation:** Start with **Three-Tier** as the default choice. It offers the best balance of simplicity and scalability for most applications.
+**Препоръка:** Започни с **Трислойна** като избор по подразбиране. Тя предлага най-добрия баланс между простота и мащабируемост за повечето приложения.
 
 </CollapsibleSection>
 
