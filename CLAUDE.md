@@ -1,6 +1,40 @@
-# Claude Code Instructions - University Lectures Template
+# CLAUDE.md
 
-Comprehensive instructions for working with the university lectures Docusaurus template.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Overview
+
+FMI Web Technologies course site — a Docusaurus 3 site with lecture content in MDX, Reveal.js presentations, and a React-based exercise system with progress tracking. All content is in Bulgarian; code comments in English.
+
+## Commands
+
+All commands run from `docusaurus-site/`:
+
+```bash
+cd docusaurus-site
+npm start              # Dev server with hot reload (http://localhost:3000)
+npm run build          # Production build
+npm run serve          # Test production build locally
+npm run build:slides   # Rebuild Reveal.js presentations only
+npm run clear          # Clear Docusaurus cache
+tsc                    # Type-check TypeScript (via npm run typecheck)
+```
+
+Cache issues are common — when MDX errors or exercise context errors appear, run `rm -rf .docusaurus` first.
+
+## Architecture
+
+**Content pipeline**: MDX files in `docs/XX-topic-name/` → Docusaurus renders lectures. `slides.md` files → `plugins/reveal-slides-plugin.js` generates static HTML in `static/slides/`. `plugins/lectures-plugin.js` feeds lecture metadata to the homepage.
+
+**Exercise system**: Uses React Context (`ExerciseProvider`). `ExerciseCard` auto-registers by extracting its `### Title`, transliterating to a slug ID, and registering in context. `ProgressTracker` reads from the same context. Progress persists in LocalStorage. **Zero-config**: never pass `id` to ExerciseCard or `exercises` to ProgressTracker.
+
+**Custom components** (`src/components/`): InfoBox/WarningBox/SuccessBox/WhyBox, ExerciseCard/ProgressTracker, Grid/Card, ComparisonBox, CollapsibleSection, LearningObjectives, QuickSummary, ViewSlidesButton. These are imported in MDX files via `@site/src/components/...`.
+
+**Key constraint**: Node >= 20. Docusaurus 3.9.2, React 19, MDX v3 (requires LaTeX brace escaping with `\{` `\}`).
+
+---
+
+## Detailed Instructions
 
 ## Структура на Проекта
 
@@ -30,6 +64,7 @@ university-lectures-template/
 │   │   └── reveal-slides-plugin.js # Генерира Reveal.js презентации
 │   ├── static/
 │   │   ├── img/                  # Изображения
+│   │   │   └── diagrams/         # SVG диаграми (по теми: security/, nosql/, etc.)
 │   │   └── slides/               # Генерирани презентации (автоматично)
 │   └── docusaurus.config.ts      # Главна конфигурация
 ├── .github/
@@ -778,6 +813,221 @@ MDX използва JSX синтаксис, затова SVG елементит
 - Използвайте **уникални ID-та** за gradients и filters (добавете префикс базиран на секцията)
 - **НЕ escape-вайте** къдравите скоби в JSX (`{{` е правилно, `\{{` е ГРЕШНО)
 - Стойностите в style обекти са **strings** за единици (`'600px'`) или **numbers** за безединични стойности (`1`)
+
+---
+
+## Static SVG Диаграми (Препоръчително)
+
+**✅ ПРЕПОРЪКА: Използвайте static SVG файлове в `static/img/diagrams/` за диаграми!**
+
+Static SVG файлове са по-добри от React компоненти или inline SVG в MDX защото:
+- Могат да се преизползват в лекции И презентации (Reveal.js)
+- По-лесни за поддръжка и редактиране
+- Не изискват компилация
+- Работят навсякъде без JSX трансформации
+
+### Структура на Директориите
+
+```
+static/img/diagrams/
+├── security/
+│   ├── xss-attack.svg
+│   ├── sql-injection.svg
+│   ├── csrf-attack.svg
+│   └── exercises-header.svg
+├── nosql/
+│   ├── cap-theorem.svg
+│   └── scaling-models.svg
+└── angular/
+    ├── component-lifecycle.svg
+    └── data-binding.svg
+```
+
+### Използване в MDX
+
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+  src={useBaseUrl('/img/diagrams/security/xss-attack.svg')}
+  alt="XSS Attack Diagram"
+  style={{width: '100%', maxWidth: '800px', margin: '20px auto', display: 'block'}}
+/>
+```
+
+### Използване в Reveal.js Презентации
+
+```markdown
+![XSS Attack](../../../static/img/diagrams/security/xss-attack.svg)
+```
+
+---
+
+## ⚠️ КРИТИЧНИ Правила за Static SVG Файлове
+
+### 🚨 НИКОГА НЕ използвайте CSS анимации с `opacity: 0`
+
+**Това е най-честата грешка, която прави SVG невидим!**
+
+```xml
+<!-- ❌ ГРЕШНО - Съдържанието е невидимо! -->
+<style>
+  .my-box { opacity: 0; animation: fadeIn 0.4s ease-out forwards; }
+  @keyframes fadeIn { to { opacity: 1; } }
+</style>
+<g class="my-box">
+  <rect ... />
+  <text>Този текст няма да се вижда!</text>
+</g>
+```
+
+**Защо е проблем:**
+- Елементите започват с `opacity: 0` (невидими)
+- Анимацията трябва да ги направи видими
+- Но ако анимацията не се изпълни (различни браузъри, статичен контекст, print), съдържанието остава невидимо ЗАВИНАГИ
+
+```xml
+<!-- ✅ ПРАВИЛНО - Без opacity: 0, съдържанието винаги е видимо -->
+<g>
+  <rect ... />
+  <text>Този текст винаги се вижда!</text>
+</g>
+```
+
+### 🚨 НИКОГА НЕ използвайте CSS `transform` върху елементи с `transform` атрибут
+
+```xml
+<!-- ❌ ГРЕШНО - CSS transform конфликтира с атрибута -->
+<style>
+  .my-box { transform: translateY(15px); animation: slideUp 0.4s forwards; }
+</style>
+<g class="my-box" transform="translate(50, 80)">
+  <!-- Позицията ще е грешна! -->
+</g>
+
+<!-- ✅ ПРАВИЛНО - Само атрибут transform -->
+<g transform="translate(50, 80)">
+  <!-- Позицията е коректна -->
+</g>
+```
+
+### 🚨 НИКОГА НЕ разчитайте на CSS анимации за показване на съдържание
+
+**Правило:** SVG трябва да изглежда правилно БЕЗ никакви анимации. Анимациите са само за визуален ефект, не за функционалност.
+
+```xml
+<!-- ❌ ГРЕШНО - Стрелката зависи от анимация за да се покаже -->
+<style>
+  .arrow { stroke-dashoffset: 50; animation: draw 0.3s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+</style>
+<path class="arrow" d="M10,10 L100,10" stroke-dasharray="50" />
+
+<!-- ✅ ПРАВИЛНО - Стрелката винаги е видима -->
+<path d="M10,10 L100,10" stroke="#333" stroke-width="2" />
+```
+
+---
+
+## Шаблон за Static SVG Диаграма
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Градиенти -->
+    <linearGradient id="myGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+
+    <!-- Филтри за сянка -->
+    <filter id="myShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Arrow markers -->
+    <marker id="myArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Заглавие -->
+  <text x="400" y="30" text-anchor="middle" fill="#2c3e50"
+        font-family="system-ui, sans-serif" font-size="22" font-weight="700">
+    Заглавие на Диаграмата
+  </text>
+
+  <!-- Основни елементи - използвай transform атрибути за позициониране -->
+  <g transform="translate(50, 80)" filter="url(#myShadow)">
+    <rect width="180" height="90" rx="10" fill="url(#myGrad)"/>
+    <text x="90" y="50" text-anchor="middle" fill="white"
+          font-family="system-ui, sans-serif" font-size="14" font-weight="600">
+      Текст в Кутията
+    </text>
+  </g>
+
+  <!-- Стрелки -->
+  <path d="M240,125 L300,125" stroke="#333" stroke-width="2"
+        marker-end="url(#myArrow)"/>
+</svg>
+```
+
+### Важни SVG Атрибути (HTML синтаксис, НЕ JSX)
+
+| Атрибут | Пример |
+|---------|--------|
+| `text-anchor` | `text-anchor="middle"` |
+| `font-family` | `font-family="system-ui, sans-serif"` |
+| `font-size` | `font-size="14"` |
+| `font-weight` | `font-weight="600"` |
+| `fill-opacity` | `fill-opacity="0.8"` |
+| `stroke-width` | `stroke-width="2"` |
+| `stroke-dasharray` | `stroke-dasharray="5,3"` |
+| `stop-color` | `stop-color="#3498db"` |
+| `flood-opacity` | `flood-opacity="0.2"` |
+
+**⚠️ Забележка:** В static SVG файлове използвайте kebab-case (с тирета), НЕ camelCase. camelCase е само за JSX/React.
+
+---
+
+## SVG Best Practices Checklist
+
+При създаване на нова SVG диаграма, проверете:
+
+- [ ] **Няма `opacity: 0`** в CSS стилове
+- [ ] **Няма CSS `transform`** върху елементи с `transform` атрибут
+- [ ] **Няма анимации**, от които зависи видимостта на съдържанието
+- [ ] **Уникални ID-та** за градиенти, филтри и маркери (добавете префикс: `xss-`, `sql-`, etc.)
+- [ ] **Всички `<text>` елементи** имат `font-family="system-ui, sans-serif"`
+- [ ] **viewBox е зададен** правилно (напр. `viewBox="0 0 800 400"`)
+- [ ] **Тествано в браузър** - отворете SVG файла директно в Chrome/Firefox
+- [ ] **Тествано в Docusaurus** - `npm start` и проверете страницата
+
+---
+
+## Troubleshooting SVG Проблеми
+
+### Текстът не се показва
+
+1. Проверете дали няма `opacity: 0` в CSS
+2. Проверете дали `font-family` е зададен
+3. Проверете дали `fill` цветът не е същият като фона
+
+### Елементи са на грешна позиция
+
+1. Проверете за конфликт между CSS `transform` и `transform` атрибут
+2. Премахнете всички CSS transform анимации
+
+### Градиентите/филтрите не работят
+
+1. Проверете дали ID-тата са уникални в целия файл
+2. Проверете дали `url(#id)` съвпада точно с `id="..."`
+
+### SVG изглежда различно в Docusaurus vs директно в браузър
+
+1. Премахнете всички `<style>` блокове с анимации
+2. Използвайте само inline атрибути за стилове
 
 ---
 

@@ -9,7 +9,10 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(echo ✓ $dir exists:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(wc -l /Users/i533837/data/repos/alexaytov/fmi-web-tech/docusaurus-site/docs/*/slides.md)",
+      "mcp__ai-core-perplexity__perplexity_research",
+      "mcp__ai-core-perplexity__perplexity_ask"
     ]
   }
 }

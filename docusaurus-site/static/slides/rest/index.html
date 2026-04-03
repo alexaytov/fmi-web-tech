@@ -110,7 +110,7 @@
 <script type="text/template">
 # REST API
 
-### GET и POST заявки за Web APIs
+### HTTP, JSON и уеб комуникация
 
 Note:
 Добре дошли в лекцията за REST API - основата на комуникацията между уеб приложения.
@@ -120,19 +120,63 @@ Note:
 <script type="text/template">
 ## Учебни Цели
 
-🌐 Разбирате REST архитектурата и HTTP методите <!-- .element: class="fragment" -->
+🌐 Разбирате какво е API и REST архитектурата <!-- .element: class="fragment" -->
 
-📖 Конструирате GET заявки с параметри <!-- .element: class="fragment" -->
+📖 Познавате HTTP методите: GET, POST, PUT, DELETE <!-- .element: class="fragment" -->
 
-➕ Форматирате POST заявки с JSON <!-- .element: class="fragment" -->
+🔗 Разбирате URL структурата, headers и status кодове <!-- .element: class="fragment" -->
 
-🔧 Тествате API с Postman и Python <!-- .element: class="fragment" -->
+📄 Работите с JSON формат и Content-Type <!-- .element: class="fragment" -->
 
-🐛 Диагностицирате REST грешки <!-- .element: class="fragment" -->
+🔐 Разбирате основите на API автентикацията <!-- .element: class="fragment" -->
+
+🔧 Тествате API с Postman, cURL, fetch и Python <!-- .element: class="fragment" -->
 
 Note:
-Тези пет умения са фундаментални за всеки уеб разработчик.
+Тези умения са фундаментални за всеки уеб разработчик.
 </script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Какво е API?
+
+Note:
+Преди REST, нека разберем самата концепция за API.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### API = Application Programming Interface
+
+**Интерфейс**, чрез който две програми комуникират <!-- .element: class="fragment" -->
+
+Аналогия: **сервитьор в ресторант** <!-- .element: class="fragment" -->
+
+🧑 Клиент → 📋 Поръчка → 👨‍🍳 Кухня → 🍽️ Ястие <!-- .element: class="fragment" -->
+
+🖥️ Client → 📨 Request → 🖧 Server → 📦 Response <!-- .element: class="fragment" -->
+
+Note:
+Клиентът не трябва да знае как работи кухнята. Той просто поръчва чрез сервитьора. API-то е сервитьорът.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Видове API
+
+🔹 **REST API** - HTTP базиран, най-разпространен <!-- .element: class="fragment" -->
+
+🔹 **GraphQL** - клиентът избира какви данни да получи <!-- .element: class="fragment" -->
+
+🔹 **WebSocket** - двупосочна, реално-времева комуникация <!-- .element: class="fragment" -->
+
+🔹 **gRPC** - бърз, бинарен протокол (Google) <!-- .element: class="fragment" -->
+
+Note:
+Ние ще се фокусираме върху REST, защото е стандартът за уеб разработка.
+</script>
+</section>
 </section>
 <section>
 <section data-markdown>
@@ -205,16 +249,96 @@ REST API е универсален език, който позволява на 
 
 **RE**presentational **S**tate **T**ransfer
 
-🔹 **Stateless** - всяка заявка е независима <!-- .element: class="fragment" -->
+Архитектурен **стил**, не протокол <!-- .element: class="fragment" -->
 
-🔹 **Client-Server** - ясно разделение <!-- .element: class="fragment" -->
+Note:
+REST е набор от принципи, не конкретна технология.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### REST Принципи
 
-🔹 **Uniform Interface** - стандартни HTTP методи <!-- .element: class="fragment" -->
+🔹 **Stateless** - всяка заявка съдържа цялата нужна информация <!-- .element: class="fragment" -->
+
+🔹 **Client-Server** - ясно разделение на отговорности <!-- .element: class="fragment" -->
+
+🔹 **Uniform Interface** - стандартни HTTP методи и URL-и <!-- .element: class="fragment" -->
 
 🔹 **Cacheable** - отговорите могат да се кешират <!-- .element: class="fragment" -->
 
+🔹 **Resource-Based** - всичко е ресурс с уникален URL <!-- .element: class="fragment" -->
+
 Note:
-REST е архитектурен стил, не протокол - набор от принципи за изграждане на API.
+Stateless означава, че сървърът не помни предишни заявки. Всяка заявка е самостоятелна.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Ресурси и URL-и
+
+В REST всичко е **ресурс** с уникален адрес:
+
+```
+/api/users          → колекция от потребители
+/api/users/123      → конкретен потребител
+/api/users/123/posts → постове на потребител 123
+```
+
+Note:
+URL-ът идентифицира ресурса, а HTTP методът определя операцията.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## URL Структура
+
+Note:
+Нека разберем анатомията на един URL.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Анатомия на URL
+
+```
+https://api.example.com:443/api/users?role=admin&page=2#results
+└─┬──┘  └──────┬───────┘└┬┘└───┬───┘└────────┬────────┘└──┬───┘
+scheme       host       port  path      query string    fragment
+```
+
+🔹 **Scheme** - протокол (http / https) <!-- .element: class="fragment" -->
+
+🔹 **Host** - адрес на сървъра <!-- .element: class="fragment" -->
+
+🔹 **Path** - път до ресурса <!-- .element: class="fragment" -->
+
+🔹 **Query String** - параметри за филтриране <!-- .element: class="fragment" -->
+
+Note:
+При REST API най-важни са path (идентифицира ресурса) и query string (филтриране).
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Path vs Query параметри
+
+**Path параметри** - идентифицират ресурс:
+```
+GET /api/users/123        → потребител с ID 123
+GET /api/products/456     → продукт с ID 456
+```
+
+**Query параметри** - филтриране, сортиране, пагинация:
+```
+GET /api/users?role=admin&sort=name&limit=10
+GET /api/products?category=books&page=2
+```
+
+Note:
+Path = кой ресурс, Query = как да го филтрираме.
 </script>
 </section>
 </section>
@@ -274,6 +398,58 @@ HTTP е протоколът, върху който работи REST.
 
 Note:
 Всяка API комуникация следва този прост модел.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Структура на HTTP Request
+
+```
+POST /api/users HTTP/1.1          ← Request Line
+Host: api.example.com             ← Headers
+Content-Type: application/json
+Authorization: Bearer token123
+
+{                                  ← Body (за POST/PUT)
+  "name": "Ivan",
+  "email": "ivan@example.com"
+}
+```
+
+🔹 **Request Line** - метод + URL + версия <!-- .element: class="fragment" -->
+
+🔹 **Headers** - метаданни за заявката <!-- .element: class="fragment" -->
+
+🔹 **Body** - данни (само за POST, PUT, PATCH) <!-- .element: class="fragment" -->
+
+Note:
+GET заявките нямат body. POST и PUT заявките изпращат данни в body-то.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Структура на HTTP Response
+
+```
+HTTP/1.1 201 Created              ← Status Line
+Content-Type: application/json    ← Headers
+Date: Mon, 01 Apr 2026 10:00:00
+
+{                                  ← Body
+  "id": 42,
+  "name": "Ivan",
+  "email": "ivan@example.com"
+}
+```
+
+🔹 **Status Line** - версия + статус код + съобщение <!-- .element: class="fragment" -->
+
+🔹 **Headers** - метаданни за отговора <!-- .element: class="fragment" -->
+
+🔹 **Body** - данните (обикновено JSON) <!-- .element: class="fragment" -->
+
+Note:
+Статус кодът е най-важната част - веднага казва дали заявката е успяла.
 </script>
 </section>
 <section data-markdown>
@@ -391,6 +567,25 @@ Note:
 2xx = успех, 4xx = вашата грешка, 5xx = сървърна грешка.
 </script>
 </section>
+<section data-markdown>
+<script type="text/template">
+### Най-важните кодове
+
+| Код | Значение | Кога? |
+|-----|----------|-------|
+| **200** | OK | Успешен GET |
+| **201** | Created | Успешен POST |
+| **204** | No Content | Успешен DELETE |
+| **400** | Bad Request | Невалидни данни |
+| **401** | Unauthorized | Липсва автентикация |
+| **403** | Forbidden | Нямате достъп |
+| **404** | Not Found | Ресурсът не съществува |
+| **500** | Internal Error | Бъг в сървъра |
+
+Note:
+Запомнете тези кодове - ще ги виждате ежедневно.
+</script>
+</section>
 </section>
 <section>
 <section data-markdown>
@@ -429,6 +624,48 @@ Note:
 
 Note:
 JSON е лек, четим и поддържан от всички езици.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### JSON Правила
+
+✅ Ключовете са **винаги** в двойни кавички <!-- .element: class="fragment" -->
+
+✅ Стрингове - само **двойни** кавички (не единични) <!-- .element: class="fragment" -->
+
+❌ Не се допускат trailing запетаи <!-- .element: class="fragment" -->
+
+❌ Не се допускат коментари <!-- .element: class="fragment" -->
+
+Note:
+Тези правила са различни от JavaScript обектите - JSON е по-строг.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Невалиден vs Валиден JSON
+
+```json
+// ❌ НЕВАЛИДЕН
+{
+  name: "Ivan",           // ключ без кавички
+  'age': 25,              // единични кавички
+  "active": true,         // trailing запетая
+}
+
+// ✅ ВАЛИДЕН
+{
+  "name": "Ivan",
+  "age": 25,
+  "active": true
+}
+```
+
+⚠️ Невалиден JSON = **400 Bad Request** <!-- .element: class="fragment" -->
+
+Note:
+Използвайте JSON валидатор (jsonlint.com) ако не сте сигурни.
 </script>
 </section>
 </section>
@@ -513,6 +750,51 @@ response = requests.get(
 
 Note:
 requests библиотеката е стандарт за HTTP в Python.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### GET с JavaScript (fetch)
+
+```javascript
+// Проста GET заявка
+const response = await fetch(
+  'https://jsonplaceholder.typicode.com/users'
+);
+const users = await response.json();
+console.log(users);
+
+// GET с query параметри
+const params = new URLSearchParams({
+  username: 'Bret'
+});
+const res = await fetch(
+  `https://jsonplaceholder.typicode.com/users?${params}`
+);
+```
+
+Note:
+fetch е вграден в браузъра - не е нужна допълнителна библиотека.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### GET с cURL
+
+```bash
+# Проста GET заявка
+curl https://jsonplaceholder.typicode.com/users
+
+# С query параметри
+curl "https://jsonplaceholder.typicode.com/users?username=Bret"
+
+# С допълнителни headers
+curl -H "Accept: application/json" \
+     https://jsonplaceholder.typicode.com/users/1
+```
+
+Note:
+cURL е полезен за бързи тестове от терминала.
 </script>
 </section>
 </section>
@@ -601,6 +883,55 @@ Note:
 Най-честата грешка при POST заявки е липсващ Content-Type header.
 </script>
 </section>
+<section data-markdown>
+<script type="text/template">
+### POST с JavaScript (fetch)
+
+```javascript
+const response = await fetch(
+  'https://jsonplaceholder.typicode.com/posts',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: 'My Post',
+      body: 'Content here...',
+      userId: 1
+    })
+  }
+);
+
+const created = await response.json();
+console.log(created.id); // Новият ID
+```
+
+Note:
+Забележете: fetch изисква ръчно JSON.stringify, за разлика от Python requests.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### POST с cURL
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"title":"My Post","body":"Content","userId":1}' \
+  https://jsonplaceholder.typicode.com/posts
+```
+
+🔹 `-X POST` - задава HTTP метода <!-- .element: class="fragment" -->
+
+🔹 `-H` - добавя header <!-- .element: class="fragment" -->
+
+🔹 `-d` - изпраща data (body) <!-- .element: class="fragment" -->
+
+Note:
+cURL е идеален за бързо тестване от терминала.
+</script>
+</section>
 </section>
 <section>
 <section data-markdown>
@@ -678,6 +1009,300 @@ Note:
 <section>
 <section data-markdown>
 <script type="text/template">
+## PUT, PATCH, DELETE
+
+Note:
+Останалите CRUD операции.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### PUT = Пълно обновяване
+
+```javascript
+// Замества ЦЕЛИЯ ресурс
+await fetch('https://api.example.com/users/123', {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    name: 'Ivan Petrov',    // Всички полета!
+    email: 'ivan@mail.com',
+    age: 30
+  })
+});
+```
+
+⚠️ PUT изпраща **всички полета** - пропуснатите се изтриват!
+
+Note:
+PUT е като "замени целия обект". Ако пропуснете поле, то може да стане null.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### PATCH = Частично обновяване
+
+```javascript
+// Обновява САМО посочените полета
+await fetch('https://api.example.com/users/123', {
+  method: 'PATCH',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: 'new-email@mail.com'  // Само това поле!
+  })
+});
+```
+
+✅ PATCH обновява **само изпратените полета**
+
+Note:
+PATCH е по-безопасен - останалите полета остават непроменени.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### PUT vs PATCH
+
+| | PUT | PATCH |
+|---|-----|-------|
+| **Какво** | Цял ресурс | Частично |
+| **Полета** | Всички задължителни | Само променените |
+| **Идемпотентен** | ✅ Да | ❌ Не винаги |
+| **Пример** | Замени профила | Промени email-а |
+
+Note:
+На практика много API-та използват PUT и PATCH взаимозаменяемо.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### DELETE = Изтриване
+
+```javascript
+// Изтриване на ресурс
+const response = await fetch(
+  'https://api.example.com/users/123',
+  { method: 'DELETE' }
+);
+
+// Обикновено 204 No Content
+console.log(response.status); // 204
+```
+
+🔹 Няма body в заявката <!-- .element: class="fragment" -->
+
+🔹 Идемпотентен - повторното изтриване дава 404 <!-- .element: class="fragment" -->
+
+🔹 Обикновено връща **204 No Content** <!-- .element: class="fragment" -->
+
+Note:
+DELETE е прост - изпращате заявка с ID-то на ресурса.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Всички методи заедно
+
+```
+GET    /api/users       → Списък потребители
+GET    /api/users/123   → Конкретен потребител
+POST   /api/users       → Създай потребител
+PUT    /api/users/123   → Замени потребител
+PATCH  /api/users/123   → Обнови част от потребител
+DELETE /api/users/123   → Изтрий потребител
+```
+
+Това е **пълният CRUD** цикъл! <!-- .element: class="fragment" -->
+
+Note:
+Забележете шаблона: колекцията е за списък/създаване, а с ID е за конкретен ресурс.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## HTTP Headers
+
+Note:
+Headers са метаданните на HTTP заявките и отговорите.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Важни Request Headers
+
+| Header | Цел | Пример |
+|--------|-----|--------|
+| **Content-Type** | Формат на body | `application/json` |
+| **Accept** | Какъв формат искам | `application/json` |
+| **Authorization** | Автентикация | `Bearer token123` |
+| **User-Agent** | Кой е клиентът | `Mozilla/5.0...` |
+
+Note:
+Content-Type и Authorization са най-важните за REST API.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Важни Response Headers
+
+| Header | Цел | Пример |
+|--------|-----|--------|
+| **Content-Type** | Формат на отговора | `application/json` |
+| **Cache-Control** | Кеширане | `max-age=3600` |
+| **X-RateLimit-Remaining** | Оставащи заявки | `98` |
+| **Access-Control-Allow-Origin** | CORS | `*` |
+
+Note:
+Response headers дават важна информация за отговора и ограниченията на API-то.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Автентикация
+
+Note:
+Повечето API-та изискват автентикация.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Защо автентикация?
+
+🔹 **Идентификация** - кой прави заявката <!-- .element: class="fragment" -->
+
+🔹 **Авторизация** - какво има право да прави <!-- .element: class="fragment" -->
+
+🔹 **Rate Limiting** - ограничаване на заявки по потребител <!-- .element: class="fragment" -->
+
+🔹 **Billing** - отчитане на употребата <!-- .element: class="fragment" -->
+
+Note:
+Без автентикация API-то не знае кой го използва.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### API Key
+
+```bash
+# Като query параметър
+GET /api/weather?city=Sofia&apikey=abc123
+
+# Като header
+GET /api/weather?city=Sofia
+X-API-Key: abc123
+```
+
+✅ Просто <!-- .element: class="fragment" -->
+
+⚠️ Ключът е статичен - ако изтече, трябва да се смени <!-- .element: class="fragment" -->
+
+Note:
+API ключове са най-простата форма на автентикация. Повечето безплатни API-та ги използват.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Bearer Token (JWT)
+
+```bash
+GET /api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+```
+
+🔹 Получава се след **login** <!-- .element: class="fragment" -->
+
+🔹 Има **срок на валидност** (expiration) <!-- .element: class="fragment" -->
+
+🔹 Изпраща се в **Authorization** header <!-- .element: class="fragment" -->
+
+Note:
+JWT (JSON Web Token) е стандартът за модерна API автентикация.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Пример: Login → Token → API Call
+
+```javascript
+// 1. Login - получаване на token
+const loginRes = await fetch('/api/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: 'ivan@example.com',
+    password: 's3cret'
+  })
+});
+const { token } = await loginRes.json();
+
+// 2. Използване на token за API call
+const usersRes = await fetch('/api/users', {
+  headers: { 'Authorization': `Bearer ${token}` }
+});
+const users = await usersRes.json();
+```
+
+Note:
+Типичен workflow: влизате, получавате token, използвате го за всяка следваща заявка.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## REST URL Конвенции
+
+Note:
+Добрите URL-и правят API-то интуитивно.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Правила за именуване
+
+✅ Използвайте **съществителни**, не глаголи <!-- .element: class="fragment" -->
+
+✅ Използвайте **множествено число** <!-- .element: class="fragment" -->
+
+✅ Използвайте **kebab-case** за multi-word ресурси <!-- .element: class="fragment" -->
+
+✅ Групирайте свързани ресурси **йерархично** <!-- .element: class="fragment" -->
+
+Note:
+Тези правила не са задължителни, но са стандартна практика.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Примери
+
+```
+✅ ДОБРО:
+GET  /api/users
+GET  /api/users/123
+GET  /api/users/123/posts
+GET  /api/blog-posts?category=tech
+
+❌ ЛОШО:
+GET  /api/getUsers         ← глагол в URL
+GET  /api/user             ← единствено число
+GET  /api/user_posts       ← snake_case
+POST /api/createNewUser    ← глагол + операция
+```
+
+Note:
+Глаголът идва от HTTP метода (GET, POST), не от URL-а.
+</script>
+</section>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
 ## Инструменти
 
 Note:
@@ -734,6 +1359,29 @@ curl -X POST -H "Content-Type: application/json" \
 
 Note:
 Изберете инструмента според контекста - Postman за exploration, cURL за скриптове.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Browser DevTools (F12)
+
+🔹 Отворете **Network** tab <!-- .element: class="fragment" -->
+
+🔹 Филтрирайте по **Fetch/XHR** <!-- .element: class="fragment" -->
+
+🔹 Кликнете на заявка за детайли: <!-- .element: class="fragment" -->
+
+| Tab | Какво показва |
+|-----|---------------|
+| **Headers** | Request/Response headers |
+| **Payload** | Изпратените данни (body) |
+| **Preview** | Форматиран response |
+| **Response** | Raw response body |
+| **Timing** | Колко време е отнело |
+<!-- .element: class="fragment" -->
+
+Note:
+DevTools е най-бързият начин да видите какво се случва с реалните заявки на сайта.
 </script>
 </section>
 </section>
@@ -794,20 +1442,120 @@ Note:
 </section>
 <section data-markdown>
 <script type="text/template">
+### 404 Not Found
+
+```
+GET /api/uesrs/123    ← правописна грешка!
+GET /api/users/99999  ← несъществуващ ID
+```
+
+**Причини:** <!-- .element: class="fragment" -->
+
+🔹 Грешен URL (правописна грешка) <!-- .element: class="fragment" -->
+
+🔹 Ресурсът не съществува (изтрит или грешен ID) <!-- .element: class="fragment" -->
+
+🔹 Грешна версия на API-то (`/v1/` vs `/v2/`) <!-- .element: class="fragment" -->
+
+Note:
+404 е най-честата грешка при REST. Винаги проверявайте URL-а.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### 500 Internal Server Error
+
+```json
+{
+  "error": "Internal Server Error",
+  "message": "Something went wrong"
+}
+```
+
+🔹 Бъг в сървъра - **не е ваша грешка** <!-- .element: class="fragment" -->
+
+🔹 Опитайте отново след малко <!-- .element: class="fragment" -->
+
+🔹 Ако продължава - свържете се с поддръжката <!-- .element: class="fragment" -->
+
+Note:
+500 грешки са проблем на сървъра. Единственото, което можете да направите е retry.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### CORS Грешки
+
+```
+Access to fetch at 'https://api.example.com'
+from origin 'http://localhost:3000'
+has been blocked by CORS policy
+```
+
+**Cross-Origin Resource Sharing** <!-- .element: class="fragment" -->
+
+🔹 Браузърът блокира заявки към **друг домейн** <!-- .element: class="fragment" -->
+
+🔹 Сървърът трябва да разреши с `Access-Control-Allow-Origin` header <!-- .element: class="fragment" -->
+
+🔹 Не се случва в Postman/cURL (само в браузъра!) <!-- .element: class="fragment" -->
+
+Note:
+CORS е честа главоболие за frontend разработчици. Решението е на сървъра.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
 ### Debug Checklist
 
-✅ Проверете URL за грешки <!-- .element: class="fragment" -->
+✅ Проверете URL за правописни грешки <!-- .element: class="fragment" -->
+
+✅ Проверете HTTP метода (GET vs POST) <!-- .element: class="fragment" -->
 
 ✅ Валидирайте JSON синтаксис <!-- .element: class="fragment" -->
 
 ✅ Проверете Content-Type header <!-- .element: class="fragment" -->
 
-✅ Прочетете response body за детайли <!-- .element: class="fragment" -->
+✅ Проверете Authorization header <!-- .element: class="fragment" -->
 
-✅ Консултирайте API документация <!-- .element: class="fragment" -->
+✅ Прочетете **response body** за детайли <!-- .element: class="fragment" -->
+
+✅ Отворете **DevTools Network tab** <!-- .element: class="fragment" -->
+
+✅ Консултирайте **API документация** <!-- .element: class="fragment" -->
 
 Note:
-Следвайте тези стъпки при всяка грешка.
+Следвайте тези стъпки последователно при всяка грешка.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Error Handling в Код
+
+```javascript
+try {
+  const response = await fetch('/api/users');
+
+  if (!response.ok) {
+    // 4xx или 5xx
+    const error = await response.json();
+    console.error(`Error ${response.status}: ${error.message}`);
+    return;
+  }
+
+  const users = await response.json();
+  console.log(users);
+
+} catch (error) {
+  // Мрежова грешка (няма интернет, DNS, timeout)
+  console.error('Network error:', error.message);
+}
+```
+
+⚠️ `fetch` **НЕ** хвърля грешка при 4xx/5xx! <!-- .element: class="fragment" -->
+
+Note:
+Това е критично - fetch хвърля грешка само при мрежови проблеми. Трябва ръчно да проверявате response.ok.
 </script>
 </section>
 </section>
@@ -822,55 +1570,213 @@ Note:
 </section>
 <section data-markdown>
 <script type="text/template">
-### Full Example: Python
+### Full CRUD Example (JavaScript)
+
+```javascript
+const BASE = 'https://jsonplaceholder.typicode.com';
+
+// CREATE - POST
+const created = await fetch(`${BASE}/posts`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title: 'New Post', body: 'Content', userId: 1
+  })
+}).then(r => r.json());
+console.log('Created:', created.id);
+
+// READ - GET
+const post = await fetch(`${BASE}/posts/1`)
+  .then(r => r.json());
+console.log('Read:', post.title);
+```
+
+Note:
+Използваме jsonplaceholder за демонстрация - безплатен fake API.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Full CRUD Example (продължение)
+
+```javascript
+// UPDATE - PUT
+const updated = await fetch(`${BASE}/posts/1`, {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    id: 1, title: 'Updated', body: 'New content', userId: 1
+  })
+}).then(r => r.json());
+console.log('Updated:', updated.title);
+
+// DELETE
+const deleteRes = await fetch(`${BASE}/posts/1`, {
+  method: 'DELETE'
+});
+console.log('Deleted:', deleteRes.status); // 200
+```
+
+Note:
+Пълен CRUD цикъл: Create, Read, Update, Delete.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Full CRUD Example (Python)
 
 ```python
 import requests
 
 BASE = "https://jsonplaceholder.typicode.com"
 
-# 1. GET - извличане
+# GET - списък
 users = requests.get(f"{BASE}/users").json()
 print(f"Found {len(users)} users")
 
-# 2. Намиране на потребител
-bret = next(u for u in users if u['username'] == 'Bret')
-print(f"User: {bret['name']} (ID: {bret['id']})")
+# GET - конкретен потребител
+user = requests.get(f"{BASE}/users/1").json()
+print(f"User: {user['name']}")
 
-# 3. POST - създаване на пост
-new_post = {
-    "title": "Hello from Bret",
-    "body": "Test content",
-    "userId": bret['id']
-}
-response = requests.post(f"{BASE}/posts", json=new_post)
-print(f"Created: {response.status_code}")
+# POST - създаване
+new_post = {"title": "Hello", "body": "Content", "userId": 1}
+res = requests.post(f"{BASE}/posts", json=new_post)
+print(f"Created: {res.status_code}")  # 201
+
+# PUT - обновяване
+res = requests.put(f"{BASE}/posts/1",
+    json={"title": "Updated", "body": "New", "userId": 1})
+print(f"Updated: {res.status_code}")  # 200
+
+# DELETE - изтриване
+res = requests.delete(f"{BASE}/posts/1")
+print(f"Deleted: {res.status_code}")  # 200
 ```
 
 Note:
-Този пример демонстрира GET за търсене и POST за създаване.
+Python requests е по-прост от fetch - автоматично сериализира JSON.
 </script>
 </section>
 </section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Пагинация и Rate Limiting
+
+Note:
+Важни концепции при работа с реални API-та.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Пагинация
+
+```
+GET /api/users?page=1&limit=10   → потребители 1-10
+GET /api/users?page=2&limit=10   → потребители 11-20
+GET /api/users?page=3&limit=10   → потребители 21-30
+```
+
+🔹 API-тата **рядко** връщат всички данни наведнъж <!-- .element: class="fragment" -->
+
+🔹 Използвайте `page` и `limit` (или `offset`) <!-- .element: class="fragment" -->
+
+🔹 Response обикновено включва `total` и `totalPages` <!-- .element: class="fragment" -->
+
+Note:
+Без пагинация заявка за милион записа ще срине и сървъра, и клиента.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Rate Limiting
+
+```
+HTTP/1.1 429 Too Many Requests
+Retry-After: 60
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1712000000
+```
+
+🔹 API-тата ограничават **брой заявки** за период <!-- .element: class="fragment" -->
+
+🔹 Типично: 60-1000 заявки/минута <!-- .element: class="fragment" -->
+
+🔹 При превишаване: **429 Too Many Requests** <!-- .element: class="fragment" -->
+
+🔹 Проверявайте `X-RateLimit-Remaining` header <!-- .element: class="fragment" -->
+
+Note:
+Ако получите 429, изчакайте преди следващата заявка.
+</script>
+</section>
+</section>
+<section>
 <section data-markdown>
 <script type="text/template">
 ## Best Practices
 
-✅ Винаги проверявайте status кодовете <!-- .element: class="fragment" -->
+Note:
+Съвети от практиката.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Правила за клиенти
 
-✅ Използвайте Content-Type за POST <!-- .element: class="fragment" -->
+✅ Винаги проверявайте **status кодовете** <!-- .element: class="fragment" -->
 
-✅ Пазете API токени сигурни <!-- .element: class="fragment" -->
+✅ Задавайте **Content-Type** за POST/PUT/PATCH <!-- .element: class="fragment" -->
 
-✅ Handle-вайте грешки gracefully <!-- .element: class="fragment" -->
+✅ Обработвайте **грешки** (4xx, 5xx, мрежови) <!-- .element: class="fragment" -->
 
-✅ Консултирайте документацията <!-- .element: class="fragment" -->
+✅ Тествайте с **Postman** преди да пишете код <!-- .element: class="fragment" -->
 
-✅ Тествайте с Postman преди код <!-- .element: class="fragment" -->
+✅ Четете **API документацията** <!-- .element: class="fragment" -->
 
 Note:
-Следвайте тези практики за по-малко главоболия.
+Тези правила ще ви спестят часове дебъгване.
 </script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Правила за сигурност
+
+🔐 Никога не commit-вайте **API ключове** в код <!-- .element: class="fragment" -->
+
+🔐 Използвайте **environment variables** за secrets <!-- .element: class="fragment" -->
+
+🔐 Използвайте **HTTPS** (не HTTP) <!-- .element: class="fragment" -->
+
+🔐 Валидирайте **входните данни** на сървъра <!-- .element: class="fragment" -->
+
+🔐 Не пращайте **пароли** в URL (query params) <!-- .element: class="fragment" -->
+
+Note:
+Сигурността е критична при работа с API-та.
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Чести грешки
+
+❌ Забравен `Content-Type` header при POST <!-- .element: class="fragment" -->
+
+❌ Невалиден JSON (trailing запетаи, единични кавички) <!-- .element: class="fragment" -->
+
+❌ `fetch` не хвърля грешка при 4xx/5xx <!-- .element: class="fragment" -->
+
+❌ GET с данни в body (трябва в URL) <!-- .element: class="fragment" -->
+
+❌ Повторни POST без проверка (дубликати) <!-- .element: class="fragment" -->
+
+❌ API ключове в публичен код (GitHub) <!-- .element: class="fragment" -->
+
+Note:
+Запомнете тези грешки - ще ги правите поне веднъж.
+</script>
+</section>
 </section>
 <section data-markdown>
 <script type="text/template">
@@ -917,33 +1823,66 @@ Note:
 <script type="text/template">
 ## Следващи стъпки
 
-📚 PUT и PATCH - обновяване <!-- .element: class="fragment" -->
+📄 **OpenAPI / Swagger** - стандарт за API документация <!-- .element: class="fragment" -->
 
-🗑️ DELETE - изтриване <!-- .element: class="fragment" -->
+🔐 **OAuth 2.0** - по-сигурна автентикация <!-- .element: class="fragment" -->
 
-🔐 Authentication (JWT, OAuth) <!-- .element: class="fragment" -->
+⚡ **WebSockets** - реално-времева комуникация <!-- .element: class="fragment" -->
 
-📄 API Documentation (OpenAPI) <!-- .element: class="fragment" -->
+🔄 **GraphQL** - алтернатива на REST <!-- .element: class="fragment" -->
+
+🏗️ **Изграждане на REST API** - Express.js, FastAPI, Spring Boot <!-- .element: class="fragment" -->
 
 Note:
-След GET и POST, следващата стъпка са останалите CRUD операции.
+Следващата стъпка е да не само консумирате, но и да създавате REST API-та.
+</script>
+</section>
+<section>
+<section data-markdown>
+<script type="text/template">
+## Ресурси
 </script>
 </section>
 <section data-markdown>
 <script type="text/template">
-## Ресурси
+### Документация
 
 📖 [MDN HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) <!-- .element: class="fragment" -->
 
-🔧 [Postman](https://www.postman.com/) <!-- .element: class="fragment" -->
+📖 [MDN Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) <!-- .element: class="fragment" -->
 
-🧪 [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - Fake API <!-- .element: class="fragment" -->
+📖 [REST API Tutorial](https://restfulapi.net/) <!-- .element: class="fragment" -->
 
-🐍 [Python Requests](https://docs.python-requests.org/) <!-- .element: class="fragment" -->
+📖 [HTTP Status Codes](https://httpstatuses.com/) <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Инструменти
+
+🔧 [Postman](https://www.postman.com/) - GUI за тестване <!-- .element: class="fragment" -->
+
+🐍 [Python Requests](https://docs.python-requests.org/) - Python HTTP библиотека <!-- .element: class="fragment" -->
+
+🔧 [HTTPie](https://httpie.io/) - модерна cURL алтернатива <!-- .element: class="fragment" -->
+</script>
+</section>
+<section data-markdown>
+<script type="text/template">
+### Практика (Fake APIs)
+
+🧪 [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - GET, POST, PUT, DELETE <!-- .element: class="fragment" -->
+
+🧪 [ReqRes](https://reqres.in/) - с автентикация <!-- .element: class="fragment" -->
+
+🧪 [httpbin.org](https://httpbin.org/) - HTTP дебъгване <!-- .element: class="fragment" -->
+
+🧪 [Dog API](https://dog.ceo/dog-api/) - забавен API за упражнения <!-- .element: class="fragment" -->
 
 Note:
-JSONPlaceholder е отличен за практика без нужда от backend.
+Практикувайте с тези безплатни API-та. JSONPlaceholder е най-добрият за начало.
 </script>
+</section>
 </section>
 <section data-markdown>
 <script type="text/template">
@@ -958,7 +1897,7 @@ Note:
     </div>
 
     <!-- Navigation Helper -->
-    <a href="/fmi-web-tech/docs/rest/lecture" class="back-button">
+    <a href="/fmi-sdp-exc-2025-26/docs/rest/lecture" class="back-button">
         ← Back to Lecture
     </a>
 
